@@ -336,12 +336,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Hello" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ji3-JH-7q4">
-                                <rect key="frame" x="86" y="356" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -358,7 +352,6 @@
                         <outlet property="educationField" destination="IUD-Gn-iXu" id="Qpa-BC-rIh"/>
                         <outlet property="jobField" destination="bhB-FV-QoH" id="fRR-hH-rDv"/>
                         <outlet property="nameField" destination="QRo-Se-BSm" id="xwR-oT-OTF"/>
-                        <outlet property="placeholderField" destination="ji3-JH-7q4" id="5U1-w1-4kq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SkV-Hc-3yU" userLabel="First Responder" sceneMemberID="firstResponder"/>
