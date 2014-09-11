@@ -613,16 +613,27 @@
                                     <segue destination="Tzb-HE-Ibm" kind="push" identifier="showTerms" id="Hwb-LB-YMA"/>
                                 </connections>
                             </button>
+                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Tf-ca-3Vk">
+                                <rect key="frame" x="30" y="223" width="65" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UpP-b3-a3W">
+                                <rect key="frame" x="232" y="223" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextStep:" destination="Aeb-Kg-VeH" eventType="touchUpInside" id="nKF-Tv-g4Y"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Create Account" id="CSh-YJ-Amg">
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="utc-im-Jpm">
-                            <connections>
-                                <action selector="next:" destination="Aeb-Kg-VeH" id="aau-KT-iU7"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Create Account" id="CSh-YJ-Amg"/>
                     <connections>
                         <outlet property="emailField" destination="OTP-LK-Mcz" id="Evc-5J-M0X"/>
                         <outlet property="passField" destination="TFU-MZ-Ko9" id="oDE-Gf-U6L"/>

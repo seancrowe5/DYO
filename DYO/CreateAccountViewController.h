@@ -17,7 +17,7 @@
 
 
 - (IBAction)textFieldReturn:(id)sender;
-- (IBAction)next:(id)sender;
+- (IBAction)nextStep:(id)sender;
 
 
 @end

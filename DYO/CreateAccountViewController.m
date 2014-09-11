@@ -22,7 +22,9 @@
 }
 
 
-- (IBAction)next:(id)sender {
+
+- (IBAction)nextStep:(id)sender {
+    
     //get the variables from text fields
     NSString *email = [self.emailField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *password = [self.passField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -68,6 +70,7 @@
         }];
         
     }
+    
 }
 - (IBAction)textFieldReturn:(id)sender {
     //hides keyboard on return
