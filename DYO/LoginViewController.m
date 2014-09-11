@@ -17,10 +17,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Hide back button
-    self.navigationItem.hidesBackButton = YES;
     [self.emailField becomeFirstResponder];
 
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    // I will hide the top navigation bar
+    [self.navigationController.navigationBar setHidden:YES];
 }
 
 
