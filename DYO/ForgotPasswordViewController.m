@@ -17,6 +17,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // I will make the top navigation bar appear
+    [self.navigationController.navigationBar setHidden:NO];
 }
 
 - (IBAction)submit:(id)sender {

@@ -18,6 +18,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     //Get user info from Parse.com
     PFUser *user = [PFUser currentUser];
     PFQuery *query = [PFUser query];
@@ -25,12 +26,11 @@
     NSArray *userInfo = [query findObjects];
     NSString *name = [userInfo valueForKey:@"firstName"];
     //[self.nameLabel setText:name];
-    
-   
-    
- 
-    
-}
+
+
+    // I will make the top navigation bar appear
+    [self.navigationController.navigationBar setHidden:NO];}
+
 
 
 /*

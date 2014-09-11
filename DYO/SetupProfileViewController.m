@@ -17,6 +17,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // I will make the top navigation bar appear
+    [self.navigationController.navigationBar setHidden:NO];
+    
     self.navigationItem.hidesBackButton = YES;
     
     //Set profile image to a placeholder image so the initial launch shows something
