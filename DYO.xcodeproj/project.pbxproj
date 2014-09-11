@@ -12,6 +12,7 @@
 		212E9CE919B92721004E013E /* selfie.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 212E9CE819B92721004E013E /* selfie.jpg */; };
 		212E9CEC19B92BA8004E013E /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 212E9CEB19B92BA8004E013E /* ProfileViewController.m */; };
 		212F21DB19B757120045E351 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 212F21DA19B757120045E351 /* Logo.png */; };
+		214E133219C26D7200D61FB3 /* TermsandConditionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 214E133119C26D7200D61FB3 /* TermsandConditionsViewController.m */; };
 		2192977D19BDF566006F664A /* DYO - Launch Screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 2192977C19BDF566006F664A /* DYO - Launch Screen.png */; };
 		2192977F19BDF7B4006F664A /* DYO - Launch Screen2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2192977E19BDF7B4006F664A /* DYO - Launch Screen2.png */; };
 		21CFF72B19B620A4001D5088 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CFF72A19B620A4001D5088 /* Foundation.framework */; };
@@ -64,6 +65,8 @@
 		212E9CEB19B92BA8004E013E /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		212F21DA19B757120045E351 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
 		214E132C19C1F91300D61FB3 /* HomeTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableViewController.h; sourceTree = "<group>"; };
+		214E133019C26D7200D61FB3 /* TermsandConditionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TermsandConditionsViewController.h; sourceTree = "<group>"; };
+		214E133119C26D7200D61FB3 /* TermsandConditionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TermsandConditionsViewController.m; sourceTree = "<group>"; };
 		2192977C19BDF566006F664A /* DYO - Launch Screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DYO - Launch Screen.png"; sourceTree = "<group>"; };
 		2192977E19BDF7B4006F664A /* DYO - Launch Screen2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DYO - Launch Screen2.png"; sourceTree = "<group>"; };
 		21CFF72719B620A4001D5088 /* DYO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DYO.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -250,6 +253,8 @@
 				210478D019B8EAAF007DE573 /* SearchViewController.m */,
 				212E9CEA19B92BA8004E013E /* ProfileViewController.h */,
 				212E9CEB19B92BA8004E013E /* ProfileViewController.m */,
+				214E133019C26D7200D61FB3 /* TermsandConditionsViewController.h */,
+				214E133119C26D7200D61FB3 /* TermsandConditionsViewController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -356,6 +361,7 @@
 			files = (
 				21F6A7E019B775BF00FE995A /* ForgotPasswordViewController.m in Sources */,
 				212E9CEC19B92BA8004E013E /* ProfileViewController.m in Sources */,
+				214E133219C26D7200D61FB3 /* TermsandConditionsViewController.m in Sources */,
 				21CFF78219B6BFA3001D5088 /* LoginViewController.m in Sources */,
 				21CFF73B19B620A4001D5088 /* AppDelegate.m in Sources */,
 				21F6A7DD19B76A3C00FE995A /* CreateAccountViewController.m in Sources */,

@@ -61,6 +61,36 @@
             endingLineNumber = "58"
             landmarkName = "-login:"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[LoginViewController login:]"
+                  moduleName = "DYO"
+                  urlString = "file:///Users/seancrowe/Developer/Git/DYO/DYO/LoginViewController.m"
+                  timestampString = "432172237.521294"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "780">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__29-[LoginViewController login:]_block_invoke"
+                  moduleName = "DYO"
+                  urlString = "file:///Users/seancrowe/Developer/Git/DYO/DYO/LoginViewController.m"
+                  timestampString = "432172237.521649"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "54">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -91,8 +121,22 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "58"
             endingLineNumber = "58"
-            landmarkName = "-textFieldReturn:"
-            landmarkType = "5">
+            landmarkName = "@implementation ForgotPasswordViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DYO/ProfileViewController.h"
+            timestampString = "432171624.397394"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "8"
+            endingLineNumber = "8">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
