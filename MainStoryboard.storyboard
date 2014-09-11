@@ -352,6 +352,7 @@
                         <outlet property="educationField" destination="IUD-Gn-iXu" id="Qpa-BC-rIh"/>
                         <outlet property="jobField" destination="bhB-FV-QoH" id="fRR-hH-rDv"/>
                         <outlet property="nameField" destination="QRo-Se-BSm" id="xwR-oT-OTF"/>
+                        <outlet property="profileImage" destination="SlB-qp-J0M" id="Ouc-fJ-o21"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SkV-Hc-3yU" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -17,5 +17,6 @@
 - (IBAction)editProfile:(id)sender;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *editButton;
 @property (strong, nonatomic) IBOutlet UITextField *placeholderField;
+@property (strong, nonatomic) IBOutlet UIImageView *profileImage;
 
 @end

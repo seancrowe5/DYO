@@ -19,23 +19,33 @@ int count;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //display image
+    PFUser *user = [PFUser currentUser];
+    PFFile *userImageFile = user[@"photo"];
+    [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+        if (!error) {
+            UIImage *image = [UIImage imageWithData:imageData];
+            [self.profileImage setImage:image];
+        }
+    }];
 
     //Display the name
-    self.nameField.text = [NSString stringWithFormat:@"%@ %@",[[PFUser currentUser]valueForKey:@"firstName"],[[PFUser currentUser]valueForKey:@"lastName"] ];
+    self.nameField.text = [NSString stringWithFormat:@"%@ %@",[user valueForKey:@"firstName"],[user valueForKey:@"lastName"] ];
     
     //Display the job title
-    self.jobField.text = [NSString stringWithFormat:@"%@",[[PFUser currentUser]valueForKey:@"jobTitle"]];
+    self.jobField.text = [NSString stringWithFormat:@"%@",[user valueForKey:@"jobTitle"]];
 
     //Display the company
-    self.companyField.text = [NSString stringWithFormat:@"%@",[[PFUser currentUser]valueForKey:@"company"]];
+    self.companyField.text = [NSString stringWithFormat:@"%@",[user valueForKey:@"company"]];
 
     
    // Display the Education
-     self.educationField.text = [NSString stringWithFormat:@"%@",[[PFUser currentUser]valueForKey:@"education"]];
+     self.educationField.text = [NSString stringWithFormat:@"%@",[user valueForKey:@"education"]];
 
 
     // I will make the top navigation bar appear
-    [self.navigationController.navigationBar setHidden:NO];}
+    [self.navigationController.navigationBar setHidden:NO];
+}
 
 
 
@@ -57,6 +67,8 @@ int count;
     if(count==1){
         //You are in this loop because the user selected the save button
         
+        self.editButton.title = @"Edit";
+
         //change border style to indicate it is editable
         self.nameField.borderStyle = UITextBorderStyleNone;
         self.jobField.borderStyle = UITextBorderStyleNone;
@@ -88,10 +100,14 @@ int count;
                 [self resignFirstResponder];
             }
         }];
- 
+        [self.nameField resignFirstResponder];
+        count=0;
+
     }
     else{
+        //you are here because the user selected the eidt button
         count=0;
+               //set the ui image
         //set the border of the text field to indicate its editable
         self.nameField.borderStyle = UITextBorderStyleRoundedRect;
         self.jobField.borderStyle = UITextBorderStyleRoundedRect;
