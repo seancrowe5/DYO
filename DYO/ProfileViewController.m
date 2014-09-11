@@ -18,7 +18,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    //Get user info from Parse.com
+    PFUser *user = [PFUser currentUser];
+    PFQuery *query = [PFUser query];
+   [query whereKey:@"objectId" equalTo:user.objectId];
+    NSArray *userInfo = [query findObjects];
+    NSString *name = [userInfo valueForKey:@"firstName"];
+    //[self.nameLabel setText:name];
+    
+   
+    
+ 
+    
 }
 
 
