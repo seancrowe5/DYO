@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>1320E74A-38B5-44A3-A7E1-349B4625F03A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>DYO</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>B29EA151-353E-4AF6-BA69-240925157A04</key>
+		<string>https://github.com/seancrowe5/DYO.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>DYO.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>B29EA151-353E-4AF6-BA69-240925157A04</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/seancrowe5/DYO.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B29EA151-353E-4AF6-BA69-240925157A04</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B29EA151-353E-4AF6-BA69-240925157A04</string>
+			<key>IDESourceControlWCCName</key>
+			<string>DYO</string>
+		</dict>
+	</array>
+</dict>
+</plist>
