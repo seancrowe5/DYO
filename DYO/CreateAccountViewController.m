@@ -19,9 +19,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    // Keep in mind that the top navigation bar is hidden in this view
+    // To make appear, use this [self.navigationController.navigationBar setHidden:NO];
     
-    // I will make the top navigation bar appear
-    [self.navigationController.navigationBar setHidden:NO];
 }
 
 
@@ -75,6 +75,10 @@
     }
     
 }
+
+- (IBAction)cancelSignUp:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 - (IBAction)textFieldReturn:(id)sender {
     //hides keyboard on return
     [sender resignFirstResponder];
@@ -94,7 +98,5 @@
     }
     [super touchesBegan:touches withEvent:event];
 }
-
-
 
 @end

@@ -18,6 +18,7 @@
 
 - (IBAction)textFieldReturn:(id)sender;
 - (IBAction)nextStep:(id)sender;
+- (IBAction)cancelSignUp:(id)sender;
 
 
 @end
