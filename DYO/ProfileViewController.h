@@ -10,9 +10,12 @@
 #import <Parse/Parse.h>
 
 @interface ProfileViewController : UIViewController
-@property (strong, nonatomic) IBOutlet UITableViewCell *jobTitle;
-@property (strong, nonatomic) IBOutlet UITableViewCell *companyName;
-@property (strong, nonatomic) IBOutlet UITableViewCell *educationName;
-@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
+@property (strong, nonatomic) IBOutlet UITextField *nameField;
+@property (strong, nonatomic) IBOutlet UITextField *jobField;
+@property (strong, nonatomic) IBOutlet UITextField *companyField;
+@property (strong, nonatomic) IBOutlet UITextField *educationField;
+- (IBAction)editProfile:(id)sender;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *editButton;
+@property (strong, nonatomic) IBOutlet UITextField *placeholderField;
 
 @end
