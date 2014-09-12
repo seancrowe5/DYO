@@ -26,6 +26,7 @@
     
     // I will hide the top navigation bar
     [self.navigationController.navigationBar setHidden:YES];
+    //[self.navigationController setNavigationBarHidden:YES animated:NO];
     
     /*
     UIColor *color = [UIColor darkTextColor];

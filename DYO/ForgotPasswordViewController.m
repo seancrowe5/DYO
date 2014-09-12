@@ -20,6 +20,8 @@
     
     // I will make the top navigation bar appear
     [self.navigationController.navigationBar setHidden:NO];
+    //[self.navigationController setNavigationBarHidden:NO animated:NO];
+
     
     
 }

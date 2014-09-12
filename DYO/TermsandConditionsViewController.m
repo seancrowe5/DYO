@@ -21,10 +21,12 @@
     //thomas add here
     
     // I will make the top navigation bar appear
-    [self.navigationController.navigationBar setHidden:NO];
+    //[self.navigationController.navigationBar setHidden:NO];
     
     // I get rid of the back button text
-    self.navigationController.navigationBar.topItem.title = @"";
+    //self.navigationController.navigationBar.topItem.title = @"";
+    
+    //ABOVE IS CAUSING ISSUES FOR THE CREATE ACCOUNT PAGE TITLE..... FIX LTR
     
     
 }

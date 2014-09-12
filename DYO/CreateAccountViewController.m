@@ -22,6 +22,8 @@
     
     // I make the navigation bar appear
     [self.navigationController.navigationBar setHidden:NO];
+    //[self.navigationController setNavigationBarHidden:NO animated:NO];
+
     
     // Tho confusing as can be, I make the navigation bar transparent, though keeping items untouched
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
@@ -38,13 +40,6 @@
     // When the view loads, the keyboard selects this and pops up
     [self.emailField becomeFirstResponder];
     
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:NO];
-    
-    // I set the title of the view
-    self.createAccountTitle.title =@"Create a free account";
 }
 
 
