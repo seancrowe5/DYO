@@ -7,6 +7,7 @@
 //
 
 #import "SearchResultsTableViewController.h"
+#import "TableViewCell.h"
 
 @interface SearchResultsTableViewController ()
 
@@ -46,16 +47,15 @@
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [self.userSearchResults count];
+    return 1;
 }
 
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"searchCell" forIndexPath:indexPath];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    TableViewCell *cell = (TableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"resultCell"];
     
-    // Configure the cell...
-    self.companyLabel.text = @"Hutster LLC";
+    // Configure Cell
+    [cell.companyLabel setText:[NSString stringWithFormat:@"Row %i in Section %i", [indexPath row], [indexPath section]]];
     
     return cell;
 }

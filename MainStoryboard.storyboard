@@ -198,7 +198,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="searchCell" rowHeight="182" id="w4Z-sU-gZV">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="resultCell" rowHeight="182" id="w4Z-sU-gZV" customClass="TableViewCell">
                                 <rect key="frame" x="0.0" y="86" width="320" height="182"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w4Z-sU-gZV" id="Rne-zC-WHL">
@@ -272,6 +272,12 @@
                                         </button>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="companyLabel" destination="Xmr-eB-6st" id="jWd-3b-IuH"/>
+                                    <outlet property="educationLabel" destination="chr-yV-KJ0" id="tgT-eh-dW6"/>
+                                    <outlet property="fullNameLabel" destination="XH7-NE-2hS" id="tr0-5K-Gff"/>
+                                    <outlet property="jobTitle" destination="rnz-mE-NTk" id="rb7-gX-HSJ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -280,14 +286,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Professionals Near You" id="Ypd-jH-xoX"/>
-                    <connections>
-                        <outlet property="companyLabel" destination="Xmr-eB-6st" id="IeW-QA-p6a"/>
-                        <outlet property="distanceLabel" destination="KLn-W9-10s" id="h4A-Yv-NV0"/>
-                        <outlet property="jobTitleLabel" destination="rnz-mE-NTk" id="vWG-IE-J79"/>
-                        <outlet property="profileImage" destination="B8Q-ZE-2RI" id="kTh-iV-cvA"/>
-                        <outlet property="schoolLabel" destination="chr-yV-KJ0" id="4tm-h3-oyM"/>
-                        <outlet property="userFullName" destination="XH7-NE-2hS" id="YrN-5z-riQ"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDT-Z4-LNW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
