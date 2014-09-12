@@ -20,11 +20,13 @@
     [super viewDidLoad];
     //thomas add here
     
-    
     // I will make the top navigation bar appear
     [self.navigationController.navigationBar setHidden:NO];
     
-
+    // I get rid of the back button text
+    self.navigationController.navigationBar.topItem.title = @"";
+    
+    
 }
 
 @end

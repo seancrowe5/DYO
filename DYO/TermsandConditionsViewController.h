@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface TermsandConditionsViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UINavigationItem *termsAndConditionsTitle;
 
 @end

@@ -25,7 +25,7 @@
     
     // Tho confusing as can be, I make the navigation bar transparent, though keeping items untouched
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
-                             forBarMetrics:UIBarMetricsDefault];
+                                                  forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.shadowImage = [UIImage new];
     self.navigationController.navigationBar.translucent = YES;
     
@@ -40,6 +40,12 @@
     
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:NO];
+    
+    // I set the title of the view
+    self.createAccountTitle.title =@"Create a free account";
+}
 
 
 - (IBAction)nextStep:(id)sender {
