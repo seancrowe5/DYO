@@ -56,20 +56,28 @@
         user.jobTitle = [usersArray valueForKey:@"jobTitle"];
         user.firstName = [usersArray valueForKey:@"firstName"];
         
+        //This gets the photos
+        //here is what happens...if we use get data in background,
+        //the view loads before the images have time to be shown, leaving empty spaces
+        //i commented the backgound code out and did the process in the front...it takes a while to load
+        //but for now it is good...cuz it works
+        PFFile *userImageFile = [usersArray valueForKey:@"photo"];
+        NSData *imageData = [userImageFile getData];
+        UIImage *image = [UIImage imageWithData:imageData];
+        user.profileImage = image;
+        
+        //commented out background process
+//        [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+//            if (!error) {
+//                UIImage *image = [UIImage imageWithData:imageData];
+//                user.profileImage = image;
+//                
+//            }
+//        }];
+        
+    
         //add to local mutable array
         [self.userSearchResults addObject:user];
-        
-        //get photo
-        PFFile *userImageFile = [usersArray valueForKey:@"photo"];
-        [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
-            if (!error) {
-                UIImage *image = [UIImage imageWithData:imageData];
-                user.profileImage = image;
-                
-            }
-        }];
-        
-        
     }
     
 }
@@ -106,8 +114,6 @@
     cell.companyLabel.text =    user.companyName;
     cell.educationLabel.text =  user.educationLabel;
     cell.profileImage.image = user.profileImage;
-    
-    
     
     return cell;
 }
