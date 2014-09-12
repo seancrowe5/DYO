@@ -19,8 +19,24 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    // Keep in mind that the top navigation bar is hidden in this view
-    // To make appear, use this [self.navigationController.navigationBar setHidden:NO];
+    
+    // I make the navigation bar appear
+    [self.navigationController.navigationBar setHidden:NO];
+    
+    // Tho confusing as can be, I make the navigation bar transparent, though keeping items untouched
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+                             forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    self.navigationController.navigationBar.translucent = YES;
+    
+    // I set the title of the view
+    self.createAccountTitle.title =@"Create a free account";
+    
+    // I get rid of the back button text
+    self.navigationController.navigationBar.topItem.title = @"";
+    
+    // When the view loads, the keyboard selects this and pops up
+    [self.emailField becomeFirstResponder];
     
 }
 

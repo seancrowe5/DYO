@@ -27,10 +27,11 @@
     // I will hide the top navigation bar
     [self.navigationController.navigationBar setHidden:YES];
     
+    /*
     UIColor *color = [UIColor darkTextColor];
     self.passwordField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Password" attributes:@{NSForegroundColorAttributeName: color}];
     
-    self.emailField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Email Address" attributes:@{NSForegroundColorAttributeName: color}];
+    self.emailField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Email Address" attributes:@{NSForegroundColorAttributeName: color}];  */
 
 }
 

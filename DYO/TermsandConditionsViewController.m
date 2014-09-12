@@ -20,6 +20,10 @@
     [super viewDidLoad];
     //thomas add here
     
+    
+    // I will make the top navigation bar appear
+    [self.navigationController.navigationBar setHidden:NO];
+    
 
 }
 
