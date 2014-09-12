@@ -13,6 +13,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *jobTitle;
 @property (weak, nonatomic) IBOutlet UILabel *companyLabel;
 @property (weak, nonatomic) IBOutlet UILabel *educationLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *profileImage;
+
+
 
 
 @end

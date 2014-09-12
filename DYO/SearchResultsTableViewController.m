@@ -33,6 +33,45 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    //////////////////
+    
+   
+    self.userSearchResults = [NSMutableArray array];
+    
+    //Get all of the data into an array
+    //for now, lets just get all users
+    PFQuery *query = [PFUser query];
+    NSArray *resultsArray = [query findObjects];
+    
+    for (NSArray *usersArray in resultsArray){
+        //declare new USER object
+        //loop through the array
+        //on each iteration, we set the properties of the user class
+        //add the object to the local mutable array userSearchResults
+        
+        User *user = [User userWithEmail:[usersArray valueForKey:@"email"]];
+        user.companyName = [usersArray valueForKey:@"company"];
+        user.educationLabel = [usersArray valueForKey:@"education"];
+        user.jobTitle = [usersArray valueForKey:@"jobTitle"];
+        user.firstName = [usersArray valueForKey:@"firstName"];
+        
+        //add to local mutable array
+        [self.userSearchResults addObject:user];
+        
+        //get photo
+        PFFile *userImageFile = [usersArray valueForKey:@"photo"];
+        [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+            if (!error) {
+                UIImage *image = [UIImage imageWithData:imageData];
+                user.profileImage = image;
+                
+            }
+        }];
+        
+        
+    }
+    
 }
 
 
@@ -47,15 +86,28 @@
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 1;
+    return [self.userSearchResults count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TableViewCell *cell = (TableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"resultCell"];
     
-    // Configure Cell
-    [cell.companyLabel setText:[NSString stringWithFormat:@"Row %i in Section %i", [indexPath row], [indexPath section]]];
+    //declare a new object of type USER
+    //This takes the current row in the table view and gets the corresponding userInfo
+    //from the mutable array property
+    User *user = [self.userSearchResults objectAtIndex:indexPath.row];
+    
+    // I go get the cell and tell him the set each field text property
+    //I set the text to properties in the user class
+    //the information was set in the view did load for the user properties
+    cell.fullNameLabel.text =   user.firstName;
+    cell.jobTitle.text =        user.jobTitle;
+    cell.companyLabel.text =    user.companyName;
+    cell.educationLabel.text =  user.educationLabel;
+    cell.profileImage.image = user.profileImage;
+    
+    
     
     return cell;
 }

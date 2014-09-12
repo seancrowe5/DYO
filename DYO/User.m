@@ -28,4 +28,7 @@
     return self;
 }
 
++ (id) userWithEmail:(NSString *)email{
+    return [[self alloc] initWithEmail:email];
+}
 @end

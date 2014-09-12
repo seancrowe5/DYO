@@ -277,6 +277,7 @@
                                     <outlet property="educationLabel" destination="chr-yV-KJ0" id="tgT-eh-dW6"/>
                                     <outlet property="fullNameLabel" destination="XH7-NE-2hS" id="tr0-5K-Gff"/>
                                     <outlet property="jobTitle" destination="rnz-mE-NTk" id="rb7-gX-HSJ"/>
+                                    <outlet property="profileImage" destination="B8Q-ZE-2RI" id="kFN-ve-BE7"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
