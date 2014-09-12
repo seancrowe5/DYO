@@ -189,10 +189,10 @@
             </objects>
             <point key="canvasLocation" x="-712" y="-245"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Search Results Table View Controller - Professionals Near You-->
         <scene sceneID="H2m-Ns-chb">
             <objects>
-                <tableViewController id="MmB-P7-Yxk" sceneMemberID="viewController">
+                <tableViewController id="MmB-P7-Yxk" customClass="SearchResultsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="182" sectionHeaderHeight="22" sectionFooterHeight="22" id="quK-eb-0DE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -206,21 +206,70 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B8Q-ZE-2RI">
-                                            <rect key="frame" x="20" y="43" width="95" height="95"/>
+                                            <rect key="frame" x="20" y="36" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </imageView>
                                         <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Feet Away" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pO-Vl-Cdk">
-                                            <rect key="frame" x="51" y="152" width="59" height="21"/>
+                                            <rect key="frame" x="54" y="151" width="59" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="400" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLn-W9-10s">
-                                            <rect key="frame" x="24" y="152" width="27" height="21"/>
+                                            <rect key="frame" x="27" y="151" width="27" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sean Crowe" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XH7-NE-2hS">
+                                            <rect key="frame" x="159" y="36" width="99" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Founder" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rnz-mE-NTk">
+                                            <rect key="frame" x="159" y="75" width="60" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="esntee LLC" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xmr-eB-6st">
+                                            <rect key="frame" x="159" y="95" width="83" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Miami University" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chr-yV-KJ0">
+                                            <rect key="frame" x="159" y="117" width="118" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9k-o7-X9D">
+                                            <rect key="frame" x="156" y="147" width="67" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Message">
+                                                <color key="titleColor" red="0.34117648010000001" green="0.65098041299999998" blue="0.45882356169999999" alpha="1" colorSpace="deviceRGB"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="messageButton:" destination="MmB-P7-Yxk" eventType="touchUpInside" id="hiq-iP-7ET"/>
+                                            </connections>
+                                        </button>
+                                        <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZSf-fF-35x">
+                                            <rect key="frame" x="226" y="147" width="74" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Pass">
+                                                <color key="titleColor" red="0.92156862750000001" green="0.32549019610000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="passButton:" destination="MmB-P7-Yxk" eventType="touchUpInside" id="MM7-mH-hLo"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -230,7 +279,15 @@
                             <outlet property="delegate" destination="MmB-P7-Yxk" id="bde-WR-wbj"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Ypd-jH-xoX"/>
+                    <navigationItem key="navigationItem" title="Professionals Near You" id="Ypd-jH-xoX"/>
+                    <connections>
+                        <outlet property="companyLabel" destination="Xmr-eB-6st" id="IeW-QA-p6a"/>
+                        <outlet property="distanceLabel" destination="KLn-W9-10s" id="h4A-Yv-NV0"/>
+                        <outlet property="jobTitleLabel" destination="rnz-mE-NTk" id="vWG-IE-J79"/>
+                        <outlet property="profileImage" destination="B8Q-ZE-2RI" id="kTh-iV-cvA"/>
+                        <outlet property="schoolLabel" destination="chr-yV-KJ0" id="4tm-h3-oyM"/>
+                        <outlet property="userFullName" destination="XH7-NE-2hS" id="YrN-5z-riQ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDT-Z4-LNW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

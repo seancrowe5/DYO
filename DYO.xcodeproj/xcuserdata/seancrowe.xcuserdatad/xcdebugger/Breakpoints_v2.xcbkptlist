@@ -50,7 +50,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/LoginViewController.m"
@@ -63,31 +63,31 @@
             landmarkType = "5">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "-[LoginViewController login:]"
                   moduleName = "DYO"
                   urlString = "file:///Users/seancrowe/Developer/Git/DYO/DYO/LoginViewController.m"
-                  timestampString = "432172237.521294"
+                  timestampString = "432183909.796849"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "59"
-                  endingLineNumber = "59"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
                   offsetFromSymbolStart = "780">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "__29-[LoginViewController login:]_block_invoke"
                   moduleName = "DYO"
                   urlString = "file:///Users/seancrowe/Developer/Git/DYO/DYO/LoginViewController.m"
-                  timestampString = "432172237.521649"
+                  timestampString = "432183909.797692"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "59"
-                  endingLineNumber = "59"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
                   offsetFromSymbolStart = "54">
                </Location>
             </Locations>
@@ -121,8 +121,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "58"
             endingLineNumber = "58"
-            landmarkName = "@implementation ForgotPasswordViewController"
-            landmarkType = "3">
+            landmarkName = "-submit:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
