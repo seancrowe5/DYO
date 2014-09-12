@@ -187,7 +187,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jpy-D4-wIx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-968" y="-269"/>
+            <point key="canvasLocation" x="-712" y="-245"/>
         </scene>
         <!--Search View Controller - Search-->
         <scene sceneID="qkq-JX-SgR">
@@ -757,7 +757,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0VB-Jl-xcG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1401" y="-257"/>
+            <point key="canvasLocation" x="-1225" y="-245"/>
         </scene>
     </scenes>
     <resources>

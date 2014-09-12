@@ -8,7 +8,7 @@
 
 #import "SearchViewController.h"
 
-@interface SearchViewController ()
+@interface SearchViewController () <UITextFieldDelegate>
 
 @end
 
@@ -73,4 +73,7 @@
 }
 
 //when user selects a field, all others are inactive
+- (void)textFieldDidBeginEditing:(UITextField *)textField{
+    
+}
 @end
