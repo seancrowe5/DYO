@@ -20,6 +20,9 @@
 
 @property (strong,nonatomic) NSString *email;
 @property (strong,nonatomic) PFUser *currentUser;
+@property (strong,nonatomic) PFGeoPoint *recentLocation;
+
+
 
 - (id) initWithEmail:(NSString *)email;
 + (id) userWithEmail:(NSString *)email;
