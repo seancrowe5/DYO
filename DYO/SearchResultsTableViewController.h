@@ -13,6 +13,4 @@
 @interface SearchResultsTableViewController : UITableViewController
 @property (nonatomic, strong) NSMutableArray *userSearchResults;
 
-- (IBAction)messageButton:(id)sender;
-- (IBAction)passButton:(id)sender;
 @end

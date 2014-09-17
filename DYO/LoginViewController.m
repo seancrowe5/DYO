@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "User.h"
 
 @interface LoginViewController ()
 
@@ -38,7 +39,6 @@
 
 
 - (IBAction)login:(id)sender {
-    
 
     
     //get info from the text fields

@@ -15,56 +15,48 @@
 
 @implementation SearchResultsTableViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    //////////////////
-    
    
+    //initialize the property userSearchResults
     self.userSearchResults = [NSMutableArray array];
     
     //Get all of the data into an array
     //for now, lets just get all users
-    PFQuery *query = [PFUser query];
-    NSArray *resultsArray = [query findObjects];
+    //This is where we will change the search query in the future
     
-    for (NSArray *usersArray in resultsArray){
-        //declare new USER object
-        //loop through the array
-        //on each iteration, we set the properties of the user class
-        //add the object to the local mutable array userSearchResults
+    PFQuery *query = [PFUser query];
+    NSArray *resultsArray = [query findObjects];     //now all of the objects from the query are in *resutlsArray
+
+    
+    for (NSArray *usersArray in resultsArray){ //in the for loop to go through all the results
         
-        User *user = [User userWithEmail:[usersArray valueForKey:@"email"]];
-        user.companyName = [usersArray valueForKey:@"company"];
+        User *user = [User userWithEmail:[usersArray valueForKey:@"email"]];         //declare new USER object
+        user.companyName = [usersArray valueForKey:@"company"];                     //set the properties of the user class
         user.educationLabel = [usersArray valueForKey:@"education"];
         user.jobTitle = [usersArray valueForKey:@"jobTitle"];
         user.firstName = [usersArray valueForKey:@"firstName"];
+        user.userID = [usersArray valueForKey:@"objectId"];
         
-        //This gets the photos
-        //here is what happens...if we use get data in background,
-        //the view loads before the images have time to be shown, leaving empty spaces
-        //i commented the backgound code out and did the process in the front...it takes a while to load
-        //but for now it is good...cuz it works
-        PFFile *userImageFile = [usersArray valueForKey:@"photo"];
-        NSData *imageData = [userImageFile getData];
-        UIImage *image = [UIImage imageWithData:imageData];
-        user.profileImage = image;
+        PFFile *userImageFile = [usersArray valueForKey:@"photo"]; //declare a Parse file datatype obect and store the file
+        NSData *imageData = [userImageFile getData];            //put image in NSData object
+        UIImage *image = [UIImage imageWithData:imageData];     //take data and put in UIimage so we can use it
+        user.profileImage = image;                              //sets profile pic in user class
+        
+        
+        
+//        [userImageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+//            if(!error){
+//                UIImage *image = [UIImage imageWithData:data];
+//                user.profileImage = image;
+//            }
+//            
+//        }];
+        
+       // NSData *imageData = [userImageFile getData];               //convert the image to NSData object type so that we can
+                 //put it in a UIImage object to allow us to use it
+                                           //set the user profile image property with the UIImage
         
         //commented out background process
 //        [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
@@ -92,7 +84,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return [self.userSearchResults count];
 }
@@ -115,62 +106,38 @@
     cell.educationLabel.text =  user.educationLabel;
     cell.profileImage.image = user.profileImage;
     
+    //set tag to the indexPath
+    [cell.likeBtn setTag:indexPath.row];
+    
+    //listen for this button being pressed, and then run method likeButtonClick
+    [cell.likeBtn addTarget:self action:@selector(likeButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    
+    
     return cell;
 }
 
+-(void)likeButtonClick:(id)sender{
+    
+    //DON'T LET THE USER CLICK SEND MESSAGE TWICE!!!
+    
+    UIButton *senderButton = (UIButton *)sender;
+    NSLog(@"Current row = %d", senderButton.tag);
+    
+    User *selectedUser = [self.userSearchResults objectAtIndex:senderButton.tag]; //instantiate new object of type USER, get index path
+    PFUser *userSelected = [PFQuery getUserObjectWithId:selectedUser.userID]; //
+    
+    //MOVE THIS CODE TO THE ACTUAL MESSAGE THAT IS SENT
+    PFObject *likeActivity = [PFObject objectWithClassName:@"Chat"]; //set likeActivity object as a new Parse class Actiivity
+    [likeActivity setObject:@"like" forKey:@"isLiked"];                    // set likeActivity object field 'type' to the value of 'like'
+    [likeActivity setObject:[PFUser currentUser] forKey:@"user1"];   //set likeActivity object field 'fromUser' to the value of currentUser
+    [likeActivity setObject:userSelected forKey:@"user2"];
+    
+    [likeActivity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if(error){
+            UIAlertView *alertView = [[UIAlertView alloc ] initWithTitle:@"Try Liking Again!" message:[error.userInfo objectForKey:@"error"] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [alertView show];
+        }
+    }];
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-- (IBAction)messageButton:(id)sender {
-}
-
-- (IBAction)passButton:(id)sender {
 }
 @end

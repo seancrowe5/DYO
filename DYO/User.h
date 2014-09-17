@@ -21,12 +21,12 @@
 @property (strong,nonatomic) NSString *email;
 @property (strong,nonatomic) PFUser *currentUser;
 @property (strong,nonatomic) PFGeoPoint *recentLocation;
+@property (strong,nonatomic) NSString *userID;
 
 
 
 - (id) initWithEmail:(NSString *)email;
 + (id) userWithEmail:(NSString *)email;
-
 
 
 @end
