@@ -8,7 +8,6 @@
 //
 
 #import "AvailableChatsTableViewController.h"
-#import "ChatViewController.h"
 
 @interface AvailableChatsTableViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -86,9 +85,9 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    ChatViewController *chatVC = segue.destinationViewController;
-    NSIndexPath *indexPath = sender;
-    chatVC.chatroom = [self.availableChatRooms objectAtIndex:indexPath.row];
+//    ChatViewController *chatVC = segue.destinationViewController;
+//    NSIndexPath *indexPath = sender;
+//    chatVC.chatroom = [self.availableChatRooms objectAtIndex:indexPath.row];
 }
 
 
