@@ -119,25 +119,58 @@
 -(void)likeButtonClick:(id)sender{
     
     //DON'T LET THE USER CLICK SEND MESSAGE TWICE!!!
+    //This code should be when the user sends the first message
     
     UIButton *senderButton = (UIButton *)sender;
-    NSLog(@"Current row = %d", senderButton.tag);
+    NSLog(@"Current row = %ld", (long)senderButton.tag);
     
     User *selectedUser = [self.userSearchResults objectAtIndex:senderButton.tag]; //instantiate new object of type USER, get index path
     PFUser *userSelected = [PFQuery getUserObjectWithId:selectedUser.userID]; //
     
-    //MOVE THIS CODE TO THE ACTUAL MESSAGE THAT IS SENT
-    PFObject *likeActivity = [PFObject objectWithClassName:@"Chat"]; //set likeActivity object as a new Parse class Actiivity
-    [likeActivity setObject:@"like" forKey:@"isLiked"];                    // set likeActivity object field 'type' to the value of 'like'
-    [likeActivity setObject:[PFUser currentUser] forKey:@"user1"];   //set likeActivity object field 'fromUser' to the value of currentUser
-    [likeActivity setObject:userSelected forKey:@"user2"];
+    [self createChatRoom:userSelected];
     
-    [likeActivity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if(error){
-            UIAlertView *alertView = [[UIAlertView alloc ] initWithTitle:@"Try Liking Again!" message:[error.userInfo objectForKey:@"error"] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-            [alertView show];
-        }
-    }];
+//    //MOVE THIS CODE TO THE ACTUAL MESSAGE THAT IS SENT
+//    PFObject *likeActivity = [PFObject objectWithClassName:@"Chat"]; //set likeActivity object as a new Parse class Actiivity
+//    [likeActivity setObject:@"like" forKey:@"isLiked"];                    // set likeActivity object field 'type' to the value of 'like'
+//    [likeActivity setObject:[PFUser currentUser] forKey:@"user1"];   //set likeActivity object field 'fromUser' to the value of currentUser
+//    [likeActivity setObject:userSelected forKey:@"user2"];
+//    
+//    [likeActivity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+//        if(error){
+//            UIAlertView *alertView = [[UIAlertView alloc ] initWithTitle:@"Try Liking Again!" message:[error.userInfo objectForKey:@"error"] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+//            [alertView show];
+//        }
+//    }];
 
 }
+
+
+-(void)createChatRoom:(PFUser *)userSelected{
+    NSLog(@"create called");
+    //Give me back all of the available chatrooms where user 1 is the current user
+    PFQuery *queryForChatRoom = [PFQuery queryWithClassName:@"ChatRoom"];
+    [queryForChatRoom whereKey:@"user1" equalTo:[PFUser currentUser]];
+    [queryForChatRoom whereKey:@"user2" equalTo:userSelected];
+    
+    //Give me back all of the available chatrooms where user 2 is the current user
+    PFQuery *queryForChatRoomInverse = [PFQuery queryWithClassName:@"ChatRoom"];
+    [queryForChatRoomInverse whereKey:@"user1" equalTo:userSelected];
+    [queryForChatRoomInverse whereKey:@"user2" equalTo:[PFUser currentUser]];
+    
+    PFQuery *combinedQuery = [PFQuery orQueryWithSubqueries:@[queryForChatRoom, queryForChatRoomInverse]];
+    
+    [combinedQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if ([objects count] == 0) {
+            PFObject *chatroom = [PFObject objectWithClassName:@"ChatRoom"];
+            [chatroom setObject:[PFUser currentUser] forKey:@"user1"];
+            [chatroom setObject:userSelected forKey:@"user2"];
+            [chatroom saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                //[self performSegueWithIdentifier:@"homeToMatchSegue" sender:nil];
+                NSLog(@"Success! You have just created a new chatroom");
+                //Tell user the message is sent and take them back to the search results
+            }];
+        }
+    }];
+}
+
 @end

@@ -7,18 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13B79FEAA765435B8E396DCE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 85030C987AB74296A9C9B94F /* libPods.a */; };
 		210478CE19B8BFD0007DE573 /* SetupProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 210478CD19B8BFD0007DE573 /* SetupProfileViewController.m */; };
 		210478D119B8EAAF007DE573 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 210478D019B8EAAF007DE573 /* SearchViewController.m */; };
-		2116346719CA20AE0016AFB3 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2116346419CA20AE0016AFB3 /* Bolts.framework */; };
-		2116346819CA20AE0016AFB3 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2116346519CA20AE0016AFB3 /* Parse.framework */; };
-		2116346919CA20AE0016AFB3 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2116346619CA20AE0016AFB3 /* ParseFacebookUtils.framework */; };
 		212E9CE919B92721004E013E /* selfie.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 212E9CE819B92721004E013E /* selfie.jpg */; };
 		212E9CEC19B92BA8004E013E /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 212E9CEB19B92BA8004E013E /* ProfileViewController.m */; };
 		212F21DB19B757120045E351 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 212F21DA19B757120045E351 /* Logo.png */; };
+		2143343B19CE062900F23CCB /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2143343A19CE062900F23CCB /* ChatViewController.m */; };
 		214E133219C26D7200D61FB3 /* TermsandConditionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 214E133119C26D7200D61FB3 /* TermsandConditionsViewController.m */; };
 		214E133519C29D5100D61FB3 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 214E133419C29D5100D61FB3 /* User.m */; };
 		214E133819C29FAC00D61FB3 /* SearchResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 214E133719C29FAC00D61FB3 /* SearchResultsTableViewController.m */; };
 		214E133B19C2A4F200D61FB3 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 214E133A19C2A4F200D61FB3 /* TableViewCell.m */; };
+		216F696119CF820B003F695C /* JSQDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 216F696019CF820B003F695C /* JSQDemoViewController.m */; };
 		2192977D19BDF566006F664A /* DYO - Launch Screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 2192977C19BDF566006F664A /* DYO - Launch Screen.png */; };
 		2192977F19BDF7B4006F664A /* DYO - Launch Screen2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2192977E19BDF7B4006F664A /* DYO - Launch Screen2.png */; };
 		21CFF72B19B620A4001D5088 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CFF72A19B620A4001D5088 /* Foundation.framework */; };
@@ -35,16 +35,8 @@
 		21CFF75019B620A5001D5088 /* DYOTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CFF74F19B620A5001D5088 /* DYOTests.m */; };
 		21CFF76019B62D92001D5088 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21CFF75F19B62D92001D5088 /* MainStoryboard.storyboard */; };
 		21CFF76919B6785D001D5088 /* HomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CFF76819B6785D001D5088 /* HomeTableViewController.m */; };
-		21CFF76C19B6BAC4001D5088 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CFF76A19B6BAC4001D5088 /* Bolts.framework */; };
-		21CFF76F19B6BB0D001D5088 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CFF76E19B6BB0D001D5088 /* AudioToolbox.framework */; };
-		21CFF77119B6BB14001D5088 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CFF77019B6BB14001D5088 /* CFNetwork.framework */; };
 		21CFF77919B6BB74001D5088 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CFF77219B6BB74001D5088 /* CoreLocation.framework */; };
-		21CFF77A19B6BB74001D5088 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CFF77319B6BB74001D5088 /* libz.dylib */; };
-		21CFF77B19B6BB74001D5088 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CFF77419B6BB74001D5088 /* MobileCoreServices.framework */; };
 		21CFF77C19B6BB74001D5088 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CFF77519B6BB74001D5088 /* QuartzCore.framework */; };
-		21CFF77D19B6BB74001D5088 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CFF77619B6BB74001D5088 /* Security.framework */; };
-		21CFF77E19B6BB74001D5088 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CFF77719B6BB74001D5088 /* StoreKit.framework */; };
-		21CFF77F19B6BB74001D5088 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CFF77819B6BB74001D5088 /* SystemConfiguration.framework */; };
 		21CFF78219B6BFA3001D5088 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CFF78119B6BFA3001D5088 /* LoginViewController.m */; };
 		21F6A7DD19B76A3C00FE995A /* CreateAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F6A7DC19B76A3C00FE995A /* CreateAccountViewController.m */; };
 		21F6A7E019B775BF00FE995A /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F6A7DF19B775BF00FE995A /* ForgotPasswordViewController.m */; };
@@ -73,6 +65,8 @@
 		212E9CEA19B92BA8004E013E /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		212E9CEB19B92BA8004E013E /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		212F21DA19B757120045E351 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
+		2143343919CE062900F23CCB /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		2143343A19CE062900F23CCB /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		214E132C19C1F91300D61FB3 /* HomeTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableViewController.h; sourceTree = "<group>"; };
 		214E133019C26D7200D61FB3 /* TermsandConditionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TermsandConditionsViewController.h; sourceTree = "<group>"; };
 		214E133119C26D7200D61FB3 /* TermsandConditionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TermsandConditionsViewController.m; sourceTree = "<group>"; };
@@ -82,6 +76,8 @@
 		214E133719C29FAC00D61FB3 /* SearchResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultsTableViewController.m; sourceTree = "<group>"; };
 		214E133919C2A4F200D61FB3 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		214E133A19C2A4F200D61FB3 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		216F695F19CF820B003F695C /* JSQDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSQDemoViewController.h; sourceTree = "<group>"; };
+		216F696019CF820B003F695C /* JSQDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQDemoViewController.m; sourceTree = "<group>"; };
 		2192977C19BDF566006F664A /* DYO - Launch Screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DYO - Launch Screen.png"; sourceTree = "<group>"; };
 		2192977E19BDF7B4006F664A /* DYO - Launch Screen2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DYO - Launch Screen2.png"; sourceTree = "<group>"; };
 		21CFF72719B620A4001D5088 /* DYO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DYO.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +116,8 @@
 		21F6A7DF19B775BF00FE995A /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordViewController.m; sourceTree = "<group>"; };
 		21FA432519C780350003B8A7 /* AvailableChatsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvailableChatsTableViewController.h; sourceTree = "<group>"; };
 		21FA432619C780350003B8A7 /* AvailableChatsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvailableChatsTableViewController.m; sourceTree = "<group>"; };
+		85030C987AB74296A9C9B94F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF651A8ACE724E71BC1A7BC2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,22 +125,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2116346719CA20AE0016AFB3 /* Bolts.framework in Frameworks */,
-				2116346819CA20AE0016AFB3 /* Parse.framework in Frameworks */,
-				2116346919CA20AE0016AFB3 /* ParseFacebookUtils.framework in Frameworks */,
 				21CFF77919B6BB74001D5088 /* CoreLocation.framework in Frameworks */,
-				21CFF77A19B6BB74001D5088 /* libz.dylib in Frameworks */,
-				21CFF77B19B6BB74001D5088 /* MobileCoreServices.framework in Frameworks */,
 				21CFF77C19B6BB74001D5088 /* QuartzCore.framework in Frameworks */,
-				21CFF77D19B6BB74001D5088 /* Security.framework in Frameworks */,
-				21CFF77E19B6BB74001D5088 /* StoreKit.framework in Frameworks */,
-				21CFF77F19B6BB74001D5088 /* SystemConfiguration.framework in Frameworks */,
 				21CFF72D19B620A4001D5088 /* CoreGraphics.framework in Frameworks */,
-				21CFF77119B6BB14001D5088 /* CFNetwork.framework in Frameworks */,
-				21CFF76F19B6BB0D001D5088 /* AudioToolbox.framework in Frameworks */,
 				21CFF72F19B620A4001D5088 /* UIKit.framework in Frameworks */,
 				21CFF72B19B620A4001D5088 /* Foundation.framework in Frameworks */,
-				21CFF76C19B6BAC4001D5088 /* Bolts.framework in Frameworks */,
+				13B79FEAA765435B8E396DCE /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +235,7 @@
 				21CFF74919B620A5001D5088 /* DYOTests */,
 				21CFF72919B620A4001D5088 /* Frameworks */,
 				21CFF72819B620A4001D5088 /* Products */,
+				DF651A8ACE724E71BC1A7BC2 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -279,6 +268,7 @@
 				21CFF72C19B620A4001D5088 /* CoreGraphics.framework */,
 				21CFF72E19B620A4001D5088 /* UIKit.framework */,
 				21CFF74319B620A5001D5088 /* XCTest.framework */,
+				85030C987AB74296A9C9B94F /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -338,6 +328,10 @@
 		21FA432119C779A20003B8A7 /* Chat/Messages */ = {
 			isa = PBXGroup;
 			children = (
+				2143343919CE062900F23CCB /* ChatViewController.h */,
+				2143343A19CE062900F23CCB /* ChatViewController.m */,
+				216F695F19CF820B003F695C /* JSQDemoViewController.h */,
+				216F696019CF820B003F695C /* JSQDemoViewController.m */,
 			);
 			name = Chat/Messages;
 			sourceTree = "<group>";
@@ -359,9 +353,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 21CFF75319B620A5001D5088 /* Build configuration list for PBXNativeTarget "DYO" */;
 			buildPhases = (
+				3535A6E17DCD498AA02D2CD7 /* Check Pods Manifest.lock */,
 				21CFF72319B620A4001D5088 /* Sources */,
 				21CFF72419B620A4001D5088 /* Frameworks */,
 				21CFF72519B620A4001D5088 /* Resources */,
+				961BA100898545BFB800DEC0 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -450,6 +446,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3535A6E17DCD498AA02D2CD7 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		961BA100898545BFB800DEC0 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		21CFF72319B620A4001D5088 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -457,7 +486,9 @@
 			files = (
 				21F6A7E019B775BF00FE995A /* ForgotPasswordViewController.m in Sources */,
 				212E9CEC19B92BA8004E013E /* ProfileViewController.m in Sources */,
+				2143343B19CE062900F23CCB /* ChatViewController.m in Sources */,
 				214E133219C26D7200D61FB3 /* TermsandConditionsViewController.m in Sources */,
+				216F696119CF820B003F695C /* JSQDemoViewController.m in Sources */,
 				21CFF78219B6BFA3001D5088 /* LoginViewController.m in Sources */,
 				214E133819C29FAC00D61FB3 /* SearchResultsTableViewController.m in Sources */,
 				21CFF73B19B620A4001D5088 /* AppDelegate.m in Sources */,
@@ -582,6 +613,7 @@
 		};
 		21CFF75419B620A5001D5088 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF651A8ACE724E71BC1A7BC2 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -601,6 +633,7 @@
 		};
 		21CFF75519B620A5001D5088 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF651A8ACE724E71BC1A7BC2 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

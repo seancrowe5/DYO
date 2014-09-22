@@ -23,8 +23,6 @@
     return  _availableChatRooms;
 }
 
-
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -32,7 +30,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    //Call the helper method defined below to get the updated list of messages
+    //Call the helper method defined below to get the updated list of chatrooms
     [self updateAvailableChatRooms];
   
 }
@@ -57,71 +55,96 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    PFObject *chatroom = [self.availableChatRooms objectAtIndex:indexPath.row];
-    PFUser *likedUser;
+    PFObject *chatroom = [self.availableChatRooms objectAtIndex:indexPath.row]; //accessing chatroom
+    PFUser *selectedUser;
     PFUser *currentUser = [PFUser currentUser];
     PFUser *testUser1 = chatroom[@"user1"];
     if ([testUser1.objectId isEqual:currentUser.objectId]) {
-        likedUser = [chatroom objectForKey:@"user2"];
+        selectedUser = [chatroom objectForKey:@"user2"];
     }
     else {
-        likedUser = [chatroom objectForKey:@"user1"];
+        selectedUser = [chatroom objectForKey:@"user1"];
     }
     
-    cell.textLabel.text = likedUser[@"firstName"];
+    cell.textLabel.text = selectedUser[@"firstName"];
+    
+    //Images in Cells//
+    
+    //cell.imageview.image = placeholderImage;
+    cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
+    PFFile *userImageFile = [selectedUser valueForKey:@"photo"]; //declare a Parse file datatype obect and store the file
+    
+    //GET DATA IN BACKGROUND ???? //
+    ///////////////////////////////
+    NSData *imageData = [userImageFile getData];            //put image in NSData object
+    UIImage *image = [UIImage imageWithData:imageData];
+    cell.imageView.image = image;
+    cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
     
     return cell;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-
-    [self performSegueWithIdentifier:@"availableChatToConversation" sender:indexPath];
-    
-    
-}
 
 
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-//    ChatViewController *chatVC = segue.destinationViewController;
-//    NSIndexPath *indexPath = sender;
-//    chatVC.chatroom = [self.availableChatRooms objectAtIndex:indexPath.row];
+    /* 1. You click a person to chat with
+     * 2. I create an instance (*chatVC) of the ChatView Controller and set it equal to the desitinationViewController (ChatViewController)
+     * 3. I can now access the properties of the VC. So I set the 'chatRoom' property to the object in the current array 'availableChatRooms' at the index path chosen
+     */
+    
+    if ([segue.identifier isEqualToString:@"availableChatsToMessages"]) {
+        //UINavigationController *nc = segue.destinationViewController;
+        //JSQDemoViewController *vc = (JSQDemoViewController *)nc.topViewController;
+        //vc.delegateModal = self;
+        
+
+        JSQDemoViewController *matchVC = segue.destinationViewController;
+        NSIndexPath *indexPath = sender;
+        matchVC.chatRoom = [self.availableChatRooms objectAtIndex:indexPath.row];
+        matchVC.delegate = self;
+        NSLog(@"chatroom: %@",self.availableChatRooms);
+        
+
+    }
+
+    
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    [self performSegueWithIdentifier:@"availableChatsToMessages" sender:indexPath];
+    
+    
+}
 
+#pragma mark - Helper
 
 -(void)updateAvailableChatRooms{
     
-    
-    PFQuery *query = [PFQuery queryWithClassName:@"Chat"]; //query on the chat table
-    [query whereKey:@"user1" equalTo:[PFUser currentUser]]; //check if user1 field is equal to the current user
-    PFQuery *queryInverse = [PFQuery queryWithClassName:@"Chat"]; //do the oposite
+    PFQuery *query = [PFQuery queryWithClassName:@"ChatRoom"];
+    [query whereKey:@"user1" equalTo:[PFUser currentUser]];
+    PFQuery *queryInverse = [PFQuery queryWithClassName:@"ChatRoom"];
     [query whereKey:@"user2" equalTo:[PFUser currentUser]];
-    PFQuery *queryCombined = [PFQuery orQueryWithSubqueries:@[query, queryInverse]]; //combine the queries
     
-    //[queryCombined includeKey:@"chat"]; //I think this is the message content
-    [queryCombined includeKey:@"user1"]; //I think these are like SELECT statments
+    PFQuery *queryCombined = [PFQuery orQueryWithSubqueries:@[query, queryInverse]];
+    [queryCombined includeKey:@"chat"];
+    [queryCombined includeKey:@"user1"];
     [queryCombined includeKey:@"user2"];
     
     [queryCombined findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
-            [self.availableChatRooms removeAllObjects];             //if no error, then remove all previous objects from mutable array
-            self.availableChatRooms = [objects mutableCopy];        //set the mutable array to the object retrieved from parse
-            [self.tableView reloadData];                            //reload the data into the tableview
-            
+            [self.availableChatRooms removeAllObjects];
+            self.availableChatRooms = [objects mutableCopy];
+            [self.tableView reloadData];
         }
-        
     }];
     
 
 
 
-
-    
-
-    
 
 
 }

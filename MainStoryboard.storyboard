@@ -466,10 +466,32 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="1fP-A5-Q7q"/>
+                    <connections>
+                        <segue destination="pdb-X7-2rF" kind="push" identifier="availableChatsToMessages" id="Zqn-ug-p64"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vrb-qn-Lli" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="288" y="-218"/>
+        </scene>
+        <!--Demo View Controller-->
+        <scene sceneID="Df9-wD-piM">
+            <objects>
+                <viewController id="pdb-X7-2rF" customClass="JSQDemoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="u71-w4-AmM"/>
+                        <viewControllerLayoutGuide type="bottom" id="oxb-Iv-dyl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="I5O-9Z-e0o">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="vPh-Pf-cY0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y1Z-Zb-XTx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="795" y="-218"/>
         </scene>
         <!--Settings-->
         <scene sceneID="o7L-5P-TFV">
