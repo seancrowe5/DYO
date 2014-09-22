@@ -474,10 +474,10 @@
             </objects>
             <point key="canvasLocation" x="288" y="-218"/>
         </scene>
-        <!--Demo View Controller-->
+        <!--Chat View-->
         <scene sceneID="Df9-wD-piM">
             <objects>
-                <viewController id="pdb-X7-2rF" customClass="JSQDemoViewController" sceneMemberID="viewController">
+                <viewController id="pdb-X7-2rF" customClass="ChatView" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="u71-w4-AmM"/>
                         <viewControllerLayoutGuide type="bottom" id="oxb-Iv-dyl"/>

@@ -21,6 +21,7 @@
 		216F696119CF820B003F695C /* JSQDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 216F696019CF820B003F695C /* JSQDemoViewController.m */; };
 		2192977D19BDF566006F664A /* DYO - Launch Screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 2192977C19BDF566006F664A /* DYO - Launch Screen.png */; };
 		2192977F19BDF7B4006F664A /* DYO - Launch Screen2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2192977E19BDF7B4006F664A /* DYO - Launch Screen2.png */; };
+		21CF0F3219D083F000CB4094 /* ChatView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CF0F3119D083F000CB4094 /* ChatView.m */; };
 		21CFF72B19B620A4001D5088 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CFF72A19B620A4001D5088 /* Foundation.framework */; };
 		21CFF72D19B620A4001D5088 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CFF72C19B620A4001D5088 /* CoreGraphics.framework */; };
 		21CFF72F19B620A4001D5088 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CFF72E19B620A4001D5088 /* UIKit.framework */; };
@@ -80,6 +81,8 @@
 		216F696019CF820B003F695C /* JSQDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQDemoViewController.m; sourceTree = "<group>"; };
 		2192977C19BDF566006F664A /* DYO - Launch Screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DYO - Launch Screen.png"; sourceTree = "<group>"; };
 		2192977E19BDF7B4006F664A /* DYO - Launch Screen2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DYO - Launch Screen2.png"; sourceTree = "<group>"; };
+		21CF0F3019D083F000CB4094 /* ChatView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatView.h; sourceTree = "<group>"; };
+		21CF0F3119D083F000CB4094 /* ChatView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatView.m; sourceTree = "<group>"; };
 		21CFF72719B620A4001D5088 /* DYO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DYO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21CFF72A19B620A4001D5088 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		21CFF72C19B620A4001D5088 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -328,6 +331,8 @@
 		21FA432119C779A20003B8A7 /* Chat/Messages */ = {
 			isa = PBXGroup;
 			children = (
+				21CF0F3019D083F000CB4094 /* ChatView.h */,
+				21CF0F3119D083F000CB4094 /* ChatView.m */,
 				2143343919CE062900F23CCB /* ChatViewController.h */,
 				2143343A19CE062900F23CCB /* ChatViewController.m */,
 				216F695F19CF820B003F695C /* JSQDemoViewController.h */,
@@ -495,6 +500,7 @@
 				214E133B19C2A4F200D61FB3 /* TableViewCell.m in Sources */,
 				21F6A7DD19B76A3C00FE995A /* CreateAccountViewController.m in Sources */,
 				214E133519C29D5100D61FB3 /* User.m in Sources */,
+				21CF0F3219D083F000CB4094 /* ChatView.m in Sources */,
 				210478CE19B8BFD0007DE573 /* SetupProfileViewController.m in Sources */,
 				21CFF76919B6785D001D5088 /* HomeTableViewController.m in Sources */,
 				21FA432719C780350003B8A7 /* AvailableChatsTableViewController.m in Sources */,

@@ -101,9 +101,15 @@
         //vc.delegateModal = self;
         
 
-        JSQDemoViewController *matchVC = segue.destinationViewController;
+//        JSQDemoViewController *matchVC = segue.destinationViewController;
+//        NSIndexPath *indexPath = sender;
+//        matchVC.chatRoom = [self.availableChatRooms objectAtIndex:indexPath.row];
+//        matchVC.delegate = self;
+//        NSLog(@"chatroom: %@",self.availableChatRooms);
+        
+        ChatView *matchVC = segue.destinationViewController;
         NSIndexPath *indexPath = sender;
-        matchVC.chatRoom = [self.availableChatRooms objectAtIndex:indexPath.row];
+        matchVC.chatRoomObject = [self.availableChatRooms objectAtIndex:indexPath.row];
         matchVC.delegate = self;
         NSLog(@"chatroom: %@",self.availableChatRooms);
         

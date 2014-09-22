@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "JSQDemoViewController.h"
+#import "ChatView.h"
 
-@interface AvailableChatsTableViewController : UITableViewController <JSQDemoViewControllerDelegate>
+@interface AvailableChatsTableViewController : UITableViewController <ChatViewDelegate>
 @property (strong,nonatomic) NSMutableArray *availableChatRooms;
 
 @end

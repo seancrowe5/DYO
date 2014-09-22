@@ -9,9 +9,6 @@
 #import "JSQDemoViewController.h"
 
 
-
-
-
 @implementation JSQDemoViewController
 
 #pragma mark - Demo setup
