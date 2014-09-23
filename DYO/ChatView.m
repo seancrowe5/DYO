@@ -32,7 +32,6 @@
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 {
     [super viewDidLoad];
-    self.title = @"Chat Name";
     //i added for avatar stuff
     self.collectionView.collectionViewLayout.incomingAvatarViewSize = CGSizeZero;
     self.collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero;
@@ -65,7 +64,7 @@
         self.withUser = self.chatRoomObject[@"user1"];    //otherwise, 'user1' is the OTHER user and 'user2' is the current user
     }
 
-    
+    self.title = self.withUser[@"firstName"];
 }
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------
