@@ -32,7 +32,10 @@
     
     //Call the helper method defined below to get the updated list of chatrooms
     [self updateAvailableChatRooms];
+    
+    self.listOfAvatars = [[NSMutableArray alloc] init];
   
+    
 }
 
 
@@ -76,10 +79,13 @@
     
     //GET DATA IN BACKGROUND ???? //
     ///////////////////////////////
-    NSData *imageData = [userImageFile getData];            //put image in NSData object
-    UIImage *image = [UIImage imageWithData:imageData];
-    cell.imageView.image = image;
+    NSData *imageData = [userImageFile getData]; //put image in NSData object
+    self.userImage = [UIImage imageWithData:imageData]; //asign property userImage the image from data
+    [self.listOfAvatars addObject:self.userImage];
+    cell.imageView.image =[self.listOfAvatars objectAtIndex:indexPath.row]; //display the userImage property
     cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
+    
+   // NSLog(@"PHOTO: %ld",(long)indexPath.row);
     
     return cell;
 }
@@ -110,8 +116,8 @@
         ChatView *matchVC = segue.destinationViewController;
         NSIndexPath *indexPath = sender;
         matchVC.chatRoomObject = [self.availableChatRooms objectAtIndex:indexPath.row];
+        matchVC.selectedUserImage = self.userImage;
         matchVC.delegate = self;
-        NSLog(@"chatroom: %@",self.availableChatRooms);
         
 
     }
@@ -148,11 +154,6 @@
         }
     }];
     
-
-
-
-
-
 }
 
 

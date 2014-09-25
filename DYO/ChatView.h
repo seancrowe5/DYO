@@ -27,10 +27,11 @@
     @property (strong, nonatomic) NSString *chatRoom;
     @property (strong, nonatomic) NSMutableArray *messages;
     @property (strong, nonatomic) NSMutableArray *users;
-   // @property (copy, nonatomic) NSMutableDictionary *avatars;
+    @property (copy, nonatomic) NSMutableDictionary *avatars;
     @property (strong, nonatomic) UIImageView *outgoingBubbleImageView;
     @property (strong, nonatomic) UIImageView *incomingBubbleImageView;
     @property (strong, nonatomic) PFObject *chatRoomObject;
+    @property (strong, nonatomic) UIImage *selectedUserImage;
     @property (nonatomic) int initialLoadNum;
     @property (nonatomic) int numberMessageToLoad;
     @property (nonatomic) int incrementLoadNum;
