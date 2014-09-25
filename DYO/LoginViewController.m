@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "User.h"
 
 @interface LoginViewController ()
 
@@ -17,14 +18,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Hide back button
-    self.navigationItem.hidesBackButton = YES;
     [self.emailField becomeFirstResponder];
+
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    // I will hide the top navigation bar
+    [self.navigationController.navigationBar setHidden:YES];
+    //[self.navigationController setNavigationBarHidden:YES animated:NO];
+    
+    /*
+    UIColor *color = [UIColor darkTextColor];
+    self.passwordField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Password" attributes:@{NSForegroundColorAttributeName: color}];
+    
+    self.emailField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Email Address" attributes:@{NSForegroundColorAttributeName: color}];  */
 
 }
 
 
 - (IBAction)login:(id)sender {
+
     
     //get info from the text fields
     NSString *email = [self.emailField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];

@@ -15,6 +15,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *passwordField;
 @property (strong, nonatomic) IBOutlet UITextField *emailField;
 @property (nonatomic, assign) id currentResponder;
+@property (weak, nonatomic) IBOutlet UINavigationItem *loginTitleBar;
 
 - (IBAction)login:(id)sender;
 

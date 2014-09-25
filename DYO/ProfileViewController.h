@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
 @interface ProfileViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UITextField *nameField;
+@property (strong, nonatomic) IBOutlet UITextField *jobField;
+@property (strong, nonatomic) IBOutlet UITextField *companyField;
+@property (strong, nonatomic) IBOutlet UITextField *educationField;
+- (IBAction)editProfile:(id)sender;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *editButton;
+@property (strong, nonatomic) IBOutlet UITextField *placeholderField;
+@property (strong, nonatomic) IBOutlet UIImageView *profileImage;
 
 @end

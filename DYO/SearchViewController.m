@@ -8,7 +8,7 @@
 
 #import "SearchViewController.h"
 
-@interface SearchViewController ()
+@interface SearchViewController () <UITextFieldDelegate>
 
 @end
 
@@ -18,6 +18,8 @@
 {
     [super viewDidLoad];
     
+    // I will make the top navigation bar appear
+    [self.navigationController.navigationBar setHidden:NO];
 }
 
 
@@ -71,4 +73,7 @@
 }
 
 //when user selects a field, all others are inactive
+- (void)textFieldDidBeginEditing:(UITextField *)textField{
+    
+}
 @end

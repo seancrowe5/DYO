@@ -19,10 +19,32 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    // I make the navigation bar appear
+    [self.navigationController.navigationBar setHidden:NO];
+    //[self.navigationController setNavigationBarHidden:NO animated:NO];
+
+    
+    // Tho confusing as can be, I make the navigation bar transparent, though keeping items untouched
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+                                                  forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    self.navigationController.navigationBar.translucent = YES;
+    
+    // I set the title of the view
+    self.createAccountTitle.title =@"Create a free account";
+    
+    // I get rid of the back button text
+    self.navigationController.navigationBar.topItem.title = @"";
+    
+    // When the view loads, the keyboard selects this and pops up
+    [self.emailField becomeFirstResponder];
+    
 }
 
 
-- (IBAction)next:(id)sender {
+- (IBAction)nextStep:(id)sender {
+    
     //get the variables from text fields
     NSString *email = [self.emailField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *password = [self.passField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -68,6 +90,11 @@
         }];
         
     }
+    
+}
+
+- (IBAction)cancelSignUp:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 - (IBAction)textFieldReturn:(id)sender {
     //hides keyboard on return
@@ -88,7 +115,5 @@
     }
     [super touchesBegan:touches withEvent:event];
 }
-
-
 
 @end

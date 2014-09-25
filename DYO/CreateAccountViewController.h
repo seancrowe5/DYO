@@ -14,10 +14,13 @@
 @property (strong, nonatomic) IBOutlet UITextField *emailField;
 @property (strong, nonatomic) IBOutlet UITextField *passField;
 @property (strong, nonatomic) IBOutlet UITextField *secondPassField;
+@property (weak, nonatomic) IBOutlet UINavigationItem *createAccountTitle;
+@property (weak, nonatomic) IBOutlet UITextView *createAccountSubTitle;
 
 
 - (IBAction)textFieldReturn:(id)sender;
-- (IBAction)next:(id)sender;
+- (IBAction)nextStep:(id)sender;
+- (IBAction)cancelSignUp:(id)sender;
 
 
 @end

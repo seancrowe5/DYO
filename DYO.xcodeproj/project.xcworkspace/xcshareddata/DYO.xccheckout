@@ -10,29 +10,29 @@
 	<string>DYO</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>B29EA151-353E-4AF6-BA69-240925157A04</key>
+		<key>803FFC409C931D4936010E8BF6F496A883F615B6</key>
 		<string>https://github.com/seancrowe5/DYO.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>DYO.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>B29EA151-353E-4AF6-BA69-240925157A04</key>
+		<key>803FFC409C931D4936010E8BF6F496A883F615B6</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/seancrowe5/DYO.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>B29EA151-353E-4AF6-BA69-240925157A04</string>
+	<string>803FFC409C931D4936010E8BF6F496A883F615B6</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>B29EA151-353E-4AF6-BA69-240925157A04</string>
+			<string>803FFC409C931D4936010E8BF6F496A883F615B6</string>
 			<key>IDESourceControlWCCName</key>
 			<string>DYO</string>
 		</dict>

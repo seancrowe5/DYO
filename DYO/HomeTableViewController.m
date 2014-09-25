@@ -19,6 +19,9 @@
 {
     [super viewDidLoad];
     
+    // I will make the top navigation bar appear
+    [self.navigationController.navigationBar setHidden:NO];
+    
     //create a new user and set it to the currently logged in user
     PFUser *currentUser = [PFUser currentUser];
     
