@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Parse/Parse.h>
+#import "LocationTracker.h"
+
 
 @interface HomeTableViewController : UITableViewController
+@property (strong, nonatomic) LocationTracker *locationTracker;
+@property (nonatomic) NSTimer *locationUpdateTimer;
 - (IBAction)logout:(id)sender;
 
 

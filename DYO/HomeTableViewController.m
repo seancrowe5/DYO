@@ -35,9 +35,28 @@
         [self performSegueWithIdentifier:@"showLogin" sender:self];
     }
     
+        //ADDED LOCATION STUFF
+        self.locationTracker = [[LocationTracker alloc]init];
+        [self.locationTracker startLocationTracking];
+    
+        //LOCATION CODE
+        NSTimeInterval time = 60.0;
+        self.locationUpdateTimer =
+        [NSTimer scheduledTimerWithTimeInterval:time
+                                         target:self
+                                       selector:@selector(updateLocation)
+                                       userInfo:nil
+                                        repeats:YES];
+        
+        //END LOCATION CODE
+ 
     
 }
 
+-(void)updateLocation {
+    NSLog(@"updateLocation");
+    [self.locationTracker updateLocationToServer];
+}
 
 #pragma mark - Table view data source
 

@@ -15,11 +15,11 @@
 {
     
     [NSThread sleepForTimeInterval:1.5]; // This is the time interval used to display the lauchscreen for 1.5 seconds
-    
     [Parse setApplicationId:@"SVacx74S0JIYxRfimRreuu8JzggWmwnBANvj1dtb"
                   clientKey:@"2DehtF2ih9Tew4YdZmfMPfqgh0S6QztYJFdGhanz"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-    return YES;
+    
+       return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
