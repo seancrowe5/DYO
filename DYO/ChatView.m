@@ -177,6 +177,7 @@
 {
     [self.inputToolbar.contentView.textView resignFirstResponder];
     return;
+    //test
 }
 
 - (void)messagesCollectionViewCellDidTapAvatar:(JSQMessagesCollectionViewCell *)cell
