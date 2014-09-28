@@ -66,8 +66,6 @@
 		210FE46619D8917200BBDF77 /* AvailableChatsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AvailableChatsTableViewController.h; path = DYO/AvailableChatsTableViewController.h; sourceTree = "<group>"; };
 		210FE46719D8917200BBDF77 /* AvailableChatsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AvailableChatsTableViewController.m; path = DYO/AvailableChatsTableViewController.m; sourceTree = "<group>"; };
 		2116346419CA20AE0016AFB3 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../../Downloads/parse-library/Bolts.framework"; sourceTree = "<group>"; };
-		2116346519CA20AE0016AFB3 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../../Downloads/parse-library/Parse.framework"; sourceTree = "<group>"; };
-		2116346619CA20AE0016AFB3 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtils.framework; path = "../../../Downloads/parse-library/ParseFacebookUtils.framework"; sourceTree = "<group>"; };
 		212E9CE819B92721004E013E /* selfie.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = selfie.jpg; sourceTree = "<group>"; };
 		212E9CEA19B92BA8004E013E /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		212E9CEB19B92BA8004E013E /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
@@ -266,8 +264,6 @@
 			isa = PBXGroup;
 			children = (
 				2116346419CA20AE0016AFB3 /* Bolts.framework */,
-				2116346519CA20AE0016AFB3 /* Parse.framework */,
-				2116346619CA20AE0016AFB3 /* ParseFacebookUtils.framework */,
 				21CFF77219B6BB74001D5088 /* CoreLocation.framework */,
 				21CFF77319B6BB74001D5088 /* libz.dylib */,
 				21CFF77419B6BB74001D5088 /* MobileCoreServices.framework */,
