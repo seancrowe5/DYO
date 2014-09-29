@@ -21,19 +21,9 @@
     
     // I will make the top navigation bar appear
     [self.navigationController.navigationBar setHidden:NO];
+    self.navigationItem.hidesBackButton = YES;
+
     
-    //create a new user and set it to the currently logged in user
-    PFUser *currentUser = [PFUser currentUser];
-    
-    //if a user exists...
-    if(currentUser){
-        //then we will print out th username
-        NSLog(@"Current user %@", currentUser.username);
-    }
-    else{
-        //if nobody is logged in...then show login page
-        [self performSegueWithIdentifier:@"showLogin" sender:self];
-    }
     
         //ADDED LOCATION STUFF
         self.locationTracker = [[LocationTracker alloc]init];

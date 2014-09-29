@@ -11,7 +11,7 @@
 
 
 
-@interface LoginViewController : UIViewController
+@interface LoginViewController : UIViewController <UITextFieldDelegate>
 @property (strong, nonatomic) IBOutlet UITextField *passwordField;
 @property (strong, nonatomic) IBOutlet UITextField *emailField;
 @property (nonatomic, assign) id currentResponder;

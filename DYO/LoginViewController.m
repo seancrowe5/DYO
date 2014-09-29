@@ -19,6 +19,12 @@
 {
     [super viewDidLoad];
     [self.emailField becomeFirstResponder];
+    self.emailField.delegate = self;
+    //self.emailField.contentVerticalAlignment = UIControlContentVerticalAlignmentTop;
+    self.emailField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+    
+    //if a user exists...
+    
 
 }
 
@@ -34,6 +40,14 @@
     self.passwordField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Password" attributes:@{NSForegroundColorAttributeName: color}];
     
     self.emailField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Email Address" attributes:@{NSForegroundColorAttributeName: color}];  */
+
+    if([PFUser currentUser]){
+        //then we will segue to the home screen
+        [self performSegueWithIdentifier:@"showHome" sender:self];
+    }
+    else{
+        //if nobody is logged in...then do nothing
+    }
 
 }
 

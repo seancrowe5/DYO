@@ -122,6 +122,7 @@
         matchVC.chatRoomObject = [self.availableChatRooms objectAtIndex:indexPath.row];
         matchVC.selectedUserImage = self.userImage;
         matchVC.delegate = self;
+        matchVC.isFirstMessage = false;
         
 
     }

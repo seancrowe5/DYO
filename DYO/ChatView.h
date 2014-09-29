@@ -37,7 +37,7 @@
     @property (nonatomic) int incrementLoadNum;
     @property (strong, nonatomic) PFUser *withUser;
     @property (strong, nonatomic) PFUser *currentUser;
-
+    @property (nonatomic) BOOL isFirstMessage;
 
 
 

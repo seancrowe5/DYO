@@ -9,8 +9,14 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 #import "User.h"
+#import "JSQDemoViewController.h"
+#import "ChatView.h"
 
-@interface SearchResultsTableViewController : UITableViewController
+@interface SearchResultsTableViewController : UITableViewController <ChatViewDelegate>
 @property (nonatomic, strong) NSMutableArray *userSearchResults;
+@property (nonatomic, strong) PFUser *userSelected;
+@property (nonatomic, strong) NSMutableArray *chatRoom;
+
+
 
 @end

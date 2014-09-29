@@ -46,7 +46,11 @@
     
     
     self.isLoading = NO;
-    [self loadMessages:false];
+    
+    if(self.isFirstMessage == false){
+        //if first message is false, then run
+        [self loadMessages:false];
+    }
     self.chatsTimer = [NSTimer scheduledTimerWithTimeInterval:20.0 target:self selector:@selector(refreshMessages) userInfo:nil repeats:YES];
     
     self.currentUser = [PFUser currentUser];        //set current user property to the pfcurrent user
@@ -59,7 +63,10 @@
         self.withUser = self.chatRoomObject[@"user1"];    //otherwise, 'user1' is the OTHER user and 'user2' is the current user
     }
 
-    self.title = self.withUser[@"firstName"];
+    if(self.isFirstMessage == false){
+        //you came from the message tab
+        self.title = self.withUser[@"firstName"];
+    }
     
 }
 
@@ -88,6 +95,7 @@
         JSQMessage *message_last = [self.messages lastObject];
     
         PFQuery *query = [PFQuery queryWithClassName:@"Chat"];
+        //FAILING HERE BECAUSE THE CHATROOMOBJECT IS NULL
         [query whereKey:@"chatroom" equalTo:self.chatRoomObject];
         NSLog(@"Message Last is: %@",message_last);
         //bLoadMore = true;
@@ -143,6 +151,7 @@
 
 - (void)didPressSendButton:(UIButton *)button withMessageText:(NSString *)text sender:(NSString *)sender date:(NSDate *)date
 {
+
     PFObject *object = [PFObject objectWithClassName:@"Chat"];
     object[@"chatroom"] = self.chatRoomObject;
     object[@"fromUser"] = [PFUser currentUser]; //CHECK
@@ -166,6 +175,10 @@
      }];
     
     [self finishSendingMessage];
+    
+    if(self.isFirstMessage == true){ //aka you came from search
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 - (void)didPressAccessoryButton:(UIButton *)sender

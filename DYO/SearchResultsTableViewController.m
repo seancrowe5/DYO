@@ -9,6 +9,7 @@
 #import "SearchResultsTableViewController.h"
 #import "TableViewCell.h"
 
+
 @interface SearchResultsTableViewController ()
 
 @end
@@ -118,34 +119,34 @@
 
 -(void)likeButtonClick:(id)sender{
     
-    //DON'T LET THE USER CLICK SEND MESSAGE TWICE!!!
-    //This code should be when the user sends the first message
+    //app is listening for a user to click one of the send message buttons
+    //when user clics one of them, this method executes
     
     UIButton *senderButton = (UIButton *)sender;
-    NSLog(@"Current row = %ld", (long)senderButton.tag);
+    NSLog(@"Current row = %ld", (long)senderButton.tag); //senderButton.tag contains the row number selected
     
     User *selectedUser = [self.userSearchResults objectAtIndex:senderButton.tag]; //instantiate new object of type USER, get index path
-    PFUser *userSelected = [PFQuery getUserObjectWithId:selectedUser.userID]; //
-    
-    [self createChatRoom:userSelected];
-    
-//    //MOVE THIS CODE TO THE ACTUAL MESSAGE THAT IS SENT
-//    PFObject *likeActivity = [PFObject objectWithClassName:@"Chat"]; //set likeActivity object as a new Parse class Actiivity
-//    [likeActivity setObject:@"like" forKey:@"isLiked"];                    // set likeActivity object field 'type' to the value of 'like'
-//    [likeActivity setObject:[PFUser currentUser] forKey:@"user1"];   //set likeActivity object field 'fromUser' to the value of currentUser
-//    [likeActivity setObject:userSelected forKey:@"user2"];
-//    
-//    [likeActivity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//        if(error){
-//            UIAlertView *alertView = [[UIAlertView alloc ] initWithTitle:@"Try Liking Again!" message:[error.userInfo objectForKey:@"error"] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-//            [alertView show];
-//        }
-//    }];
+    self.userSelected = [PFQuery getUserObjectWithId:selectedUser.userID]; //set the userSelected property to the correct user
+    [self createChatRoom:self.userSelected]; //go create a chatroom between the cuurent user and selected user
+    [self performSegueWithIdentifier:@"showSearchMessage" sender:self];
 
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"showSearchMessage"]) {
+        ChatView *matchVC = segue.destinationViewController;
+        matchVC.chatRoomObject = [self.chatRoom objectAtIndex:0]; //FAILING BECAUSE THE CHATROOM OBJECT IS NULL
+        //matchVC.selectedUserImage = self.userImage;
+        matchVC.delegate = self;
+        matchVC.isFirstMessage = true;
+    }
+
+}
 
 -(void)createChatRoom:(PFUser *)userSelected{
+    //I am called when a user selects the 'send message' button in the search results
+    //list view.
+    
     NSLog(@"create called");
     //Give me back all of the available chatrooms where user 1 is the current user
     PFQuery *queryForChatRoom = [PFQuery queryWithClassName:@"ChatRoom"];
@@ -159,18 +160,66 @@
     
     PFQuery *combinedQuery = [PFQuery orQueryWithSubqueries:@[queryForChatRoom, queryForChatRoomInverse]];
     
-    [combinedQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if ([objects count] == 0) {
-            PFObject *chatroom = [PFObject objectWithClassName:@"ChatRoom"];
-            [chatroom setObject:[PFUser currentUser] forKey:@"user1"];
-            [chatroom setObject:userSelected forKey:@"user2"];
-            [chatroom saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                //[self performSegueWithIdentifier:@"homeToMatchSegue" sender:nil];
-                NSLog(@"Success! You have just created a new chatroom");
-                //Tell user the message is sent and take them back to the search results
-            }];
-        }
-    }];
+    ///////////////////////////////////////
+    //testing purposes for threading shit//
+    NSArray *objects = [combinedQuery findObjects];
+    
+    NSLog(@"here is what the query found: %@", objects);
+    
+    if([objects count]==0){
+        NSLog(@"no chatroom found, one will be made shortly");
+        PFObject *chatroom = [PFObject objectWithClassName:@"ChatRoom"];
+        [chatroom setObject:[PFUser currentUser] forKey:@"user1"];
+        [chatroom setObject:userSelected forKey:@"user2"];
+        [chatroom save];
+    }
+    
+    
+    self.chatRoom = [[combinedQuery findObjects] mutableCopy];
+    NSLog(@"THIS IS YOUR CHATROOM WE JUST CREATED: %@", self.chatRoom[0][@"user1"]);
+    
+    
+
+//THE CODE BELOW IS THE CODE ABOVE EXCEPT USING BACKGROUND PROCESSES//
+    
+//    [combinedQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//        if ([objects count] == 0) {
+//            NSLog(@"no chatroom found, one will be made shortly");
+//            //if there isn't a chatroom already in existence between these users
+//            //then we will make one!!!
+//            //yay
+//            
+//            PFObject *chatroom = [PFObject objectWithClassName:@"ChatRoom"];
+//            [chatroom setObject:[PFUser currentUser] forKey:@"user1"];
+//            [chatroom setObject:userSelected forKey:@"user2"];
+//            [chatroom saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+//                //[self performSegueWithIdentifier:@"homeToMatchSegue" sender:nil];
+//                NSLog(@"Success! You have just created a new chatroom");
+//                //Tell user the message is sent and take them back to the search results
+//            }];
+//            
+//        }
+//    
+//        [combinedQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//            //we checked if chatroom exists. It didnt'
+//            //then we made one on parse
+//            //now lets go get that chatroom dude
+//            if (!error) {
+//                [self.chatRoom removeAllObjects];
+//                self.chatRoom = [objects mutableCopy];
+//                NSLog(@"your chatroom object is: %@", self.chatRoom);
+//            }
+//        }];
+//    
+//    }];
+    
+   
+    
+    //I made you a nice object called chatroom object that you can use in the prepare for seuque
+    //statement. This is passed on to the chatveiw
+
 }
 
+- (IBAction)messagePressed:(id)sender {
+}
 @end
