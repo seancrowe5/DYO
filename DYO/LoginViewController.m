@@ -25,6 +25,7 @@
     
     //if a user exists...
     
+    
 
 }
 
@@ -43,7 +44,11 @@
 
     if([PFUser currentUser]){
         //then we will segue to the home screen
-        [self performSegueWithIdentifier:@"showHome" sender:self];
+//        [self performSegueWithIdentifier:@"showHome" sender:self];
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+        UITabBarController *obj=[storyboard instantiateViewControllerWithIdentifier:@"homeStoryboard"];
+        self.navigationController.navigationBarHidden=YES;
+        [self.navigationController pushViewController:obj animated:NO];
     }
     else{
         //if nobody is logged in...then do nothing

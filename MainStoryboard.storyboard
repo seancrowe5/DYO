@@ -86,12 +86,10 @@
                                                     <rect key="frame" x="15" y="0.0" width="270" height="84"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.30196078430000001" green="0.73333333329999995" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <segue destination="MmB-P7-Yxk" kind="push" id="4N0-Yb-FE2"/>
                                         </connections>
@@ -107,12 +105,10 @@
                                                     <rect key="frame" x="15" y="0.0" width="270" height="84"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.92156862750000001" green="0.32549019610000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <segue destination="EC0-8E-GWe" kind="push" id="Jv5-iJ-tUx"/>
                                         </connections>
@@ -128,12 +124,10 @@
                                                     <rect key="frame" x="15" y="0.0" width="270" height="84"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.30196078430000001" green="0.73333333329999995" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <segue destination="6QW-AS-E7S" kind="push" id="VhS-cB-Acc"/>
                                         </connections>
@@ -149,12 +143,10 @@
                                                     <rect key="frame" x="15" y="0.0" width="270" height="84"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.92156862750000001" green="0.32549019610000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <segue destination="uaj-d2-W6G" kind="push" id="mRt-i7-bto"/>
                                         </connections>
@@ -184,12 +176,12 @@
                     </navigationItem>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="-712" y="-245"/>
+            <point key="canvasLocation" x="-972" y="-133"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="q4U-ZU-YmT">
             <objects>
-                <viewController id="VDt-8v-wBL" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="homeStoryboard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VDt-8v-wBL" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ty1-wS-4Kk"/>
                         <viewControllerLayoutGuide type="bottom" id="bDn-W6-s6w"/>
@@ -694,7 +686,6 @@
                         <outlet property="emailField" destination="KRd-2C-Wt2" id="tjz-24-ElI"/>
                         <outlet property="loginTitleBar" destination="ucc-O0-RIC" id="io4-XU-nxx"/>
                         <outlet property="passwordField" destination="zud-Fp-Cf7" id="Dub-M0-Nh5"/>
-                        <segue destination="VDt-8v-wBL" kind="push" identifier="showHome" id="bc5-bE-Kpq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pty-FA-8j8" userLabel="First Responder" sceneMemberID="firstResponder"/>

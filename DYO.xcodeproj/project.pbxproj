@@ -19,7 +19,6 @@
 		214E133519C29D5100D61FB3 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 214E133419C29D5100D61FB3 /* User.m */; };
 		214E133819C29FAC00D61FB3 /* SearchResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 214E133719C29FAC00D61FB3 /* SearchResultsTableViewController.m */; };
 		214E133B19C2A4F200D61FB3 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 214E133A19C2A4F200D61FB3 /* TableViewCell.m */; };
-		215D178919D9E59600FF4E2E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 215D178819D9E59600FF4E2E /* HomeViewController.m */; };
 		2164A78319D47A42006332B1 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2164A77C19D47A42006332B1 /* LocationViewController.m */; };
 		2164A78419D47A42006332B1 /* LocationTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2164A77E19D47A42006332B1 /* LocationTracker.m */; };
 		2164A78519D47A42006332B1 /* BackgroundTaskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2164A78019D47A42006332B1 /* BackgroundTaskManager.m */; };
@@ -82,8 +81,6 @@
 		214E133719C29FAC00D61FB3 /* SearchResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultsTableViewController.m; sourceTree = "<group>"; };
 		214E133919C2A4F200D61FB3 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		214E133A19C2A4F200D61FB3 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
-		215D178719D9E59600FF4E2E /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		215D178819D9E59600FF4E2E /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		2164A77B19D47A42006332B1 /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
 		2164A77C19D47A42006332B1 /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
 		2164A77D19D47A42006332B1 /* LocationTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationTracker.h; sourceTree = "<group>"; };
@@ -205,8 +202,6 @@
 				211DCCBB19C3710000847830 /* Search */,
 				214E132C19C1F91300D61FB3 /* HomeTableViewController.h */,
 				21CFF76819B6785D001D5088 /* HomeTableViewController.m */,
-				215D178719D9E59600FF4E2E /* HomeViewController.h */,
-				215D178819D9E59600FF4E2E /* HomeViewController.m */,
 			);
 			name = "Main View";
 			sourceTree = "<group>";
@@ -530,7 +525,6 @@
 				214E133519C29D5100D61FB3 /* User.m in Sources */,
 				21CF0F3219D083F000CB4094 /* ChatView.m in Sources */,
 				210478CE19B8BFD0007DE573 /* SetupProfileViewController.m in Sources */,
-				215D178919D9E59600FF4E2E /* HomeViewController.m in Sources */,
 				21CFF76919B6785D001D5088 /* HomeTableViewController.m in Sources */,
 				2164A78419D47A42006332B1 /* LocationTracker.m in Sources */,
 				210478D119B8EAAF007DE573 /* SearchViewController.m in Sources */,
