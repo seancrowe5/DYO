@@ -19,7 +19,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-   
+    self.navigationController.navigationBarHidden=NO;
+
     //initialize the property userSearchResults
     self.userSearchResults = [NSMutableArray array];
     
@@ -75,6 +76,11 @@
     
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:NO];
+    [self.navigationController.navigationBar setHidden:NO];
+
+}
 
 #pragma mark - Table view data source
 

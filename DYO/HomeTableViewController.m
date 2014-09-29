@@ -19,9 +19,9 @@
 {
     [super viewDidLoad];
     
-    // I will make the top navigation bar appear
-    [self.navigationController.navigationBar setHidden:NO];
-    self.navigationItem.hidesBackButton = YES;
+    // I will make the top navigation bar disappear
+    [self.navigationController.navigationBar setHidden:YES];
+
 
     
     
@@ -41,6 +41,12 @@
         //END LOCATION CODE
  
     
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:NO];
+    [self.navigationController.navigationBar setHidden:YES];
+
 }
 
 -(void)updateLocation {

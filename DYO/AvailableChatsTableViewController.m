@@ -33,6 +33,8 @@
     //set the table view delegate and datasource...
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    [self.navigationController.navigationBar setHidden:NO];
+
     
     //Call the helper method defined below to get the updated list of chatrooms
     [self updateAvailableChatRooms];
@@ -42,7 +44,11 @@
     
 }
 
-
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:NO];
+    [self.navigationController.navigationBar setHidden:NO];
+    
+}
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
