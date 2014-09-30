@@ -884,13 +884,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Setup Profile" id="4va-wb-0C9">
-                        <barButtonItem key="rightBarButtonItem" title="Finish" id="thP-Ph-jPu">
-                            <connections>
-                                <action selector="finish:" destination="v7k-sm-mEp" id="4YQ-aQ-7bR"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Setup Profile" id="4va-wb-0C9"/>
                     <connections>
                         <outlet property="areaOfStudyField" destination="tK7-fU-b1H" id="VBX-oF-h2Y"/>
                         <outlet property="companyField" destination="0fB-z8-3Qj" id="1H3-4Q-8vs"/>

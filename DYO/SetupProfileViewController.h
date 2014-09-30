@@ -25,7 +25,6 @@
 @property (nonatomic, strong) UIImage *image;
 - (IBAction)locationButton:(id)sender;
 
-- (IBAction)finish:(id)sender;
 - (IBAction)imagePicker:(id)sender;
 - (IBAction)finishButtonPressed:(id)sender;
 @property (strong, nonatomic) IBOutlet UIImageView *profileImage;

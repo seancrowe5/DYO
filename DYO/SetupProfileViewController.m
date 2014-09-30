@@ -144,7 +144,15 @@
             }
         }];
     }
-
+    
+    
+    //Location Services: set params and show alert to user
+    self.locationManager=[[CLLocationManager alloc] init];
+    self.locationManager.delegate=self;
+    self.locationManager.desiredAccuracy=kCLLocationAccuracyNearestTenMeters;
+    self.locationManager.distanceFilter=10.0;
+    [self.locationManager startUpdatingLocation];
+    
 }
 
 - (UIImage *)resizeImage:(UIImage *)image toWidth:(float)width andHeight:(float)height{
@@ -195,23 +203,7 @@
 
 
 - (IBAction)locationButton:(id)sender {
-    //set params and show alert to user
-    self.locationManager=[[CLLocationManager alloc] init];
-    self.locationManager.delegate=self;
-    self.locationManager.desiredAccuracy=kCLLocationAccuracyNearestTenMeters;
-    self.locationManager.distanceFilter=10.0;
-    [self.locationManager startUpdatingLocation];
-    
-    
-    [PFGeoPoint geoPointForCurrentLocationInBackground:^(PFGeoPoint *geoPoint, NSError *error) {
-        if (!error) {
-            //put on parse
-            PFObject *geoLocation = [PFObject objectWithClassName:@"GeoPoints"];
-            geoLocation[@"geoPoint"] = geoPoint;
-            geoLocation[@"user"]= [PFUser currentUser];
-            [geoLocation saveInBackground];
-        }
-    }];
+   
     
 }
 
@@ -220,9 +212,6 @@
     NSLog(@"Your coordinates are: %f and %f", location.coordinate.latitude, location.coordinate.longitude);
 }
 
-
-- (IBAction)finish:(id)sender {
-    }
 
 #pragma Mark - Helper Methods
 
