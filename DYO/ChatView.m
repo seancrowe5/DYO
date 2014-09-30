@@ -179,6 +179,20 @@
     if(self.isFirstMessage == true){ //aka you came from search
         [self.navigationController popViewControllerAnimated:YES];
     }
+    
+  //Push notification test
+    // When users indicate they are Giants fans, we subscribe them to that channel.
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation addUniqueObject:self.withUser.objectId forKey:@"channels"];
+    [currentInstallation saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        PFPush *push = [[PFPush alloc] init];
+        [push setChannel:self.withUser.objectId];
+        [push setMessage:object[@"text"]];
+        [push sendPushInBackground];
+    }];
+    
+   
+    
 }
 
 - (void)didPressAccessoryButton:(UIButton *)sender
