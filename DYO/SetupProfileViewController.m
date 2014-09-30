@@ -25,7 +25,62 @@
     
     //Set profile image to a placeholder image so the initial launch shows something
     
+    self.profileImage.image = [UIImage imageNamed:@"profilePlaceholder.ico"];
+    
+    //autocomplete thing
+    //missing cell for row at index path
+    //here is the tutorial
+    //http://www.raywenderlich.com/336/auto-complete-tutorial-for-ios-how-to-auto-complete-with-custom-values
+    
+//    self.autocompleteTableView = [[UITableView alloc] initWithFrame:
+//                             CGRectMake(0, 80, 320, 120) style:UITableViewStylePlain];
+//    self.autocompleteTableView.delegate = self;
+//    self.autocompleteTableView.dataSource = self;
+//    self.autocompleteTableView.scrollEnabled = YES;
+//    self.autocompleteTableView.hidden = YES;
+//    [self.view addSubview:self.autocompleteTableView];
+    
 }
+
+//- (BOOL)textField:(UITextField *)textField
+//shouldChangeCharactersInRange:(NSRange)range
+//replacementString:(NSString *)string {
+//    self.autocompleteTableView.hidden = NO;
+//    
+//    NSString *substring = [NSString stringWithString:textField.text];
+//    substring = [substring
+//                 stringByReplacingCharactersInRange:range withString:string];
+//    [self searchAutocompleteEntriesWithSubstring:substring];
+//    return YES;
+//}
+//
+//- (void)searchAutocompleteEntriesWithSubstring:(NSString *)substring {
+//    
+//    // Put anything that starts with this substring into the autocompleteUrls array
+//    // The items in this array is what will show up in the table view
+//    NSMutableArray *pastUrls = [[NSMutableArray alloc]init];
+//    NSMutableArray *autocompleteUrls = [[NSMutableArray alloc] initWithObjects:@"hello",@"helllllllish", nil];
+//    [autocompleteUrls removeAllObjects];
+//    for(NSString *curString in pastUrls) {
+//        NSRange substringRange = [curString rangeOfString:substring];
+//        if (substringRange.location == 0) {
+//            [autocompleteUrls addObject:curString];
+//        }
+//    }
+//    
+//    [self.autocompleteTableView reloadData];
+//}
+//
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+//{
+//    return 1;
+//}
+//
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+//{
+//    // Return the number of rows in the section.
+//    return 10;
+//}
 
 #pragma Mark - Image
 
@@ -38,6 +93,58 @@
                                                     otherButtonTitles:@"Choose Existing",@"Take Photo",nil];
     [actionSheet showInView:self.view];
     
+}
+
+- (IBAction)finishButtonPressed:(id)sender {
+    //on submit get all data and put in variables
+    NSString *firstName = [self.firstNameField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *lastName = [self.lastNameField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *jobTitle = [self.jobField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *company = [self.companyField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *education = [self.educationField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
+    
+    //validation check to see if the first three fields have something in them
+    //its only three because the job and education may be dropdown fields
+    if([firstName length] == 0 || [lastName length] == 0 || [company length] == 0){
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Oops!"
+                                                            message:@"Make sure you enter all fields"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil, nil];
+        
+        [alertView show];
+    }
+    else{
+        
+        //set current user to user variable
+        PFUser *user = [PFUser currentUser];
+        
+        //update the user class to add in information
+        user[@"firstName"] = firstName;
+        user[@"lastName"] = lastName;
+        user[@"jobTitle"] = jobTitle;
+        user[@"company"] = company;
+        user[@"education"] = education;
+        [self uploadMessage];
+        
+        //save in background
+        [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if(error){
+                UIAlertView *alertView = [[UIAlertView alloc ] initWithTitle:@"Sorry" message:[error.userInfo objectForKey:@"error"] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                [alertView show];
+            }
+            else{
+                //Success! Go to home screen
+                UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+                UITabBarController *obj=[storyboard instantiateViewControllerWithIdentifier:@"homeStoryboard"];
+                self.navigationController.navigationBarHidden=YES;
+                [self.navigationController pushViewController:obj animated:YES];
+                
+            }
+        }];
+    }
+
 }
 
 - (UIImage *)resizeImage:(UIImage *)image toWidth:(float)width andHeight:(float)height{
@@ -115,53 +222,7 @@
 
 
 - (IBAction)finish:(id)sender {
-    //on submit get all data and put in variables
-    NSString *firstName = [self.firstNameField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    NSString *lastName = [self.lastNameField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    NSString *jobTitle = [self.jobField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    NSString *company = [self.companyField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    NSString *education = [self.educationField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    
-    
-    //validation check to see if the first three fields have something in them
-    //its only three because the job and education may be dropdown fields
-    if([firstName length] == 0 || [lastName length] == 0 || [company length] == 0){
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Oops!"
-                                                            message:@"Make sure you enter all fields"
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"OK"
-                                                  otherButtonTitles:nil, nil];
-        
-        [alertView show];
     }
-    else{
-        
-        //set current user to user variable
-        PFUser *user = [PFUser currentUser];
-        
-        //update the user class to add in information
-        user[@"firstName"] = firstName;
-        user[@"lastName"] = lastName;
-        user[@"jobTitle"] = jobTitle;
-        user[@"company"] = company;
-        user[@"education"] = education;
-        [self uploadMessage];
-        
-        //save in background
-        [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            if(error){
-                UIAlertView *alertView = [[UIAlertView alloc ] initWithTitle:@"Sorry" message:[error.userInfo objectForKey:@"error"] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-                [alertView show];
-            }
-            else{
-                //Success! Go to home screen
-                
-                [self.navigationController popToRootViewControllerAnimated:YES];
-                
-            }
-        }];
-    }
-}
 
 #pragma Mark - Helper Methods
 

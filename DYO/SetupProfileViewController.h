@@ -19,13 +19,15 @@
 @property (strong, nonatomic) IBOutlet UITextField *jobField;
 @property (strong, nonatomic) IBOutlet UITextField *companyField;
 @property (strong, nonatomic) IBOutlet UITextField *educationField;
-
+@property (strong, nonatomic) UITableView  *autocompleteTableView;
 @property (nonatomic,strong) UIImagePickerController *imagePicker;
+@property (strong, nonatomic) IBOutlet UITextField *areaOfStudyField;
 @property (nonatomic, strong) UIImage *image;
 - (IBAction)locationButton:(id)sender;
 
 - (IBAction)finish:(id)sender;
 - (IBAction)imagePicker:(id)sender;
+- (IBAction)finishButtonPressed:(id)sender;
 @property (strong, nonatomic) IBOutlet UIImageView *profileImage;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
