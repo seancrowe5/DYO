@@ -19,7 +19,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationController.navigationBarHidden=NO;
+    [self.navigationController.navigationBar setHidden:NO];
 
     //initialize the property userSearchResults
     self.userSearchResults = [NSMutableArray array];

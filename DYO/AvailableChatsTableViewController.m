@@ -40,14 +40,16 @@
     [self updateAvailableChatRooms];
     
     self.listOfAvatars = [[NSMutableArray alloc] init];
-  
-    
+
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:NO];
     [self.navigationController.navigationBar setHidden:NO];
-    
+}
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:NO];
+    [self.navigationController.navigationBar setHidden:NO];
 }
 #pragma mark - Table view data source
 

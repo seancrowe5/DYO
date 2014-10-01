@@ -27,6 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     //i added for avatar stuff change something here for the load maybe?
 //    self.collectionView.collectionViewLayout.incomingAvatarViewSize = CGSizeZero;
 //    self.collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero;
@@ -67,6 +68,7 @@
         //you came from the message tab
         self.title = self.withUser[@"firstName"];
     }
+
     
 }
 

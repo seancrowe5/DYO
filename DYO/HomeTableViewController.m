@@ -19,12 +19,6 @@
 {
     [super viewDidLoad];
     
-    // I will make the top navigation bar disappear
-    [self.navigationController.navigationBar setHidden:YES];
-
-
-    
-    
         //ADDED LOCATION STUFF
         self.locationTracker = [[LocationTracker alloc]init];
         [self.locationTracker startLocationTracking];
@@ -56,15 +50,6 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 4;
-}
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -115,21 +100,8 @@
 }
 */
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-- (IBAction)logout:(id)sender {
-    [PFUser logOut];
-    [self performSegueWithIdentifier:@"showLogin" sender:self];
-    
-}
 
 @end
+
+

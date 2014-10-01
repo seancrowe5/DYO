@@ -19,6 +19,8 @@ int count;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.navigationController.navigationBar setHidden:NO];
+
     //display image
     PFUser *user = [PFUser currentUser];
     PFFile *userImageFile = user[@"photo"];
@@ -42,12 +44,14 @@ int count;
    // Display the Education
      self.educationField.text = [NSString stringWithFormat:@"%@",[user valueForKey:@"education"]];
 
-
-    // I will make the top navigation bar appear
-    [self.navigationController.navigationBar setHidden:NO];
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:NO];
+    [self.navigationController.navigationBar setHidden:NO];
 
+
+}
 
 /*
 #pragma mark - Navigation

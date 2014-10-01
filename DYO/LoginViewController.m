@@ -46,7 +46,7 @@
         //then we will segue to the home screen
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
         UITabBarController *obj=[storyboard instantiateViewControllerWithIdentifier:@"homeStoryboard"];
-        self.navigationController.navigationBarHidden=YES;
+        self.navigationController.navigationBarHidden=NO;
         [self.navigationController pushViewController:obj animated:NO];
     }
     else{
