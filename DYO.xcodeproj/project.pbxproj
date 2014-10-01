@@ -19,6 +19,7 @@
 		214E133519C29D5100D61FB3 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 214E133419C29D5100D61FB3 /* User.m */; };
 		214E133819C29FAC00D61FB3 /* SearchResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 214E133719C29FAC00D61FB3 /* SearchResultsTableViewController.m */; };
 		214E133B19C2A4F200D61FB3 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 214E133A19C2A4F200D61FB3 /* TableViewCell.m */; };
+		2164027619DC9F2000638BD9 /* AvailableChatsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2164027519DC9F2000638BD9 /* AvailableChatsTableViewCell.m */; };
 		2164A78319D47A42006332B1 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2164A77C19D47A42006332B1 /* LocationViewController.m */; };
 		2164A78419D47A42006332B1 /* LocationTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2164A77E19D47A42006332B1 /* LocationTracker.m */; };
 		2164A78519D47A42006332B1 /* BackgroundTaskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2164A78019D47A42006332B1 /* BackgroundTaskManager.m */; };
@@ -80,6 +81,8 @@
 		214E133719C29FAC00D61FB3 /* SearchResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultsTableViewController.m; sourceTree = "<group>"; };
 		214E133919C2A4F200D61FB3 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		214E133A19C2A4F200D61FB3 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		2164027419DC9F2000638BD9 /* AvailableChatsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvailableChatsTableViewCell.h; sourceTree = "<group>"; };
+		2164027519DC9F2000638BD9 /* AvailableChatsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvailableChatsTableViewCell.m; sourceTree = "<group>"; };
 		2164A77B19D47A42006332B1 /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
 		2164A77C19D47A42006332B1 /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
 		2164A77D19D47A42006332B1 /* LocationTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationTracker.h; sourceTree = "<group>"; };
@@ -357,6 +360,8 @@
 			children = (
 				210FE46619D8917200BBDF77 /* AvailableChatsTableViewController.h */,
 				210FE46719D8917200BBDF77 /* AvailableChatsTableViewController.m */,
+				2164027419DC9F2000638BD9 /* AvailableChatsTableViewCell.h */,
+				2164027519DC9F2000638BD9 /* AvailableChatsTableViewCell.m */,
 			);
 			name = "Available Chatrooms";
 			path = ..;
@@ -511,6 +516,7 @@
 				212E9CEC19B92BA8004E013E /* ProfileViewController.m in Sources */,
 				2143343B19CE062900F23CCB /* ChatViewController.m in Sources */,
 				2164A78619D47A42006332B1 /* LocationShareModel.m in Sources */,
+				2164027619DC9F2000638BD9 /* AvailableChatsTableViewCell.m in Sources */,
 				214E133219C26D7200D61FB3 /* TermsandConditionsViewController.m in Sources */,
 				216F696119CF820B003F695C /* JSQDemoViewController.m in Sources */,
 				21CFF78219B6BFA3001D5088 /* LoginViewController.m in Sources */,

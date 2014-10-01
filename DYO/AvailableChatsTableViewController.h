@@ -12,8 +12,8 @@
 
 @interface AvailableChatsTableViewController : UITableViewController <ChatViewDelegate>
 @property (strong,nonatomic) NSMutableArray *availableChatRooms;
-@property (strong,nonatomic) UIImage *userImage;
-@property (strong,nonatomic) NSMutableArray *listOfAvatars;
+//@property (strong,nonatomic) UIImage *userImage;
+//@property (strong,nonatomic) NSMutableArray *listOfAvatars;
 
 
 

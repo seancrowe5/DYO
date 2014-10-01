@@ -8,6 +8,8 @@
 //
 
 #import "AvailableChatsTableViewController.h"
+#import "AvailableChatsTableViewCell.h"
+
 
 @interface AvailableChatsTableViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -39,7 +41,7 @@
     //Call the helper method defined below to get the updated list of chatrooms
     [self updateAvailableChatRooms];
     
-    self.listOfAvatars = [[NSMutableArray alloc] init];
+//    self.listOfAvatars = [[NSMutableArray alloc] init];
 
 }
 
@@ -68,7 +70,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    AvailableChatsTableViewCell *cell = (AvailableChatsTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"resultCell"];
     
     PFObject *chatroom = [self.availableChatRooms objectAtIndex:indexPath.row]; //accessing chatroom
     PFUser *selectedUser;
@@ -81,21 +83,40 @@
         selectedUser = [chatroom objectForKey:@"user1"];
     }
     
-    cell.textLabel.text = selectedUser[@"firstName"];
     
+    PFQuery *query = [PFQuery queryWithClassName:@"Chat"];
+    [query whereKey:@"chatroom" equalTo:chatroom]; //looks for all messages with the same chatroom object as the current cell
+    [query orderByDescending:@"createdAt"];
+    PFObject *lastMessageObject = [PFObject objectWithClassName:@"Chat"];
+    lastMessageObject = [query getFirstObject];
+    
+    cell.messageExcerpt.text = lastMessageObject[@"text"];
+    cell.userName.text = selectedUser[@"firstName"];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    //uncomment to get the time only
+    //[formatter setDateFormat:@"hh:mm a"];
+    //[formatter setDateFormat:@"MMM dd, YYYY"];
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    
+    
+    NSDate *time = lastMessageObject.createdAt;
+    NSString *messageDate = [formatter stringFromDate:time];
+    
+    [cell.timeLabel setText:messageDate];
     //Images in Cells//
     
     //cell.imageview.image = placeholderImage;
-    cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
-    PFFile *userImageFile = [selectedUser valueForKey:@"photo"]; //declare a Parse file datatype obect and store the file
+//    cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
+//    PFFile *userImageFile = [selectedUser valueForKey:@"photo"]; //declare a Parse file datatype obect and store the file
     
     //GET DATA IN BACKGROUND ???? //
     ///////////////////////////////
-    NSData *imageData = [userImageFile getData]; //put image in NSData object
-    self.userImage = [UIImage imageWithData:imageData]; //asign property userImage the image from data
-    [self.listOfAvatars addObject:self.userImage];
-    cell.imageView.image =[self.listOfAvatars objectAtIndex:indexPath.row]; //display the userImage property
-    cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
+//    NSData *imageData = [userImageFile getData]; //put image in NSData object
+//    self.userImage = [UIImage imageWithData:imageData]; //asign property userImage the image from data
+//    [self.listOfAvatars addObject:self.userImage];
+//    cell.imageView.image =[self.listOfAvatars objectAtIndex:indexPath.row]; //display the userImage property
+//    cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
     
    // NSLog(@"PHOTO: %ld",(long)indexPath.row);
     
@@ -128,7 +149,7 @@
         ChatView *matchVC = segue.destinationViewController;
         NSIndexPath *indexPath = sender;
         matchVC.chatRoomObject = [self.availableChatRooms objectAtIndex:indexPath.row];
-        matchVC.selectedUserImage = self.userImage;
+        //matchVC.selectedUserImage = self.userImage;
         matchVC.delegate = self;
         matchVC.isFirstMessage = false;
         
