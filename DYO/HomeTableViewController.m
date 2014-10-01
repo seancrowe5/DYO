@@ -18,7 +18,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    [self.navigationController.navigationBar setHidden:NO];
+    self.navigationItem.hidesBackButton = YES;
+
         //ADDED LOCATION STUFF
         self.locationTracker = [[LocationTracker alloc]init];
         [self.locationTracker startLocationTracking];
@@ -39,7 +41,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:NO];
-    [self.navigationController.navigationBar setHidden:YES];
+    [self.navigationController.navigationBar setHidden:NO];
 
 }
 

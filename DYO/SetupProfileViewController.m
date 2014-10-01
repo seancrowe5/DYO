@@ -181,43 +181,8 @@
         UIImageWriteToSavedPhotosAlbum(self.image, nil, nil, nil);
     }
     
-    //declasre a file datatype and a filename datatype
-//    NSData *fileData;
-//    
-//    //declare a UI image variable set it to our image property...then resize it
-//    UIImage *newImage = [self  resizeImage:self.image toWidth:100.0f andHeight:100.0f];
-//    fileData = UIImagePNGRepresentation(newImage);
-//    
-////    self.profileImage.layer.cornerRadius = self.profileImage.frame.size.width / 2;
-////    self.profileImage.layer.borderWidth = 3.0f;
-////    self.profileImage.layer.borderColor = [UIColor whiteColor].CGColor;
-////    self.profileImage.clipsToBounds = YES;
-//    
- //  self.profileImage.image = [UIImage imageWithData:fileData];
-    
-//    UIImage *image = self.image;
-//    UIImage *tempImage = nil;
-//    CGSize targetSize = CGSizeMake(100,1000);
-//    UIGraphicsBeginImageContext(targetSize);
-//    
-//    CGRect thumbnailRect = CGRectMake(0, 0, 0, 0);
-//    thumbnailRect.origin = CGPointMake(0.0,0.0);
-//    thumbnailRect.size.width  = targetSize.width;
-//    thumbnailRect.size.height = targetSize.height;
-//    
-//    [image drawInRect:thumbnailRect];
-//    
-//    tempImage = UIGraphicsGetImageFromCurrentImageContext();
-//    
-//    UIGraphicsEndImageContext();
-//    
-//    self.profileImage.image = tempImage;
-//    
-   
-    
-    CGFloat newSize = 100.0f;
-    
-    
+    CGFloat newSize = 100.0f; //this is the size of the square that we want
+
     self.profileImage.image = [self squareImageFromImage:self.image scaledToSize:newSize];
     [self dismissViewControllerAnimated:YES completion:nil];
     

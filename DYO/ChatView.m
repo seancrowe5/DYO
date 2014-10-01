@@ -29,12 +29,12 @@
     [super viewDidLoad];
     
     //i added for avatar stuff change something here for the load maybe?
-//    self.collectionView.collectionViewLayout.incomingAvatarViewSize = CGSizeZero;
-//    self.collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero;
+    self.collectionView.collectionViewLayout.incomingAvatarViewSize = CGSizeZero;
+    self.collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero;
     
     self.users = [[NSMutableArray alloc] init];
     self.messages = [[NSMutableArray alloc] init];
-    self.avatars = [[NSMutableDictionary alloc] init];
+    //self.avatars = [[NSMutableDictionary alloc] init];
     
     self.sender = [PFUser currentUser].objectId;
     
@@ -253,32 +253,32 @@
 
 - (UIImageView *)collectionView:(JSQMessagesCollectionView *)collectionView avatarImageViewForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    PFUser *user = [self.users objectAtIndex:indexPath.item]; //New user object...set to the user of the current text message in loop
-    UIImageView *imageView = [[UIImageView alloc] init]; //sets the placeholder image
-   
-    NSString *messageUserID = user.objectId;
-    NSString *currentUserID = self.currentUser.objectId;
-    
-    if([messageUserID isEqualToString:currentUserID]){
-        //get current user image
-        PFFile *userImageFile = self.currentUser[@"photo"];
-        [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
-            if (!error) {
-                UIImage *image = [UIImage imageWithData:imageData];
-                [imageView setImage:image];
-            }
-        }];
-
-    }
-    else{
-        //set the imageview to the one passed from previous view self.selectedImage
-        [imageView setImage:self.selectedUserImage];
-    }
-    
-//    imageView.layer.cornerRadius = imageView.frame.size.width/2;
-//    imageView.layer.masksToBounds = YES;
-    
-    return imageView;
+//    PFUser *user = [self.users objectAtIndex:indexPath.item]; //New user object...set to the user of the current text message in loop
+//    UIImageView *imageView = [[UIImageView alloc] init]; //sets the placeholder image
+//   
+//    NSString *messageUserID = user.objectId;
+//    NSString *currentUserID = self.currentUser.objectId;
+//    
+//    if([messageUserID isEqualToString:currentUserID]){
+//        //get current user image
+//        PFFile *userImageFile = self.currentUser[@"photo"];
+//        [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+//            if (!error) {
+//                UIImage *image = [UIImage imageWithData:imageData];
+//                [imageView setImage:image];
+//            }
+//        }];
+//
+//    }
+//    else{
+//        //set the imageview to the one passed from previous view self.selectedImage
+//        [imageView setImage:self.selectedUserImage];
+//    }
+//    
+////    imageView.layer.cornerRadius = imageView.frame.size.width/2;
+////    imageView.layer.masksToBounds = YES;
+//    
+    return nil;
 }
 
 
