@@ -9,8 +9,8 @@
 #import "ProfileViewController.h"
 
 @interface ProfileViewController ()
-
-
+-(void)goodbyeKeyboard;
+-(void)areFieldsSelectable:(BOOL)makeSelectable;
 @end
 
 @implementation ProfileViewController
@@ -21,7 +21,7 @@ int count;
     [super viewDidLoad];
     [self.navigationController.navigationBar setHidden:NO];
 
-    //display image
+    //display profile image from parse
     PFUser *user = [PFUser currentUser];
     PFFile *userImageFile = user[@"photo"];
     [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
@@ -31,38 +31,50 @@ int count;
         }
     }];
 
-    //Display the name
-    self.nameField.text = [NSString stringWithFormat:@"%@ %@",[user valueForKey:@"firstName"],[user valueForKey:@"lastName"] ];
-    
-    //Display the job title
-    self.jobField.text = [NSString stringWithFormat:@"%@",[user valueForKey:@"jobTitle"]];
-
-    //Display the company
-    self.companyField.text = [NSString stringWithFormat:@"%@",[user valueForKey:@"company"]];
-
-    
-   // Display the Education
-     self.educationField.text = [NSString stringWithFormat:@"%@",[user valueForKey:@"education"]];
+    //Display the info from parse
+    self.firstNameField.text = [NSString stringWithFormat:@"%@",[user valueForKey:@"firstName"]];   //first Name
+    self.lastNameField.text = [NSString stringWithFormat:@"%@",[user valueForKey:@"lastName"]];     //Last Name
+    self.jobField.text = [NSString stringWithFormat:@"%@",[user valueForKey:@"jobTitle"]];          //job title
+    self.companyField.text = [NSString stringWithFormat:@"%@",[user valueForKey:@"company"]];       //company
+    self.educationField.text = [NSString stringWithFormat:@"%@",[user valueForKey:@"education"]];   //education
+    self.industryField.text = [NSString stringWithFormat:@"%@",[user valueForKey:@"education"]];   //industry
 
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:NO];
     [self.navigationController.navigationBar setHidden:NO];
-
-
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - Helper Methods
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)goodbyeKeyboard{
+    [self.firstNameField resignFirstResponder];
+    [self.lastNameField resignFirstResponder];
+    [self.jobField resignFirstResponder];
+    [self.companyField resignFirstResponder];
+    [self.educationField resignFirstResponder];
+    [self.industryField resignFirstResponder];
 }
-*/
+
+-(void)areFieldsSelectable:(BOOL)makeSelectable{
+    if(makeSelectable == true){
+        self.firstNameField.enabled = YES;
+        self.lastNameField.enabled = YES;
+        self.jobField.enabled = YES;
+        self.companyField.enabled = YES;
+        self.educationField.enabled = YES;
+        self.industryField.enabled = YES;
+    }
+    else{
+        self.firstNameField.enabled = NO;
+        self.lastNameField.enabled = NO;
+        self.jobField.enabled = NO;
+        self.companyField.enabled = NO;
+        self.educationField.enabled = NO;
+        self.industryField.enabled = NO;
+    }
+}
 
 - (IBAction)editProfile:(id)sender {
     
@@ -73,24 +85,30 @@ int count;
         
         self.editButton.title = @"Edit";
 
-        //change border style to indicate it is editable
-        self.nameField.borderStyle = UITextBorderStyleNone;
+        //style to indicate it is not editable
+        self.firstNameField.borderStyle = UITextBorderStyleNone;
+        self.lastNameField.borderStyle = UITextBorderStyleNone;
         self.jobField.borderStyle = UITextBorderStyleNone;
         self.companyField.borderStyle = UITextBorderStyleNone;
         self.educationField.borderStyle = UITextBorderStyleNone;
-        
-        //take the values from fields and put them in variables
-        NSString *firstName = [self.nameField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        self.industryField.borderStyle = UITextBorderStyleNone;
+
+        //take the new values from fields and put them in variables
+        NSString *firstName = [self.firstNameField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        NSString *lastName = [self.lastNameField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         NSString *jobTitle = [self.jobField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         NSString *company = [self.companyField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         NSString *education = [self.educationField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        
+        NSString *industry = [self.educationField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+
         //add new info to parse for the current user
         PFUser *user = [PFUser currentUser];
         user[@"firstName"] = firstName;
+        user[@"lastName"] = lastName;
         user[@"jobTitle"] = jobTitle;
         user[@"company"] = company;
         user[@"education"] = education;
+        user[@"industry"] = industry;
         
         //save to parse in background
         [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
@@ -100,34 +118,38 @@ int count;
             }
             else{
                 //success! do sumin cray cray
-                NSLog(@"you rock");
+                NSLog(@"Way to go Sean! You succesfully updated the user profile :)");
                 [self resignFirstResponder];
             }
         }];
-        [self.nameField resignFirstResponder];
-        count=0;
-
+        //hide keyboard no matter what field is selected
+        [self goodbyeKeyboard];
+        
+        //don't allow selection anymore on the fields
+        [self areFieldsSelectable:NO];
+        
+        
+        count=0; //show that we are finished saving
     }
     else{
         //you are here because the user selected the eidt button
-        count=0;
-               //set the ui image
-        //set the border of the text field to indicate its editable
-        self.nameField.borderStyle = UITextBorderStyleRoundedRect;
+        count=0;    //reset the count to 0
+        
+        //Set the style of the Text Fields to indicate they are editable
+        self.firstNameField.borderStyle = UITextBorderStyleRoundedRect;
+        self.lastNameField.borderStyle = UITextBorderStyleRoundedRect;
         self.jobField.borderStyle = UITextBorderStyleRoundedRect;
         self.companyField.borderStyle = UITextBorderStyleRoundedRect;
         self.educationField.borderStyle = UITextBorderStyleRoundedRect;
+        self.industryField.borderStyle = UITextBorderStyleRoundedRect;
         
-        //allow the keyboard to show if user selects field
-        self.nameField.enabled = YES;
-        self.jobField.enabled = YES;
-        self.companyField.enabled = YES;
-        self.educationField.enabled = YES;
-        count++;
-        NSLog(@"count iinside: %d",count);
-
+        //allow the selection on thefield
+        [self areFieldsSelectable:YES];
         
+        count++; //increment count to indicate that we have successfully edited the fields
+        NSLog(@"Wooo you selected to edit your profile! the count in the loop is: %d",count);
     }
     
+
 }
 @end
