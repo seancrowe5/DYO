@@ -102,6 +102,7 @@
     NSString *jobTitle = [self.jobField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *company = [self.companyField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *education = [self.educationField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *study = [self.areaOfStudyField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
     
     //validation check to see if the first three fields have something in them
@@ -126,9 +127,10 @@
         user[@"jobTitle"] = jobTitle;
         user[@"company"] = company;
         user[@"education"] = education;
+        user[@"areaOfStudy"] = study;
         [self uploadMessage];
         
-        //save in background
+        //save to parse in background
         [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if(error){
                 UIAlertView *alertView = [[UIAlertView alloc ] initWithTitle:@"Sorry" message:[error.userInfo objectForKey:@"error"] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
@@ -140,7 +142,6 @@
                 UITabBarController *obj=[storyboard instantiateViewControllerWithIdentifier:@"homeStoryboard"];
                 self.navigationController.navigationBarHidden=YES;
                 [self.navigationController pushViewController:obj animated:YES];
-                
             }
         }];
     }
@@ -181,31 +182,86 @@
     }
     
     //declasre a file datatype and a filename datatype
-    NSData *fileData;
+//    NSData *fileData;
+//    
+//    //declare a UI image variable set it to our image property...then resize it
+//    UIImage *newImage = [self  resizeImage:self.image toWidth:100.0f andHeight:100.0f];
+//    fileData = UIImagePNGRepresentation(newImage);
+//    
+////    self.profileImage.layer.cornerRadius = self.profileImage.frame.size.width / 2;
+////    self.profileImage.layer.borderWidth = 3.0f;
+////    self.profileImage.layer.borderColor = [UIColor whiteColor].CGColor;
+////    self.profileImage.clipsToBounds = YES;
+//    
+ //  self.profileImage.image = [UIImage imageWithData:fileData];
     
-    //declare a UI image variable set it to our image property...then resize it
-    UIImage *newImage = [self resizeImage:self.image toWidth:320.0f andHeight:480.0f];
-    fileData = UIImagePNGRepresentation(newImage);
+//    UIImage *image = self.image;
+//    UIImage *tempImage = nil;
+//    CGSize targetSize = CGSizeMake(100,1000);
+//    UIGraphicsBeginImageContext(targetSize);
+//    
+//    CGRect thumbnailRect = CGRectMake(0, 0, 0, 0);
+//    thumbnailRect.origin = CGPointMake(0.0,0.0);
+//    thumbnailRect.size.width  = targetSize.width;
+//    thumbnailRect.size.height = targetSize.height;
+//    
+//    [image drawInRect:thumbnailRect];
+//    
+//    tempImage = UIGraphicsGetImageFromCurrentImageContext();
+//    
+//    UIGraphicsEndImageContext();
+//    
+//    self.profileImage.image = tempImage;
+//    
+   
     
-    self.profileImage.layer.cornerRadius = self.profileImage.frame.size.width / 2;
-    self.profileImage.layer.borderWidth = 3.0f;
-    self.profileImage.layer.borderColor = [UIColor whiteColor].CGColor;
-    self.profileImage.clipsToBounds = YES;
+    CGFloat newSize = 100.0f;
     
-    self.profileImage.image = [UIImage imageWithData:fileData];
     
+    self.profileImage.image = [self squareImageFromImage:self.image scaledToSize:newSize];
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 
 
+- (UIImage *)squareImageFromImage:(UIImage *)image scaledToSize:(CGFloat)newSize {
+    CGAffineTransform scaleTransform;
+    CGPoint origin;
+    
+    if (image.size.width > image.size.height) {
+        CGFloat scaleRatio = newSize / image.size.height;
+        scaleTransform = CGAffineTransformMakeScale(scaleRatio, scaleRatio);
+        
+        origin = CGPointMake(-(image.size.width - image.size.height) / 2.0f, 0);
+    } else {
+        CGFloat scaleRatio = newSize / image.size.width;
+        scaleTransform = CGAffineTransformMakeScale(scaleRatio, scaleRatio);
+        
+        origin = CGPointMake(0, -(image.size.height - image.size.width) / 2.0f);
+    }
+    
+    CGSize size = CGSizeMake(newSize, newSize);
+    if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)]) {
+        UIGraphicsBeginImageContextWithOptions(size, YES, 0);
+    } else {
+        UIGraphicsBeginImageContext(size);
+    }
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextConcatCTM(context, scaleTransform);
+    
+    [image drawAtPoint:origin];
+    
+    image = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
+
+
 #pragma Mark - Submit
 
-
-- (IBAction)locationButton:(id)sender {
-   
-    
-}
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
     CLLocation *location = [locations lastObject];

@@ -12,7 +12,7 @@
 #import <MapKit/MapKit.h>
 
 
-@interface SetupProfileViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface SetupProfileViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextField *firstNameField;
 @property (strong, nonatomic) IBOutlet UITextField *lastNameField;
@@ -23,7 +23,6 @@
 @property (nonatomic,strong) UIImagePickerController *imagePicker;
 @property (strong, nonatomic) IBOutlet UITextField *areaOfStudyField;
 @property (nonatomic, strong) UIImage *image;
-- (IBAction)locationButton:(id)sender;
 
 - (IBAction)imagePicker:(id)sender;
 - (IBAction)finishButtonPressed:(id)sender;
