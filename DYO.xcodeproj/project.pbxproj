@@ -11,7 +11,6 @@
 		210478CE19B8BFD0007DE573 /* SetupProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 210478CD19B8BFD0007DE573 /* SetupProfileViewController.m */; };
 		210478D119B8EAAF007DE573 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 210478D019B8EAAF007DE573 /* SearchViewController.m */; };
 		210FE46819D8917200BBDF77 /* AvailableChatsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 210FE46719D8917200BBDF77 /* AvailableChatsTableViewController.m */; };
-		212E9CE919B92721004E013E /* selfie.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 212E9CE819B92721004E013E /* selfie.jpg */; };
 		212E9CEC19B92BA8004E013E /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 212E9CEB19B92BA8004E013E /* ProfileViewController.m */; };
 		212F21DB19B757120045E351 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 212F21DA19B757120045E351 /* Logo.png */; };
 		21382D1A19DB369200018622 /* profilePlaceholder.ico in Resources */ = {isa = PBXBuildFile; fileRef = 21382D1919DB369200018622 /* profilePlaceholder.ico */; };
@@ -25,8 +24,7 @@
 		2164A78519D47A42006332B1 /* BackgroundTaskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2164A78019D47A42006332B1 /* BackgroundTaskManager.m */; };
 		2164A78619D47A42006332B1 /* LocationShareModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2164A78219D47A42006332B1 /* LocationShareModel.m */; };
 		216F696119CF820B003F695C /* JSQDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 216F696019CF820B003F695C /* JSQDemoViewController.m */; };
-		2192977D19BDF566006F664A /* DYO - Launch Screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 2192977C19BDF566006F664A /* DYO - Launch Screen.png */; };
-		2192977F19BDF7B4006F664A /* DYO - Launch Screen2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2192977E19BDF7B4006F664A /* DYO - Launch Screen2.png */; };
+		217A6B3419DC9878009D22C9 /* camera.ico in Resources */ = {isa = PBXBuildFile; fileRef = 217A6B3319DC9878009D22C9 /* camera.ico */; };
 		21CF0F3219D083F000CB4094 /* ChatView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CF0F3119D083F000CB4094 /* ChatView.m */; };
 		21CFF72B19B620A4001D5088 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CFF72A19B620A4001D5088 /* Foundation.framework */; };
 		21CFF72D19B620A4001D5088 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CFF72C19B620A4001D5088 /* CoreGraphics.framework */; };
@@ -67,7 +65,6 @@
 		210FE46619D8917200BBDF77 /* AvailableChatsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AvailableChatsTableViewController.h; path = DYO/AvailableChatsTableViewController.h; sourceTree = "<group>"; };
 		210FE46719D8917200BBDF77 /* AvailableChatsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AvailableChatsTableViewController.m; path = DYO/AvailableChatsTableViewController.m; sourceTree = "<group>"; };
 		2116346419CA20AE0016AFB3 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../../Downloads/parse-library/Bolts.framework"; sourceTree = "<group>"; };
-		212E9CE819B92721004E013E /* selfie.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = selfie.jpg; sourceTree = "<group>"; };
 		212E9CEA19B92BA8004E013E /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		212E9CEB19B92BA8004E013E /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		212F21DA19B757120045E351 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
@@ -93,8 +90,7 @@
 		2164A78219D47A42006332B1 /* LocationShareModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationShareModel.m; sourceTree = "<group>"; };
 		216F695F19CF820B003F695C /* JSQDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSQDemoViewController.h; sourceTree = "<group>"; };
 		216F696019CF820B003F695C /* JSQDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQDemoViewController.m; sourceTree = "<group>"; };
-		2192977C19BDF566006F664A /* DYO - Launch Screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DYO - Launch Screen.png"; sourceTree = "<group>"; };
-		2192977E19BDF7B4006F664A /* DYO - Launch Screen2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DYO - Launch Screen2.png"; sourceTree = "<group>"; };
+		217A6B3319DC9878009D22C9 /* camera.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = camera.ico; sourceTree = "<group>"; };
 		21CF0F3019D083F000CB4094 /* ChatView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatView.h; sourceTree = "<group>"; };
 		21CF0F3119D083F000CB4094 /* ChatView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatView.m; sourceTree = "<group>"; };
 		21CFF72719B620A4001D5088 /* DYO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DYO.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -233,10 +229,8 @@
 		212F21D919B757050045E351 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				217A6B3319DC9878009D22C9 /* camera.ico */,
 				21382D1919DB369200018622 /* profilePlaceholder.ico */,
-				2192977E19BDF7B4006F664A /* DYO - Launch Screen2.png */,
-				2192977C19BDF566006F664A /* DYO - Launch Screen.png */,
-				212E9CE819B92721004E013E /* selfie.jpg */,
 				212F21DA19B757120045E351 /* Logo.png */,
 			);
 			name = Images;
@@ -453,14 +447,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2192977F19BDF7B4006F664A /* DYO - Launch Screen2.png in Resources */,
-				2192977D19BDF566006F664A /* DYO - Launch Screen.png in Resources */,
+				217A6B3419DC9878009D22C9 /* camera.ico in Resources */,
 				212F21DB19B757120045E351 /* Logo.png in Resources */,
 				21382D1A19DB369200018622 /* profilePlaceholder.ico in Resources */,
 				21CFF76019B62D92001D5088 /* MainStoryboard.storyboard in Resources */,
 				21CFF73519B620A4001D5088 /* InfoPlist.strings in Resources */,
 				21CFF73D19B620A4001D5088 /* Images.xcassets in Resources */,
-				212E9CE919B92721004E013E /* selfie.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
