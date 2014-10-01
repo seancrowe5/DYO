@@ -11,6 +11,8 @@
 @interface ProfileViewController ()
 -(void)goodbyeKeyboard;
 -(void)areFieldsSelectable:(BOOL)makeSelectable;
+-(void)savePhoto;
+
 @end
 
 @implementation ProfileViewController
@@ -76,6 +78,161 @@ int count;
     }
 }
 
+#pragma mark - IMAGE STUFF
+
+//DICATATES WHAT HAPPENS WHEN ACTION SHEET ITEMS ARE SELECTED
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if(buttonIndex == 0){
+        //choose existing was pressed
+        //show the library
+        self.imagePicker = [[UIImagePickerController alloc] init];
+        self.imagePicker.delegate = self;
+        self.imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        [self presentViewController:self.imagePicker animated:YES completion:nil];
+    }
+    else if(buttonIndex == 1){
+        //takephoto was pressed
+        //show the camera
+        self.imagePicker = [[UIImagePickerController alloc] init];
+        self.imagePicker.delegate = self;
+        self.imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        [self presentViewController:self.imagePicker animated:YES completion:nil];
+    }
+}
+
+//DISPLAYS THE ACTION SHEET AT BOTTOM OF SCREEN
+- (IBAction)changePhoto:(id)sender {
+    //display Action Sheet
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil
+                                                             delegate:self
+                                                    cancelButtonTitle:@"Cancel"
+                                               destructiveButtonTitle:nil
+                                                    otherButtonTitles:@"Choose Existing",@"Take Photo",nil];
+    [actionSheet showInView:self.view];
+}
+
+//METHOD TO MAKE THE IMAGE SQUARE
+- (UIImage *)squareImageFromImage:(UIImage *)image scaledToSize:(CGFloat)newSize {
+    CGAffineTransform scaleTransform;
+    CGPoint origin;
+    
+    if (image.size.width > image.size.height) {
+        CGFloat scaleRatio = newSize / image.size.height;
+        scaleTransform = CGAffineTransformMakeScale(scaleRatio, scaleRatio);
+        
+        origin = CGPointMake(-(image.size.width - image.size.height) / 2.0f, 0);
+    } else {
+        CGFloat scaleRatio = newSize / image.size.width;
+        scaleTransform = CGAffineTransformMakeScale(scaleRatio, scaleRatio);
+        
+        origin = CGPointMake(0, -(image.size.height - image.size.width) / 2.0f);
+    }
+    
+    CGSize size = CGSizeMake(newSize, newSize);
+    if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)]) {
+        UIGraphicsBeginImageContextWithOptions(size, YES, 0);
+    } else {
+        UIGraphicsBeginImageContext(size);
+    }
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextConcatCTM(context, scaleTransform);
+    
+    [image drawAtPoint:origin];
+    
+    image = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
+
+//GETS THE IMAGE FROM THE CAMERA
+- (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    
+    //photo is passed to me with a variable called info
+    //I will take that variable and set it to my image property
+    self.image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    //if the camera was used, lets store the image in my photo library
+    if (self.imagePicker.sourceType == UIImagePickerControllerSourceTypeCamera){
+        UIImageWriteToSavedPhotosAlbum(self.image, nil, nil, nil);
+    }
+    
+    CGFloat newSize = 100.0f; //this is the size of the square that we want
+    
+    self.profileImage.image = [self squareImageFromImage:self.image scaledToSize:newSize];
+    [self savePhoto]; //saves to parse
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+-(void)savePhoto{
+    //save photo to parse
+    //declasre a file datatype and a filename datatype
+    NSData *fileData;
+    NSString *fileName;
+    
+    //declare a UI image variable set it to our image property...then resize it
+    UIImage *newImage = [self resizeImage:self.image toWidth:200.0f andHeight:200.0f];
+    fileData = UIImagePNGRepresentation(newImage);
+    fileName = @"image.png";
+    PFFile *file = [PFFile fileWithName:fileName data:fileData];
+
+    //save file
+    [file saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if(error){
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Occured!"
+                                                                message:@"Try sending message again"
+                                                               delegate:self
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil, nil];
+            [alertView show];
+            
+        }
+        else{
+            //success, file is on parse.com
+            PFUser *currentUser = [PFUser currentUser];
+            [currentUser setObject:file forKey:@"photo"];
+            //save parse object in background
+            [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if(error){
+                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Occured!"
+                                                                        message:@"Try sending message again"
+                                                                       delegate:self
+                                                              cancelButtonTitle:@"OK"
+                                                              otherButtonTitles:nil, nil];
+                    [alertView show];
+                }
+                else{
+                    //success
+                    //[self reset];
+                    NSLog(@"hey");
+                    
+                }
+                
+            }];
+            
+        }
+    }];
+
+}
+
+- (UIImage *)resizeImage:(UIImage *)image toWidth:(float)width andHeight:(float)height{
+    
+    CGSize newSize = CGSizeMake(width, height);
+    CGRect newRectangle = CGRectMake(0, 0, width, height);
+    
+    UIGraphicsBeginImageContext(newSize);
+    [self.image drawInRect:newRectangle];
+    UIImage *resizedImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return resizedImage;
+    
+}
+
+#pragma mark - EDIT PROFILE BUTTON
 - (IBAction)editProfile:(id)sender {
     
     self.editButton.title = @"Save";
@@ -149,7 +306,7 @@ int count;
         count++; //increment count to indicate that we have successfully edited the fields
         NSLog(@"Wooo you selected to edit your profile! the count in the loop is: %d",count);
     }
-    
+
 
 }
 @end
