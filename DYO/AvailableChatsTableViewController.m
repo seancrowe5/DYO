@@ -32,11 +32,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     //set the table view delegate and datasource...
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.navigationController.navigationBar setHidden:NO];
-
+    self.navigationItem.title = @"Messages";
     
     //Call the helper method defined below to get the updated list of chatrooms
     [self updateAvailableChatRooms];
@@ -48,10 +49,15 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:NO];
     [self.navigationController.navigationBar setHidden:NO];
+    self.navigationItem.title = @"Messages";
+
 }
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:NO];
     [self.navigationController.navigationBar setHidden:NO];
+    self.navigationItem.title = @"Messages";
+
+    
 }
 #pragma mark - Table view data source
 
