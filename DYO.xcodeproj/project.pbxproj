@@ -13,13 +13,14 @@
 		210FE46819D8917200BBDF77 /* AvailableChatsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 210FE46719D8917200BBDF77 /* AvailableChatsTableViewController.m */; };
 		212E9CEC19B92BA8004E013E /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 212E9CEB19B92BA8004E013E /* ProfileViewController.m */; };
 		212F21DB19B757120045E351 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 212F21DA19B757120045E351 /* Logo.png */; };
-		21382D1A19DB369200018622 /* profilePlaceholder.ico in Resources */ = {isa = PBXBuildFile; fileRef = 21382D1919DB369200018622 /* profilePlaceholder.ico */; };
 		2143343B19CE062900F23CCB /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2143343A19CE062900F23CCB /* ChatViewController.m */; };
 		214E133219C26D7200D61FB3 /* TermsandConditionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 214E133119C26D7200D61FB3 /* TermsandConditionsViewController.m */; };
 		214E133519C29D5100D61FB3 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 214E133419C29D5100D61FB3 /* User.m */; };
 		214E133819C29FAC00D61FB3 /* SearchResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 214E133719C29FAC00D61FB3 /* SearchResultsTableViewController.m */; };
 		214E133B19C2A4F200D61FB3 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 214E133A19C2A4F200D61FB3 /* TableViewCell.m */; };
 		2164027619DC9F2000638BD9 /* AvailableChatsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2164027519DC9F2000638BD9 /* AvailableChatsTableViewCell.m */; };
+		2164027819DE345F00638BD9 /* profilePlaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 2164027719DE345F00638BD9 /* profilePlaceholder.png */; };
+		2164027A19DE4DD900638BD9 /* backbtn.ico in Resources */ = {isa = PBXBuildFile; fileRef = 2164027919DE4DD900638BD9 /* backbtn.ico */; };
 		2164A78319D47A42006332B1 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2164A77C19D47A42006332B1 /* LocationViewController.m */; };
 		2164A78419D47A42006332B1 /* LocationTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2164A77E19D47A42006332B1 /* LocationTracker.m */; };
 		2164A78519D47A42006332B1 /* BackgroundTaskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2164A78019D47A42006332B1 /* BackgroundTaskManager.m */; };
@@ -69,7 +70,6 @@
 		212E9CEA19B92BA8004E013E /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		212E9CEB19B92BA8004E013E /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		212F21DA19B757120045E351 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
-		21382D1919DB369200018622 /* profilePlaceholder.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = profilePlaceholder.ico; sourceTree = "<group>"; };
 		2143343919CE062900F23CCB /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
 		2143343A19CE062900F23CCB /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		214E132C19C1F91300D61FB3 /* HomeTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableViewController.h; sourceTree = "<group>"; };
@@ -83,6 +83,8 @@
 		214E133A19C2A4F200D61FB3 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		2164027419DC9F2000638BD9 /* AvailableChatsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvailableChatsTableViewCell.h; sourceTree = "<group>"; };
 		2164027519DC9F2000638BD9 /* AvailableChatsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvailableChatsTableViewCell.m; sourceTree = "<group>"; };
+		2164027719DE345F00638BD9 /* profilePlaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profilePlaceholder.png; sourceTree = "<group>"; };
+		2164027919DE4DD900638BD9 /* backbtn.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = backbtn.ico; sourceTree = "<group>"; };
 		2164A77B19D47A42006332B1 /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
 		2164A77C19D47A42006332B1 /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
 		2164A77D19D47A42006332B1 /* LocationTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationTracker.h; sourceTree = "<group>"; };
@@ -232,8 +234,9 @@
 		212F21D919B757050045E351 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				2164027919DE4DD900638BD9 /* backbtn.ico */,
+				2164027719DE345F00638BD9 /* profilePlaceholder.png */,
 				217A6B3319DC9878009D22C9 /* camera.ico */,
-				21382D1919DB369200018622 /* profilePlaceholder.ico */,
 				212F21DA19B757120045E351 /* Logo.png */,
 			);
 			name = Images;
@@ -452,10 +455,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2164027A19DE4DD900638BD9 /* backbtn.ico in Resources */,
 				217A6B3419DC9878009D22C9 /* camera.ico in Resources */,
 				212F21DB19B757120045E351 /* Logo.png in Resources */,
-				21382D1A19DB369200018622 /* profilePlaceholder.ico in Resources */,
 				21CFF76019B62D92001D5088 /* MainStoryboard.storyboard in Resources */,
+				2164027819DE345F00638BD9 /* profilePlaceholder.png in Resources */,
 				21CFF73519B620A4001D5088 /* InfoPlist.strings in Resources */,
 				21CFF73D19B620A4001D5088 /* Images.xcassets in Resources */,
 			);

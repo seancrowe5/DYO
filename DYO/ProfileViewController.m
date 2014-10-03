@@ -22,6 +22,7 @@ int count;
 {
     [super viewDidLoad];
     [self.navigationController.navigationBar setHidden:NO];
+    
 
     //display profile image from parse
     PFUser *user = [PFUser currentUser];
@@ -45,7 +46,20 @@ int count;
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:NO];
+    //make sure nav shows
     [self.navigationController.navigationBar setHidden:NO];
+    //set the bar to red background
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:0.929 green:0.243 blue:0.31 alpha:1]]; /*#f76070*/
+    //set the style of the text for the title
+    [self.navigationController.navigationBar setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+                                                                    [UIColor whiteColor], NSForegroundColorAttributeName,nil]];
+    //sets the back button to white
+    [self.navigationItem.backBarButtonItem setBackgroundImage:[UIImage imageNamed:@"backbtn.ico"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    //make back button white
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    
+    
+    
 }
 
 #pragma mark - Helper Methods

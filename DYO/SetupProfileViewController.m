@@ -25,7 +25,7 @@
     
     //Set profile image to a placeholder image so the initial launch shows something
     
-    self.profileImage.image = [UIImage imageNamed:@"profilePlaceholder.ico"];
+    self.profileImage.image = [UIImage imageNamed:@"profilePlaceholder.png"];
     
     //autocomplete thing
     //missing cell for row at index path

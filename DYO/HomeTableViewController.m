@@ -18,8 +18,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.navigationController.navigationBar setHidden:NO];
-    self.navigationItem.hidesBackButton = YES;
+    [self.navigationController.navigationBar setHidden:YES];
+    //set the bar to red background
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:0.929 green:0.243 blue:0.31 alpha:1]]; /*#f76070*/
+   
 
         //ADDED LOCATION STUFF
         self.locationTracker = [[LocationTracker alloc]init];
@@ -41,7 +43,15 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:NO];
-    [self.navigationController.navigationBar setHidden:NO];
+    [self.navigationController.navigationBar setHidden:YES];
+    //set the bar to red background
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:0.929 green:0.243 blue:0.31 alpha:1]]; /*#f76070*/
+    [self.navigationController.navigationBar setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+                                                                      [UIColor whiteColor], NSForegroundColorAttributeName,nil]];
+    //sets the back button to white
+    [self.navigationItem.backBarButtonItem setBackgroundImage:[UIImage imageNamed:@"backbtn.ico"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    //make back button white
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
 
 }
 

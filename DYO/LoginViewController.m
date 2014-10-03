@@ -24,8 +24,12 @@
     self.emailField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     
     //if a user exists...
+    //Nav Bar customization
+    //http://www.appcoda.com/customize-navigation-status-bar-ios-7/
     
-    
+    //set the background color *Global*
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:0.929 green:0.243 blue:0.31 alpha:1]]; /*#f76070*/
+        
 
 }
 
