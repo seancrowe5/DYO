@@ -45,6 +45,10 @@
 	<string></string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>I have learned more on stack overflow than anything else</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>GothaMed.ttf</string>
+	</array>
 	<key>LSApplicationCategoryType</key>
 	<false/>
 </dict>

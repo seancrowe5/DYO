@@ -10,6 +10,7 @@
 		13B79FEAA765435B8E396DCE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 85030C987AB74296A9C9B94F /* libPods.a */; };
 		210478CE19B8BFD0007DE573 /* SetupProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 210478CD19B8BFD0007DE573 /* SetupProfileViewController.m */; };
 		210478D119B8EAAF007DE573 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 210478D019B8EAAF007DE573 /* SearchViewController.m */; };
+		2108C9D619E2F5ED0013572B /* GothaMed.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2108C9D519E2F5ED0013572B /* GothaMed.ttf */; };
 		210FE46819D8917200BBDF77 /* AvailableChatsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 210FE46719D8917200BBDF77 /* AvailableChatsTableViewController.m */; };
 		212E9CEC19B92BA8004E013E /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 212E9CEB19B92BA8004E013E /* ProfileViewController.m */; };
 		212F21DB19B757120045E351 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 212F21DA19B757120045E351 /* Logo.png */; };
@@ -64,6 +65,7 @@
 		210478CD19B8BFD0007DE573 /* SetupProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetupProfileViewController.m; sourceTree = "<group>"; };
 		210478CF19B8EAAF007DE573 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		210478D019B8EAAF007DE573 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		2108C9D519E2F5ED0013572B /* GothaMed.ttf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GothaMed.ttf; sourceTree = "<group>"; };
 		210FE46619D8917200BBDF77 /* AvailableChatsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AvailableChatsTableViewController.h; path = DYO/AvailableChatsTableViewController.h; sourceTree = "<group>"; };
 		210FE46719D8917200BBDF77 /* AvailableChatsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AvailableChatsTableViewController.m; path = DYO/AvailableChatsTableViewController.m; sourceTree = "<group>"; };
 		2116346419CA20AE0016AFB3 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../../Downloads/parse-library/Bolts.framework"; sourceTree = "<group>"; };
@@ -162,6 +164,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2108C9D419E2F3AA0013572B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2108C9D519E2F5ED0013572B /* GothaMed.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		211DCCB719C370AE00847830 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,6 +244,7 @@
 		212F21D919B757050045E351 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				2108C9D419E2F3AA0013572B /* Fonts */,
 				2164027919DE4DD900638BD9 /* backbtn.ico */,
 				2164027719DE345F00638BD9 /* profilePlaceholder.png */,
 				217A6B3319DC9878009D22C9 /* camera.ico */,
@@ -456,6 +467,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2164027A19DE4DD900638BD9 /* backbtn.ico in Resources */,
+				2108C9D619E2F5ED0013572B /* GothaMed.ttf in Resources */,
 				217A6B3419DC9878009D22C9 /* camera.ico in Resources */,
 				212F21DB19B757120045E351 /* Logo.png in Resources */,
 				21CFF76019B62D92001D5088 /* MainStoryboard.storyboard in Resources */,

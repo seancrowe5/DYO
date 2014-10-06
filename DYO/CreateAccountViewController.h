@@ -10,7 +10,7 @@
 #import <Parse/Parse.h>
 
 
-@interface CreateAccountViewController : UIViewController
+@interface CreateAccountViewController : UIViewController <UITextFieldDelegate>
 @property (strong, nonatomic) IBOutlet UITextField *emailField;
 @property (strong, nonatomic) IBOutlet UITextField *passField;
 @property (strong, nonatomic) IBOutlet UITextField *secondPassField;

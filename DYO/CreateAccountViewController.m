@@ -37,6 +37,7 @@
     // I get rid of the back button text
     self.navigationController.navigationBar.topItem.title = @"";
     
+    
     // When the view loads, the keyboard selects this and pops up
     [self.emailField becomeFirstResponder];
     
