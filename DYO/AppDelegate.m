@@ -36,6 +36,16 @@
         
             }
     
+    //sets the font and size of the back button
+    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil]
+     setTitleTextAttributes:
+     @{NSForegroundColorAttributeName:[UIColor whiteColor],
+       NSFontAttributeName: [UIFont fontWithName:@"Montserrat-Bold" size:17.0f]
+       }
+     forState:UIControlStateNormal];
+    
+    
+    
        return YES;
 }
 

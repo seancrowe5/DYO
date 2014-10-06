@@ -17,9 +17,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    UINavigationBar *navBar = self.navigationController.navigationBar;
+    [navBar setHidden:NO];
+    [navBar setTitleTextAttributes: @{
+                                      NSForegroundColorAttributeName: [UIColor whiteColor],
+                                      NSFontAttributeName: [UIFont fontWithName:@"Montserrat-Regular" size:17.0f],
+                                      }];
     
-    // I will make the top navigation bar appear
-    [self.navigationController.navigationBar setHidden:NO];
+    navBar.tintColor =[UIColor whiteColor]; //back button color
+    navBar.backgroundColor = [UIColor colorWithRed:0.929 green:0.243 blue:0.31 alpha:1]; /*#f76070*/
 }
 
 

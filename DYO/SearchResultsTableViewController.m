@@ -19,21 +19,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //make sure nav shows
-    [self.navigationController.navigationBar setHidden:NO];
-    //set the bar to red background
-    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:0.929 green:0.243 blue:0.31 alpha:1]]; /*#f76070*/
-    //set the style of the text for the title
-    [self.navigationController.navigationBar setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
-                                                                      [UIColor whiteColor], NSForegroundColorAttributeName,nil]];
-    //sets the back button to white
-    [self.navigationItem.backBarButtonItem setBackgroundImage:[UIImage imageNamed:@"backbtn.ico"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    //make back button white
-    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     
-    
-   
-
     //initialize the property userSearchResults
     self.userSearchResults = [NSMutableArray array];
     
@@ -92,6 +78,16 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:NO];
     [self.navigationController.navigationBar setHidden:NO];
+    UINavigationBar *navBar = self.navigationController.navigationBar;
+    [navBar setHidden:NO];
+    [navBar setTitleTextAttributes: @{
+                                      NSForegroundColorAttributeName: [UIColor whiteColor],
+                                      NSFontAttributeName: [UIFont fontWithName:@"Montserrat-Regular" size:17.0f],
+                                      }];
+    
+    navBar.tintColor =[UIColor whiteColor]; //back button color
+    navBar.backgroundColor = [UIColor colorWithRed:0.929 green:0.243 blue:0.31 alpha:1]; /*#f76070*/
+   
 
 }
 
@@ -159,6 +155,7 @@
         matchVC.delegate = self;
         matchVC.isFirstMessage = true;
     }
+    
 
 }
 

@@ -47,7 +47,8 @@
 	<string>I have learned more on stack overflow than anything else</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>GothaMed.ttf</string>
+		<string>Montserrat-Regular.ttf</string>
+		<string>Montserrat-Bold.ttf</string>
 	</array>
 	<key>LSApplicationCategoryType</key>
 	<false/>

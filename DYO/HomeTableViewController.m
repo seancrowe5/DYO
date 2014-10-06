@@ -18,17 +18,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-for (NSString* family in [UIFont familyNames])
-    {
-        NSLog(@"%@", family);
-        
-        for (NSString* name in [UIFont fontNamesForFamilyName: family])
-        {
-            NSLog(@"  %@", name);
-        }
-    }
-    
     [self.navigationController.navigationBar setHidden:YES];
     //set the bar to red background
     [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:0.929 green:0.243 blue:0.31 alpha:1]]; /*#f76070*/

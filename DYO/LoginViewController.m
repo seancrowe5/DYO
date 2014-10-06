@@ -28,8 +28,17 @@
     //http://www.appcoda.com/customize-navigation-status-bar-ios-7/
     
     //set the background color *Global*
-    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:0.929 green:0.243 blue:0.31 alpha:1]]; /*#f76070*/
-        
+    UINavigationBar *navBar = self.navigationController.navigationBar;
+   
+    [navBar setTitleTextAttributes: @{
+                                      NSForegroundColorAttributeName: [UIColor whiteColor],
+                                      NSFontAttributeName: [UIFont fontWithName:@"Montserrat-Regular" size:17.0f],
+                                      }];
+    
+    navBar.tintColor =[UIColor whiteColor]; //back button color
+    navBar.backgroundColor = [UIColor colorWithRed:0.929 green:0.243 blue:0.31 alpha:1]; /*#f76070*/
+    
+    
 
 }
 
@@ -38,14 +47,7 @@
     
     // I will hide the top navigation bar
     [self.navigationController.navigationBar setHidden:YES];
-    //[self.navigationController setNavigationBarHidden:YES animated:NO];
-    
-    /*
-    UIColor *color = [UIColor darkTextColor];
-    self.passwordField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Password" attributes:@{NSForegroundColorAttributeName: color}];
-    
-    self.emailField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Email Address" attributes:@{NSForegroundColorAttributeName: color}];  */
-
+   
     if([PFUser currentUser]){
         //then we will segue to the home screen
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];

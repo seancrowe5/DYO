@@ -10,7 +10,6 @@
 		13B79FEAA765435B8E396DCE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 85030C987AB74296A9C9B94F /* libPods.a */; };
 		210478CE19B8BFD0007DE573 /* SetupProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 210478CD19B8BFD0007DE573 /* SetupProfileViewController.m */; };
 		210478D119B8EAAF007DE573 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 210478D019B8EAAF007DE573 /* SearchViewController.m */; };
-		2108C9D619E2F5ED0013572B /* GothaMed.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2108C9D519E2F5ED0013572B /* GothaMed.ttf */; };
 		2108C9D819E304CF0013572B /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2108C9D719E304CF0013572B /* Logo.png */; };
 		210FE46819D8917200BBDF77 /* AvailableChatsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 210FE46719D8917200BBDF77 /* AvailableChatsTableViewController.m */; };
 		212E9CEC19B92BA8004E013E /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 212E9CEB19B92BA8004E013E /* ProfileViewController.m */; };
@@ -19,6 +18,8 @@
 		214E133519C29D5100D61FB3 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 214E133419C29D5100D61FB3 /* User.m */; };
 		214E133819C29FAC00D61FB3 /* SearchResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 214E133719C29FAC00D61FB3 /* SearchResultsTableViewController.m */; };
 		214E133B19C2A4F200D61FB3 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 214E133A19C2A4F200D61FB3 /* TableViewCell.m */; };
+		216092A719E322D2000718C2 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 216092A519E322D2000718C2 /* Montserrat-Bold.ttf */; };
+		216092A819E322D2000718C2 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 216092A619E322D2000718C2 /* Montserrat-Regular.ttf */; };
 		2164027619DC9F2000638BD9 /* AvailableChatsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2164027519DC9F2000638BD9 /* AvailableChatsTableViewCell.m */; };
 		2164027819DE345F00638BD9 /* profilePlaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 2164027719DE345F00638BD9 /* profilePlaceholder.png */; };
 		2164027A19DE4DD900638BD9 /* backbtn.ico in Resources */ = {isa = PBXBuildFile; fileRef = 2164027919DE4DD900638BD9 /* backbtn.ico */; };
@@ -65,7 +66,6 @@
 		210478CD19B8BFD0007DE573 /* SetupProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetupProfileViewController.m; sourceTree = "<group>"; };
 		210478CF19B8EAAF007DE573 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		210478D019B8EAAF007DE573 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
-		2108C9D519E2F5ED0013572B /* GothaMed.ttf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GothaMed.ttf; sourceTree = "<group>"; };
 		2108C9D719E304CF0013572B /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
 		210FE46619D8917200BBDF77 /* AvailableChatsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AvailableChatsTableViewController.h; path = DYO/AvailableChatsTableViewController.h; sourceTree = "<group>"; };
 		210FE46719D8917200BBDF77 /* AvailableChatsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AvailableChatsTableViewController.m; path = DYO/AvailableChatsTableViewController.m; sourceTree = "<group>"; };
@@ -83,6 +83,8 @@
 		214E133719C29FAC00D61FB3 /* SearchResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultsTableViewController.m; sourceTree = "<group>"; };
 		214E133919C2A4F200D61FB3 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		214E133A19C2A4F200D61FB3 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		216092A519E322D2000718C2 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		216092A619E322D2000718C2 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		2164027419DC9F2000638BD9 /* AvailableChatsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvailableChatsTableViewCell.h; sourceTree = "<group>"; };
 		2164027519DC9F2000638BD9 /* AvailableChatsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvailableChatsTableViewCell.m; sourceTree = "<group>"; };
 		2164027719DE345F00638BD9 /* profilePlaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profilePlaceholder.png; sourceTree = "<group>"; };
@@ -167,7 +169,8 @@
 		2108C9D419E2F3AA0013572B /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				2108C9D519E2F5ED0013572B /* GothaMed.ttf */,
+				216092A519E322D2000718C2 /* Montserrat-Bold.ttf */,
+				216092A619E322D2000718C2 /* Montserrat-Regular.ttf */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
@@ -466,11 +469,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				216092A819E322D2000718C2 /* Montserrat-Regular.ttf in Resources */,
 				2164027A19DE4DD900638BD9 /* backbtn.ico in Resources */,
-				2108C9D619E2F5ED0013572B /* GothaMed.ttf in Resources */,
 				217A6B3419DC9878009D22C9 /* camera.ico in Resources */,
 				21CFF76019B62D92001D5088 /* MainStoryboard.storyboard in Resources */,
 				2108C9D819E304CF0013572B /* Logo.png in Resources */,
+				216092A719E322D2000718C2 /* Montserrat-Bold.ttf in Resources */,
 				2164027819DE345F00638BD9 /* profilePlaceholder.png in Resources */,
 				21CFF73519B620A4001D5088 /* InfoPlist.strings in Resources */,
 				21CFF73D19B620A4001D5088 /* Images.xcassets in Resources */,
