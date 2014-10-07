@@ -36,7 +36,7 @@
                                       }];
     
     navBar.tintColor =[UIColor whiteColor]; //back button color
-    navBar.backgroundColor = [UIColor colorWithRed:0.929 green:0.243 blue:0.31 alpha:1]; /*#f76070*/
+    navBar.backgroundColor = [UIColor colorWithRed:241.0/255.0 green:106.0/255.0 blue:108.0/255.0 alpha:1];
     
     
 

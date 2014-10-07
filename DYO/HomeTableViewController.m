@@ -20,7 +20,7 @@
     [super viewDidLoad];
     [self.navigationController.navigationBar setHidden:YES];
     //set the bar to red background
-    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:0.929 green:0.243 blue:0.31 alpha:1]]; /*#f76070*/
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:241.0/255.0 green:106.0/255.0 blue:108.0/255.0 alpha:1]]; /*#f76070*/
    
 
         //ADDED LOCATION STUFF
@@ -45,7 +45,7 @@
     [super viewWillAppear:NO];
     [self.navigationController.navigationBar setHidden:YES];
     //set the bar to red background
-    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:0.929 green:0.243 blue:0.31 alpha:1]]; /*#f76070*/
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:241.0/255.0 green:106.0/255.0 blue:108.0/255.0 alpha:1]]; /*#f76070*/
     [self.navigationController.navigationBar setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
                                                                       [UIColor whiteColor], NSForegroundColorAttributeName,nil]];
     //sets the back button to white

@@ -51,8 +51,8 @@
     
     self.sender = [PFUser currentUser].objectId;
     
-    self.outgoingBubbleImageView = [JSQMessagesBubbleImageFactory outgoingMessageBubbleImageViewWithColor:[UIColor jsq_messageBubbleLightGrayColor]];
-    self.incomingBubbleImageView = [JSQMessagesBubbleImageFactory incomingMessageBubbleImageViewWithColor:[UIColor jsq_messageBubbleGreenColor]];
+    self.outgoingBubbleImageView = [JSQMessagesBubbleImageFactory outgoingMessageBubbleImageViewWithColor:[UIColor colorWithRed:241.0/255.0 green:106.0/255.0 blue:108.0/255.0 alpha:1]];
+    self.incomingBubbleImageView = [JSQMessagesBubbleImageFactory incomingMessageBubbleImageViewWithColor:[UIColor colorWithRed:90.0/255.0 green:196.0/255.0 blue:190.0/255.0 alpha:1]];
     
     self.initialLoadNum = 5;
     self.numberMessageToLoad =self.initialLoadNum;
@@ -90,7 +90,7 @@
     //make sure nav shows
     [self.navigationController.navigationBar setHidden:NO];
     //set the bar to red background
-    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:0.929 green:0.243 blue:0.31 alpha:1]]; /*#f76070*/
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:241.0/255.0 green:106.0/255.0 blue:108.0/255.0 alpha:1]]; /*#f76070*/
     //set the style of the text for the title
     [self.navigationController.navigationBar setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
                                                                       [UIColor whiteColor], NSForegroundColorAttributeName,nil]];
@@ -210,17 +210,33 @@
         [self.navigationController popViewControllerAnimated:YES];
     }
     
+    
+    // Associate the device with a user
+    PFInstallation *installation = [PFInstallation currentInstallation];
+    installation[@"user"] = self.currentUser;
+    [installation saveInBackground];
+    
+    // Create our Installation query
+    PFQuery *pushQuery = [PFInstallation query];
+    [pushQuery whereKey:@"user" equalTo:self.withUser];
+    
+    // Send push notification to query
+    PFPush *push = [[PFPush alloc] init];
+    [push setQuery:pushQuery]; // Set our Installation query
+    [push setMessage:object[@"text"]];
+    [push sendPushInBackground];
+    
   //Push notification test
     // When users indicate they are Giants fans, we subscribe them to that channel.
-    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
-    [currentInstallation addUniqueObject:self.withUser.objectId forKey:@"channels"];
-    [currentInstallation saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        PFPush *push = [[PFPush alloc] init];
-        [push setChannel:self.withUser.objectId];
-        [push setMessage:object[@"text"]];
-        [push sendPushInBackground];
-    }];
-    
+//    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+//    [currentInstallation addUniqueObject:self.withUser.objectId forKey:@"channels"];
+//    [currentInstallation saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+//        PFPush *push = [[PFPush alloc] init];
+//        [push setChannel:self.withUser.objectId];
+//        [push setMessage:object[@"text"]];
+//        [push sendPushInBackground];
+//    }];
+//    
    
     
 }
@@ -367,7 +383,7 @@
     JSQMessage *message = [self.messages objectAtIndex:indexPath.item];
     if ([message.sender isEqualToString:self.sender])
     {
-        cell.textView.textColor = [UIColor blackColor];
+        cell.textView.textColor = [UIColor whiteColor];
     }
     else
     {

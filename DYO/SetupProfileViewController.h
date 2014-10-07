@@ -19,6 +19,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *jobField;
 @property (strong, nonatomic) IBOutlet UITextField *companyField;
 @property (strong, nonatomic) IBOutlet UITextField *educationField;
+
 @property (strong, nonatomic) UITableView  *autocompleteTableView;
 @property (nonatomic,strong) UIImagePickerController *imagePicker;
 @property (strong, nonatomic) IBOutlet UITextField *areaOfStudyField;

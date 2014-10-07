@@ -41,6 +41,8 @@ int count;
     self.companyField.text = [NSString stringWithFormat:@"%@",[user valueForKey:@"company"]];       //company
     self.educationField.text = [NSString stringWithFormat:@"%@",[user valueForKey:@"education"]];   //education
     self.industryField.text = [NSString stringWithFormat:@"%@",[user valueForKey:@"education"]];   //industry
+    self.areaOfStudyField.text = [NSString stringWithFormat:@"%@",[user valueForKey:@"areaOfStudy"]];   //industry
+
 
 }
 
@@ -61,6 +63,7 @@ int count;
     [self.companyField resignFirstResponder];
     [self.educationField resignFirstResponder];
     [self.industryField resignFirstResponder];
+    [self.areaOfStudyField resignFirstResponder];
 }
 
 -(void)areFieldsSelectable:(BOOL)makeSelectable{
@@ -253,6 +256,7 @@ int count;
         self.companyField.borderStyle = UITextBorderStyleNone;
         self.educationField.borderStyle = UITextBorderStyleNone;
         self.industryField.borderStyle = UITextBorderStyleNone;
+        self.areaOfStudyField.borderStyle = UITextBorderStyleNone;
 
         //take the new values from fields and put them in variables
         NSString *firstName = [self.firstNameField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -261,6 +265,7 @@ int count;
         NSString *company = [self.companyField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         NSString *education = [self.educationField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         NSString *industry = [self.educationField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        NSString *areaOfStudy = [self.areaOfStudyField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 
         //add new info to parse for the current user
         PFUser *user = [PFUser currentUser];
@@ -270,6 +275,7 @@ int count;
         user[@"company"] = company;
         user[@"education"] = education;
         user[@"industry"] = industry;
+        user[@"areaOfStudy"] = areaOfStudy;
         
         //save to parse in background
         [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
@@ -303,7 +309,8 @@ int count;
         self.companyField.borderStyle = UITextBorderStyleRoundedRect;
         self.educationField.borderStyle = UITextBorderStyleRoundedRect;
         self.industryField.borderStyle = UITextBorderStyleRoundedRect;
-        
+        self.areaOfStudyField.borderStyle = UITextBorderStyleRoundedRect;
+
         //allow the selection on thefield
         [self areFieldsSelectable:YES];
         

@@ -18,6 +18,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *companyField;
 @property (strong, nonatomic) IBOutlet UITextField *educationField;
 @property (strong, nonatomic) IBOutlet UITextField *industryField;
+@property (strong, nonatomic) IBOutlet UITextField *areaOfStudyField;
 
 @property (nonatomic,strong) UIImagePickerController *imagePicker;
 @property (nonatomic, strong) UIImage *image;
