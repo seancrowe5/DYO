@@ -21,7 +21,7 @@
     // Do any additional setup after loading the view.
     
     // I make the navigation bar appear
-    [self.navigationController.navigationBar setHidden:NO];
+    [self.navigationController.navigationBar setHidden:YES];
     //[self.navigationController setNavigationBarHidden:NO animated:NO];
 
     

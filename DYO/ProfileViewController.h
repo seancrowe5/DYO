@@ -12,8 +12,7 @@
 @interface ProfileViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>
 
 //text fields
-@property (strong, nonatomic) IBOutlet UITextField *firstNameField;
-@property (strong, nonatomic) IBOutlet UITextField *lastNameField;
+@property (strong, nonatomic) IBOutlet UITextField *nameField;
 @property (strong, nonatomic) IBOutlet UITextField *jobField;
 @property (strong, nonatomic) IBOutlet UITextField *companyField;
 @property (strong, nonatomic) IBOutlet UITextField *educationField;
@@ -23,9 +22,10 @@
 @property (nonatomic,strong) UIImagePickerController *imagePicker;
 @property (nonatomic, strong) UIImage *image;
 
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *editButton;
 @property (strong, nonatomic) IBOutlet UITextField *placeholderField;
+@property (strong, nonatomic) IBOutlet UIButton *editButton;
 @property (strong, nonatomic) IBOutlet UIImageView *profileImage;
 - (IBAction)changePhoto:(id)sender;
-- (IBAction)editProfile:(id)sender;
+- (IBAction)logout:(id)sender;
+- (IBAction)editProfileButton:(id)sender;
 @end

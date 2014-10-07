@@ -103,6 +103,7 @@
     NSString *company = [self.companyField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *education = [self.educationField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *study = [self.areaOfStudyField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *industry = [self.industryField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
     
     //validation check to see if the first three fields have something in them
@@ -128,6 +129,8 @@
         user[@"company"] = company;
         user[@"education"] = education;
         user[@"areaOfStudy"] = study;
+        user[@"industry"] = industry;
+
         [self uploadMessage];
         
         //save to parse in background
@@ -327,6 +330,12 @@
     }
     if ([self.educationField isFirstResponder] && [touch view] != self.educationField) {
         [self.educationField resignFirstResponder];
+    }
+    if ([self.areaOfStudyField isFirstResponder] && [touch view] != self.areaOfStudyField) {
+        [self.areaOfStudyField resignFirstResponder];
+    }
+    if ([self.industryField isFirstResponder] && [touch view] != self.industryField) {
+        [self.industryField resignFirstResponder];
     }
     [super touchesBegan:touches withEvent:event];
 }

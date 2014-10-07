@@ -35,6 +35,25 @@
                                        selector:@selector(updateLocation)
                                        userInfo:nil
                                         repeats:YES];
+    
+    
+    UIView *backgroundSelectedCell = [[UIView alloc] init];
+    [backgroundSelectedCell setBackgroundColor:[UIColor colorWithRed:241.0/255.0 green:106.0/255.0 blue:108.0/255.0 alpha:1]];
+    
+    for (int section = 0; section < [self.tableView numberOfSections]; section++)
+        for (int row = 0; row < [self.tableView numberOfRowsInSection:section]; row++)
+        {
+            NSIndexPath* cellPath = [NSIndexPath indexPathForRow:row inSection:section];
+            UITableViewCell* cell = [self.tableView cellForRowAtIndexPath:cellPath];
+            cell.textLabel.highlightedTextColor = [UIColor whiteColor];
+            
+            
+            
+            [cell setSelectedBackgroundView:backgroundSelectedCell];
+        }
+   
+    
+    
         
         //END LOCATION CODE
  
@@ -62,17 +81,6 @@
 
 #pragma mark - Table view data source
 
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
 
 /*
 // Override to support conditional editing of the table view.

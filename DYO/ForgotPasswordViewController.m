@@ -23,6 +23,16 @@
     //[self.navigationController setNavigationBarHidden:NO animated:NO];
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:241.0/255.0 green:106.0/255.0 blue:108.0/255.0 alpha:1]]; /*#f76070*/
+    [self.navigationController.navigationBar setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+                                                                      [UIColor whiteColor], NSForegroundColorAttributeName,nil]];
+    //sets the back button to white
+    [self.navigationItem.backBarButtonItem setBackgroundImage:[UIImage imageNamed:@"backbtn.ico"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    //make back button white
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+}
+
 - (IBAction)submit:(id)sender {
     //get email and put in variable
     NSString *email = [self.passwordField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
