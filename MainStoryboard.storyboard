@@ -1073,6 +1073,11 @@
                                             <action selector="textFieldReturn:" destination="JUm-PW-Dcs" eventType="editingDidEndOnExit" id="JfI-sk-G0c"/>
                                         </connections>
                                     </textField>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" id="cBs-ub-F5U">
+                                        <rect key="frame" x="258" y="490" width="20" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="size" keyPath="contentSize">
@@ -1087,6 +1092,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="700"/>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="cBs-ub-F5U" id="bSb-fV-cka"/>
                         <outlet property="areaOfStudyField" destination="tK7-fU-b1H" id="VBX-oF-h2Y"/>
                         <outlet property="companyField" destination="0fB-z8-3Qj" id="1H3-4Q-8vs"/>
                         <outlet property="educationField" destination="PL3-Da-Y5g" id="d6Q-IS-7HY"/>
@@ -1095,6 +1101,7 @@
                         <outlet property="jobField" destination="QRK-ui-3i0" id="PE1-qR-kx2"/>
                         <outlet property="lastNameField" destination="KVW-O1-dPR" id="fZ9-XJ-ehE"/>
                         <outlet property="profileImage" destination="VF7-99-R7V" id="JRx-ns-p6y"/>
+                        <outlet property="submitButton" destination="U42-dm-RcA" id="IQk-QM-1tH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JUm-PW-Dcs" userLabel="First Responder" sceneMemberID="firstResponder"/>

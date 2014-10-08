@@ -27,13 +27,21 @@ int count;
     //display profile image from parse
     PFUser *user = [PFUser currentUser];
     PFFile *userImageFile = user[@"photo"];
-    [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
-        if (!error) {
-            UIImage *image = [UIImage imageWithData:imageData];
-            [self.profileImage setImage:image];
-        }
-    }];
-
+    //if there is data for the photo...
+    if(userImageFile){
+        //go to parse and get the image
+        [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+            if (!error) {
+                UIImage *image = [UIImage imageWithData:imageData];
+                [self.profileImage setImage:image];
+                NSLog(@"image: %@",imageData);
+            }
+        }];
+    }
+    else{
+        self.profileImage.image = [UIImage imageNamed:@"profilePlaceholder.png"];
+    }
+    
     //Display the info from parse
     self.nameField.text = [NSString stringWithFormat:@"%@ %@",[user valueForKey:@"firstName"], [user valueForKey:@"lastName"]];
     self.jobField.text = [NSString stringWithFormat:@"%@",[user valueForKey:@"jobTitle"]];          //job title
@@ -42,6 +50,8 @@ int count;
     self.industryField.text = [NSString stringWithFormat:@"%@",[user valueForKey:@"education"]];   //industry
     self.areaOfStudyField.text = [NSString stringWithFormat:@"%@",[user valueForKey:@"areaOfStudy"]];   //industry
 
+   
+    
 
 }
 

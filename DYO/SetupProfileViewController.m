@@ -26,61 +26,24 @@
     //Set profile image to a placeholder image so the initial launch shows something
     
     self.profileImage.image = [UIImage imageNamed:@"profilePlaceholder.png"];
+    self.didUploadPhoto = NO;
+//    self.picker.dataSource = self;
+//    self.picker.delegate = self;
+//    
+//    //PLIST STUFF
+//    NSString *path = [[NSBundle mainBundle] pathForResource:
+//                      @"dyoData" ofType:@"plist"];
+//    NSMutableDictionary *myDataDictionary = [[NSMutableDictionary alloc] initWithContentsOfFile:path];
+//    NSLog(@"MyDict:%@",[myDataDictionary description]);
+//    
     
-    //autocomplete thing
-    //missing cell for row at index path
-    //here is the tutorial
-    //http://www.raywenderlich.com/336/auto-complete-tutorial-for-ios-how-to-auto-complete-with-custom-values
+    ////    NSArray *models = [[[data filteredArrayUsingPredicate:[NSPredicate
+    //                            predicateWithFormat:@"name = %@", @"Ford"]] objectAtIndex:0]
+    //                            valueForKey:@"models"]);
     
-//    self.autocompleteTableView = [[UITableView alloc] initWithFrame:
-//                             CGRectMake(0, 80, 320, 120) style:UITableViewStylePlain];
-//    self.autocompleteTableView.delegate = self;
-//    self.autocompleteTableView.dataSource = self;
-//    self.autocompleteTableView.scrollEnabled = YES;
-//    self.autocompleteTableView.hidden = YES;
-//    [self.view addSubview:self.autocompleteTableView];
     
 }
 
-//- (BOOL)textField:(UITextField *)textField
-//shouldChangeCharactersInRange:(NSRange)range
-//replacementString:(NSString *)string {
-//    self.autocompleteTableView.hidden = NO;
-//    
-//    NSString *substring = [NSString stringWithString:textField.text];
-//    substring = [substring
-//                 stringByReplacingCharactersInRange:range withString:string];
-//    [self searchAutocompleteEntriesWithSubstring:substring];
-//    return YES;
-//}
-//
-//- (void)searchAutocompleteEntriesWithSubstring:(NSString *)substring {
-//    
-//    // Put anything that starts with this substring into the autocompleteUrls array
-//    // The items in this array is what will show up in the table view
-//    NSMutableArray *pastUrls = [[NSMutableArray alloc]init];
-//    NSMutableArray *autocompleteUrls = [[NSMutableArray alloc] initWithObjects:@"hello",@"helllllllish", nil];
-//    [autocompleteUrls removeAllObjects];
-//    for(NSString *curString in pastUrls) {
-//        NSRange substringRange = [curString rangeOfString:substring];
-//        if (substringRange.location == 0) {
-//            [autocompleteUrls addObject:curString];
-//        }
-//    }
-//    
-//    [self.autocompleteTableView reloadData];
-//}
-//
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-//{
-//    return 1;
-//}
-//
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-//{
-//    // Return the number of rows in the section.
-//    return 10;
-//}
 
 #pragma Mark - Image
 
@@ -96,6 +59,10 @@
 }
 
 - (IBAction)finishButtonPressed:(id)sender {
+    self.submitButton.enabled = NO;
+    [self.activityIndicatorView startAnimating];
+
+
     //on submit get all data and put in variables
     NSString *firstName = [self.firstNameField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *lastName = [self.lastNameField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -116,6 +83,7 @@
                                                   otherButtonTitles:nil, nil];
         
         [alertView show];
+        self.submitButton.enabled = YES;
     }
     else{
         
@@ -130,14 +98,21 @@
         user[@"education"] = education;
         user[@"areaOfStudy"] = study;
         user[@"industry"] = industry;
-
-        [self uploadMessage];
+        
+        
+        if(self.didUploadPhoto == YES){
+            //the user uploaded his own photo
+            NSLog(@"User uploaded his photo");
+            [self uploadMessage];
+        }
+       
         
         //save to parse in background
         [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if(error){
                 UIAlertView *alertView = [[UIAlertView alloc ] initWithTitle:@"Sorry" message:[error.userInfo objectForKey:@"error"] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                 [alertView show];
+                self.submitButton.enabled = YES;
             }
             else{
                 //Success! Go to home screen
@@ -147,8 +122,7 @@
                 [self.navigationController pushViewController:obj animated:YES];
             }
         }];
-    }
-    
+}
     
     //Location Services: set params and show alert to user
     self.locationManager=[[CLLocationManager alloc] init];
@@ -223,7 +197,8 @@
     image = UIGraphicsGetImageFromCurrentImageContext();
     
     UIGraphicsEndImageContext();
-    
+    self.didUploadPhoto = YES;
+
     return image;
 }
 
@@ -338,5 +313,32 @@
         [self.industryField resignFirstResponder];
     }
     [super touchesBegan:touches withEvent:event];
+
 }
+
+// The number of columns of data
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
+
+// The number of rows of data
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    return self.industry.count;
+}
+
+// The data to return for the row and component (column) that's being passed in
+- (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    return self.industry[row];
+}
+
+// Catpure the picker view selection
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    // This method is triggered whenever the user makes a change to the picker selection.
+    // The parameter named row and component represents what was selected.
+}
+
 @end
