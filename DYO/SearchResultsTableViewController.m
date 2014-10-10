@@ -41,34 +41,16 @@
         user.userID = [usersArray valueForKey:@"objectId"];
         
         PFFile *userImageFile = [usersArray valueForKey:@"photo"]; //declare a Parse file datatype obect and store the file
-        NSData *imageData = [userImageFile getData];            //put image in NSData object
-        UIImage *image = [UIImage imageWithData:imageData];     //take data and put in UIimage so we can use it
-        user.profileImage = image;                              //sets profile pic in user class
+        if(userImageFile){
+            //go to parse and get the image
+            NSData *imageData = [userImageFile getData];
+            UIImage *image = [UIImage imageWithData:imageData];
+            user.profileImage = image;
+        }
+        else{
+            user.profileImage = [UIImage imageNamed:@"profilePlaceholder.png"];
+        }
         
-        
-        
-//        [userImageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-//            if(!error){
-//                UIImage *image = [UIImage imageWithData:data];
-//                user.profileImage = image;
-//            }
-//            
-//        }];
-        
-       // NSData *imageData = [userImageFile getData];               //convert the image to NSData object type so that we can
-                 //put it in a UIImage object to allow us to use it
-                                           //set the user profile image property with the UIImage
-        
-        //commented out background process
-//        [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
-//            if (!error) {
-//                UIImage *image = [UIImage imageWithData:imageData];
-//                user.profileImage = image;
-//                
-//            }
-//        }];
-        
-    
         //add to local mutable array
         [self.userSearchResults addObject:user];
     }

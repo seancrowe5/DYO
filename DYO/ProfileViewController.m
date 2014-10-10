@@ -13,6 +13,7 @@
 -(void)areFieldsSelectable:(BOOL)makeSelectable;
 -(void)savePhoto;
 
+
 @end
 
 @implementation ProfileViewController
@@ -47,7 +48,7 @@ int count;
     self.jobField.text = [NSString stringWithFormat:@"%@",[user valueForKey:@"jobTitle"]];          //job title
     self.companyField.text = [NSString stringWithFormat:@"%@",[user valueForKey:@"company"]];       //company
     self.educationField.text = [NSString stringWithFormat:@"%@",[user valueForKey:@"education"]];   //education
-    self.industryField.text = [NSString stringWithFormat:@"%@",[user valueForKey:@"education"]];   //industry
+    self.industryField.text = [NSString stringWithFormat:@"%@",[user valueForKey:@"industry"]];   //industry
     self.areaOfStudyField.text = [NSString stringWithFormat:@"%@",[user valueForKey:@"areaOfStudy"]];   //industry
 
    
@@ -79,13 +80,33 @@ int count;
         self.companyField.enabled = YES;
         self.educationField.enabled = YES;
         self.industryField.enabled = YES;
+        self.backgroundColor = [UIColor colorWithRed:220.0/255.0 green:220.0/255.0 blue:220.0/255.0 alpha:1];
     }
     else{
         self.jobField.enabled = NO;
         self.companyField.enabled = NO;
         self.educationField.enabled = NO;
         self.industryField.enabled = NO;
+        self.backgroundColor = [UIColor whiteColor];
     }
+    
+
+    self.jobField.borderStyle = UITextBorderStyleNone;
+    self.jobField.backgroundColor = self.backgroundColor;
+    self.companyField.borderStyle = UITextBorderStyleNone;
+    self.companyField.backgroundColor = self.backgroundColor;
+    self.educationField.borderStyle = UITextBorderStyleNone;
+    self.educationField.backgroundColor = self.backgroundColor;
+    self.industryField.borderStyle = UITextBorderStyleNone;
+    self.industryField.backgroundColor = self.backgroundColor;
+    self.areaOfStudyField.borderStyle = UITextBorderStyleNone;
+    self.areaOfStudyField.backgroundColor = self.backgroundColor;
+}
+
+-(void)fieldsSelectableStyle{
+    
+    
+    
 }
 
 #pragma mark - IMAGE STUFF

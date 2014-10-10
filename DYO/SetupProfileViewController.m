@@ -9,7 +9,18 @@
 #import "SetupProfileViewController.h"
 
 @interface SetupProfileViewController () <CLLocationManagerDelegate>
+{
+    NSArray *_pickerData;
+    int monthClick;
+    NSArray *industryArray;
+    UIPickerView *pktStatePicker ;
+    UIToolbar *mypickerToolbar;
 
+    NSArray *collegeArray;
+    UIPickerView *pktCollegePicker ;
+
+
+}
 @end
 
 @implementation SetupProfileViewController
@@ -27,20 +38,49 @@
     
     self.profileImage.image = [UIImage imageNamed:@"profilePlaceholder.png"];
     self.didUploadPhoto = NO;
-//    self.picker.dataSource = self;
-//    self.picker.delegate = self;
-//    
-//    //PLIST STUFF
-//    NSString *path = [[NSBundle mainBundle] pathForResource:
-//                      @"dyoData" ofType:@"plist"];
-//    NSMutableDictionary *myDataDictionary = [[NSMutableDictionary alloc] initWithContentsOfFile:path];
-//    NSLog(@"MyDict:%@",[myDataDictionary description]);
-//    
     
-    ////    NSArray *models = [[[data filteredArrayUsingPredicate:[NSPredicate
-    //                            predicateWithFormat:@"name = %@", @"Ford"]] objectAtIndex:0]
-    //                            valueForKey:@"models"]);
     
+    //get industry plist
+    NSString *path = [[NSBundle mainBundle] pathForResource:
+                      @"testing2" ofType:@"plist"];
+    // Build the array from the plist
+    NSMutableArray *array2 = [[NSMutableArray alloc] initWithContentsOfFile:path];
+    NSMutableArray *array3 = [[NSMutableArray alloc]init];
+    
+    //loop through industry stuff
+    for (NSDictionary *dict in array2) {
+        [array3 addObject:[dict objectForKey:@"Industry"]];
+    }
+    
+    //Industry Picker
+    industryArray = array3;
+    pktStatePicker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 43, 320, 480)];
+    pktStatePicker.delegate = self;
+    pktStatePicker.dataSource = self;
+    [pktStatePicker  setShowsSelectionIndicator:YES];
+    self.industryField.inputView =  pktStatePicker  ;
+    
+    
+    //college picker
+    //get industry plist
+    NSString *pathCollege = [[NSBundle mainBundle] pathForResource:
+                      @"CollegeData" ofType:@"plist"];
+    // Build the array from the plist
+    NSMutableArray *arrayCollege = [[NSMutableArray alloc] initWithContentsOfFile:pathCollege];
+    NSMutableArray *arrayCollege2 = [[NSMutableArray alloc]init];
+    
+    //loop through industry stuff
+    for (NSDictionary *dict in arrayCollege) {
+        [arrayCollege2 addObject:[dict objectForKey:@"College"]];
+    }
+    
+    //College Picker
+    collegeArray = arrayCollege2;
+    pktCollegePicker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 43, 320, 480)];
+    pktCollegePicker.delegate = self;
+    pktCollegePicker.dataSource = self;
+    [pktCollegePicker  setShowsSelectionIndicator:YES];
+    self.educationField.inputView =  pktCollegePicker  ;
     
 }
 
@@ -71,7 +111,7 @@
     NSString *education = [self.educationField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *study = [self.areaOfStudyField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *industry = [self.industryField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    
+    NSLog(@"industry field is: %@", industry);
     
     //validation check to see if the first three fields have something in them
     //its only three because the job and education may be dropdown fields
@@ -305,40 +345,66 @@
     }
     if ([self.educationField isFirstResponder] && [touch view] != self.educationField) {
         [self.educationField resignFirstResponder];
+        pktCollegePicker.hidden = YES;
     }
     if ([self.areaOfStudyField isFirstResponder] && [touch view] != self.areaOfStudyField) {
         [self.areaOfStudyField resignFirstResponder];
     }
     if ([self.industryField isFirstResponder] && [touch view] != self.industryField) {
         [self.industryField resignFirstResponder];
+        pktStatePicker.hidden = YES;
     }
     [super touchesBegan:touches withEvent:event];
 
 }
 
-// The number of columns of data
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
-{
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
     return 1;
 }
 
-// The number of rows of data
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
-{
-    return self.industry.count;
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+    
+    if([pickerView isEqual: pktStatePicker]){
+        // return the appropriate number of components, for instance
+        return [industryArray count];
+        
+    }
+    
+    if([pickerView isEqual: pktCollegePicker]){
+        // return the appropriate number of components, for instance
+        return [collegeArray count];
+    }
+    
+    return [industryArray count];
 }
 
-// The data to return for the row and component (column) that's being passed in
-- (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
-{
-    return self.industry[row];
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    
+    if([pickerView isEqual: pktStatePicker]){
+        return [industryArray objectAtIndex:row];
+    }
+    
+    if([pickerView isEqual: pktCollegePicker]){
+        return [collegeArray objectAtIndex:row];
+    }
+
+    
+    return [industryArray objectAtIndex:row];
 }
 
-// Catpure the picker view selection
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
-{
-    // This method is triggered whenever the user makes a change to the picker selection.
-    // The parameter named row and component represents what was selected.
+- (void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    
+    if([pickerView isEqual: pktStatePicker]){
+        self.industryField.text = [industryArray objectAtIndex:row];
+    }
+    
+    if([pickerView isEqual: pktCollegePicker]){
+        self.educationField.text = [collegeArray objectAtIndex:row];
+    }
+    
 }
+
 
 @end

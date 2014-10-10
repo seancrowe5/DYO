@@ -21,6 +21,8 @@
 
 @property (nonatomic,strong) UIImagePickerController *imagePicker;
 @property (nonatomic, strong) UIImage *image;
+@property (nonatomic, strong) UIColor *backgroundColor;
+
 
 @property (strong, nonatomic) IBOutlet UITextField *placeholderField;
 @property (strong, nonatomic) IBOutlet UIButton *editButton;

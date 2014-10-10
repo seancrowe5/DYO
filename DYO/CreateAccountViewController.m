@@ -51,6 +51,21 @@
     NSString *password = [self.passField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *secondPass = [self.secondPassField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
+    //logic to check password has some capitals and numbers
+    int occurrenceCapital = 0;
+    int occurenceNumbers = 0;
+    for (int i = 0; i < [password length]; i++) {
+        if([[NSCharacterSet uppercaseLetterCharacterSet] characterIsMember:[password characterAtIndex:i]])
+            occurrenceCapital++;
+        if([[NSCharacterSet decimalDigitCharacterSet] characterIsMember:[password characterAtIndex:i]])
+            occurenceNumbers++;
+    }
+    
+    NSLog(@"There are: %d capital letters", occurrenceCapital);
+    NSLog(@"There are: %d numbers", occurenceNumbers);
+
+    
+    //check if email, pas, and second pass are filled in
     if([email length] == 0 || [password length]==0 || [secondPass length]==0){
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Oops!"
                                                             message:@"Make sure you enter all fields"
@@ -59,6 +74,17 @@
                                                   otherButtonTitles:nil, nil];
         
         [alertView show];
+    }
+    else if((occurenceNumbers < 1) || (occurrenceCapital < 1) || ([password length] < 6)){
+        //show alert if password doens't contain numbers or capital letter or have enough characters
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Oops!"
+                                                            message:@"Make sure your password is at least 6 characters, has a capital letter and a number"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil, nil];
+        
+        [alertView show];
+
     }
     else if(![secondPass isEqualToString:password]){
         //if the second password doesn't match the first, then show error
