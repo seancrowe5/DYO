@@ -35,7 +35,7 @@ int count;
             if (!error) {
                 UIImage *image = [UIImage imageWithData:imageData];
                 [self.profileImage setImage:image];
-                NSLog(@"image: %@",imageData);
+                //NSLog(@"image: %@",imageData);
             }
         }];
     }

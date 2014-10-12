@@ -8,7 +8,7 @@
 
 #import "SetupProfileViewController.h"
 
-@interface SetupProfileViewController () <CLLocationManagerDelegate>
+@interface SetupProfileViewController () //<CLLocationManagerDelegate>
 {
     NSArray *_pickerData;
     int monthClick;
@@ -111,7 +111,7 @@
     NSString *education = [self.educationField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *study = [self.areaOfStudyField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *industry = [self.industryField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    NSLog(@"industry field is: %@", industry);
+    //NSLog(@"industry field is: %@", industry);
     
     //validation check to see if the first three fields have something in them
     //its only three because the job and education may be dropdown fields
@@ -142,7 +142,7 @@
         
         if(self.didUploadPhoto == YES){
             //the user uploaded his own photo
-            NSLog(@"User uploaded his photo");
+           // NSLog(@"User uploaded his photo");
             [self uploadMessage];
         }
        
@@ -164,12 +164,12 @@
         }];
 }
     
-    //Location Services: set params and show alert to user
-    self.locationManager=[[CLLocationManager alloc] init];
-    self.locationManager.delegate=self;
-    self.locationManager.desiredAccuracy=kCLLocationAccuracyNearestTenMeters;
-    self.locationManager.distanceFilter=10.0;
-    [self.locationManager startUpdatingLocation];
+//    //Location Services: set params and show alert to user
+//    self.locationManager=[[CLLocationManager alloc] init];
+//    self.locationManager.delegate=self;
+//    self.locationManager.desiredAccuracy=kCLLocationAccuracyNearestTenMeters;
+//    self.locationManager.distanceFilter=10.0;
+//    [self.locationManager startUpdatingLocation];
     
 }
 
@@ -246,10 +246,10 @@
 #pragma Mark - Submit
 
 
--(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
-    CLLocation *location = [locations lastObject];
-    NSLog(@"Your coordinates are: %f and %f", location.coordinate.latitude, location.coordinate.longitude);
-}
+//-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
+//    CLLocation *location = [locations lastObject];
+//    NSLog(@"Your coordinates are: %f and %f", location.coordinate.latitude, location.coordinate.longitude);
+//}
 
 
 #pragma Mark - Helper Methods
@@ -294,7 +294,7 @@
                 else{
                     //success
                     //[self reset];
-                    NSLog(@"hey");
+                    //NSLog(@"hey");
                     
                 }
                 

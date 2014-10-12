@@ -364,10 +364,11 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="companyLabel" destination="Xmr-eB-6st" id="jWd-3b-IuH"/>
-                                    <outlet property="educationLabel" destination="chr-yV-KJ0" id="tgT-eh-dW6"/>
-                                    <outlet property="fullNameLabel" destination="XH7-NE-2hS" id="tr0-5K-Gff"/>
-                                    <outlet property="jobTitle" destination="rnz-mE-NTk" id="rb7-gX-HSJ"/>
+                                    <outlet property="companyLabel" destination="Xmr-eB-6st" id="VMD-g1-HzK"/>
+                                    <outlet property="educationLabel" destination="chr-yV-KJ0" id="p47-Gb-wkm"/>
+                                    <outlet property="firstNameLabel" destination="XH7-NE-2hS" id="MUV-Kn-hJe"/>
+                                    <outlet property="jobTitle" destination="rnz-mE-NTk" id="drE-YL-sqc"/>
+                                    <outlet property="lastNameLabel" destination="H5q-yG-WsL" id="6pN-I8-5xg"/>
                                     <outlet property="likeBtn" destination="aFE-3d-uAm" id="n41-Ds-6oF"/>
                                     <outlet property="profileImage" destination="B8Q-ZE-2RI" id="kFN-ve-BE7"/>
                                 </connections>
@@ -460,7 +461,6 @@
                                         </state>
                                         <connections>
                                             <action selector="search:" destination="8d0-3K-wcC" eventType="touchUpInside" id="PQx-jL-kSQ"/>
-                                            <segue destination="MmB-P7-Yxk" kind="push" id="ha7-KM-jMY"/>
                                         </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Area of study" textAlignment="center" minimumFontSize="17" id="M4i-tT-Ezk">
@@ -480,7 +480,7 @@
                                 </subviews>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="size" keyPath="contentSize">
-                                        <size key="value" width="320" height="500"/>
+                                        <size key="value" width="320" height="800"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </scrollView>
@@ -496,6 +496,7 @@
                         <outlet property="jobField" destination="7uk-kg-d6j" id="NZ7-zL-qcb"/>
                         <outlet property="lastNameField" destination="zCg-m5-vBU" id="jeB-Rg-o7N"/>
                         <outlet property="searchDisplayController" destination="Nah-fY-y4Y" id="zzh-0G-Zet"/>
+                        <segue destination="MmB-P7-Yxk" kind="push" identifier="showSearchResults" id="VAF-YF-ozd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YgS-JG-QOJ" userLabel="First Responder" sceneMemberID="firstResponder"/>

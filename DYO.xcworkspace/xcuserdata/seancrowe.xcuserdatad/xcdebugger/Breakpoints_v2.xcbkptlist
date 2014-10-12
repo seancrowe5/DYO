@@ -1434,28 +1434,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DYO/SearchResultsTableViewController.h"
-            timestampString = "433637520.321852"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "userSearchResults"
-            landmarkType = "19">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "DYO/SearchResultsTableViewController.m"
-            timestampString = "434644749.155017"
+            timestampString = "434843880.653392"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
             landmarkName = "-likeButtonClick:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1467,11 +1451,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/SearchResultsTableViewController.m"
-            timestampString = "434644749.155017"
+            timestampString = "434844373.40873"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "176"
-            endingLineNumber = "176"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "-createChatRoom:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1697,6 +1681,22 @@
             startingLineNumber = "99"
             endingLineNumber = "99"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DYO/SearchResultsTableViewController.m"
+            timestampString = "434844177.095414"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
+            landmarkName = "-prepareForSegue:sender:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

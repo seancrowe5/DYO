@@ -143,7 +143,7 @@ static NSString * const kJSQDemoAvatarNameWoz = @"Steve Wozniak";
     [chat setObject:text forKey:@"text"];                   //the message is put in a 'text' column
 
     [chat saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        NSLog(@"save message to Parse complete");
+        //NSLog(@"save message to Parse complete");
         [self.chats addObject:chat];
         [JSQSystemSoundPlayer jsq_playMessageSentSound];
         //[self.tableView reloadData];

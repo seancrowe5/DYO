@@ -28,11 +28,11 @@
         [self.locationTracker startLocationTracking];
     
         //LOCATION CODE
-        NSTimeInterval time = 60.0;
+        NSTimeInterval time = 900.0; //15 min
         self.locationUpdateTimer =
         [NSTimer scheduledTimerWithTimeInterval:time
                                          target:self
-                                       selector:@selector(updateLocation)
+                                       selector:@selector(updateLocation) //declared below
                                        userInfo:nil
                                         repeats:YES];
     

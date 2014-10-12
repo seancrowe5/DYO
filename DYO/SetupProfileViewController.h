@@ -32,7 +32,7 @@
 - (IBAction)imagePicker:(id)sender;
 - (IBAction)finishButtonPressed:(id)sender;
 @property (strong, nonatomic) IBOutlet UIImageView *profileImage;
-@property (strong, nonatomic) CLLocationManager *locationManager;
+//@property (strong, nonatomic) CLLocationManager *locationManager;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorView;
 @property (weak, nonatomic) IBOutlet UIButton *submitButton;
 

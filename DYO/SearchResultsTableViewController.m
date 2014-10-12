@@ -21,23 +21,24 @@
     [super viewDidLoad];
     
     //initialize the property userSearchResults
-    self.userSearchResults = [NSMutableArray array];
+   self.userMutableArray = [NSMutableArray array];
     
     //Get all of the data into an array
     //for now, lets just get all users
     //This is where we will change the search query in the future
     
-    PFQuery *query = [PFUser query];
-    NSArray *resultsArray = [query findObjects];     //now all of the objects from the query are in *resutlsArray
+    //PFQuery *query = [PFUser query];
+   // NSArray *resultsArray = [query findObjects];     //now all of the objects from the query are in *resutlsArray
 
-    
-    for (NSArray *usersArray in resultsArray){ //in the for loop to go through all the results
+    NSLog(@"array passed to me contains: %@", self.userSearchResults);
+    for (NSArray *usersArray in self.userSearchResults){ //in the for loop to go through all the results
         
         User *user = [User userWithEmail:[usersArray valueForKey:@"email"]];         //declare new USER object
         user.companyName = [usersArray valueForKey:@"company"];                     //set the properties of the user class
         user.educationLabel = [usersArray valueForKey:@"education"];
         user.jobTitle = [usersArray valueForKey:@"jobTitle"];
         user.firstName = [usersArray valueForKey:@"firstName"];
+        user.lastName = [usersArray valueForKey:@"lastName"];
         user.userID = [usersArray valueForKey:@"objectId"];
         
         PFFile *userImageFile = [usersArray valueForKey:@"photo"]; //declare a Parse file datatype obect and store the file
@@ -52,7 +53,7 @@
         }
         
         //add to local mutable array
-        [self.userSearchResults addObject:user];
+        [self.userMutableArray addObject:user];
     }
     
 }
@@ -83,7 +84,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.userSearchResults count];
+    return [self.userMutableArray count];
 }
 
 
@@ -93,13 +94,15 @@
     //declare a new object of type USER
     //This takes the current row in the table view and gets the corresponding userInfo
     //from the mutable array property
-    User *user = [self.userSearchResults objectAtIndex:indexPath.row];
+    User *user = [self.userMutableArray objectAtIndex:indexPath.row];
     
     // I go get the cell and tell him the set each field text property
     //I set the text to properties in the user class
     //the information was set in the view did load for the user properties
-    cell.fullNameLabel.text =   user.firstName;
-    cell.jobTitle.text =        user.jobTitle;
+    NSLog(@"First Name: %@", user.firstName);
+    cell.firstNameLabel.text =   user.firstName;
+    cell.lastNameLabel.text =   user.lastName;
+    //cell.jobTitle.text =        user.jobTitle;
     cell.companyLabel.text =    user.companyName;
     cell.educationLabel.text =  user.educationLabel;
     cell.profileImage.image = user.profileImage;
@@ -120,9 +123,9 @@
     //when user clics one of them, this method executes
     
     UIButton *senderButton = (UIButton *)sender;
-    NSLog(@"Current row = %ld", (long)senderButton.tag); //senderButton.tag contains the row number selected
+    //NSLog(@"Current row = %ld", (long)senderButton.tag); //senderButton.tag contains the row number selected
     
-    User *selectedUser = [self.userSearchResults objectAtIndex:senderButton.tag]; //instantiate new object of type USER, get index path
+    User *selectedUser = [self.userMutableArray objectAtIndex:senderButton.tag]; //instantiate new object of type USER, get index path
     self.userSelected = [PFQuery getUserObjectWithId:selectedUser.userID]; //set the userSelected property to the correct user
     [self createChatRoom:self.userSelected]; //go create a chatroom between the cuurent user and selected user
     [self performSegueWithIdentifier:@"showSearchMessage" sender:self];
@@ -137,15 +140,13 @@
         matchVC.delegate = self;
         matchVC.isFirstMessage = true;
     }
-    
-
 }
 
 -(void)createChatRoom:(PFUser *)userSelected{
     //I am called when a user selects the 'send message' button in the search results
     //list view.
     
-    NSLog(@"create called");
+    //NSLog(@"create called");
     //Give me back all of the available chatrooms where user 1 is the current user
     PFQuery *queryForChatRoom = [PFQuery queryWithClassName:@"ChatRoom"];
     [queryForChatRoom whereKey:@"user1" equalTo:[PFUser currentUser]];
@@ -162,10 +163,10 @@
     //testing purposes for threading shit//
     NSArray *objects = [combinedQuery findObjects];
     
-    NSLog(@"here is what the query found: %@", objects);
+    //NSLog(@"here is what the query found: %@", objects);
     
     if([objects count]==0){
-        NSLog(@"no chatroom found, one will be made shortly");
+        //NSLog(@"no chatroom found, one will be made shortly");
         PFObject *chatroom = [PFObject objectWithClassName:@"ChatRoom"];
         [chatroom setObject:[PFUser currentUser] forKey:@"user1"];
         [chatroom setObject:userSelected forKey:@"user2"];
@@ -174,7 +175,7 @@
     
     
     self.chatRoom = [[combinedQuery findObjects] mutableCopy];
-    NSLog(@"THIS IS YOUR CHATROOM WE JUST CREATED: %@", self.chatRoom[0][@"user1"]);
+    //NSLog(@"THIS IS YOUR CHATROOM WE JUST CREATED: %@", self.chatRoom[0][@"user1"]);
     
     
 

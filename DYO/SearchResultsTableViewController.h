@@ -12,8 +12,16 @@
 #import "JSQDemoViewController.h"
 #import "ChatView.h"
 
+@class SearchResultsTableViewController;
+@protocol SearchResultsTableViewControllerDelegate <NSObject>
+@end
+
 @interface SearchResultsTableViewController : UITableViewController <ChatViewDelegate>
-@property (nonatomic, strong) NSMutableArray *userSearchResults;
+@property (weak) id<SearchResultsTableViewControllerDelegate> delegate;
+
+@property (nonatomic, strong) NSArray *userSearchResults;
+@property (nonatomic, strong) NSMutableArray *userMutableArray;
+
 @property (nonatomic, strong) PFUser *userSelected;
 @property (nonatomic, strong) NSMutableArray *chatRoom;
 

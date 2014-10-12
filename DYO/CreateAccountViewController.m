@@ -61,8 +61,8 @@
             occurenceNumbers++;
     }
     
-    NSLog(@"There are: %d capital letters", occurrenceCapital);
-    NSLog(@"There are: %d numbers", occurenceNumbers);
+    //NSLog(@"There are: %d capital letters", occurrenceCapital);
+    //NSLog(@"There are: %d numbers", occurenceNumbers);
 
     
     //check if email, pas, and second pass are filled in

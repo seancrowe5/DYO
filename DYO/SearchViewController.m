@@ -33,14 +33,23 @@
 }
 
 
-/*
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    //let's send the query results over to the next page to display the results
+    //results are stored in the searchResults array
+    //segue is called "showSearchResults"
+    
+    if ([segue.identifier isEqualToString:@"showSearchResults"]) {
+        NSLog(@"SEgue called");
+        SearchResultsTableViewController *resultsVC = segue.destinationViewController;
+        resultsVC.userSearchResults = self.searchResults;
+        resultsVC.delegate = self;
+ 
+    }
+    
 }
-*/
+
 
 - (IBAction)search:(id)sender {
     
@@ -74,11 +83,12 @@
     if(![education length] == 0){
         [query whereKey:@"education" hasPrefix:education];}
     
-    NSArray *searchResults = [query findObjects];
+    self.searchResults = [query findObjects];
         
     //print out array in console
-    NSLog(@"results are: %@", searchResults);
-    
+    NSLog(@"results are: %@", _searchResults);
+    [self performSegueWithIdentifier:@"showSearchResults" sender:self];
+
    
 }
 

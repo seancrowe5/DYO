@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface TableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *fullNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *firstNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *lastNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *jobTitle;
 @property (weak, nonatomic) IBOutlet UILabel *companyLabel;
 @property (weak, nonatomic) IBOutlet UILabel *educationLabel;
