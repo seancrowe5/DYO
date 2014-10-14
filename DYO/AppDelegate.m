@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 
 
+
 @implementation AppDelegate
 
 
@@ -43,7 +44,6 @@
        NSFontAttributeName: [UIFont fontWithName:@"Montserrat-Bold" size:17.0f]
        }
      forState:UIControlStateNormal];
-    
     
     
        return YES;

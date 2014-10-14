@@ -57,6 +57,21 @@
 
 - (IBAction)search:(id)sender {
     
+   
+    
+//    // User's location
+//    PFGeoPoint *userGeoPoint = userObject[@"location"];
+//    // Create a query for places
+//    PFQuery *query = [PFQuery queryWithClassName:@"PlaceObject"];
+//    // Interested in locations near user.
+//    [query whereKey:@"location" nearGeoPoint:userGeoPoint];
+//    // Limit what could be a lot of points.
+//    query.limit = 10;
+//    // Final list of objects
+//    placesObjects = [query findObjects];
+//    
+    
+    
     //get the input from user
     //only one of these should be used each search
     NSString *firstName = [self.firstNameField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -66,6 +81,13 @@
     NSString *education = [self.eduField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 
     
+    //Get USERs current location
+    [PFGeoPoint geoPointForCurrentLocationInBackground:^(PFGeoPoint *geoPoint, NSError *error) {
+        if (!error) {
+            self.userGeoPoint = geoPoint;
+        }
+    }];
+    
     //if first name field is used, then query first names of data
         //query
     PFQuery *query = [PFUser query];
@@ -73,7 +95,9 @@
     //if the first name contains information
     if(![firstName length] == 0){
         //use parse to search for matches
-        [query whereKey:@"firstName" hasPrefix:firstName]; }
+        [query whereKey:@"firstName" hasPrefix:firstName];
+        [query whereKey:@"lastLocation" nearGeoPoint: self.userGeoPoint];
+    }
         
     if(![lastName length] == 0){
         [query whereKey:@"lastName" hasPrefix:lastName];}

@@ -252,6 +252,8 @@
     geoLocation[@"user"]= [PFUser currentUser];
     [geoLocation saveInBackground];
 
+    PFUser *currentUser = [PFUser currentUser];
+    currentUser[@"lastLocation"] = geoPoint;
     
     //END LOCATION CODE
 

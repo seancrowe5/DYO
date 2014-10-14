@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *areaField;
 @property (weak, nonatomic) IBOutlet UITextField *industryField;
 @property (strong, nonatomic) NSArray  *searchResults;
+@property (strong, nonatomic) PFGeoPoint  *userGeoPoint;
 
 - (IBAction)search:(id)sender;
 - (IBAction)firstNameEditingChanged:(UITextField *)sender;
