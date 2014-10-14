@@ -415,40 +415,55 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="476"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First name" textAlignment="center" minimumFontSize="17" id="zlC-Q8-Gmt">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First name" textAlignment="center" minimumFontSize="17" id="zlC-Q8-Gmt">
                                         <rect key="frame" x="20" y="14" width="280" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="firstNameEditingChanged:" destination="8d0-3K-wcC" eventType="editingChanged" id="rd9-ba-Ngu"/>
+                                        </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last name" textAlignment="center" minimumFontSize="17" id="zCg-m5-vBU">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last name" textAlignment="center" minimumFontSize="17" id="zCg-m5-vBU">
                                         <rect key="frame" x="20" y="62" width="280" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="lastNameEditingChanged:" destination="8d0-3K-wcC" eventType="editingChanged" id="ZLu-z5-2Kq"/>
+                                        </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Job title" textAlignment="center" minimumFontSize="17" id="7uk-kg-d6j">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Job title" textAlignment="center" minimumFontSize="17" id="7uk-kg-d6j">
                                         <rect key="frame" x="20" y="110" width="280" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="jobTitleEditingChanged:" destination="8d0-3K-wcC" eventType="editingChanged" id="xNb-qD-udK"/>
+                                        </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Current company" textAlignment="center" minimumFontSize="17" id="oSo-fN-Y3f">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Current company" textAlignment="center" minimumFontSize="17" id="oSo-fN-Y3f">
                                         <rect key="frame" x="20" y="158" width="280" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="currentCompanyEditingChanged:" destination="8d0-3K-wcC" eventType="editingChanged" id="yUk-8b-oK6"/>
+                                        </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Education" textAlignment="center" minimumFontSize="17" id="5aE-1E-95P">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Education" textAlignment="center" minimumFontSize="17" id="5aE-1E-95P">
                                         <rect key="frame" x="20" y="206" width="280" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="eduEditingChanged:" destination="8d0-3K-wcC" eventType="editingChanged" id="Wgo-Q7-F9y"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="23K-ye-DgE">
                                         <rect key="frame" x="30" y="358" width="260" height="40"/>
@@ -463,19 +478,25 @@
                                             <action selector="search:" destination="8d0-3K-wcC" eventType="touchUpInside" id="PQx-jL-kSQ"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Area of study" textAlignment="center" minimumFontSize="17" id="M4i-tT-Ezk">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Area of study" textAlignment="center" minimumFontSize="17" id="M4i-tT-Ezk">
                                         <rect key="frame" x="20" y="254" width="280" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="studyEditingChanged:" destination="8d0-3K-wcC" eventType="editingChanged" id="SwJ-YB-YZe"/>
+                                        </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Industry" textAlignment="center" minimumFontSize="17" id="Qi2-I4-wrE">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Industry" textAlignment="center" minimumFontSize="17" id="Qi2-I4-wrE">
                                         <rect key="frame" x="20" y="302" width="280" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="industryEditingChanged:" destination="8d0-3K-wcC" eventType="editingChanged" id="M48-Sz-q6r"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <userDefinedRuntimeAttributes>
@@ -490,9 +511,11 @@
                     <navigationItem key="navigationItem" title="Search" id="n92-7f-oLJ"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="areaField" destination="M4i-tT-Ezk" id="BeL-Fj-eGx"/>
                         <outlet property="companyField" destination="oSo-fN-Y3f" id="mm5-0T-DkB"/>
                         <outlet property="eduField" destination="5aE-1E-95P" id="vNe-2X-JUn"/>
                         <outlet property="firstNameField" destination="zlC-Q8-Gmt" id="lF5-xx-aua"/>
+                        <outlet property="industryField" destination="Qi2-I4-wrE" id="y1Z-Pk-5wA"/>
                         <outlet property="jobField" destination="7uk-kg-d6j" id="NZ7-zL-qcb"/>
                         <outlet property="lastNameField" destination="zCg-m5-vBU" id="jeB-Rg-o7N"/>
                         <outlet property="searchDisplayController" destination="Nah-fY-y4Y" id="zzh-0G-Zet"/>
