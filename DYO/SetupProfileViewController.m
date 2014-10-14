@@ -111,7 +111,7 @@
     NSString *education = [self.educationField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *study = [self.areaOfStudyField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *industry = [self.industryField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    //NSLog(@"industry field is: %@", industry);
+    //story(@"industry field is: %@", industry);
     
     //validation check to see if the first three fields have something in them
     //its only three because the job and education may be dropdown fields
@@ -158,7 +158,7 @@
                 //Success! Go to home screen
                 UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
                 UITabBarController *obj=[storyboard instantiateViewControllerWithIdentifier:@"homeStoryboard"];
-                self.navigationController.navigationBarHidden=YES;
+                self.navigationController.navigationBarHidden=NO;
                 [self.navigationController pushViewController:obj animated:YES];
             }
         }];

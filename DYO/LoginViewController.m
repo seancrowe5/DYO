@@ -20,12 +20,7 @@
     [super viewDidLoad];
     [self.emailField becomeFirstResponder];
     self.emailField.delegate = self;
-    //self.emailField.contentVerticalAlignment = UIControlContentVerticalAlignmentTop;
     self.emailField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-    
-    //if a user exists...
-    //Nav Bar customization
-    //http://www.appcoda.com/customize-navigation-status-bar-ios-7/
     
     //set the background color *Global*
     UINavigationBar *navBar = self.navigationController.navigationBar;
@@ -92,7 +87,7 @@
                     //then we will segue to the home screen
                     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
                     UITabBarController *obj=[storyboard instantiateViewControllerWithIdentifier:@"homeStoryboard"];
-                    self.navigationController.navigationBarHidden=YES;
+                    self.navigationController.navigationBarHidden=NO;
                     [self.navigationController pushViewController:obj animated:YES];
 
             }}];

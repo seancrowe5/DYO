@@ -268,7 +268,7 @@ int count;
     [PFUser logOut];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     UITabBarController *obj=[storyboard instantiateViewControllerWithIdentifier:@"loginView"];
-    self.navigationController.navigationBarHidden=NO;
+    self.navigationController.navigationBarHidden=YES;
     [self.navigationController pushViewController:obj animated:NO];
 }
 

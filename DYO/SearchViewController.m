@@ -56,21 +56,8 @@
 
 
 - (IBAction)search:(id)sender {
-    
-   
-    
-//    // User's location
-//    PFGeoPoint *userGeoPoint = userObject[@"location"];
-//    // Create a query for places
-//    PFQuery *query = [PFQuery queryWithClassName:@"PlaceObject"];
-//    // Interested in locations near user.
-//    [query whereKey:@"location" nearGeoPoint:userGeoPoint];
-//    // Limit what could be a lot of points.
-//    query.limit = 10;
-//    // Final list of objects
-//    placesObjects = [query findObjects];
-//    
-    
+
+   [self.activityIndicatorView startAnimating];
     
     //get the input from user
     //only one of these should be used each search
