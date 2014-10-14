@@ -46,8 +46,27 @@
      forState:UIControlStateNormal];
     
     
+    //ADDED LOCATION STUFF
+    self.locationTracker = [[LocationTracker alloc]init];
+    [self.locationTracker startLocationTracking];
+    
+    //LOCATION CODE
+    NSTimeInterval time = 60.0; //15 min
+    self.locationUpdateTimer =
+    [NSTimer scheduledTimerWithTimeInterval:time
+                                     target:self
+                                   selector:@selector(updateLocation) //declared below
+                                   userInfo:nil
+                                    repeats:YES];
+    
        return YES;
 }
+
+-(void)updateLocation {
+    NSLog(@"updateLocation");
+    [self.locationTracker updateLocationToServer];
+}
+
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     // Store the deviceToken in the current installation and save it to Parse.

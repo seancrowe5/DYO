@@ -245,15 +245,16 @@
     
     //LOCATION
     
-    PFObject *geoLocation = [PFObject objectWithClassName:@"GeoPoints"];
+    //PFObject *geoLocation = [PFObject objectWithClassName:@"GeoPoints"];
     PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLatitude:self.myLocation.latitude
                                                   longitude:self.myLocation.longitude];
-    geoLocation[@"geoPoint"] = geoPoint;
-    geoLocation[@"user"]= [PFUser currentUser];
-    [geoLocation saveInBackground];
+//    geoLocation[@"geoPoint"] = geoPoint;
+//    geoLocation[@"user"]= [PFUser currentUser];
+//    [geoLocation saveInBackground];
 
     PFUser *currentUser = [PFUser currentUser];
     currentUser[@"lastLocation"] = geoPoint;
+    [currentUser saveInBackground];
     
     //END LOCATION CODE
 

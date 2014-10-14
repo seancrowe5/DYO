@@ -85,39 +85,41 @@
     [PFGeoPoint geoPointForCurrentLocationInBackground:^(PFGeoPoint *geoPoint, NSError *error) {
         if (!error) {
             self.userGeoPoint = geoPoint;
+            NSLog(@"GeoPoint is: %@", geoPoint);
+            
+            //if first name field is used, then query first names of data
+            //query
+            PFQuery *query = [PFUser query];
+            
+            //if the first name contains information
+            if(![firstName length] == 0){
+                //use parse to search for matches
+                [query whereKey:@"firstName" hasPrefix:firstName];}
+            
+            if(![lastName length] == 0){
+                [query whereKey:@"lastName" hasPrefix:lastName];}
+            
+            if(![jobTitle length] == 0){
+                [query whereKey:@"jobTitle" hasPrefix:jobTitle];}
+            
+            if(![company length] == 0){
+                [query whereKey:@"company" hasPrefix:company];}
+            
+            if(![education length] == 0){
+                [query whereKey:@"education" hasPrefix:education];}
+            
+            [query whereKey:@"lastLocation" nearGeoPoint:self.userGeoPoint withinMiles:500.0]; //5 miles
+    
+            self.searchResults = [query findObjects];
+            
         }
+        
+        //print out array in console
+        NSLog(@"results are: %@", _searchResults);
+        [self performSegueWithIdentifier:@"showSearchResults" sender:self];
     }];
     
-    //if first name field is used, then query first names of data
-        //query
-    PFQuery *query = [PFUser query];
 
-    //if the first name contains information
-    if(![firstName length] == 0){
-        //use parse to search for matches
-        [query whereKey:@"firstName" hasPrefix:firstName];
-        [query whereKey:@"lastLocation" nearGeoPoint: self.userGeoPoint];
-    }
-        
-    if(![lastName length] == 0){
-        [query whereKey:@"lastName" hasPrefix:lastName];}
-
-    if(![jobTitle length] == 0){
-        [query whereKey:@"jobTitle" hasPrefix:jobTitle];}
-    
-    if(![company length] == 0){
-        [query whereKey:@"company" hasPrefix:company];}
-    
-    if(![education length] == 0){
-        [query whereKey:@"education" hasPrefix:education];}
-    
-    self.searchResults = [query findObjects];
-        
-    //print out array in console
-    NSLog(@"results are: %@", _searchResults);
-    [self performSegueWithIdentifier:@"showSearchResults" sender:self];
-
-   
 }
 
 - (IBAction)firstNameEditingChanged:(UITextField *)sender {

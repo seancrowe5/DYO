@@ -21,20 +21,7 @@
     [self.navigationController.navigationBar setHidden:YES];
     //set the bar to red background
     [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:241.0/255.0 green:106.0/255.0 blue:108.0/255.0 alpha:1]]; /*#f76070*/
-   
 
-        //ADDED LOCATION STUFF
-        self.locationTracker = [[LocationTracker alloc]init];
-        [self.locationTracker startLocationTracking];
-    
-        //LOCATION CODE
-        NSTimeInterval time = 60.0; //15 min
-        self.locationUpdateTimer =
-        [NSTimer scheduledTimerWithTimeInterval:time
-                                         target:self
-                                       selector:@selector(updateLocation) //declared below
-                                       userInfo:nil
-                                        repeats:YES];
     
     
     UIView *backgroundSelectedCell = [[UIView alloc] init];
@@ -74,10 +61,6 @@
 
 }
 
--(void)updateLocation {
-    NSLog(@"updateLocation");
-    [self.locationTracker updateLocationToServer];
-}
 
 #pragma mark - Table view data source
 

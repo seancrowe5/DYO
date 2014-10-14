@@ -13,7 +13,6 @@
 @interface HomeTableViewController : UITableViewController
 @property (strong, nonatomic) LocationTracker *locationTracker;
 @property (nonatomic) NSTimer *locationUpdateTimer;
-- (IBAction)logout:(id)sender;
 
 
 @end
