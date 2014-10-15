@@ -113,11 +113,14 @@
     if(sender.text.length >= 1){
         //if there is 1 or more characters in the field, then disable all others
         [self allOtherFieldsDisabled:YES textFieldSender:sender];
+        NSLog(@"You have more than one character in first name field!");
         
     }
     else{
         //if there are zero characters, then
         [self allOtherFieldsDisabled:NO textFieldSender:sender];
+        NSLog(@"You have else in first name field!");
+
     }
     
 }
@@ -201,7 +204,7 @@
 
 
 -(void)allOtherFieldsDisabled:(BOOL)disable textFieldSender:(UITextField *)senderField{
-    
+    NSLog(@"all other fields called");
     //declar the colors
     UIColor *enabledColor = [UIColor colorWithRed:220.0/255.0 green:220.0/255.0 blue:220.0/255.0 alpha:1];
     UIColor *disabledColor = [UIColor whiteColor];
