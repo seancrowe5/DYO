@@ -44,6 +44,12 @@
     
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:NO];
+
+    [self.navigationController.navigationBar setHidden:YES];
+}
+
 
 - (IBAction)nextStep:(id)sender {
     

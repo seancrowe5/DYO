@@ -402,12 +402,14 @@
     
     if([pickerView isEqual: pktStatePicker]){
         self.industryField.text = [industryArray objectAtIndex:row];
+        [self.industryField resignFirstResponder];
     }
     
     if([pickerView isEqual: pktCollegePicker]){
         self.educationField.text = [collegeArray objectAtIndex:row];
     }
     
+    [pktStatePicker resignFirstResponder];
 }
 
 

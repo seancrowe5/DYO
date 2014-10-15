@@ -20,10 +20,10 @@
     
     // I will make the top navigation bar appear
     [self.navigationController.navigationBar setHidden:NO];
-    //[self.navigationController setNavigationBarHidden:NO animated:NO];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    [self.navigationController.navigationBar setHidden:NO];
     [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:241.0/255.0 green:106.0/255.0 blue:108.0/255.0 alpha:1]]; /*#f76070*/
     [self.navigationController.navigationBar setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
                                                                       [UIColor whiteColor], NSForegroundColorAttributeName,nil]];
