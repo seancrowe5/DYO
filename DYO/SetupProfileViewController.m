@@ -124,6 +124,7 @@
         
         [alertView show];
         self.submitButton.enabled = YES;
+        [self.activityIndicatorView stopAnimating];
     }
     else{
         
@@ -152,6 +153,7 @@
             if(error){
                 UIAlertView *alertView = [[UIAlertView alloc ] initWithTitle:@"Sorry" message:[error.userInfo objectForKey:@"error"] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                 [alertView show];
+                [self.activityIndicatorView stopAnimating];
                 self.submitButton.enabled = YES;
             }
             else{
@@ -274,6 +276,7 @@
                                                                delegate:self
                                                       cancelButtonTitle:@"OK"
                                                       otherButtonTitles:nil, nil];
+            [self.activityIndicatorView stopAnimating];
             [alertView show];
             
         }
@@ -289,6 +292,7 @@
                                                                        delegate:self
                                                               cancelButtonTitle:@"OK"
                                                               otherButtonTitles:nil, nil];
+                    [self.activityIndicatorView stopAnimating];
                     [alertView show];
                 }
                 else{

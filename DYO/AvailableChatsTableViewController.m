@@ -185,6 +185,7 @@
     [queryCombined includeKey:@"chat"];
     [queryCombined includeKey:@"user1"];
     [queryCombined includeKey:@"user2"];
+    [queryCombined orderByDescending:@"createdAt"];
     
     [queryCombined findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {

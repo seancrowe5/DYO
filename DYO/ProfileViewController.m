@@ -9,11 +9,12 @@
 #import "ProfileViewController.h"
 
 @interface ProfileViewController ()
--(void)goodbyeKeyboard;
--(void)areFieldsSelectable:(BOOL)makeSelectable;
--(void)savePhoto;
-
-
+{
+NSArray *_pickerData;
+NSArray *industryArray;
+UIPickerView *pktStatePicker ;
+    
+}
 @end
 
 @implementation ProfileViewController
@@ -28,6 +29,7 @@ int count;
     //display profile image from parse
     PFUser *user = [PFUser currentUser];
     PFFile *userImageFile = user[@"photo"];
+    
     //if there is data for the photo...
     if(userImageFile){
         //go to parse and get the image
@@ -52,15 +54,35 @@ int count;
     self.areaOfStudyField.text = [NSString stringWithFormat:@"%@",[user valueForKey:@"areaOfStudy"]];   //industry
 
    
+    //INDUSTRY Picker
+    NSString *path = [[NSBundle mainBundle] pathForResource:
+                      @"testing2" ofType:@"plist"];
+    // Build the array from the plist
+    NSMutableArray *array2 = [[NSMutableArray alloc] initWithContentsOfFile:path];
+    NSMutableArray *array3 = [[NSMutableArray alloc]init];
     
+    //loop through industry stuff
+    for (NSDictionary *dict in array2) {
+        [array3 addObject:[dict objectForKey:@"Industry"]];
+    }
+    
+    //Industry Picker
+    industryArray = array3;
+    pktStatePicker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 43, 320, 480)];
+    pktStatePicker.delegate = self;
+    pktStatePicker.dataSource = self;
+    [pktStatePicker  setShowsSelectionIndicator:YES];
+    self.industryField.inputView =  pktStatePicker  ;
+    
+
 
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:NO];
+    
     //make sure nav shows
     [self.navigationController.navigationBar setHidden:NO];
-    //set the bar to red background
 
 }
 
@@ -80,6 +102,7 @@ int count;
         self.companyField.enabled = YES;
         self.educationField.enabled = YES;
         self.industryField.enabled = YES;
+        self.areaOfStudyField.enabled = YES;
         self.backgroundColor = [UIColor colorWithRed:220.0/255.0 green:220.0/255.0 blue:220.0/255.0 alpha:1];
     }
     else{
@@ -87,6 +110,7 @@ int count;
         self.companyField.enabled = NO;
         self.educationField.enabled = NO;
         self.industryField.enabled = NO;
+        self.areaOfStudyField.enabled = NO;
         self.backgroundColor = [UIColor whiteColor];
     }
     
@@ -103,12 +127,28 @@ int count;
     self.areaOfStudyField.backgroundColor = self.backgroundColor;
 }
 
--(void)fieldsSelectableStyle{
-    
-    
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    //hides keyboard on background touch
+    UITouch *touch = [[event allTouches] anyObject];
+ 
+    if ([self.jobField isFirstResponder] && [touch view] != self.jobField) {
+        [self.jobField resignFirstResponder];
+    }
+    if ([self.companyField isFirstResponder] && [touch view] != self.companyField) {
+        [self.companyField resignFirstResponder];
+    }
+    if ([self.educationField isFirstResponder] && [touch view] != self.educationField) {
+        [self.educationField resignFirstResponder];
+    }
+    if ([self.areaOfStudyField isFirstResponder] && [touch view] != self.areaOfStudyField) {
+        [self.areaOfStudyField resignFirstResponder];
+    }
+    if ([self.industryField isFirstResponder] && [touch view] != self.industryField) {
+        [self.industryField resignFirstResponder];
+    }
+    [super touchesBegan:touches withEvent:event];
     
 }
-
 #pragma mark - IMAGE STUFF
 
 //DICATATES WHAT HAPPENS WHEN ACTION SHEET ITEMS ARE SELECTED
@@ -263,6 +303,25 @@ int count;
     
 }
 
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+    return [industryArray count];
+}
+
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    
+    return [industryArray objectAtIndex:row];
+}
+
+- (void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    self.industryField.text = [industryArray objectAtIndex:row];
+}
+
+
 
 - (IBAction)logout:(id)sender {
     [PFUser logOut];
@@ -288,6 +347,27 @@ int count;
         self.industryField.borderStyle = UITextBorderStyleNone;
         self.areaOfStudyField.borderStyle = UITextBorderStyleNone;
         
+        //outdent
+        UIView *spacerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+        [self.jobField setLeftViewMode:UITextFieldViewModeAlways];
+        [self.jobField setLeftView:spacerView];
+        
+        UIView *spacerView1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+        [self.companyField setLeftViewMode:UITextFieldViewModeAlways];
+        [self.companyField setLeftView:spacerView1];
+        
+        UIView *spacerView2 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+        [self.educationField setLeftViewMode:UITextFieldViewModeAlways];
+        [self.educationField setLeftView:spacerView2];
+        
+        UIView *spacerView3 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+        [self.areaOfStudyField setLeftViewMode:UITextFieldViewModeAlways];
+        [self.areaOfStudyField setLeftView:spacerView3];
+        
+        UIView *spacerView4 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+        [self.industryField setLeftViewMode:UITextFieldViewModeAlways];
+        [self.industryField setLeftView:spacerView4];
+
         //take the new values from fields and put them in variables
         NSString *jobTitle = [self.jobField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         NSString *company = [self.companyField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -328,6 +408,26 @@ int count;
         //you are here because the user selected the eidt button
         count=0;    //reset the count to 0
         
+        UIView *spacerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
+        [self.jobField setLeftViewMode:UITextFieldViewModeAlways];
+        [self.jobField setLeftView:spacerView];
+        
+        UIView *spacerView1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
+        [self.companyField setLeftViewMode:UITextFieldViewModeAlways];
+        [self.companyField setLeftView:spacerView1];
+        
+        UIView *spacerView2 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
+        [self.educationField setLeftViewMode:UITextFieldViewModeAlways];
+        [self.educationField setLeftView:spacerView2];
+        
+        UIView *spacerView3 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
+        [self.areaOfStudyField setLeftViewMode:UITextFieldViewModeAlways];
+        [self.areaOfStudyField setLeftView:spacerView3];
+        
+        UIView *spacerView4 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
+        [self.industryField setLeftViewMode:UITextFieldViewModeAlways];
+        [self.industryField setLeftView:spacerView4];
+        
         //Set the style of the Text Fields to indicate they are editable
         self.jobField.borderStyle = UITextBorderStyleRoundedRect;
         self.companyField.borderStyle = UITextBorderStyleRoundedRect;
@@ -335,6 +435,9 @@ int count;
         self.industryField.borderStyle = UITextBorderStyleRoundedRect;
         self.areaOfStudyField.borderStyle = UITextBorderStyleRoundedRect;
         
+        UIColor *backgroundColor = [UIColor lightGrayColor];
+        
+        self.jobField.backgroundColor = backgroundColor;
         //allow the selection on thefield
         [self areFieldsSelectable:YES];
         

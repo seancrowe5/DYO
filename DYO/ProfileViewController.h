@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
-@interface ProfileViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>
+@interface ProfileViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
 
 //text fields
 @property (strong, nonatomic) IBOutlet UITextField *nameField;
@@ -30,4 +30,7 @@
 - (IBAction)changePhoto:(id)sender;
 - (IBAction)logout:(id)sender;
 - (IBAction)editProfileButton:(id)sender;
+-(void)goodbyeKeyboard;
+-(void)areFieldsSelectable:(BOOL)makeSelectable;
+-(void)savePhoto;
 @end
