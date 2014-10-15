@@ -21,7 +21,7 @@
 
 @property (nonatomic, strong) NSArray *userSearchResults;
 @property (nonatomic, strong) NSMutableArray *userMutableArray;
-
+@property (nonatomic, strong) PFGeoPoint *currentLocation;
 @property (nonatomic, strong) PFUser *userSelected;
 @property (nonatomic, strong) NSMutableArray *chatRoom;
 

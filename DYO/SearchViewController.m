@@ -34,6 +34,7 @@
     
     navBar.tintColor =[UIColor whiteColor]; //back button color
     navBar.backgroundColor = [UIColor colorWithRed:0.929 green:0.243 blue:0.31 alpha:1]; /*#f76070*/
+    [self.activityIndicatorView stopAnimating]; //stops from spinning when user goes back to search again
 }
 
 
@@ -48,6 +49,7 @@
         NSLog(@"SEgue called");
         SearchResultsTableViewController *resultsVC = segue.destinationViewController;
         resultsVC.userSearchResults = self.searchResults;
+        resultsVC.currentLocation = self.userGeoPoint;
         resultsVC.delegate = self;
  
     }
@@ -100,6 +102,8 @@
             self.searchResults = [query findObjects];
             
         }
+        
+        //calculate distance between points
         
         //print out array in console
         NSLog(@"results are: %@", _searchResults);

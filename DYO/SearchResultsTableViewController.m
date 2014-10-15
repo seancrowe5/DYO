@@ -40,6 +40,7 @@
         user.firstName = [usersArray valueForKey:@"firstName"];
         user.lastName = [usersArray valueForKey:@"lastName"];
         user.userID = [usersArray valueForKey:@"objectId"];
+        user.recentLocation = [usersArray valueForKey:@"lastLocation"];
         
         PFFile *userImageFile = [usersArray valueForKey:@"photo"]; //declare a Parse file datatype obect and store the file
         if(userImageFile){
@@ -91,21 +92,22 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TableViewCell *cell = (TableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"resultCell"];
     
-    //declare a new object of type USER
-    //This takes the current row in the table view and gets the corresponding userInfo
-    //from the mutable array property
     User *user = [self.userMutableArray objectAtIndex:indexPath.row];
     
+
     // I go get the cell and tell him the set each field text property
     //I set the text to properties in the user class
     //the information was set in the view did load for the user properties
-    NSLog(@"First Name: %@", user.firstName);
+    //NSLog(@"First Name: %@", self.userMutableArray);
     cell.firstNameLabel.text =   user.firstName;
     cell.lastNameLabel.text =   user.lastName;
-    //cell.jobTitle.text =        user.jobTitle;
+    cell.jobTitle.text =        user.jobTitle;
     cell.companyLabel.text =    user.companyName;
     cell.educationLabel.text =  user.educationLabel;
     cell.profileImage.image = user.profileImage;
+    cell.lastLocationLabel.text =[NSString stringWithFormat:@"%.3f", [self.currentLocation distanceInMilesTo:user.recentLocation]];
+    //NSLog(@"distance in miles is: %f", [self.currentLocation distanceInMilesTo:user.recentLocation]);
+    
     
     //set tag to the indexPath
     [cell.likeBtn setTag:indexPath.row];
@@ -113,6 +115,7 @@
     //listen for this button being pressed, and then run method likeButtonClick
     [cell.likeBtn addTarget:self action:@selector(likeButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     
+    //get the geopoint for the search result user
     
     return cell;
 }

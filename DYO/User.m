@@ -22,6 +22,7 @@
         self.lastName = nil;
         self.jobTitle = nil;
         self.companyName = nil;
+        self.recentLocation = nil;
     }
     
     //returing the self

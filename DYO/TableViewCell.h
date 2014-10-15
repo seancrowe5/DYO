@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *companyLabel;
 @property (weak, nonatomic) IBOutlet UILabel *educationLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
+@property (weak, nonatomic) IBOutlet UILabel *lastLocationLabel;
 
 @property (weak, nonatomic) IBOutlet UIButton *likeBtn;
 

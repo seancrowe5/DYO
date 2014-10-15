@@ -14,14 +14,14 @@
 @property (strong,nonatomic) NSString *lastName;
 @property (strong,nonatomic) NSString *jobTitle;
 @property (strong,nonatomic) NSString *companyName;
-@property (strong,nonatomic) NSString *educationLabel
-;
+@property (strong,nonatomic) NSString *educationLabel;
 @property (strong,nonatomic) UIImage *profileImage;
 
 @property (strong,nonatomic) NSString *email;
 @property (strong,nonatomic) PFUser *currentUser;
 @property (strong,nonatomic) PFGeoPoint *recentLocation;
 @property (strong,nonatomic) NSString *userID;
+
 
 
 
