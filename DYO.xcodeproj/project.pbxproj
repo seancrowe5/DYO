@@ -15,7 +15,6 @@
 		212E9CEC19B92BA8004E013E /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 212E9CEB19B92BA8004E013E /* ProfileViewController.m */; };
 		2133EAFE19E6E15100140F2F /* PropertyData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2133EAFD19E6E15100140F2F /* PropertyData.plist */; };
 		2133EB0219E6E43700140F2F /* testing.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2133EB0119E6E43700140F2F /* testing.plist */; };
-		2133EB0419E6E50600140F2F /* testing2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2133EB0319E6E50600140F2F /* testing2.plist */; };
 		2133EB0619E6F24300140F2F /* CollegeData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2133EB0519E6F24300140F2F /* CollegeData.plist */; };
 		2143343B19CE062900F23CCB /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2143343A19CE062900F23CCB /* ChatViewController.m */; };
 		214E133219C26D7200D61FB3 /* TermsandConditionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 214E133119C26D7200D61FB3 /* TermsandConditionsViewController.m */; };
@@ -32,6 +31,7 @@
 		2164A78619D47A42006332B1 /* LocationShareModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2164A78219D47A42006332B1 /* LocationShareModel.m */; };
 		216F696119CF820B003F695C /* JSQDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 216F696019CF820B003F695C /* JSQDemoViewController.m */; };
 		217A6B3419DC9878009D22C9 /* camera.ico in Resources */ = {isa = PBXBuildFile; fileRef = 217A6B3319DC9878009D22C9 /* camera.ico */; };
+		21A0600719EF0BED00DCF677 /* testing2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21A0600619EF0BED00DCF677 /* testing2.plist */; };
 		21CF0F3219D083F000CB4094 /* ChatView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CF0F3119D083F000CB4094 /* ChatView.m */; };
 		21CFF72B19B620A4001D5088 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CFF72A19B620A4001D5088 /* Foundation.framework */; };
 		21CFF72D19B620A4001D5088 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CFF72C19B620A4001D5088 /* CoreGraphics.framework */; };
@@ -78,7 +78,6 @@
 		212E9CEB19B92BA8004E013E /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		2133EAFD19E6E15100140F2F /* PropertyData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PropertyData.plist; sourceTree = "<group>"; };
 		2133EB0119E6E43700140F2F /* testing.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = testing.plist; sourceTree = "<group>"; };
-		2133EB0319E6E50600140F2F /* testing2.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = testing2.plist; sourceTree = "<group>"; };
 		2133EB0519E6F24300140F2F /* CollegeData.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = CollegeData.plist; sourceTree = "<group>"; };
 		2143343919CE062900F23CCB /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
 		2143343A19CE062900F23CCB /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
@@ -107,6 +106,7 @@
 		216F695F19CF820B003F695C /* JSQDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSQDemoViewController.h; sourceTree = "<group>"; };
 		216F696019CF820B003F695C /* JSQDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQDemoViewController.m; sourceTree = "<group>"; };
 		217A6B3319DC9878009D22C9 /* camera.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = camera.ico; sourceTree = "<group>"; };
+		21A0600619EF0BED00DCF677 /* testing2.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = testing2.plist; sourceTree = "<group>"; };
 		21CF0F3019D083F000CB4094 /* ChatView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatView.h; sourceTree = "<group>"; };
 		21CF0F3119D083F000CB4094 /* ChatView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatView.m; sourceTree = "<group>"; };
 		21CFF72719B620A4001D5088 /* DYO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DYO.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -324,8 +324,8 @@
 		21CFF73119B620A4001D5088 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				21A0600619EF0BED00DCF677 /* testing2.plist */,
 				2133EB0519E6F24300140F2F /* CollegeData.plist */,
-				2133EB0319E6E50600140F2F /* testing2.plist */,
 				2133EB0119E6E43700140F2F /* testing.plist */,
 				21CFF73219B620A4001D5088 /* DYO-Info.plist */,
 				21CFF73319B620A4001D5088 /* InfoPlist.strings */,
@@ -481,7 +481,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2133EB0419E6E50600140F2F /* testing2.plist in Resources */,
 				2133EB0219E6E43700140F2F /* testing.plist in Resources */,
 				216092A819E322D2000718C2 /* Montserrat-Regular.ttf in Resources */,
 				2133EB0619E6F24300140F2F /* CollegeData.plist in Resources */,
@@ -491,6 +490,7 @@
 				217A6B3419DC9878009D22C9 /* camera.ico in Resources */,
 				21CFF76019B62D92001D5088 /* MainStoryboard.storyboard in Resources */,
 				2108C9D819E304CF0013572B /* Logo.png in Resources */,
+				21A0600719EF0BED00DCF677 /* testing2.plist in Resources */,
 				216092A719E322D2000718C2 /* Montserrat-Bold.ttf in Resources */,
 				21CFF73519B620A4001D5088 /* InfoPlist.strings in Resources */,
 				21CFF73D19B620A4001D5088 /* Images.xcassets in Resources */,
