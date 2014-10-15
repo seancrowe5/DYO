@@ -19,6 +19,7 @@
 @interface SearchResultsTableViewController : UITableViewController <ChatViewDelegate>
 @property (weak) id<SearchResultsTableViewControllerDelegate> delegate;
 
+
 @property (nonatomic, strong) NSArray *userSearchResults;
 @property (nonatomic, strong) NSMutableArray *userMutableArray;
 @property (nonatomic, strong) PFGeoPoint *currentLocation;

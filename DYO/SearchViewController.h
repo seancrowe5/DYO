@@ -24,6 +24,7 @@
 @property (strong, nonatomic) PFGeoPoint  *userGeoPoint;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorView;
 
+
 - (IBAction)search:(id)sender;
 - (IBAction)firstNameEditingChanged:(UITextField *)sender;
 - (IBAction)lastNameEditingChanged:(UITextField *)sender;
@@ -32,6 +33,8 @@
 - (IBAction)eduEditingChanged:(UITextField *)sender;
 - (IBAction)studyEditingChanged:(UITextField *)sender;
 - (IBAction)industryEditingChanged:(UITextField *)sender;
+- (IBAction)dismissKeyboardDrag:(id)sender;
+- (IBAction)firstNameExitTest:(id)sender;
 
 
 

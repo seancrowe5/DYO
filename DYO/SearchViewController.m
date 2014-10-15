@@ -8,8 +8,9 @@
 
 #import "SearchViewController.h"
 
-@interface SearchViewController () <UITextFieldDelegate>
+@interface SearchViewController ()
 -(void)allOtherFieldsDisabled:(BOOL)disable textFieldSender:(UITextField *)senderField;
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 
 
 @end
@@ -37,7 +38,12 @@
     [self.activityIndicatorView stopAnimating]; //stops from spinning when user goes back to search again
 }
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    //hides keyboard on background touch
 
+    [self.firstNameField resignFirstResponder];
+   
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -68,7 +74,8 @@
     NSString *jobTitle = [self.jobField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *company = [self.companyField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *education = [self.eduField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-
+    NSString *industry = [self.eduField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *areaOfStudy = [self.eduField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
     //Get USERs current location
     [PFGeoPoint geoPointForCurrentLocationInBackground:^(PFGeoPoint *geoPoint, NSError *error) {
@@ -96,6 +103,14 @@
             
             if(![education length] == 0){
                 [query whereKey:@"education" hasPrefix:education];}
+            
+            if(![industry length] == 0){
+                [query whereKey:@"industry" hasPrefix:industry];}
+            
+            if(![areaOfStudy length] == 0){
+                [query whereKey:@"areaOfStudy" hasPrefix:industry];}
+
+
             
             [query whereKey:@"lastLocation" nearGeoPoint:self.userGeoPoint withinMiles:500.0]; //5 miles
     
@@ -204,6 +219,15 @@
         //if there are zero characters, then
         [self allOtherFieldsDisabled:NO textFieldSender:sender];
     }
+}
+
+- (IBAction)dismissKeyboardDrag:(id)sender {
+    [sender resignFirstResponder];
+}
+
+- (IBAction)firstNameExitTest:(id)sender {
+    [sender resignFirstResponder];
+
 }
 
 
@@ -523,5 +547,7 @@
         }
         
     }
+    
+
 }
 @end

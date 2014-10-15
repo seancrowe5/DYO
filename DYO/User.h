@@ -15,6 +15,8 @@
 @property (strong,nonatomic) NSString *jobTitle;
 @property (strong,nonatomic) NSString *companyName;
 @property (strong,nonatomic) NSString *educationLabel;
+@property (strong,nonatomic) NSString *areaOfStudy;
+@property (strong,nonatomic) NSString *industry;
 @property (strong,nonatomic) UIImage *profileImage;
 
 @property (strong,nonatomic) NSString *email;

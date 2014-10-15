@@ -41,6 +41,8 @@
         user.lastName = [usersArray valueForKey:@"lastName"];
         user.userID = [usersArray valueForKey:@"objectId"];
         user.recentLocation = [usersArray valueForKey:@"lastLocation"];
+        user.areaOfStudy = [usersArray valueForKey:@"areaOfStudy"];
+        user.industry = [usersArray valueForKey:@"industry"];
         
         PFFile *userImageFile = [usersArray valueForKey:@"photo"]; //declare a Parse file datatype obect and store the file
         if(userImageFile){
@@ -99,13 +101,15 @@
     //I set the text to properties in the user class
     //the information was set in the view did load for the user properties
     //NSLog(@"First Name: %@", self.userMutableArray);
-    cell.firstNameLabel.text =   user.firstName;
-    cell.lastNameLabel.text =   user.lastName;
+    [cell.firstNameLabel setText:[NSString stringWithFormat:@"%@ %@", user.firstName, user.lastName]];
     cell.jobTitle.text =        user.jobTitle;
     cell.companyLabel.text =    user.companyName;
     cell.educationLabel.text =  user.educationLabel;
     cell.profileImage.image = user.profileImage;
+    cell.industryLabel.text = user.industry;
+    cell.studyLabel.text = user.areaOfStudy;
     cell.lastLocationLabel.text =[NSString stringWithFormat:@"%.3f", [self.currentLocation distanceInMilesTo:user.recentLocation]];
+    
     //NSLog(@"distance in miles is: %f", [self.currentLocation distanceInMilesTo:user.recentLocation]);
     
     
