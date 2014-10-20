@@ -530,6 +530,8 @@
                                         <connections>
                                             <action selector="search:" destination="8d0-3K-wcC" eventType="editingDidEndOnExit" id="TRS-pf-nUP"/>
                                             <action selector="studyEditingChanged:" destination="8d0-3K-wcC" eventType="editingChanged" id="Z6k-Ow-hWy"/>
+                                            <action selector="textFieldDidBeginEditing:" destination="8d0-3K-wcC" eventType="editingDidBegin" id="CTt-T0-gXA"/>
+                                            <action selector="textFieldDidEndEditing:" destination="8d0-3K-wcC" eventType="editingDidEnd" id="GCQ-3t-lbL"/>
                                         </connections>
                                     </textField>
                                 </subviews>

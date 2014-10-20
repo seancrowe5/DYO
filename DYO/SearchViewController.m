@@ -266,6 +266,7 @@
 
 - (void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
     self.industryField.text = [industryArray objectAtIndex:row];
+    [self allOtherFieldsDisabled:YES textFieldSender:self.industryField];
 }
 
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
@@ -316,7 +317,7 @@
                 
             case 2:
                 
-                NSLog(@"case 2 should hide first name");
+                
                 //last name field selected
                 self.firstNameField.enabled = NO;
                 self.jobField.enabled = NO;
@@ -397,26 +398,6 @@
                 
             case 6:
                 
-                //area of study field selected
-                self.firstNameField.enabled = NO;
-                self.lastNameField.enabled = NO;
-                self.jobField.enabled = NO;
-                self.companyField.enabled = NO;
-                self.eduField.enabled = NO;
-                self.industryField.enabled = NO;
-                
-                //make background change to disabled color
-                self.firstNameField.backgroundColor = disabledColor;
-                self.lastNameField.backgroundColor = disabledColor;
-                self.jobField.backgroundColor = disabledColor;
-                self.companyField.backgroundColor = disabledColor;
-                self.eduField.backgroundColor = disabledColor;
-                self.industryField.backgroundColor = disabledColor;
-                
-                break;
-                
-            case 7:
-                
                 //industry field selected
                 self.firstNameField.enabled = NO;
                 self.lastNameField.enabled = NO;
@@ -432,6 +413,26 @@
                 self.companyField.backgroundColor = disabledColor;
                 self.eduField.backgroundColor = disabledColor;
                 self.areaField.backgroundColor = disabledColor;
+                
+                break;
+                
+            case 7:
+                
+                //area field selected
+                self.firstNameField.enabled = NO;
+                self.lastNameField.enabled = NO;
+                self.jobField.enabled = NO;
+                self.companyField.enabled = NO;
+                self.eduField.enabled = NO;
+                self.industryField.enabled = NO;
+                
+                //make background change to disabled color
+                self.firstNameField.backgroundColor = disabledColor;
+                self.lastNameField.backgroundColor = disabledColor;
+                self.jobField.backgroundColor = disabledColor;
+                self.companyField.backgroundColor = disabledColor;
+                self.eduField.backgroundColor = disabledColor;
+                self.industryField.backgroundColor = disabledColor;
                 
                 break;
                 
