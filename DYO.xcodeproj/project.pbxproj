@@ -16,6 +16,7 @@
 		2133EAFE19E6E15100140F2F /* PropertyData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2133EAFD19E6E15100140F2F /* PropertyData.plist */; };
 		2133EB0219E6E43700140F2F /* testing.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2133EB0119E6E43700140F2F /* testing.plist */; };
 		2133EB0619E6F24300140F2F /* CollegeData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2133EB0519E6F24300140F2F /* CollegeData.plist */; };
+		21355DBE19F1C77E00944BEC /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 21355DBD19F1C77D00944BEC /* icon.png */; };
 		2143343B19CE062900F23CCB /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2143343A19CE062900F23CCB /* ChatViewController.m */; };
 		214E133219C26D7200D61FB3 /* TermsandConditionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 214E133119C26D7200D61FB3 /* TermsandConditionsViewController.m */; };
 		214E133519C29D5100D61FB3 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 214E133419C29D5100D61FB3 /* User.m */; };
@@ -79,6 +80,7 @@
 		2133EAFD19E6E15100140F2F /* PropertyData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PropertyData.plist; sourceTree = "<group>"; };
 		2133EB0119E6E43700140F2F /* testing.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = testing.plist; sourceTree = "<group>"; };
 		2133EB0519E6F24300140F2F /* CollegeData.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = CollegeData.plist; sourceTree = "<group>"; };
+		21355DBD19F1C77D00944BEC /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		2143343919CE062900F23CCB /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
 		2143343A19CE062900F23CCB /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		214E132C19C1F91300D61FB3 /* HomeTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableViewController.h; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 		212F21D919B757050045E351 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				21355DBD19F1C77D00944BEC /* icon.png */,
 				21FF2A3A19E4BBA50043B3B5 /* profilePlaceholder.png */,
 				2108C9D719E304CF0013572B /* Logo.png */,
 				2108C9D419E2F3AA0013572B /* Fonts */,
@@ -489,6 +492,7 @@
 				2133EAFE19E6E15100140F2F /* PropertyData.plist in Resources */,
 				217A6B3419DC9878009D22C9 /* camera.ico in Resources */,
 				21CFF76019B62D92001D5088 /* MainStoryboard.storyboard in Resources */,
+				21355DBE19F1C77E00944BEC /* icon.png in Resources */,
 				2108C9D819E304CF0013572B /* Logo.png in Resources */,
 				21A0600719EF0BED00DCF677 /* testing2.plist in Resources */,
 				216092A719E322D2000718C2 /* Montserrat-Bold.ttf in Resources */,

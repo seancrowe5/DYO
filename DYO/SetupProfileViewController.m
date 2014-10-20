@@ -412,5 +412,25 @@
     [pktStatePicker resignFirstResponder];
 }
 
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
+    UILabel* tView = (UILabel*)view;
+    if (!tView){
+        tView = [[UILabel alloc] init];
+        // Setup label properties - frame, font, colors etc
+        [tView setFont:[UIFont fontWithName:@"Montserrat-Regular" size:15.0]];
+        
+    }
+    
+    if([pickerView isEqual: pktStatePicker]){
+        tView.text = industryArray[row];
+    }
+    if([pickerView isEqual: pktCollegePicker]){
+        tView.text = collegeArray[row];
+    }
+        
+    
+    tView.textAlignment = NSTextAlignmentCenter;
+    return tView;
+}
 
 @end

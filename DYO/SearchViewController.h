@@ -11,7 +11,7 @@
 #import <MapKit/MapKit.h>
 #import "SearchResultsTableViewController.h"
 
-@interface SearchViewController : UIViewController <UITextFieldDelegate, SearchResultsTableViewControllerDelegate>
+@interface SearchViewController : UIViewController <UITextFieldDelegate, SearchResultsTableViewControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextField *firstNameField;
 @property (strong, nonatomic) IBOutlet UITextField *lastNameField;
@@ -23,7 +23,10 @@
 @property (strong, nonatomic) NSArray  *searchResults;
 @property (strong, nonatomic) PFGeoPoint  *userGeoPoint;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorView;
+@property (weak, nonatomic) IBOutlet UIScrollView *pageScrollView;
 
+-(void)allOtherFieldsDisabled:(BOOL)disable textFieldSender:(UITextField *)senderField;
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 
 - (IBAction)search:(id)sender;
 - (IBAction)firstNameEditingChanged:(UITextField *)sender;

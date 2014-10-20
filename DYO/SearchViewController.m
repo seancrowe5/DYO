@@ -8,10 +8,12 @@
 
 #import "SearchViewController.h"
 
-@interface SearchViewController ()
--(void)allOtherFieldsDisabled:(BOOL)disable textFieldSender:(UITextField *)senderField;
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
+@interface SearchViewController (){
+    NSArray *_pickerData;
+    NSArray *industryArray;
+    UIPickerView *pktStatePicker ;
 
+}
 
 @end
 
@@ -20,10 +22,31 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.firstNameField.delegate = self;
+    
+    //INDUSTRY Picker
+    NSString *path = [[NSBundle mainBundle] pathForResource:
+                      @"testing2" ofType:@"plist"];
+    // Build the array from the plist
+    NSMutableArray *array2 = [[NSMutableArray alloc] initWithContentsOfFile:path];
+    NSMutableArray *array3 = [[NSMutableArray alloc]init];
+    
+    //loop through industry stuff
+    for (NSDictionary *dict in array2) {
+        [array3 addObject:[dict objectForKey:@"Industry"]];
+    }
+    
+    //Industry Picker
+    industryArray = array3;
+    pktStatePicker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 43, 320, 480)];
+    pktStatePicker.delegate = self;
+    pktStatePicker.dataSource = self;
+    [pktStatePicker  setShowsSelectionIndicator:YES];
+    self.industryField.inputView =  pktStatePicker  ;
     
 
+    self.pageScrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
 }
+
 
 -(void)viewWillAppear:(BOOL)animated{
     UINavigationBar *navBar = self.navigationController.navigationBar;
@@ -38,12 +61,7 @@
     [self.activityIndicatorView stopAnimating]; //stops from spinning when user goes back to search again
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    //hides keyboard on background touch
 
-    [self.firstNameField resignFirstResponder];
-   
-}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -231,6 +249,38 @@
 }
 
 
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+    return [industryArray count];
+}
+
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    
+    return [industryArray objectAtIndex:row];
+}
+
+- (void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    self.industryField.text = [industryArray objectAtIndex:row];
+}
+
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
+    UILabel* tView = (UILabel*)view;
+    if (!tView){
+        tView = [[UILabel alloc] init];
+        // Setup label properties - frame, font, colors etc
+        [tView setFont:[UIFont fontWithName:@"Montserrat-Regular" size:15.0]];
+        
+    }
+    tView.text = industryArray[row];
+    tView.textAlignment = NSTextAlignmentCenter;
+    return tView;
+}
+
 -(void)allOtherFieldsDisabled:(BOOL)disable textFieldSender:(UITextField *)senderField{
     NSLog(@"all other fields called");
     //declar the colors
@@ -266,6 +316,7 @@
                 
             case 2:
                 
+                NSLog(@"case 2 should hide first name");
                 //last name field selected
                 self.firstNameField.enabled = NO;
                 self.jobField.enabled = NO;
@@ -548,6 +599,7 @@
         
     }
     
+
 
 }
 @end

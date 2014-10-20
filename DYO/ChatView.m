@@ -103,7 +103,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    self.collectionView.collectionViewLayout.springinessEnabled = YES;
+    self.collectionView.collectionViewLayout.springinessEnabled = NO;
 }
 
 - (void)viewWillDisappear:(BOOL)animated

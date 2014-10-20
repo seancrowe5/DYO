@@ -33,6 +33,8 @@
     navBar.tintColor =[UIColor whiteColor]; //back button color
     navBar.backgroundColor = [UIColor colorWithRed:241.0/255.0 green:106.0/255.0 blue:108.0/255.0 alpha:1];
     
+    //small circles on secure pass field
+    [self.passwordField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     
 
 }
@@ -56,6 +58,21 @@
 
 }
 
+- (void)textFieldDidChange:(id)sender
+{
+    UITextField *textField = (UITextField *)sender;
+    
+    if (textField == self.passwordField) {
+        // Set to custom font if the textfield is cleared, else set it to system font
+        // This is a workaround because secure text fields don't play well with custom fonts
+        if (textField.text.length == 0) {
+            textField.font = [UIFont fontWithName:@"Montserrat-Regular" size:textField.font.pointSize];
+        }
+        else {
+            textField.font = [UIFont systemFontOfSize:textField.font.pointSize];
+        }
+    }
+}
 
 - (IBAction)login:(id)sender {
 

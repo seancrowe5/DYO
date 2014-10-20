@@ -321,6 +321,18 @@ int count;
     self.industryField.text = [industryArray objectAtIndex:row];
 }
 
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
+    UILabel* tView = (UILabel*)view;
+    if (!tView){
+        tView = [[UILabel alloc] init];
+        // Setup label properties - frame, font, colors etc
+        [tView setFont:[UIFont fontWithName:@"Montserrat-Regular" size:15.0]];
+
+    }
+    tView.text = industryArray[row];
+    tView.textAlignment = NSTextAlignmentCenter;
+    return tView;
+}
 
 
 - (IBAction)logout:(id)sender {
