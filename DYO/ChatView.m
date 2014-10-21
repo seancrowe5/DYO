@@ -69,7 +69,8 @@
 
     if(self.isFirstMessage == false){
         //you came from the message tab
-        self.title = self.withUser[@"firstName"];
+        NSString *userTitle = [[[NSString alloc] initWithString:self.withUser[@"firstName"]] uppercaseString];
+        self.title = userTitle;
     }
 
     

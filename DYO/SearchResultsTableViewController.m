@@ -73,6 +73,8 @@
     UIImage *backButtonImage = [[UIImage imageNamed:@"next-right-arrow-thin-symbol2.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 13, 0, 6)];
     [[UIBarButtonItem appearance] setBackButtonBackgroundImage:backButtonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     self.navigationController.interactivePopGestureRecognizer.enabled = YES; //no swipe left to navigate
+    self.navigationItem.title = @"SEARCH OUTPUT";
+
 
 }
 

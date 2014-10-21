@@ -47,16 +47,16 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:NO];
     [self.navigationController.navigationBar setHidden:NO];
-    self.navigationItem.title = @"Messages";
     [self.navigationController.navigationBar setTitleTextAttributes: @{NSForegroundColorAttributeName: [UIColor whiteColor],
                                       NSFontAttributeName: [UIFont fontWithName:@"Avenir" size:17.0f],
                                       }];
+    self.navigationItem.title = @"MESSAGES";
+
 
 }
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:NO];
     [self.navigationController.navigationBar setHidden:NO];
-    self.navigationItem.title = @"Messages";
     [self.navigationController.navigationBar setTitleTextAttributes: @{NSForegroundColorAttributeName: [UIColor whiteColor],
                                                                        NSFontAttributeName: [UIFont fontWithName:@"Avenir" size:17.0f],
                                                                        }];

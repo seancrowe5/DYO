@@ -48,7 +48,9 @@
     self.pageScrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
     
     self.eduField.autocompleteDataSource = [HTAutocompleteManager sharedManager];
-    self.eduField.autocompleteType = HTAutocompleteTypeEmail;
+    self.eduField.autocompleteType = HTAutocompleteTypeColor;
+    
+    self.eduField.textAlignment = NSTextAlignmentCenter;
 }
 
 
@@ -62,7 +64,7 @@
     
 
     
-    
+    self.navigationItem.title = @"SEARCH";
     [self.activityIndicatorView stopAnimating]; //stops from spinning when user goes back to search again
 }
 
@@ -208,6 +210,7 @@
 }
 
 - (IBAction)eduEditingChanged:(UITextField *)sender {
+    self.eduField.textAlignment = NSTextAlignmentLeft;
     if(sender.text.length >= 1){
         //if there is 1 or more characters in the field, then disable all others
         [self allOtherFieldsDisabled:YES textFieldSender:sender];
@@ -278,6 +281,10 @@
     tView.text = industryArray[row];
     tView.textAlignment = NSTextAlignmentCenter;
     return tView;
+}
+
+- (IBAction)eduEditingEnd:(id)sender {
+    self.eduField.textAlignment = NSTextAlignmentCenter;
 }
 
 -(void)allOtherFieldsDisabled:(BOOL)disable textFieldSender:(UITextField *)senderField{

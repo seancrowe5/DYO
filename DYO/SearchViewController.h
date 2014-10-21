@@ -25,6 +25,7 @@
 @property (strong, nonatomic) PFGeoPoint  *userGeoPoint;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorView;
 @property (weak, nonatomic) IBOutlet UIScrollView *pageScrollView;
+- (IBAction)eduEditingEnd:(id)sender;
 
 -(void)allOtherFieldsDisabled:(BOOL)disable textFieldSender:(UITextField *)senderField;
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;

@@ -28,6 +28,8 @@ int count;
                                                                        NSForegroundColorAttributeName: [UIColor whiteColor],
                                                                        NSFontAttributeName: [UIFont fontWithName:@"Avenir" size:17.0f],
                                                                        }];
+    self.navigationItem.title = @"PROFILE";
+
 
     //display profile image from parse
     PFUser *user = [PFUser currentUser];
@@ -341,8 +343,9 @@ int count;
 
 - (IBAction)logout:(id)sender {
     [PFUser logOut];
+    
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-    UITabBarController *obj=[storyboard instantiateViewControllerWithIdentifier:@"loginView"];
+    UITabBarController *obj=[storyboard  instantiateViewControllerWithIdentifier:@"loginView"];
     self.navigationController.navigationBarHidden=YES;
     [self.navigationController pushViewController:obj animated:NO];
 }

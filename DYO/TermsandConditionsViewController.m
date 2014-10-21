@@ -32,6 +32,8 @@
     [super viewWillAppear:NO];
     [self.navigationController.navigationBar setHidden:NO];
     self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+    self.navigationItem.title = @"TERMS AND CONDITIONS";
+
 }
 
 -(void)viewDidAppear:(BOOL)animated{

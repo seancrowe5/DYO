@@ -11,5 +11,6 @@
 
 @interface ForgotPasswordViewController : UIViewController
 - (IBAction)submit:(id)sender;
+- (IBAction)cancelButton:(id)sender;
 @property (strong, nonatomic) IBOutlet UITextField *passwordField;
 @end
