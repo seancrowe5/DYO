@@ -232,13 +232,12 @@
 		211DCCBA19C370F100847830 /* Main View */ = {
 			isa = PBXGroup;
 			children = (
-				211DCCB819C370C700847830 /* Login */,
-				21FA432819C7803D0003B8A7 /* Available Chatrooms */,
-				21FA432119C779A20003B8A7 /* Chat/Messages */,
-				211DCCBC19C3710A00847830 /* Profile */,
-				211DCCBB19C3710000847830 /* Search */,
 				214E132C19C1F91300D61FB3 /* HomeTableViewController.h */,
 				21CFF76819B6785D001D5088 /* HomeTableViewController.m */,
+				211DCCB819C370C700847830 /* Login */,
+				211DCCBB19C3710000847830 /* Search */,
+				211DCCBC19C3710A00847830 /* Profile */,
+				21FA432819C7803D0003B8A7 /* Available Chatrooms */,
 			);
 			name = "Main View";
 			sourceTree = "<group>";
@@ -246,12 +245,12 @@
 		211DCCBB19C3710000847830 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				214E133919C2A4F200D61FB3 /* TableViewCell.h */,
-				214E133A19C2A4F200D61FB3 /* TableViewCell.m */,
-				214E133619C29FAC00D61FB3 /* SearchResultsTableViewController.h */,
-				214E133719C29FAC00D61FB3 /* SearchResultsTableViewController.m */,
 				210478CF19B8EAAF007DE573 /* SearchViewController.h */,
 				210478D019B8EAAF007DE573 /* SearchViewController.m */,
+				214E133619C29FAC00D61FB3 /* SearchResultsTableViewController.h */,
+				214E133719C29FAC00D61FB3 /* SearchResultsTableViewController.m */,
+				214E133919C2A4F200D61FB3 /* TableViewCell.h */,
+				214E133A19C2A4F200D61FB3 /* TableViewCell.m */,
 			);
 			name = Search;
 			sourceTree = "<group>";
@@ -326,11 +325,11 @@
 		21CFF73019B620A4001D5088 /* DYO */ = {
 			isa = PBXGroup;
 			children = (
+				21CFF73919B620A4001D5088 /* AppDelegate.h */,
+				21CFF73A19B620A4001D5088 /* AppDelegate.m */,
 				211DCCB719C370AE00847830 /* Views */,
 				212F21D919B757050045E351 /* Images */,
 				21CFF75B19B623CD001D5088 /* Classes */,
-				21CFF73919B620A4001D5088 /* AppDelegate.h */,
-				21CFF73A19B620A4001D5088 /* AppDelegate.m */,
 				21CFF73C19B620A4001D5088 /* Images.xcassets */,
 				21CFF73119B620A4001D5088 /* Supporting Files */,
 			);
@@ -400,11 +399,13 @@
 				21CF0F3119D083F000CB4094 /* ChatView.m */,
 			);
 			name = Chat/Messages;
+			path = DYO;
 			sourceTree = "<group>";
 		};
 		21FA432819C7803D0003B8A7 /* Available Chatrooms */ = {
 			isa = PBXGroup;
 			children = (
+				21FA432119C779A20003B8A7 /* Chat/Messages */,
 				210FE46619D8917200BBDF77 /* AvailableChatsTableViewController.h */,
 				210FE46719D8917200BBDF77 /* AvailableChatsTableViewController.m */,
 				2164027419DC9F2000638BD9 /* AvailableChatsTableViewCell.h */,

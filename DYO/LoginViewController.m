@@ -24,7 +24,6 @@
     
     //set the Nav Bar
     UINavigationBar *navBar = self.navigationController.navigationBar;
-   
     [navBar setTitleTextAttributes: @{
                                       NSForegroundColorAttributeName: [UIColor whiteColor],
                                       NSFontAttributeName: [UIFont fontWithName:@"Avenir" size:17.0f],

@@ -24,7 +24,10 @@ int count;
 {
     [super viewDidLoad];
     [self.navigationController.navigationBar setHidden:NO];
-    
+    [self.navigationController.navigationBar setTitleTextAttributes: @{
+                                                                       NSForegroundColorAttributeName: [UIColor whiteColor],
+                                                                       NSFontAttributeName: [UIFont fontWithName:@"Avenir" size:17.0f],
+                                                                       }];
 
     //display profile image from parse
     PFUser *user = [PFUser currentUser];

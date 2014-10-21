@@ -18,12 +18,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //NAv Bar
     [self.navigationController.navigationBar setHidden:YES];
-    //set the bar to red background
-    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:241.0/255.0 green:106.0/255.0 blue:108.0/255.0 alpha:1]]; /*#f76070*/
+    //[self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:241.0/255.0 green:106.0/255.0 blue:108.0/255.0 alpha:1]]; /*#f76070*/
 
+   
     
-    
+    //selected cell background color
     UIView *backgroundSelectedCell = [[UIView alloc] init];
     [backgroundSelectedCell setBackgroundColor:[UIColor colorWithRed:241.0/255.0 green:106.0/255.0 blue:108.0/255.0 alpha:1]];
     
@@ -33,32 +35,22 @@
             NSIndexPath* cellPath = [NSIndexPath indexPathForRow:row inSection:section];
             UITableViewCell* cell = [self.tableView cellForRowAtIndexPath:cellPath];
             cell.textLabel.highlightedTextColor = [UIColor whiteColor];
-            
-            
-            
             [cell setSelectedBackgroundView:backgroundSelectedCell];
         }
-   
-    
-    
-        
-        //END LOCATION CODE
- 
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:NO];
+    //nav bar
     [self.navigationController.navigationBar setHidden:YES];
-    //set the bar to red background
-    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:241.0/255.0 green:106.0/255.0 blue:108.0/255.0 alpha:1]]; /*#f76070*/
-    [self.navigationController.navigationBar setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
-                                                                      [UIColor whiteColor], NSForegroundColorAttributeName,nil]];
-    //sets the back button to white
-    [self.navigationItem.backBarButtonItem setBackgroundImage:[UIImage imageNamed:@"backButton.png"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    //make back button white
-    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
 
+
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:YES];
+    self.navigationController.interactivePopGestureRecognizer.enabled = YES; //no swipe left to navigate
+    
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{

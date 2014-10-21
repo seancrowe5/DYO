@@ -29,13 +29,9 @@
 {
     [super viewDidLoad];
     
-    // I will make the top navigation bar appear
-    //[self.navigationController.navigationBar setHidden:NO];
-    
     self.navigationItem.hidesBackButton = YES;
     
     //Set profile image to a placeholder image so the initial launch shows something
-    
     self.profileImage.image = [UIImage imageNamed:@"profilePlaceholder.png"];
     self.didUploadPhoto = NO;
     
@@ -43,6 +39,7 @@
     //get industry plist
     NSString *path = [[NSBundle mainBundle] pathForResource:
                       @"testing2" ofType:@"plist"];
+    
     // Build the array from the plist
     NSMutableArray *array2 = [[NSMutableArray alloc] initWithContentsOfFile:path];
     NSMutableArray *array3 = [[NSMutableArray alloc]init];

@@ -63,17 +63,16 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:NO];
-    [self.navigationController.navigationBar setHidden:NO];
+    //nav bar
     UINavigationBar *navBar = self.navigationController.navigationBar;
     [navBar setHidden:NO];
-    [navBar setTitleTextAttributes: @{
-                                      NSForegroundColorAttributeName: [UIColor whiteColor],
-                                      NSFontAttributeName: [UIFont fontWithName:@"Montserrat-Regular" size:17.0f],
-                                      }];
+    [navBar setTitleTextAttributes: @{NSForegroundColorAttributeName: [UIColor whiteColor],
+                                      NSFontAttributeName: [UIFont fontWithName:@"Avenir" size:17.0f],
+    }];
     
-    navBar.tintColor =[UIColor whiteColor]; //back button color
-    navBar.backgroundColor = [UIColor colorWithRed:0.965 green:0.4 blue:0.024 alpha:1];
-   
+    UIImage *backButtonImage = [[UIImage imageNamed:@"next-right-arrow-thin-symbol2.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 13, 0, 6)];
+    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:backButtonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    self.navigationController.interactivePopGestureRecognizer.enabled = YES; //no swipe left to navigate
 
 }
 
