@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-HTAutocompleteTextField.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-JSQMessagesViewController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,27 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>401E119AA45D4BA7A8870068</key>
+		<key>075191009B988F851FDFBE95</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>445498FEBDEE49F5A48B50CE</key>
+		<key>3539D9592A581C926B8900CB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>47F2BB9F35B64D0FA101B50C</key>
+		<key>598A35981A026C2615030348</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9BFC7953A93B454FB84F5A6F</key>
+		<key>6778E1AC92A769FE6CC46B33</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DD993FF4B42C4527B84AADCE</key>
+		<key>A3BA57DD4DA29323A481ED54</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CF777D74D352DD2B3B6C6A1D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

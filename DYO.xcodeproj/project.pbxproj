@@ -11,13 +11,13 @@
 		210478CE19B8BFD0007DE573 /* SetupProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 210478CD19B8BFD0007DE573 /* SetupProfileViewController.m */; };
 		210478D119B8EAAF007DE573 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 210478D019B8EAAF007DE573 /* SearchViewController.m */; };
 		2108C9D819E304CF0013572B /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2108C9D719E304CF0013572B /* Logo.png */; };
+		210B723819F5EFCC00E173A4 /* Avenir Next.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 210B723719F5EFCC00E173A4 /* Avenir Next.ttc */; };
 		210FE46819D8917200BBDF77 /* AvailableChatsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 210FE46719D8917200BBDF77 /* AvailableChatsTableViewController.m */; };
 		212E9CEC19B92BA8004E013E /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 212E9CEB19B92BA8004E013E /* ProfileViewController.m */; };
 		2133EAFE19E6E15100140F2F /* PropertyData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2133EAFD19E6E15100140F2F /* PropertyData.plist */; };
 		2133EB0219E6E43700140F2F /* testing.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2133EB0119E6E43700140F2F /* testing.plist */; };
 		2133EB0619E6F24300140F2F /* CollegeData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2133EB0519E6F24300140F2F /* CollegeData.plist */; };
 		21355DBE19F1C77E00944BEC /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 21355DBD19F1C77D00944BEC /* icon.png */; };
-		2143343B19CE062900F23CCB /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2143343A19CE062900F23CCB /* ChatViewController.m */; };
 		214E133219C26D7200D61FB3 /* TermsandConditionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 214E133119C26D7200D61FB3 /* TermsandConditionsViewController.m */; };
 		214E133519C29D5100D61FB3 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 214E133419C29D5100D61FB3 /* User.m */; };
 		214E133819C29FAC00D61FB3 /* SearchResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 214E133719C29FAC00D61FB3 /* SearchResultsTableViewController.m */; };
@@ -30,7 +30,6 @@
 		2164A78419D47A42006332B1 /* LocationTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2164A77E19D47A42006332B1 /* LocationTracker.m */; };
 		2164A78519D47A42006332B1 /* BackgroundTaskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2164A78019D47A42006332B1 /* BackgroundTaskManager.m */; };
 		2164A78619D47A42006332B1 /* LocationShareModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2164A78219D47A42006332B1 /* LocationShareModel.m */; };
-		216F696119CF820B003F695C /* JSQDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 216F696019CF820B003F695C /* JSQDemoViewController.m */; };
 		217A6B3419DC9878009D22C9 /* camera.ico in Resources */ = {isa = PBXBuildFile; fileRef = 217A6B3319DC9878009D22C9 /* camera.ico */; };
 		21A0600719EF0BED00DCF677 /* testing2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21A0600619EF0BED00DCF677 /* testing2.plist */; };
 		21CF0F3219D083F000CB4094 /* ChatView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CF0F3119D083F000CB4094 /* ChatView.m */; };
@@ -53,6 +52,9 @@
 		21CFF78219B6BFA3001D5088 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CFF78119B6BFA3001D5088 /* LoginViewController.m */; };
 		21F6A7DD19B76A3C00FE995A /* CreateAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F6A7DC19B76A3C00FE995A /* CreateAccountViewController.m */; };
 		21F6A7E019B775BF00FE995A /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F6A7DF19B775BF00FE995A /* ForgotPasswordViewController.m */; };
+		21FBE1D719F5769000F2FC30 /* HTAutocompleteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FBE1D619F5769000F2FC30 /* HTAutocompleteManager.m */; };
+		21FBE1DA19F57BA500F2FC30 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FBE1D919F57BA500F2FC30 /* ChatViewController.m */; };
+		21FBE1DD19F57BB400F2FC30 /* JSQDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FBE1DC19F57BB400F2FC30 /* JSQDemoViewController.m */; };
 		21FF2A3B19E4BBA50043B3B5 /* profilePlaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 21FF2A3A19E4BBA50043B3B5 /* profilePlaceholder.png */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +74,7 @@
 		210478CF19B8EAAF007DE573 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		210478D019B8EAAF007DE573 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		2108C9D719E304CF0013572B /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
+		210B723719F5EFCC00E173A4 /* Avenir Next.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Avenir Next.ttc"; sourceTree = "<group>"; };
 		210FE46619D8917200BBDF77 /* AvailableChatsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AvailableChatsTableViewController.h; path = DYO/AvailableChatsTableViewController.h; sourceTree = "<group>"; };
 		210FE46719D8917200BBDF77 /* AvailableChatsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AvailableChatsTableViewController.m; path = DYO/AvailableChatsTableViewController.m; sourceTree = "<group>"; };
 		2116346419CA20AE0016AFB3 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../../Downloads/parse-library/Bolts.framework"; sourceTree = "<group>"; };
@@ -81,8 +84,6 @@
 		2133EB0119E6E43700140F2F /* testing.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = testing.plist; sourceTree = "<group>"; };
 		2133EB0519E6F24300140F2F /* CollegeData.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = CollegeData.plist; sourceTree = "<group>"; };
 		21355DBD19F1C77D00944BEC /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		2143343919CE062900F23CCB /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
-		2143343A19CE062900F23CCB /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		214E132C19C1F91300D61FB3 /* HomeTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableViewController.h; sourceTree = "<group>"; };
 		214E133019C26D7200D61FB3 /* TermsandConditionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TermsandConditionsViewController.h; sourceTree = "<group>"; };
 		214E133119C26D7200D61FB3 /* TermsandConditionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TermsandConditionsViewController.m; sourceTree = "<group>"; };
@@ -105,8 +106,6 @@
 		2164A78019D47A42006332B1 /* BackgroundTaskManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundTaskManager.m; sourceTree = "<group>"; };
 		2164A78119D47A42006332B1 /* LocationShareModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationShareModel.h; sourceTree = "<group>"; };
 		2164A78219D47A42006332B1 /* LocationShareModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationShareModel.m; sourceTree = "<group>"; };
-		216F695F19CF820B003F695C /* JSQDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSQDemoViewController.h; sourceTree = "<group>"; };
-		216F696019CF820B003F695C /* JSQDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQDemoViewController.m; sourceTree = "<group>"; };
 		217A6B3319DC9878009D22C9 /* camera.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = camera.ico; sourceTree = "<group>"; };
 		21A0600619EF0BED00DCF677 /* testing2.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = testing2.plist; sourceTree = "<group>"; };
 		21CF0F3019D083F000CB4094 /* ChatView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatView.h; sourceTree = "<group>"; };
@@ -144,9 +143,16 @@
 		21F6A7DC19B76A3C00FE995A /* CreateAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateAccountViewController.m; sourceTree = "<group>"; };
 		21F6A7DE19B775BF00FE995A /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordViewController.h; sourceTree = "<group>"; };
 		21F6A7DF19B775BF00FE995A /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordViewController.m; sourceTree = "<group>"; };
+		21FBE1D519F5769000F2FC30 /* HTAutocompleteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTAutocompleteManager.h; sourceTree = "<group>"; };
+		21FBE1D619F5769000F2FC30 /* HTAutocompleteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTAutocompleteManager.m; sourceTree = "<group>"; };
+		21FBE1D819F57BA500F2FC30 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		21FBE1D919F57BA500F2FC30 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
+		21FBE1DB19F57BB400F2FC30 /* JSQDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSQDemoViewController.h; sourceTree = "<group>"; };
+		21FBE1DC19F57BB400F2FC30 /* JSQDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQDemoViewController.m; sourceTree = "<group>"; };
 		21FF2A3A19E4BBA50043B3B5 /* profilePlaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profilePlaceholder.png; sourceTree = "<group>"; };
+		3C7AF8C0AA5B4A8F8D2FD3B2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		85030C987AB74296A9C9B94F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF651A8ACE724E71BC1A7BC2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		E3C07798EBC5E0DF7258D5D1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				216092A519E322D2000718C2 /* Montserrat-Bold.ttf */,
+				210B723719F5EFCC00E173A4 /* Avenir Next.ttc */,
 				216092A619E322D2000718C2 /* Montserrat-Regular.ttf */,
 			);
 			name = Fonts;
@@ -189,8 +196,6 @@
 			isa = PBXGroup;
 			children = (
 				211DCCBA19C370F100847830 /* Main View */,
-				211DCCB919C370E100847830 /* Create Account */,
-				211DCCB819C370C700847830 /* Login */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -202,6 +207,7 @@
 				21F6A7DF19B775BF00FE995A /* ForgotPasswordViewController.m */,
 				21CFF78019B6BFA3001D5088 /* LoginViewController.h */,
 				21CFF78119B6BFA3001D5088 /* LoginViewController.m */,
+				211DCCB919C370E100847830 /* Create Account */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -209,12 +215,12 @@
 		211DCCB919C370E100847830 /* Create Account */ = {
 			isa = PBXGroup;
 			children = (
-				214E133019C26D7200D61FB3 /* TermsandConditionsViewController.h */,
-				214E133119C26D7200D61FB3 /* TermsandConditionsViewController.m */,
 				21F6A7DB19B76A3C00FE995A /* CreateAccountViewController.h */,
 				21F6A7DC19B76A3C00FE995A /* CreateAccountViewController.m */,
 				210478CC19B8BFD0007DE573 /* SetupProfileViewController.h */,
 				210478CD19B8BFD0007DE573 /* SetupProfileViewController.m */,
+				214E133019C26D7200D61FB3 /* TermsandConditionsViewController.h */,
+				214E133119C26D7200D61FB3 /* TermsandConditionsViewController.m */,
 			);
 			name = "Create Account";
 			sourceTree = "<group>";
@@ -222,6 +228,7 @@
 		211DCCBA19C370F100847830 /* Main View */ = {
 			isa = PBXGroup;
 			children = (
+				211DCCB819C370C700847830 /* Login */,
 				21FA432819C7803D0003B8A7 /* Available Chatrooms */,
 				21FA432119C779A20003B8A7 /* Chat/Messages */,
 				211DCCBC19C3710A00847830 /* Profile */,
@@ -275,7 +282,7 @@
 				21CFF74919B620A5001D5088 /* DYOTests */,
 				21CFF72919B620A4001D5088 /* Frameworks */,
 				21CFF72819B620A4001D5088 /* Products */,
-				DF651A8ACE724E71BC1A7BC2 /* Pods.xcconfig */,
+				D8909FAFA83F349AEB79D516 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -360,6 +367,8 @@
 		21CFF75B19B623CD001D5088 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				21FBE1D519F5769000F2FC30 /* HTAutocompleteManager.h */,
+				21FBE1D619F5769000F2FC30 /* HTAutocompleteManager.m */,
 				2164A77B19D47A42006332B1 /* LocationViewController.h */,
 				2164A77C19D47A42006332B1 /* LocationViewController.m */,
 				2164A77D19D47A42006332B1 /* LocationTracker.h */,
@@ -377,12 +386,12 @@
 		21FA432119C779A20003B8A7 /* Chat/Messages */ = {
 			isa = PBXGroup;
 			children = (
+				21FBE1DB19F57BB400F2FC30 /* JSQDemoViewController.h */,
+				21FBE1DC19F57BB400F2FC30 /* JSQDemoViewController.m */,
+				21FBE1D819F57BA500F2FC30 /* ChatViewController.h */,
+				21FBE1D919F57BA500F2FC30 /* ChatViewController.m */,
 				21CF0F3019D083F000CB4094 /* ChatView.h */,
 				21CF0F3119D083F000CB4094 /* ChatView.m */,
-				2143343919CE062900F23CCB /* ChatViewController.h */,
-				2143343A19CE062900F23CCB /* ChatViewController.m */,
-				216F695F19CF820B003F695C /* JSQDemoViewController.h */,
-				216F696019CF820B003F695C /* JSQDemoViewController.m */,
 			);
 			name = Chat/Messages;
 			sourceTree = "<group>";
@@ -397,6 +406,15 @@
 			);
 			name = "Available Chatrooms";
 			path = ..;
+			sourceTree = "<group>";
+		};
+		D8909FAFA83F349AEB79D516 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E3C07798EBC5E0DF7258D5D1 /* Pods.debug.xcconfig */,
+				3C7AF8C0AA5B4A8F8D2FD3B2 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -484,6 +502,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				210B723819F5EFCC00E173A4 /* Avenir Next.ttc in Resources */,
 				2133EB0219E6E43700140F2F /* testing.plist in Resources */,
 				216092A819E322D2000718C2 /* Montserrat-Regular.ttf in Resources */,
 				2133EB0619E6F24300140F2F /* CollegeData.plist in Resources */,
@@ -539,7 +558,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -553,12 +572,13 @@
 				21F6A7E019B775BF00FE995A /* ForgotPasswordViewController.m in Sources */,
 				2164A78319D47A42006332B1 /* LocationViewController.m in Sources */,
 				210FE46819D8917200BBDF77 /* AvailableChatsTableViewController.m in Sources */,
+				21FBE1DA19F57BA500F2FC30 /* ChatViewController.m in Sources */,
 				212E9CEC19B92BA8004E013E /* ProfileViewController.m in Sources */,
-				2143343B19CE062900F23CCB /* ChatViewController.m in Sources */,
 				2164A78619D47A42006332B1 /* LocationShareModel.m in Sources */,
 				2164027619DC9F2000638BD9 /* AvailableChatsTableViewCell.m in Sources */,
 				214E133219C26D7200D61FB3 /* TermsandConditionsViewController.m in Sources */,
-				216F696119CF820B003F695C /* JSQDemoViewController.m in Sources */,
+				21FBE1DD19F57BB400F2FC30 /* JSQDemoViewController.m in Sources */,
+				21FBE1D719F5769000F2FC30 /* HTAutocompleteManager.m in Sources */,
 				21CFF78219B6BFA3001D5088 /* LoginViewController.m in Sources */,
 				214E133819C29FAC00D61FB3 /* SearchResultsTableViewController.m in Sources */,
 				21CFF73B19B620A4001D5088 /* AppDelegate.m in Sources */,
@@ -684,7 +704,7 @@
 		};
 		21CFF75419B620A5001D5088 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF651A8ACE724E71BC1A7BC2 /* Pods.xcconfig */;
+			baseConfigurationReference = E3C07798EBC5E0DF7258D5D1 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -706,7 +726,7 @@
 		};
 		21CFF75519B620A5001D5088 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF651A8ACE724E71BC1A7BC2 /* Pods.xcconfig */;
+			baseConfigurationReference = 3C7AF8C0AA5B4A8F8D2FD3B2 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

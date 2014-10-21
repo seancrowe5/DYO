@@ -22,16 +22,16 @@
     self.emailField.delegate = self;
     self.emailField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     
-    //set the background color *Global*
+    //set the Nav Bar
     UINavigationBar *navBar = self.navigationController.navigationBar;
    
     [navBar setTitleTextAttributes: @{
                                       NSForegroundColorAttributeName: [UIColor whiteColor],
-                                      NSFontAttributeName: [UIFont fontWithName:@"Montserrat-Regular" size:17.0f],
+                                      NSFontAttributeName: [UIFont fontWithName:@"Avenir" size:17.0f],
                                       }];
     
     navBar.tintColor =[UIColor whiteColor]; //back button color
-    navBar.backgroundColor = [UIColor colorWithRed:241.0/255.0 green:106.0/255.0 blue:108.0/255.0 alpha:1];
+    navBar.backgroundColor = [UIColor colorWithRed:241.0/255.0 green:106.0/255.0 blue:108.0/255.0 alpha:1]; //logo red
     
     //small circles on secure pass field
     [self.passwordField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];

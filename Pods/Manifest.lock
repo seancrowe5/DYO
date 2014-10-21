@@ -1,19 +1,22 @@
 PODS:
-  - Bolts (1.1.2)
+  - Bolts (1.1.3)
+  - HTAutocompleteTextField (1.3.2)
   - JSQMessagesViewController (5.3.1):
     - JSQSystemSoundPlayer
-  - JSQSystemSoundPlayer (1.5.2)
-  - Parse (1.4.0):
-    - Bolts (~> 1.1.2)
+  - JSQSystemSoundPlayer (2.0.0)
+  - Parse (1.4.2):
+    - Bolts (~> 1.1.3)
 
 DEPENDENCIES:
-  - JSQMessagesViewController
+  - HTAutocompleteTextField
+  - JSQMessagesViewController (= 5.3.1)
   - Parse
 
 SPEC CHECKSUMS:
-  Bolts: 2635e8698a630774689441047f3465d78c48d485
+  Bolts: 3db0a875235e0c9042b013af13af0f00f79b102c
+  HTAutocompleteTextField: 554b1eb39e58a54cb2078a063e078d263ae05a76
   JSQMessagesViewController: d1f9dcf8f768aab54dc59ac9f042a69623057658
-  JSQSystemSoundPlayer: c24914bc96ff5365b5d28b59d7ecffd60d1c5587
-  Parse: 217a57ed13e870a744fe746fcc01a3fef6a9b750
+  JSQSystemSoundPlayer: c98443b1cbb3b45db09d0d3d6c2355cf78294981
+  Parse: fc9ceb6edbc6bb6a1a1f3c33f0db3293a6894f94
 
-COCOAPODS: 0.33.1
+COCOAPODS: 0.34.4

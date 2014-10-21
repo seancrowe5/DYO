@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import <MapKit/MapKit.h>
 #import "SearchResultsTableViewController.h"
+#import "HTAutocompleteManager.h"
 
 @interface SearchViewController : UIViewController <UITextFieldDelegate, SearchResultsTableViewControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
 
@@ -17,7 +18,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *lastNameField;
 @property (strong, nonatomic) IBOutlet UITextField *jobField;
 @property (strong, nonatomic) IBOutlet UITextField *companyField;
-@property (strong, nonatomic) IBOutlet UITextField *eduField;
+@property (strong, nonatomic) IBOutlet HTAutocompleteTextField *eduField;
 @property (weak, nonatomic) IBOutlet UITextField *areaField;
 @property (weak, nonatomic) IBOutlet UITextField *industryField;
 @property (strong, nonatomic) NSArray  *searchResults;

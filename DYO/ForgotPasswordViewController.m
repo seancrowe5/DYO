@@ -23,14 +23,27 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    [self.navigationController.navigationBar setHidden:NO];
-    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:241.0/255.0 green:106.0/255.0 blue:108.0/255.0 alpha:1]]; /*#f76070*/
-    [self.navigationController.navigationBar setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
-                                                                      [UIColor whiteColor], NSForegroundColorAttributeName,nil]];
-    //sets the back button to white
-    [self.navigationItem.backBarButtonItem setBackgroundImage:[UIImage imageNamed:@"backbtn.ico"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    //make back button white
-    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    
+    //set the Nav Bar
+   // UINavigationBar *navBar = self.navigationController.navigationBar;
+    
+//    [navBar setTitleTextAttributes: @{
+//                                      NSForegroundColorAttributeName: [UIColor whiteColor],
+//                                      NSFontAttributeName: [UIFont fontWithName:@"Avenir" size:17.0f],
+//                                      }];
+//    
+//    navBar.tintColor =[UIColor whiteColor]; //back button color
+//    navBar.backgroundColor = [UIColor colorWithRed:241.0/255.0 green:106.0/255.0 blue:108.0/255.0 alpha:1]; //logo red
+//    
+    
+//    [self.navigationController.navigationBar setHidden:NO]; //show nav
+//    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:241.0/255.0 green:106.0/255.0 blue:108.0/255.0 alpha:1]]; /*#f76070*/ //color of logo red
+//    [self.navigationController.navigationBar setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+//                                                                      [UIColor whiteColor], NSForegroundColorAttributeName,nil]];
+//    //sets the back button to white
+//    [self.navigationItem.backBarButtonItem setBackgroundImage:[UIImage imageNamed:@"backbtn.ico"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+//    //make back button white
+//    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
 }
 
 - (IBAction)submit:(id)sender {

@@ -8,6 +8,7 @@
 
 #import "SearchViewController.h"
 
+
 @interface SearchViewController (){
     NSArray *_pickerData;
     NSArray *industryArray;
@@ -45,6 +46,9 @@
     
 
     self.pageScrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
+    
+    self.eduField.autocompleteDataSource = [HTAutocompleteManager sharedManager];
+    self.eduField.autocompleteType = HTAutocompleteTypeEmail;
 }
 
 
@@ -243,13 +247,6 @@
     [sender resignFirstResponder];
 }
 
-- (IBAction)firstNameExitTest:(id)sender {
-    [sender resignFirstResponder];
-
-}
-
-
-
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
     return 1;
 }
@@ -265,7 +262,7 @@
 }
 
 - (void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
-    self.industryField.text = [industryArray objectAtIndex:row];
+    self.industryField.text = [industryArray objectAtIndex:row]; //set the label to object at row in array
     [self allOtherFieldsDisabled:YES textFieldSender:self.industryField];
 }
 

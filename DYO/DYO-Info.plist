@@ -47,6 +47,7 @@
 	<string>I have learned more on stack overflow than anything else</string>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Avenir Next.ttc</string>
 		<string>Montserrat-Regular.ttf</string>
 		<string>Montserrat-Bold.ttf</string>
 	</array>
