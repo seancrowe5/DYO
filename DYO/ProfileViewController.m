@@ -83,6 +83,7 @@ int count;
     
     //make sure nav shows
     [self.navigationController.navigationBar setHidden:NO];
+    
 
 }
 

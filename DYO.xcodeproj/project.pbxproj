@@ -12,6 +12,8 @@
 		210478D119B8EAAF007DE573 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 210478D019B8EAAF007DE573 /* SearchViewController.m */; };
 		2108C9D819E304CF0013572B /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2108C9D719E304CF0013572B /* Logo.png */; };
 		210B723819F5EFCC00E173A4 /* Avenir Next.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 210B723719F5EFCC00E173A4 /* Avenir Next.ttc */; };
+		210B724019F6101800E173A4 /* next-right-arrow-thin-symbol.png in Resources */ = {isa = PBXBuildFile; fileRef = 210B723F19F6101800E173A4 /* next-right-arrow-thin-symbol.png */; };
+		210B724219F6116E00E173A4 /* next-right-arrow-thin-symbol2.png in Resources */ = {isa = PBXBuildFile; fileRef = 210B724119F6116E00E173A4 /* next-right-arrow-thin-symbol2.png */; };
 		210FE46819D8917200BBDF77 /* AvailableChatsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 210FE46719D8917200BBDF77 /* AvailableChatsTableViewController.m */; };
 		212E9CEC19B92BA8004E013E /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 212E9CEB19B92BA8004E013E /* ProfileViewController.m */; };
 		2133EAFE19E6E15100140F2F /* PropertyData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2133EAFD19E6E15100140F2F /* PropertyData.plist */; };
@@ -75,6 +77,8 @@
 		210478D019B8EAAF007DE573 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		2108C9D719E304CF0013572B /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
 		210B723719F5EFCC00E173A4 /* Avenir Next.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Avenir Next.ttc"; sourceTree = "<group>"; };
+		210B723F19F6101800E173A4 /* next-right-arrow-thin-symbol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "next-right-arrow-thin-symbol.png"; sourceTree = "<group>"; };
+		210B724119F6116E00E173A4 /* next-right-arrow-thin-symbol2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "next-right-arrow-thin-symbol2.png"; sourceTree = "<group>"; };
 		210FE46619D8917200BBDF77 /* AvailableChatsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AvailableChatsTableViewController.h; path = DYO/AvailableChatsTableViewController.h; sourceTree = "<group>"; };
 		210FE46719D8917200BBDF77 /* AvailableChatsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AvailableChatsTableViewController.m; path = DYO/AvailableChatsTableViewController.m; sourceTree = "<group>"; };
 		2116346419CA20AE0016AFB3 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../../Downloads/parse-library/Bolts.framework"; sourceTree = "<group>"; };
@@ -264,6 +268,8 @@
 		212F21D919B757050045E351 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				210B724119F6116E00E173A4 /* next-right-arrow-thin-symbol2.png */,
+				210B723F19F6101800E173A4 /* next-right-arrow-thin-symbol.png */,
 				21355DBD19F1C77D00944BEC /* icon.png */,
 				21FF2A3A19E4BBA50043B3B5 /* profilePlaceholder.png */,
 				2108C9D719E304CF0013572B /* Logo.png */,
@@ -502,12 +508,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				210B724019F6101800E173A4 /* next-right-arrow-thin-symbol.png in Resources */,
 				210B723819F5EFCC00E173A4 /* Avenir Next.ttc in Resources */,
 				2133EB0219E6E43700140F2F /* testing.plist in Resources */,
 				216092A819E322D2000718C2 /* Montserrat-Regular.ttf in Resources */,
 				2133EB0619E6F24300140F2F /* CollegeData.plist in Resources */,
 				2164027A19DE4DD900638BD9 /* backbtn.ico in Resources */,
 				21FF2A3B19E4BBA50043B3B5 /* profilePlaceholder.png in Resources */,
+				210B724219F6116E00E173A4 /* next-right-arrow-thin-symbol2.png in Resources */,
 				2133EAFE19E6E15100140F2F /* PropertyData.plist in Resources */,
 				217A6B3419DC9878009D22C9 /* camera.ico in Resources */,
 				21CFF76019B62D92001D5088 /* MainStoryboard.storyboard in Resources */,

@@ -62,7 +62,7 @@
             </objects>
             <point key="canvasLocation" x="-1512" y="-1027.5"/>
         </scene>
-        <!--DYO-->
+        <!-- -->
         <scene sceneID="fs7-MF-ncI">
             <objects>
                 <tableViewController storyboardIdentifier="homeStoryboard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="D7a-oc-PjL" customClass="HomeTableViewController" sceneMemberID="viewController">
@@ -108,7 +108,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="EC0-8E-GWe" kind="push" id="VE3-oe-Jnk"/>
+                                            <segue destination="EC0-8E-GWe" kind="push" identifier="showProfile" id="VE3-oe-Jnk"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="messagesCell" textLabel="wdV-ba-Aow" rowHeight="85" style="IBUITableViewCellStyleDefault" id="PlD-jv-jar">
@@ -157,7 +157,8 @@
                             <outlet property="delegate" destination="D7a-oc-PjL" id="l2a-WD-RUX"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="DYO" id="6pc-kf-Gzp">
+                    <navigationItem key="navigationItem" title=" " id="6pc-kf-Gzp">
+                        <barButtonItem key="backBarButtonItem" title=" " id="KIy-Hu-dRw"/>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="TEm-gI-2LA">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WKf-nv-TPK">
                                 <rect key="frame" x="233" y="5" width="71" height="33"/>
@@ -638,7 +639,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Profile" id="gI4-pO-bml"/>
+                    <navigationItem key="navigationItem" title="Profile" id="gI4-pO-bml">
+                        <barButtonItem key="backBarButtonItem" title=" " id="m7i-Em-JLE"/>
+                    </navigationItem>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="areaOfStudyField" destination="ufJ-4y-pIT" id="C9Q-qO-MCm"/>

@@ -31,7 +31,7 @@
                                       }];
     
     navBar.tintColor =[UIColor whiteColor]; //back button color
-    navBar.backgroundColor = [UIColor colorWithRed:241.0/255.0 green:106.0/255.0 blue:108.0/255.0 alpha:1]; //logo red
+    [navBar setBarTintColor:[UIColor colorWithRed:241.0/255.0 green:106.0/255.0 blue:108.0/255.0 alpha:1]]; //logo red
     
     //small circles on secure pass field
     [self.passwordField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];

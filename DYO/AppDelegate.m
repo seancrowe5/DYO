@@ -18,8 +18,10 @@
 {
     
     [NSThread sleepForTimeInterval:1.5]; // This is the time interval used to display the lauchscreen for 1.5 seconds
-    [Parse setApplicationId:@"SVacx74S0JIYxRfimRreuu8JzggWmwnBANvj1dtb"
-                  clientKey:@"2DehtF2ih9Tew4YdZmfMPfqgh0S6QztYJFdGhanz"];
+//    [Parse setApplicationId:@"SVacx74S0JIYxRfimRreuu8JzggWmwnBANvj1dtb"
+//                  clientKey:@"2DehtF2ih9Tew4YdZmfMPfqgh0S6QztYJFdGhanz"];
+    [Parse setApplicationId:@"X0tpRPZrvXMwVgLhOHpDpufiPdYoqWh88azaxyrK"
+                  clientKey:@"7pQ0TMCx2QMefGYTc7R85ruHlfGrLaYRAmF9BtwH"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
     
@@ -37,14 +39,8 @@
         
             }
     
-    //sets the font and size of the back button
-    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil]
-     setTitleTextAttributes:
-     @{NSForegroundColorAttributeName:[UIColor whiteColor],
-       NSFontAttributeName: [UIFont fontWithName:@"Montserrat-Bold" size:17.0f]
-       }
-     forState:UIControlStateNormal];
-    
+    UIImage *backButtonImage = [[UIImage imageNamed:@"next-right-arrow-thin-symbol2.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 13, 0, 6)];
+    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:backButtonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     
     //ADDED LOCATION STUFF
     self.locationTracker = [[LocationTracker alloc]init];

@@ -55,12 +55,23 @@
     [self.navigationController.navigationBar setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
                                                                       [UIColor whiteColor], NSForegroundColorAttributeName,nil]];
     //sets the back button to white
-    [self.navigationItem.backBarButtonItem setBackgroundImage:[UIImage imageNamed:@"backbtn.ico"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [self.navigationItem.backBarButtonItem setBackgroundImage:[UIImage imageNamed:@"backButton.png"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     //make back button white
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
 
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    
+         UIBarButtonItem *newBackButton =
+         [[UIBarButtonItem alloc] initWithTitle:@" " //here is the blank back button
+                                          style:UIBarButtonItemStylePlain
+                                         target:nil
+                                         action:nil];
+         [[self navigationItem] setBackBarButtonItem:newBackButton];
+    
+}
 
 #pragma mark - Table view data source
 
