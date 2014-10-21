@@ -211,6 +211,12 @@
 
 - (IBAction)eduEditingChanged:(UITextField *)sender {
     self.eduField.textAlignment = NSTextAlignmentLeft;
+    
+    UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 7, 20)];
+    self.eduField.leftView = paddingView;
+    self.eduField.leftViewMode = UITextFieldViewModeAlways;
+    
+
     if(sender.text.length >= 1){
         //if there is 1 or more characters in the field, then disable all others
         [self allOtherFieldsDisabled:YES textFieldSender:sender];

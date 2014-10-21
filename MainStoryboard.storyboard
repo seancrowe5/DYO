@@ -411,7 +411,7 @@
                                             <action selector="search:" destination="8d0-3K-wcC" eventType="editingDidEndOnExit" id="QYH-NG-a8Q"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Education" minimumFontSize="17" id="5aE-1E-95P" customClass="HTAutocompleteTextField">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Education" minimumFontSize="17" clearButtonMode="whileEditing" id="5aE-1E-95P" customClass="HTAutocompleteTextField">
                                         <rect key="frame" x="20" y="254" width="280" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -991,13 +991,15 @@
                                         <rect key="frame" x="20" y="17" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Education" textAlignment="center" minimumFontSize="17" id="PL3-Da-Y5g">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Education" minimumFontSize="17" clearButtonMode="whileEditing" id="PL3-Da-Y5g" customClass="HTAutocompleteTextField">
                                         <rect key="frame" x="20" y="377" width="280" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Italic" family="Avenir Next" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                         <connections>
+                                            <action selector="eduEditingBegan:" destination="v7k-sm-mEp" eventType="editingDidBegin" id="fse-HR-RLQ"/>
+                                            <action selector="eduEditingEnd:" destination="v7k-sm-mEp" eventType="editingDidEnd" id="GTy-43-84z"/>
                                             <action selector="textFieldReturn:" destination="v7k-sm-mEp" eventType="editingDidEndOnExit" id="Oqi-Vb-WHG"/>
                                         </connections>
                                     </textField>

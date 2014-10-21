@@ -10,15 +10,18 @@
 #import <Parse/Parse.h>
 #import <MobileCoreServices/UTCoreTypes.h>
 #import <MapKit/MapKit.h>
+#import "HTAutocompleteManager.h"
 
 
 @interface SetupProfileViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate>
+- (IBAction)eduEditingEnd:(id)sender;
+- (IBAction)eduEditingBegan:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UITextField *firstNameField;
 @property (strong, nonatomic) IBOutlet UITextField *lastNameField;
 @property (strong, nonatomic) IBOutlet UITextField *jobField;
 @property (strong, nonatomic) IBOutlet UITextField *companyField;
-@property (strong, nonatomic) IBOutlet UITextField *educationField;
+@property (strong, nonatomic) IBOutlet HTAutocompleteTextField *educationField;
 @property (strong, nonatomic) IBOutlet UITextField *industryField;
 @property (strong, nonatomic) NSArray  *industry;
 

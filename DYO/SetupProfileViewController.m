@@ -16,10 +16,6 @@
     UIPickerView *pktStatePicker ;
     UIToolbar *mypickerToolbar;
 
-    NSArray *collegeArray;
-    UIPickerView *pktCollegePicker ;
-
-
 }
 @end
 
@@ -58,27 +54,10 @@
     self.industryField.inputView =  pktStatePicker  ;
     
     
-    //college picker
-    //get industry plist
-    NSString *pathCollege = [[NSBundle mainBundle] pathForResource:
-                      @"CollegeData" ofType:@"plist"];
-    // Build the array from the plist
-    NSMutableArray *arrayCollege = [[NSMutableArray alloc] initWithContentsOfFile:pathCollege];
-    NSMutableArray *arrayCollege2 = [[NSMutableArray alloc]init];
+    self.educationField.autocompleteDataSource = [HTAutocompleteManager sharedManager];
+    self.educationField.autocompleteType = HTAutocompleteTypeColor;
     
-    //loop through industry stuff
-    for (NSDictionary *dict in arrayCollege) {
-        [arrayCollege2 addObject:[dict objectForKey:@"College"]];
-    }
-    
-    //College Picker
-    collegeArray = arrayCollege2;
-    pktCollegePicker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 43, 320, 480)];
-    pktCollegePicker.delegate = self;
-    pktCollegePicker.dataSource = self;
-    [pktCollegePicker  setShowsSelectionIndicator:YES];
-    self.educationField.inputView =  pktCollegePicker  ;
-    
+    self.educationField.textAlignment = NSTextAlignmentCenter;
 }
 
 
@@ -346,7 +325,6 @@
     }
     if ([self.educationField isFirstResponder] && [touch view] != self.educationField) {
         [self.educationField resignFirstResponder];
-        pktCollegePicker.hidden = YES;
     }
     if ([self.areaOfStudyField isFirstResponder] && [touch view] != self.areaOfStudyField) {
         [self.areaOfStudyField resignFirstResponder];
@@ -366,46 +344,18 @@
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
     
-    if([pickerView isEqual: pktStatePicker]){
-        // return the appropriate number of components, for instance
-        return [industryArray count];
-        
-    }
-    
-    if([pickerView isEqual: pktCollegePicker]){
-        // return the appropriate number of components, for instance
-        return [collegeArray count];
-    }
-    
     return [industryArray count];
 }
 
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
-    
-    if([pickerView isEqual: pktStatePicker]){
-        return [industryArray objectAtIndex:row];
-    }
-    
-    if([pickerView isEqual: pktCollegePicker]){
-        return [collegeArray objectAtIndex:row];
-    }
 
-    
     return [industryArray objectAtIndex:row];
 }
 
 - (void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
     
-    if([pickerView isEqual: pktStatePicker]){
-        self.industryField.text = [industryArray objectAtIndex:row];
-        [self.industryField resignFirstResponder];
-    }
-    
-    if([pickerView isEqual: pktCollegePicker]){
-        self.educationField.text = [collegeArray objectAtIndex:row];
-    }
-    
+    self.industryField.text = [industryArray objectAtIndex:row];
     [pktStatePicker resignFirstResponder];
 }
 
@@ -421,13 +371,20 @@
     if([pickerView isEqual: pktStatePicker]){
         tView.text = industryArray[row];
     }
-    if([pickerView isEqual: pktCollegePicker]){
-        tView.text = collegeArray[row];
-    }
-        
-    
+   
     tView.textAlignment = NSTextAlignmentCenter;
     return tView;
 }
 
+- (IBAction)eduEditingEnd:(id)sender {
+    self.educationField.textAlignment = NSTextAlignmentCenter;
+}
+
+- (IBAction)eduEditingBegan:(id)sender {
+    UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 7, 20)];
+    self.educationField.leftView = paddingView;
+    self.educationField.leftViewMode = UITextFieldViewModeAlways;
+
+    self.educationField.textAlignment = NSTextAlignmentLeft;
+}
 @end
