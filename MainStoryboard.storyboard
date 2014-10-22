@@ -532,28 +532,21 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="nextButtonPressed:" destination="EC0-8E-GWe" eventType="editingDidEndOnExit" id="NYj-yx-8io"/>
-                                        </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="DYO INC" minimumFontSize="17" id="zd5-RS-vSg">
                                         <rect key="frame" x="18" y="141" width="281" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="nextButtonPressed:" destination="EC0-8E-GWe" eventType="editingDidEndOnExit" id="wmR-Iy-VU4"/>
-                                        </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="NORTHWESTERN UNIVERSITY" minimumFontSize="17" clearButtonMode="whileEditing" id="IUD-Gn-iXu" customClass="HTAutocompleteTextField">
-                                        <rect key="frame" x="18" y="188" width="281" height="28"/>
+                                        <rect key="frame" x="18" y="235" width="281" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
                                             <action selector="eduEditingBegan:" destination="EC0-8E-GWe" eventType="editingDidBegin" id="A48-iu-ZA8"/>
-                                            <action selector="nextButtonPressed:" destination="EC0-8E-GWe" eventType="editingDidEndOnExit" id="Cpe-8d-kVR"/>
                                         </connections>
                                     </textField>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="SlB-qp-J0M">
@@ -571,13 +564,10 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="FINANCE" minimumFontSize="17" clearButtonMode="whileEditing" id="Qcm-RH-aN6">
-                                        <rect key="frame" x="18" y="235" width="281" height="28"/>
+                                        <rect key="frame" x="18" y="188" width="281" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="nextButtonPressed:" destination="EC0-8E-GWe" eventType="editingDidEndOnExit" id="XPk-tp-n0R"/>
-                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAME" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lbl-4n-ifU">
                                         <rect key="frame" x="126" y="24" width="84" height="20"/>
@@ -594,14 +584,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EDUCATION" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="K9x-53-6br">
-                                        <rect key="frame" x="18" y="171" width="93" height="20"/>
+                                        <rect key="frame" x="18" y="218" width="93" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="11"/>
                                         <color key="textColor" red="0.031372549019607843" green="0.50196078431372548" blue="0.77254901960784317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INDUSTRY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hDC-N4-pNM">
-                                        <rect key="frame" x="18" y="218" width="83" height="20"/>
+                                        <rect key="frame" x="18" y="171" width="83" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="11"/>
                                         <color key="textColor" red="0.031372549019607843" green="0.50196078431372548" blue="0.77254901960784317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -619,9 +609,6 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="nextButtonPressed:" destination="EC0-8E-GWe" eventType="editingDidEndOnExit" id="0Ar-x7-eir"/>
-                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CURRENT COMPANY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IU1-YO-glc">
                                         <rect key="frame" x="18" y="124" width="159" height="20"/>
@@ -635,9 +622,6 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="nextButtonPressed:" destination="EC0-8E-GWe" eventType="editingDidEndOnExit" id="kIY-7p-3bX"/>
-                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qWO-eN-R8q">
                                         <rect key="frame" x="258" y="19" width="66" height="30"/>

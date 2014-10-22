@@ -24,7 +24,6 @@
 @property (nonatomic, strong) UIImage *image;
 @property (nonatomic, strong) UIColor *backgroundColor;
 @property (weak, nonatomic) IBOutlet UIScrollView *pageScrollView;
-- (IBAction)nextButtonPressed:(UITextField *)sender;
 
 - (IBAction)eduEditingBegan:(id)sender;
 

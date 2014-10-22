@@ -482,26 +482,6 @@ int count;
     
 
 }
-- (IBAction)nextButtonPressed:(UITextField *)sender {
-    if (sender.tag == 0) {
-        [sender resignFirstResponder];
-        [self.jobField becomeFirstResponder];
-    }
-    else if (sender.tag == 1) {
-        [sender resignFirstResponder];
-        [self.companyField becomeFirstResponder];
-    }
-    else if (sender.tag == 2) {
-        [self.educationField becomeFirstResponder];
-    }
-    else if (sender.tag == 3) {
-        [self.industryField becomeFirstResponder];
-    }
-    else if (sender.tag == 4) {
-        [self.areaOfStudyField becomeFirstResponder];
-    }
-    
-}
 
 - (IBAction)eduEditingBegan:(id)sender {
     self.educationField.textAlignment = NSTextAlignmentLeft;
