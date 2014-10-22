@@ -996,7 +996,7 @@
                                         <fontDescription key="fontDescription" name="AvenirNext-Italic" family="Avenir Next" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="next"/>
                                         <connections>
-                                            <action selector="textFieldShouldReturn:" destination="Aeb-Kg-VeH" eventType="editingDidEndOnExit" id="pLO-qK-y6j"/>
+                                            <action selector="nextKeyPressed:" destination="Aeb-Kg-VeH" eventType="editingDidEndOnExit" id="Z8f-Ar-XnZ"/>
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" id="TFU-MZ-Ko9">
@@ -1134,6 +1134,7 @@
                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                         <connections>
                                             <action selector="nextKeyPressed:" destination="v7k-sm-mEp" eventType="editingDidEndOnExit" id="JAl-Nm-Fqq"/>
+                                            <action selector="textFieldChanged:" destination="v7k-sm-mEp" eventType="editingChanged" id="yK9-7j-Jek"/>
                                             <action selector="textFieldReturn:" destination="v7k-sm-mEp" eventType="editingDidEndOnExit" id="eEp-F8-Cjf"/>
                                         </connections>
                                     </textField>
@@ -1145,6 +1146,7 @@
                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                         <connections>
                                             <action selector="nextKeyPressed:" destination="v7k-sm-mEp" eventType="editingDidEndOnExit" id="OHh-1y-jcV"/>
+                                            <action selector="textFieldChanged:" destination="v7k-sm-mEp" eventType="editingDidBegin" id="ssa-Ty-YBK"/>
                                             <action selector="textFieldReturn:" destination="v7k-sm-mEp" eventType="editingDidEndOnExit" id="AOX-IY-5en"/>
                                         </connections>
                                     </textField>
@@ -1156,6 +1158,7 @@
                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                         <connections>
                                             <action selector="nextKeyPressed:" destination="v7k-sm-mEp" eventType="editingDidEndOnExit" id="KEE-CC-J9I"/>
+                                            <action selector="textFieldChanged:" destination="v7k-sm-mEp" eventType="editingDidBegin" id="DQo-gx-aTi"/>
                                             <action selector="textFieldReturn:" destination="v7k-sm-mEp" eventType="editingDidEndOnExit" id="byY-np-uXh"/>
                                         </connections>
                                     </textField>
@@ -1167,6 +1170,7 @@
                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                         <connections>
                                             <action selector="nextKeyPressed:" destination="v7k-sm-mEp" eventType="editingDidEndOnExit" id="6Y0-bu-ZeW"/>
+                                            <action selector="textFieldChanged:" destination="v7k-sm-mEp" eventType="editingChanged" id="MRs-Dr-A7R"/>
                                             <action selector="textFieldReturn:" destination="v7k-sm-mEp" eventType="editingDidEndOnExit" id="wpd-3a-dyi"/>
                                         </connections>
                                     </textField>

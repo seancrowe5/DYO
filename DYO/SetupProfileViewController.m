@@ -59,9 +59,10 @@
     self.educationField.autocompleteType = HTAutocompleteTypeColor;
     
     self.educationField.textAlignment = NSTextAlignmentCenter;
+    
+    [self registerForKeyboardNotifications];
 }
 
-// Call this method somewhere in your view controller setup code.
 - (void)registerForKeyboardNotifications
 {
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -72,12 +73,14 @@
                                                  name:UIKeyboardWillHideNotification object:nil];
 }
 
+
 // Called when the UIKeyboardDidShowNotification is sent.
 - (void)keyboardWasShown:(NSNotification*)aNotification
 {
     NSDictionary* info = [aNotification userInfo];
     CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0);
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height+300, 0.0);
+    
     self.pageScrollView.contentInset = contentInsets;
     self.pageScrollView.scrollIndicatorInsets = contentInsets;
     
@@ -85,8 +88,9 @@
     // Your application might not need or want this behavior.
     CGRect aRect = self.view.frame;
     aRect.size.height -= kbSize.height;
-    if (!CGRectContainsPoint(aRect, self.areaOfStudyField.frame.origin) ) {
-        CGPoint scrollPoint = CGPointMake(0.0, self.areaOfStudyField.frame.origin.y-kbSize.height);
+    if (!CGRectContainsPoint(aRect, self.activeField.frame.origin) ) {
+        CGPoint scrollPoint = CGPointMake(0.0, self.activeField.frame.origin.y-kbSize.height);
+        NSLog(@"scroll point is: %@", NSStringFromCGPoint(scrollPoint));
         [self.pageScrollView setContentOffset:scrollPoint animated:YES];
     }
 }
@@ -94,10 +98,12 @@
 // Called when the UIKeyboardWillHideNotification is sent
 - (void)keyboardWillBeHidden:(NSNotification*)aNotification
 {
-    UIEdgeInsets contentInsets = UIEdgeInsetsZero;
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0,0.0, 0.0);
     self.pageScrollView.contentInset = contentInsets;
     self.pageScrollView.scrollIndicatorInsets = contentInsets;
 }
+
+
 
 #pragma Mark - Image
 
@@ -346,35 +352,6 @@
     //hides keyboard on return
     [sender resignFirstResponder];
 }
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    //hides keyboard on background touch
-    UITouch *touch = [[event allTouches] anyObject];
-    if ([self.firstNameField isFirstResponder] && [touch view] != self.firstNameField) {
-        [self.firstNameField resignFirstResponder];
-    }
-    if ([self.lastNameField isFirstResponder] && [touch view] != self.lastNameField) {
-        [self.lastNameField resignFirstResponder];
-    }
-    if ([self.jobField isFirstResponder] && [touch view] != self.jobField) {
-        [self.jobField resignFirstResponder];
-    }
-    if ([self.companyField isFirstResponder] && [touch view] != self.companyField) {
-        [self.companyField resignFirstResponder];
-    }
-    if ([self.educationField isFirstResponder] && [touch view] != self.educationField) {
-        [self.educationField resignFirstResponder];
-    }
-    if ([self.areaOfStudyField isFirstResponder] && [touch view] != self.areaOfStudyField) {
-        [self.areaOfStudyField resignFirstResponder];
-    }
-    if ([self.industryField isFirstResponder] && [touch view] != self.industryField) {
-        [self.industryField resignFirstResponder];
-        pktStatePicker.hidden = YES;
-    }
-    [super touchesBegan:touches withEvent:event];
-
-}
-
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
     return 1;
@@ -427,6 +404,10 @@
     self.educationField.textAlignment = NSTextAlignmentLeft;
 }
 
+- (IBAction)textFieldChanged:(UITextField *)sender {
+    self.activeField = sender;
+}
+
 - (IBAction)nextKeyPressed:(UITextField *)sender {
     NSLog(@"next key pressed");
     if (sender.tag == 0) {
@@ -438,15 +419,19 @@
         [self.jobField becomeFirstResponder];
     }
     else if (sender.tag == 2) {
+        [sender resignFirstResponder];
         [self.companyField becomeFirstResponder];
     }
     else if (sender.tag == 3) {
+        [sender resignFirstResponder];
         [self.industryField becomeFirstResponder];
     }
     else if (sender.tag == 4) {
+        [sender resignFirstResponder];
         [self.educationField becomeFirstResponder];
     }
     else if (sender.tag == 5) {
+        [sender resignFirstResponder];
         [self.areaOfStudyField becomeFirstResponder];
     }
     else if (sender.tag == 6) {

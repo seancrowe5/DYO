@@ -53,6 +53,7 @@
     self.eduField.textAlignment = NSTextAlignmentCenter;
     
     [self registerForKeyboardNotifications];
+   
 }
 
 
@@ -80,12 +81,13 @@
                                                  name:UIKeyboardWillHideNotification object:nil];
 }
 
+
 // Called when the UIKeyboardDidShowNotification is sent.
 - (void)keyboardWasShown:(NSNotification*)aNotification
 {
     NSDictionary* info = [aNotification userInfo];
     CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height+70, 0.0);
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(45.0, 0.0, kbSize.height+70, 0.0);
     
     self.pageScrollView.contentInset = contentInsets;
     self.pageScrollView.scrollIndicatorInsets = contentInsets;
@@ -104,10 +106,12 @@
 // Called when the UIKeyboardWillHideNotification is sent
 - (void)keyboardWillBeHidden:(NSNotification*)aNotification
 {
-    UIEdgeInsets contentInsets = UIEdgeInsetsMake(45.0, 0.0,0.0, 0.0);
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0,0.0, 0.0);
     self.pageScrollView.contentInset = contentInsets;
     self.pageScrollView.scrollIndicatorInsets = contentInsets;
 }
+
+
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

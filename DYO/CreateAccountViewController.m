@@ -27,9 +27,6 @@
     //small circles on secure pass field
     [self.passField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     [self.secondPassField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
-    
-
-    
 
     
 }

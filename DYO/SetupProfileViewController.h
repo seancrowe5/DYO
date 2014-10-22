@@ -16,6 +16,7 @@
 @interface SetupProfileViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate>
 - (IBAction)eduEditingEnd:(id)sender;
 - (IBAction)eduEditingBegan:(id)sender;
+- (IBAction)textFieldChanged:(UITextField *)sender;
 
 @property (strong, nonatomic) IBOutlet UITextField *firstNameField;
 @property (strong, nonatomic) IBOutlet UITextField *lastNameField;
@@ -25,6 +26,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *industryField;
 @property (strong, nonatomic) NSArray  *industry;
 @property (weak, nonatomic) IBOutlet UIScrollView *pageScrollView;
+@property (strong, nonatomic) UITextField  *activeField;
 
 
 @property BOOL didUploadPhoto;
