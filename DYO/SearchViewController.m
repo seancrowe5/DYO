@@ -143,13 +143,18 @@
     NSString *jobTitle = [self.jobField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *company = [self.companyField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *education = [self.eduField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    NSString *industry = [self.eduField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    NSString *areaOfStudy = [self.eduField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *industry = [self.industryField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *areaOfStudy = [self.areaField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
+    NSLog(@"eductation chosen: %@", education);
     
     //Get USERs current location
     [PFGeoPoint geoPointForCurrentLocationInBackground:^(PFGeoPoint *geoPoint, NSError *error) {
         if (!error) {
             self.userGeoPoint = geoPoint;
+            PFUser *currentUser = [PFUser currentUser];
+            currentUser[@"lastLocation"] = geoPoint;
+            [currentUser save];
             NSLog(@"GeoPoint is: %@", geoPoint);
             
             //if first name field is used, then query first names of data
@@ -171,17 +176,16 @@
                 [query whereKey:@"company" hasPrefix:company];}
             
             if(![education length] == 0){
+                NSLog(@"Education search in correct place %@", education);
                 [query whereKey:@"education" hasPrefix:education];}
             
             if(![industry length] == 0){
                 [query whereKey:@"industry" hasPrefix:industry];}
             
             if(![areaOfStudy length] == 0){
-                [query whereKey:@"areaOfStudy" hasPrefix:industry];}
+                [query whereKey:@"areaOfStudy" hasPrefix:areaOfStudy];}
 
-
-            
-            [query whereKey:@"lastLocation" nearGeoPoint:self.userGeoPoint withinMiles:500.0]; //5 miles
+            [query whereKey:@"lastLocation" nearGeoPoint:self.userGeoPoint withinMiles:50000.0]; //5 miles
     
             self.searchResults = [query findObjects];
             

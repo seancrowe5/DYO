@@ -20,7 +20,7 @@
     [super viewDidLoad];
     self.navigationController.interactivePopGestureRecognizer.enabled = NO;
 
-    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     //NAv Bar
     [self.navigationController.navigationBar setHidden:YES];
@@ -38,6 +38,7 @@
             NSIndexPath* cellPath = [NSIndexPath indexPathForRow:row inSection:section];
             UITableViewCell* cell = [self.tableView cellForRowAtIndexPath:cellPath];
             cell.textLabel.highlightedTextColor = [UIColor whiteColor];
+            cell.textLabel.font = [UIFont fontWithName:@"AveniBld" size:17.0f];
             [cell setSelectedBackgroundView:backgroundSelectedCell];
             cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"disclosure"]];
 
@@ -49,6 +50,7 @@
     //nav bar
     [self.navigationController.navigationBar setHidden:YES];
     self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 
 
 
