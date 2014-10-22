@@ -18,9 +18,9 @@
 @property (weak, nonatomic) IBOutlet UITextView *createAccountSubTitle;
 
 - (IBAction)nextStep:(id)sender;
-- (IBAction)cancelSignUp:(id)sender;
 - (IBAction)nextKeyPressed:(UITextField *)sender;
-- (IBAction)cancelButtonPressed:(id)sender;
+- (IBAction)cancelPressed:(id)sender;
+
 
 
 

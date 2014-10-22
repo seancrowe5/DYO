@@ -35,7 +35,7 @@
     [super viewWillAppear:NO];
     
     [self.navigationController.navigationBar setHidden:YES]; // I make sure the navigation bar appear
-    [self.emailField becomeFirstResponder]; // When the view loads, the keyboard selects this and pops up
+    //[self.emailField becomeFirstResponder]; // When the view loads, the keyboard selects this and pops up
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -156,9 +156,11 @@
     
 }
 
-- (IBAction)cancelButtonPressed:(id)sender {
+- (IBAction)cancelPressed:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
+
 }
+
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     //hides keyboard on background touch

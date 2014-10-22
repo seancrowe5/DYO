@@ -84,7 +84,7 @@
                         <sections>
                             <tableViewSection id="7IH-WR-YUN">
                                 <cells>
-                                    <tableViewCell hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" shouldIndentWhileEditing="NO" rowHeight="53" id="cCT-Ot-yQQ">
+                                    <tableViewCell hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" shouldIndentWhileEditing="NO" rowHeight="29" id="cCT-Ot-yQQ">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="cCT-Ot-yQQ" id="AcC-gv-cKK">
@@ -1079,16 +1079,16 @@
                                             <segue destination="Tzb-HE-Ibm" kind="push" identifier="showTerms" id="Hwb-LB-YMA"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5ez-Kl-eW3">
-                                        <rect key="frame" x="15" y="8" width="48" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QpO-ow-Ho7">
+                                        <rect key="frame" x="136" y="334" width="48" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="13"/>
                                         <state key="normal" title="Cancel">
                                             <color key="titleColor" red="0.1019607843" green="0.4431372549" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="cancelButtonPressed:" destination="Aeb-Kg-VeH" eventType="touchUpInside" id="7fA-Oq-yUP"/>
+                                            <action selector="cancelPressed:" destination="Aeb-Kg-VeH" eventType="touchUpInside" id="ELV-Ti-S1h"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1109,7 +1109,6 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="500"/>
                     <connections>
-                        <outlet property="cancelButtonPressed" destination="5ez-Kl-eW3" id="Olh-4c-vCS"/>
                         <outlet property="createAccountTitle" destination="CSh-YJ-Amg" id="ln3-HO-6cE"/>
                         <outlet property="emailField" destination="OTP-LK-Mcz" id="Evc-5J-M0X"/>
                         <outlet property="passField" destination="TFU-MZ-Ko9" id="oDE-Gf-U6L"/>
@@ -1322,7 +1321,7 @@
                                 </connections>
                             </containerView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo.png" id="dsM-TI-2Xf">
-                                <rect key="frame" x="70" y="47" width="180" height="96"/>
+                                <rect key="frame" x="88" y="47" width="144" height="77"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
