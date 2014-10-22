@@ -470,7 +470,7 @@ int count;
         self.industryField.borderStyle = UITextBorderStyleRoundedRect;
         self.areaOfStudyField.borderStyle = UITextBorderStyleRoundedRect;
         
-        UIColor *backgroundColor = [UIColor colorWithWhite: 0.70 alpha:1];;
+        UIColor *backgroundColor = [UIColor colorWithWhite: 0.50 alpha:1];;
         
         self.jobField.backgroundColor = backgroundColor;
         //allow the selection on thefield

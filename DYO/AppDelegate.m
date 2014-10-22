@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
+#import <HockeySDK/HockeySDK.h>
 
 
 
@@ -56,6 +57,10 @@
                                     repeats:YES];
     
        return YES;
+    
+    [[BITHockeyManager sharedHockeyManager] configureWithIdentifier:@"aa98531d647709ef424483860110b40f"];
+    [[BITHockeyManager sharedHockeyManager] startManager];
+    [[BITHockeyManager sharedHockeyManager].authenticator authenticateInstallation];
 }
 
 -(void)updateLocation {
