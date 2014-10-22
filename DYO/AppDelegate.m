@@ -21,8 +21,8 @@
     [NSThread sleepForTimeInterval:1.5]; // This is the time interval used to display the lauchscreen for 1.5 seconds
 //    [Parse setApplicationId:@"SVacx74S0JIYxRfimRreuu8JzggWmwnBANvj1dtb"
 //                  clientKey:@"2DehtF2ih9Tew4YdZmfMPfqgh0S6QztYJFdGhanz"];
-    [Parse setApplicationId:@"Gkig5tZWqG0ASYlbKDJf2ZtNe2UI9XDZizza0mUf"
-                  clientKey:@"clhPEoz7qiUDZkz9XmhTSdVy7U3EAZGjcH25Wk60"];
+    [Parse setApplicationId:@"HoohY9YYgq5583mweeNirRFMuSDPB5BEZwu2vG76"
+                   clientKey:@"lZ4Atjef7VNFbkg3XZ7lCFclcDf9Py83zNekvhlU"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
     

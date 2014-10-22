@@ -18,6 +18,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+
+    
     
     //NAv Bar
     [self.navigationController.navigationBar setHidden:YES];
@@ -45,13 +48,15 @@
     [super viewWillAppear:NO];
     //nav bar
     [self.navigationController.navigationBar setHidden:YES];
+    self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+
 
 
 }
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:YES];
-    self.navigationController.interactivePopGestureRecognizer.enabled = YES; //no swipe left to navigate
+    self.navigationController.interactivePopGestureRecognizer.enabled = NO; //no swipe left to navigate
     
 }
 

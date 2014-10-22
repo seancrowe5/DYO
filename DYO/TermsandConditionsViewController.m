@@ -22,7 +22,15 @@
     // I will make the top navigation bar appear
     [self.navigationController.navigationBar setHidden:NO];
     self.navigationController.interactivePopGestureRecognizer.enabled = YES;
-
+    
+    UINavigationBar *navBar = self.navigationController.navigationBar;
+    [navBar setTitleTextAttributes: @{
+                                      NSForegroundColorAttributeName: [UIColor whiteColor],
+                                      NSFontAttributeName: [UIFont fontWithName:@"Avenir" size:17.0f],
+                                      }];
+    
+    navBar.tintColor =[UIColor whiteColor]; //back button color
+    [navBar setBarTintColor:[UIColor colorWithRed:241.0/255.0 green:106.0/255.0 blue:108.0/255.0 alpha:1]]; //logo red
     
 
     //self.navigationController.navigationBar.topItem.title = @"";

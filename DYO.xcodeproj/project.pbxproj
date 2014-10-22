@@ -36,6 +36,12 @@
 		21942CB819F76DE500B192BF /* disclosure@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21942CB719F76DE500B192BF /* disclosure@2x.png */; };
 		21942CBA19F76E5400B192BF /* disclosure-White@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21942CB919F76E5400B192BF /* disclosure-White@2x.png */; };
 		21A0600719EF0BED00DCF677 /* testing2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21A0600619EF0BED00DCF677 /* testing2.plist */; };
+		21AA5AE619F80F4700219759 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21AA5AE519F80F4700219759 /* CoreText.framework */; };
+		21AA5AE719F80F5600219759 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CFF77619B6BB74001D5088 /* Security.framework */; };
+		21AA5AE819F80F6100219759 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CFF77819B6BB74001D5088 /* SystemConfiguration.framework */; };
+		21AA5AEA19F80FE700219759 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21AA5AE919F80FE700219759 /* AssetsLibrary.framework */; };
+		21AA5AEB19F80FF200219759 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CFF77419B6BB74001D5088 /* MobileCoreServices.framework */; };
+		21AA5AED19F8100200219759 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21AA5AEC19F8100200219759 /* QuickLook.framework */; };
 		21CF0F3219D083F000CB4094 /* ChatView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CF0F3119D083F000CB4094 /* ChatView.m */; };
 		21CFF72B19B620A4001D5088 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CFF72A19B620A4001D5088 /* Foundation.framework */; };
 		21CFF72D19B620A4001D5088 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CFF72C19B620A4001D5088 /* CoreGraphics.framework */; };
@@ -121,6 +127,9 @@
 		21942CB719F76DE500B192BF /* disclosure@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "disclosure@2x.png"; sourceTree = "<group>"; };
 		21942CB919F76E5400B192BF /* disclosure-White@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "disclosure-White@2x.png"; sourceTree = "<group>"; };
 		21A0600619EF0BED00DCF677 /* testing2.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = testing2.plist; sourceTree = "<group>"; };
+		21AA5AE519F80F4700219759 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		21AA5AE919F80FE700219759 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		21AA5AEC19F8100200219759 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
 		21CF0F3019D083F000CB4094 /* ChatView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatView.h; sourceTree = "<group>"; };
 		21CF0F3119D083F000CB4094 /* ChatView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatView.m; sourceTree = "<group>"; };
 		21CFF72719B620A4001D5088 /* DYO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DYO.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,8 +185,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21CFF77919B6BB74001D5088 /* CoreLocation.framework in Frameworks */,
+				21AA5AED19F8100200219759 /* QuickLook.framework in Frameworks */,
 				21CFF77C19B6BB74001D5088 /* QuartzCore.framework in Frameworks */,
+				21AA5AEB19F80FF200219759 /* MobileCoreServices.framework in Frameworks */,
+				21AA5AEA19F80FE700219759 /* AssetsLibrary.framework in Frameworks */,
+				21AA5AE819F80F6100219759 /* SystemConfiguration.framework in Frameworks */,
+				21AA5AE719F80F5600219759 /* Security.framework in Frameworks */,
+				21AA5AE619F80F4700219759 /* CoreText.framework in Frameworks */,
+				21CFF77919B6BB74001D5088 /* CoreLocation.framework in Frameworks */,
 				21CFF72D19B620A4001D5088 /* CoreGraphics.framework in Frameworks */,
 				21CFF72F19B620A4001D5088 /* UIKit.framework in Frameworks */,
 				21CFF72B19B620A4001D5088 /* Foundation.framework in Frameworks */,
@@ -307,6 +322,7 @@
 		21CFF71E19B620A4001D5088 = {
 			isa = PBXGroup;
 			children = (
+				21FDC36419F806A700D50141 /* HockeySDK.embeddedframework */,
 				21CFF75F19B62D92001D5088 /* MainStoryboard.storyboard */,
 				21CFF73019B620A4001D5088 /* DYO */,
 				21CFF74919B620A5001D5088 /* DYOTests */,
@@ -328,7 +344,9 @@
 		21CFF72919B620A4001D5088 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				21FDC36419F806A700D50141 /* HockeySDK.embeddedframework */,
+				21AA5AEC19F8100200219759 /* QuickLook.framework */,
+				21AA5AE919F80FE700219759 /* AssetsLibrary.framework */,
+				21AA5AE519F80F4700219759 /* CoreText.framework */,
 				2116346419CA20AE0016AFB3 /* Bolts.framework */,
 				21CFF77219B6BB74001D5088 /* CoreLocation.framework */,
 				21CFF77319B6BB74001D5088 /* libz.dylib */,
