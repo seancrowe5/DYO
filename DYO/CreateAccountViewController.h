@@ -20,6 +20,8 @@
 - (IBAction)nextStep:(id)sender;
 - (IBAction)cancelSignUp:(id)sender;
 - (IBAction)nextKeyPressed:(UITextField *)sender;
+- (IBAction)cancelButtonPressed:(id)sender;
+
 
 
 @end

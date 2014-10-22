@@ -137,9 +137,7 @@
     
 }
 
-- (IBAction)cancelSignUp:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
-}
+
 
 - (IBAction)nextKeyPressed:(UITextField *)sender {
     NSLog(@"next key pressed");
@@ -156,6 +154,10 @@
          sender];
     }
     
+}
+
+- (IBAction)cancelButtonPressed:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
