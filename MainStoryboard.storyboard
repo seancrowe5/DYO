@@ -388,6 +388,7 @@
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                         <connections>
                                             <action selector="firstNameEditingChanged:" destination="8d0-3K-wcC" eventType="editingChanged" id="SKa-gL-Kvq"/>
+                                            <action selector="firstNameSelected:" destination="8d0-3K-wcC" eventType="touchUpInside" id="AtK-7r-yFP"/>
                                             <action selector="search:" destination="8d0-3K-wcC" eventType="editingDidEndOnExit" id="IEw-2z-Qbh"/>
                                         </connections>
                                     </textField>
@@ -466,7 +467,6 @@
                                         <fontDescription key="fontDescription" name="AvenirNext-Italic" family="Avenir Next" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                         <connections>
-                                            <action selector="search:" destination="8d0-3K-wcC" eventType="editingDidEndOnExit" id="TRS-pf-nUP"/>
                                             <action selector="studyEditingChanged:" destination="8d0-3K-wcC" eventType="editingChanged" id="Z6k-Ow-hWy"/>
                                         </connections>
                                     </textField>

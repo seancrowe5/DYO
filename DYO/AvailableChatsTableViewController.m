@@ -82,11 +82,11 @@
     AvailableChatsTableViewCell *cell = (AvailableChatsTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"resultCell"];
     
     PFObject *chatroom = [self.availableChatRooms objectAtIndex:indexPath.row]; //accessing chatroom
-    PFUser *selectedUser;
-    PFUser *currentUser = [PFUser currentUser];
-    PFUser *testUser1 = chatroom[@"user1"];
-    if ([testUser1.objectId isEqual:currentUser.objectId]) {
-        selectedUser = [chatroom objectForKey:@"user2"];
+    PFUser *selectedUser; //selected user
+    PFUser *currentUser = [PFUser currentUser]; //current user
+    PFUser *testUser1 = chatroom[@"user1"]; //I am setting a temporary user object to the user1 from the chatroom element [row] from the array available chatroom //sean
+    if ([testUser1.objectId isEqual:currentUser.objectId]) { //sean == sean
+        selectedUser = [chatroom objectForKey:@"user2"]; //then roger
     }
     else {
         selectedUser = [chatroom objectForKey:@"user1"];
@@ -179,10 +179,10 @@
 
 -(void)updateAvailableChatRooms{
     
-    PFQuery *query = [PFQuery queryWithClassName:@"ChatRoom"];
-    [query whereKey:@"user1" equalTo:[PFUser currentUser]];
-    PFQuery *queryInverse = [PFQuery queryWithClassName:@"ChatRoom"];
-    [query whereKey:@"user2" equalTo:[PFUser currentUser]];
+    PFQuery *query = [PFQuery queryWithClassName:@"ChatRoom"]; //let's query the chatroom class
+    [query whereKey:@"user1" equalTo:[PFUser currentUser]]; //give me all results when the user1 column is equal to the current user
+    PFQuery *queryInverse = [PFQuery queryWithClassName:@"ChatRoom"]; //lets also check the same class but a different colum
+    [query whereKey:@"user2" equalTo:[PFUser currentUser]]; //give me all results when the user2 column is equal to the current user, just incase the current user didn't start convo
     
     PFQuery *queryCombined = [PFQuery orQueryWithSubqueries:@[query, queryInverse]];
     [queryCombined includeKey:@"chat"];

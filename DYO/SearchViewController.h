@@ -26,12 +26,15 @@
 @property (strong, nonatomic) PFGeoPoint  *userGeoPoint;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorView;
 @property (weak, nonatomic) IBOutlet UIScrollView *pageScrollView;
+@property (weak, nonatomic) IBOutlet UITextField *activeField;
+
 - (IBAction)eduEditingEnd:(id)sender;
 
 -(void)allOtherFieldsDisabled:(BOOL)disable textFieldSender:(UITextField *)senderField;
 
 - (IBAction)search:(id)sender;
 - (IBAction)firstNameEditingChanged:(UITextField *)sender;
+- (IBAction)firstNameSelected:(id)sender;
 - (IBAction)lastNameEditingChanged:(UITextField *)sender;
 - (IBAction)jobTitleEditingChanged:(UITextField *)sender;
 - (IBAction)currentCompanyEditingChanged:(UITextField *)sender;
@@ -39,6 +42,7 @@
 - (IBAction)studyEditingChanged:(UITextField *)sender;
 - (IBAction)industryEditingChanged:(UITextField *)sender;
 - (IBAction)dismissKeyboardDrag:(id)sender;
+- (void)textFieldDidBeginEditing:(UITextField *)textField;
 
 
 

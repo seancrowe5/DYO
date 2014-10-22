@@ -52,7 +52,13 @@
     
     self.eduField.textAlignment = NSTextAlignmentCenter;
     
-    [self registerForKeyboardNotifications];
+   
+    self.lastNameField.delegate = self;
+    self.jobField.delegate = self;
+    self.companyField.delegate = self;
+    self.industryField.delegate = self;
+    self.eduField.delegate = self; self.firstNameField.delegate = self;
+    self.areaField.delegate = self;
    
 }
 
@@ -71,48 +77,14 @@
     [self.activityIndicatorView stopAnimating]; //stops from spinning when user goes back to search again
 }
 
-- (void)registerForKeyboardNotifications
+// called when textField start editting.
+- (void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWasShown:)
-                                                 name:UIKeyboardDidShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillBeHidden:)
-                                                 name:UIKeyboardWillHideNotification object:nil];
-}
-
-
-// Called when the UIKeyboardDidShowNotification is sent.
-- (void)keyboardWasShown:(NSNotification*)aNotification
-{
-    NSDictionary* info = [aNotification userInfo];
-    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-    UIEdgeInsets contentInsets = UIEdgeInsetsMake(45.0, 0.0, kbSize.height+70, 0.0);
-    
-    self.pageScrollView.contentInset = contentInsets;
-    self.pageScrollView.scrollIndicatorInsets = contentInsets;
-    
-    // If active text field is hidden by keyboard, scroll it so it's visible
-    // Your application might not need or want this behavior.
-    CGRect aRect = self.view.frame;
-    aRect.size.height -= kbSize.height;
-    if (!CGRectContainsPoint(aRect, self.areaField.frame.origin) ) {
-        CGPoint scrollPoint = CGPointMake(0.0, self.areaField.frame.origin.y-kbSize.height);
-        NSLog(@"scroll point is: %@", NSStringFromCGPoint(scrollPoint));
-        [self.pageScrollView setContentOffset:scrollPoint animated:YES];
+    self.activeField = textField;
+    if(self.activeField != self.firstNameField){
+    [self.pageScrollView setContentOffset:CGPointMake(0,textField.center.y-60) animated:YES];
     }
 }
-
-// Called when the UIKeyboardWillHideNotification is sent
-- (void)keyboardWillBeHidden:(NSNotification*)aNotification
-{
-    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0,0.0, 0.0);
-    self.pageScrollView.contentInset = contentInsets;
-    self.pageScrollView.scrollIndicatorInsets = contentInsets;
-}
-
-
-
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -202,6 +174,7 @@
 }
 
 - (IBAction)firstNameEditingChanged:(UITextField *)sender {
+    
     if(sender.text.length >= 1){
         //if there is 1 or more characters in the field, then disable all others
         [self allOtherFieldsDisabled:YES textFieldSender:sender];
@@ -216,6 +189,8 @@
     }
     
 }
+
+
 
 - (IBAction)lastNameEditingChanged:(UITextField *)sender {
     if(sender.text.length >= 1){
