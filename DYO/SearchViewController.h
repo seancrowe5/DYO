@@ -13,7 +13,7 @@
 #import "HTAutocompleteManager.h"
 
 @interface SearchViewController : UIViewController <UITextFieldDelegate, SearchResultsTableViewControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
-- (IBAction)didEndEditing:(id)sender;
+
 
 @property (strong, nonatomic) IBOutlet UITextField *firstNameField;
 @property (strong, nonatomic) IBOutlet UITextField *lastNameField;
@@ -29,7 +29,6 @@
 - (IBAction)eduEditingEnd:(id)sender;
 
 -(void)allOtherFieldsDisabled:(BOOL)disable textFieldSender:(UITextField *)senderField;
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 
 - (IBAction)search:(id)sender;
 - (IBAction)firstNameEditingChanged:(UITextField *)sender;
@@ -40,7 +39,6 @@
 - (IBAction)studyEditingChanged:(UITextField *)sender;
 - (IBAction)industryEditingChanged:(UITextField *)sender;
 - (IBAction)dismissKeyboardDrag:(id)sender;
-- (IBAction)firstNameExitTest:(id)sender;
 
 
 

@@ -18,7 +18,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.emailField becomeFirstResponder];
+    //[self.emailField becomeFirstResponder];
     self.emailField.delegate = self;
     self.emailField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     

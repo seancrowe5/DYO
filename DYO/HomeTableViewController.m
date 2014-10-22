@@ -36,6 +36,8 @@
             UITableViewCell* cell = [self.tableView cellForRowAtIndexPath:cellPath];
             cell.textLabel.highlightedTextColor = [UIColor whiteColor];
             [cell setSelectedBackgroundView:backgroundSelectedCell];
+            cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"disclosure"]];
+
         }
 }
 

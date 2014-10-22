@@ -32,7 +32,6 @@
 @property (strong, nonatomic) IBOutlet UIButton *editButton;
 @property (strong, nonatomic) IBOutlet UIImageView *profileImage;
 - (IBAction)changePhoto:(id)sender;
-- (IBAction)logout:(id)sender;
 - (IBAction)editProfileButton:(id)sender;
 -(void)goodbyeKeyboard;
 -(void)areFieldsSelectable:(BOOL)makeSelectable;
