@@ -44,9 +44,14 @@
     self.outgoingBubbleImageView = [JSQMessagesBubbleImageFactory outgoingMessageBubbleImageViewWithColor:[UIColor colorWithRed:241.0/255.0 green:106.0/255.0 blue:108.0/255.0 alpha:1]];
     self.incomingBubbleImageView = [JSQMessagesBubbleImageFactory incomingMessageBubbleImageViewWithColor:[UIColor colorWithRed:90.0/255.0 green:196.0/255.0 blue:190.0/255.0 alpha:1]];
     
+    
+    
+    self.collectionView.collectionViewLayout.messageBubbleFont = [UIFont fontWithName:@"Avenir" size:12.0f];
+    
     self.initialLoadNum = 5;
     self.numberMessageToLoad =self.initialLoadNum;
     self.incrementLoadNum = 4;
+    
     
     
     self.isLoading = NO;
@@ -71,8 +76,9 @@
         //you came from the message tab
         NSString *userTitle = [[[NSString alloc] initWithString:self.withUser[@"firstName"]] uppercaseString];
         self.title = userTitle;
-        
-        
+    }
+    else{
+        self.title = @"Message";
     }
 
     
