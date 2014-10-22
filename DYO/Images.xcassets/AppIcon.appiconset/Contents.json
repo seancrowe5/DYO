@@ -3,25 +3,25 @@
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "DYO - 29pt-@2x.png",
+      "filename" : "Dyo_AppIcon_29pt-@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "DYO - 40pt-@2x.png",
+      "filename" : "Dyo_AppIcon_40pt-@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "DYO - 60pt-@2x.png",
+      "filename" : "Dyo_AppIcon_60pt-@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "DYO - 60pt-@3x.png",
+      "filename" : "Dyo_AppIcon_60pt-@3x.png",
       "scale" : "3x"
     }
   ],

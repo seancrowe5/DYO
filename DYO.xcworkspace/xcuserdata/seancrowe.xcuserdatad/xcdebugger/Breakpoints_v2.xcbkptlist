@@ -459,11 +459,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "-loadMessages:"
             landmarkType = "5">
          </BreakpointContent>
@@ -475,23 +475,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
-            landmarkName = "-loadMessages:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "112"
@@ -507,7 +491,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "114"
@@ -523,11 +507,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
+            landmarkName = "-loadMessages:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DYO/ChatView.m"
+            timestampString = "435614383.727978"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "-loadMessages:"
             landmarkType = "5">
          </BreakpointContent>
@@ -539,11 +539,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
             landmarkName = "-loadMessages:"
             landmarkType = "5">
          </BreakpointContent>
@@ -555,23 +555,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
-            landmarkName = "-loadMessages:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "124"
@@ -587,11 +571,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
             landmarkName = "-loadMessages:"
             landmarkType = "5">
          </BreakpointContent>
@@ -603,7 +587,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "127"
@@ -619,7 +603,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "129"
@@ -635,11 +619,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
             landmarkName = "-loadMessages:"
             landmarkType = "5">
          </BreakpointContent>
@@ -651,11 +635,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "-loadMessages:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DYO/ChatView.m"
+            timestampString = "435614383.727978"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
             landmarkName = "-loadMessages:"
             landmarkType = "5">
          </BreakpointContent>
@@ -667,11 +667,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
             landmarkName = "-loadMessages:"
             landmarkType = "5">
          </BreakpointContent>
@@ -683,11 +683,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
             landmarkName = "-loadMessages:"
             landmarkType = "5">
          </BreakpointContent>
@@ -699,39 +699,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
-            landmarkName = "-loadMessages:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
-            landmarkName = "-loadMessages:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "146"
@@ -747,7 +715,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "147"
@@ -763,7 +731,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
+            landmarkName = "-loadMessages:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DYO/ChatView.m"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "149"
@@ -779,11 +763,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
             landmarkName = "-loadMessages:"
             landmarkType = "5">
          </BreakpointContent>
@@ -795,11 +779,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
+            landmarkName = "-loadMessages:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DYO/ChatView.m"
+            timestampString = "435614383.727978"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
             landmarkName = "-loadMessages:"
             landmarkType = "5">
          </BreakpointContent>
@@ -843,11 +843,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "-viewDidAppear:"
             landmarkType = "5">
          </BreakpointContent>
@@ -859,11 +859,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "-viewWillDisappear:"
             landmarkType = "5">
          </BreakpointContent>
@@ -875,11 +875,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "-refreshMessages"
             landmarkType = "5">
          </BreakpointContent>
@@ -891,11 +891,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "-loadMessages:"
             landmarkType = "5">
          </BreakpointContent>
@@ -907,11 +907,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
             landmarkName = "-didPressSendButton:withMessageText:sender:date:"
             landmarkType = "5">
          </BreakpointContent>
@@ -923,11 +923,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "227"
-            endingLineNumber = "227"
+            startingLineNumber = "237"
+            endingLineNumber = "237"
             landmarkName = "-didPressAccessoryButton:"
             landmarkType = "5">
          </BreakpointContent>
@@ -939,11 +939,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "232"
-            endingLineNumber = "232"
+            startingLineNumber = "242"
+            endingLineNumber = "242"
             landmarkName = "-messagesCollectionViewCellDidTapCell:atPosition:"
             landmarkType = "5">
          </BreakpointContent>
@@ -955,11 +955,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "238"
-            endingLineNumber = "238"
+            startingLineNumber = "248"
+            endingLineNumber = "248"
             landmarkName = "-messagesCollectionViewCellDidTapAvatar:"
             landmarkType = "5">
          </BreakpointContent>
@@ -971,11 +971,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "247"
-            endingLineNumber = "247"
+            startingLineNumber = "257"
+            endingLineNumber = "257"
             landmarkName = "-messagesCollectionViewCellDidTapMessageBubble:"
             landmarkType = "5">
          </BreakpointContent>
@@ -987,11 +987,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "263"
-            endingLineNumber = "263"
+            startingLineNumber = "273"
+            endingLineNumber = "273"
             landmarkName = "-collectionView:messageDataForItemAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1003,11 +1003,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "269"
-            endingLineNumber = "269"
+            startingLineNumber = "279"
+            endingLineNumber = "279"
             landmarkName = "-collectionView:bubbleImageViewForItemAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1019,11 +1019,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "280"
-            endingLineNumber = "280"
+            startingLineNumber = "290"
+            endingLineNumber = "290"
             landmarkName = "-collectionView:avatarImageViewForItemAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1035,11 +1035,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "311"
-            endingLineNumber = "311"
+            startingLineNumber = "321"
+            endingLineNumber = "321"
             landmarkName = "-collectionView:attributedTextForCellTopLabelAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1051,11 +1051,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "322"
-            endingLineNumber = "322"
+            startingLineNumber = "332"
+            endingLineNumber = "332"
             landmarkName = "-collectionView:attributedTextForMessageBubbleTopLabelAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1067,11 +1067,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "349"
-            endingLineNumber = "349"
+            startingLineNumber = "359"
+            endingLineNumber = "359"
             landmarkName = "-collectionView:attributedTextForCellBottomLabelAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1083,11 +1083,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "356"
-            endingLineNumber = "356"
+            startingLineNumber = "366"
+            endingLineNumber = "366"
             landmarkName = "-collectionView:numberOfItemsInSection:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1099,11 +1099,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "361"
-            endingLineNumber = "361"
+            startingLineNumber = "371"
+            endingLineNumber = "371"
             landmarkName = "-collectionView:cellForItemAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1115,11 +1115,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "384"
-            endingLineNumber = "384"
+            startingLineNumber = "394"
+            endingLineNumber = "394"
             landmarkName = "-collectionView:layout:heightForCellTopLabelAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1131,11 +1131,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "394"
-            endingLineNumber = "394"
+            startingLineNumber = "404"
+            endingLineNumber = "404"
             landmarkName = "-collectionView:layout:heightForMessageBubbleTopLabelAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1147,11 +1147,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "414"
-            endingLineNumber = "414"
+            startingLineNumber = "424"
+            endingLineNumber = "424"
             landmarkName = "-collectionView:layout:heightForCellBottomLabelAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1163,11 +1163,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "420"
-            endingLineNumber = "420"
+            startingLineNumber = "430"
+            endingLineNumber = "430"
             landmarkName = "-collectionView:header:didTapLoadEarlierMessagesButton:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1179,11 +1179,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
             landmarkName = "-didPressSendButton:withMessageText:sender:date:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1195,11 +1195,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
             landmarkName = "-didPressSendButton:withMessageText:sender:date:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1243,11 +1243,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "282"
-            endingLineNumber = "282"
+            startingLineNumber = "292"
+            endingLineNumber = "292"
             landmarkName = "-collectionView:avatarImageViewForItemAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1259,11 +1259,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "307"
-            endingLineNumber = "307"
+            startingLineNumber = "317"
+            endingLineNumber = "317"
             landmarkName = "-collectionView:avatarImageViewForItemAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1275,11 +1275,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "328"
-            endingLineNumber = "328"
+            startingLineNumber = "338"
+            endingLineNumber = "338"
             landmarkName = "-collectionView:attributedTextForMessageBubbleTopLabelAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1291,11 +1291,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "330"
-            endingLineNumber = "330"
+            startingLineNumber = "340"
+            endingLineNumber = "340"
             landmarkName = "-collectionView:attributedTextForMessageBubbleTopLabelAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1595,11 +1595,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ChatView.m"
-            timestampString = "435596040.680058"
+            timestampString = "435614383.727978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "-loadMessages:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1739,11 +1739,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/SearchViewController.m"
-            timestampString = "435603815.064098"
+            timestampString = "435635277.139429"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
             landmarkName = "-prepareForSegue:sender:"
             landmarkType = "5">
          </BreakpointContent>

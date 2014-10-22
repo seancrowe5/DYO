@@ -109,7 +109,7 @@
     cell.profileImage.image = user.profileImage;
     cell.industryLabel.text = user.industry;
     cell.studyLabel.text = user.areaOfStudy;
-    cell.lastLocationLabel.text =[NSString stringWithFormat:@"%.3f", [self.currentLocation distanceInMilesTo:user.recentLocation]];
+    cell.lastLocationLabel.text =[NSString stringWithFormat:@"%.2f", [self.currentLocation distanceInMilesTo:user.recentLocation]];
     
     //NSLog(@"distance in miles is: %f", [self.currentLocation distanceInMilesTo:user.recentLocation]);
     

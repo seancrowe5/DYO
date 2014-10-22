@@ -24,6 +24,13 @@
     [self.navigationController.navigationBar setHidden:YES]; // I make the navigation bar appear
     self.createAccountTitle.title =@"Create a free account"; // I set the title of the view
     [self.emailField becomeFirstResponder]; // When the view loads, the keyboard selects this and pops up
+    //small circles on secure pass field
+    [self.passField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    [self.secondPassField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    
+
+    
+
     
 }
 
@@ -38,6 +45,25 @@
     self.navigationController.interactivePopGestureRecognizer.enabled = NO; //no swipe left to navigate
 
 }
+
+- (void)textFieldDidChange:(id)sender
+{
+    UITextField *textField = (UITextField *)sender;
+    
+    if ( (textField == self.passField) || (textField ==self.secondPassField) ) {
+        // Set to custom font if the textfield is cleared, else set it to system font
+        // This is a workaround because secure text fields don't play well with custom fonts
+        if (textField.text.length == 0) {
+            textField.font = [UIFont fontWithName:@"Avenir" size:textField.font.pointSize];
+        }
+        else {
+            textField.font = [UIFont systemFontOfSize:textField.font.pointSize];
+        }
+    }
+}
+
+
+
 - (IBAction)nextStep:(id)sender {
     
     //get the variables from text fields
@@ -117,9 +143,22 @@
 - (IBAction)cancelSignUp:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
-- (IBAction)textFieldReturn:(id)sender {
-    //hides keyboard on return
-    [sender resignFirstResponder];
+
+- (IBAction)nextKeyPressed:(UITextField *)sender {
+    NSLog(@"next key pressed");
+    if (sender.tag == 0) {
+        [sender resignFirstResponder];
+        [self.passField becomeFirstResponder];
+    }
+    else if (sender.tag == 1) {
+        [sender resignFirstResponder];
+        [self.secondPassField becomeFirstResponder];
+    }
+    else if (sender.tag == 2) {
+        [self nextStep:
+         sender];
+    }
+    
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {

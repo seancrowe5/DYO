@@ -24,6 +24,8 @@
 		214E133519C29D5100D61FB3 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 214E133419C29D5100D61FB3 /* User.m */; };
 		214E133819C29FAC00D61FB3 /* SearchResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 214E133719C29FAC00D61FB3 /* SearchResultsTableViewController.m */; };
 		214E133B19C2A4F200D61FB3 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 214E133A19C2A4F200D61FB3 /* TableViewCell.m */; };
+		2156D49C19F6F72000368836 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2156D49B19F6F72000368836 /* ViewController.m */; };
+		2156D49F19F6F8CF00368836 /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2156D49E19F6F8CF00368836 /* FeedbackViewController.m */; };
 		216092A719E322D2000718C2 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 216092A519E322D2000718C2 /* Montserrat-Bold.ttf */; };
 		216092A819E322D2000718C2 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 216092A619E322D2000718C2 /* Montserrat-Regular.ttf */; };
 		2164027619DC9F2000638BD9 /* AvailableChatsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2164027519DC9F2000638BD9 /* AvailableChatsTableViewCell.m */; };
@@ -97,6 +99,10 @@
 		214E133719C29FAC00D61FB3 /* SearchResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultsTableViewController.m; sourceTree = "<group>"; };
 		214E133919C2A4F200D61FB3 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		214E133A19C2A4F200D61FB3 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		2156D49A19F6F72000368836 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		2156D49B19F6F72000368836 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2156D49D19F6F8CF00368836 /* FeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedbackViewController.h; path = ../FeedbackViewController.h; sourceTree = "<group>"; };
+		2156D49E19F6F8CF00368836 /* FeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedbackViewController.m; path = ../FeedbackViewController.m; sourceTree = "<group>"; };
 		216092A519E322D2000718C2 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		216092A619E322D2000718C2 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		2164027419DC9F2000638BD9 /* AvailableChatsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvailableChatsTableViewCell.h; sourceTree = "<group>"; };
@@ -238,6 +244,7 @@
 				211DCCBB19C3710000847830 /* Search */,
 				211DCCBC19C3710A00847830 /* Profile */,
 				21FA432819C7803D0003B8A7 /* Available Chatrooms */,
+				2156D49919F6F6EA00368836 /* Settings */,
 			);
 			name = "Main View";
 			sourceTree = "<group>";
@@ -277,6 +284,17 @@
 				217A6B3319DC9878009D22C9 /* camera.ico */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		2156D49919F6F6EA00368836 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				2156D49D19F6F8CF00368836 /* FeedbackViewController.h */,
+				2156D49E19F6F8CF00368836 /* FeedbackViewController.m */,
+				2156D49A19F6F72000368836 /* ViewController.h */,
+				2156D49B19F6F72000368836 /* ViewController.m */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 		21CFF71E19B620A4001D5088 = {
@@ -595,9 +613,11 @@
 				21F6A7DD19B76A3C00FE995A /* CreateAccountViewController.m in Sources */,
 				214E133519C29D5100D61FB3 /* User.m in Sources */,
 				21CF0F3219D083F000CB4094 /* ChatView.m in Sources */,
+				2156D49C19F6F72000368836 /* ViewController.m in Sources */,
 				210478CE19B8BFD0007DE573 /* SetupProfileViewController.m in Sources */,
 				21CFF76919B6785D001D5088 /* HomeTableViewController.m in Sources */,
 				2164A78419D47A42006332B1 /* LocationTracker.m in Sources */,
+				2156D49F19F6F8CF00368836 /* FeedbackViewController.m in Sources */,
 				210478D119B8EAAF007DE573 /* SearchViewController.m in Sources */,
 				21CFF73719B620A4001D5088 /* main.m in Sources */,
 			);

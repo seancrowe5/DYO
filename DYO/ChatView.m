@@ -71,6 +71,8 @@
         //you came from the message tab
         NSString *userTitle = [[[NSString alloc] initWithString:self.withUser[@"firstName"]] uppercaseString];
         self.title = userTitle;
+        
+        
     }
 
     
@@ -191,6 +193,14 @@
     
     if(self.isFirstMessage == true){ //aka you came from search
         [self.navigationController popViewControllerAnimated:YES];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Congrats!"
+                                                            message:@" Your messages was sent successfully."
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil, nil];
+        
+        [alertView show];
+
     }
     
     

@@ -24,6 +24,7 @@
 @property (strong, nonatomic) IBOutlet HTAutocompleteTextField *educationField;
 @property (strong, nonatomic) IBOutlet UITextField *industryField;
 @property (strong, nonatomic) NSArray  *industry;
+@property (weak, nonatomic) IBOutlet UIScrollView *pageScrollView;
 
 
 @property BOOL didUploadPhoto;
@@ -34,6 +35,7 @@
 
 - (IBAction)imagePicker:(id)sender;
 - (IBAction)finishButtonPressed:(id)sender;
+- (IBAction)nextKeyPressed:(UITextField *)sender;
 @property (strong, nonatomic) IBOutlet UIImageView *profileImage;
 //@property (strong, nonatomic) CLLocationManager *locationManager;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorView;

@@ -44,13 +44,15 @@
     [pktStatePicker  setShowsSelectionIndicator:YES];
     self.industryField.inputView =  pktStatePicker  ;
     
-
+    //dismiss keyboard on drag
     self.pageScrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
     
     self.eduField.autocompleteDataSource = [HTAutocompleteManager sharedManager];
     self.eduField.autocompleteType = HTAutocompleteTypeColor;
     
     self.eduField.textAlignment = NSTextAlignmentCenter;
+    
+    [self registerForKeyboardNotifications];
 }
 
 
@@ -68,6 +70,44 @@
     [self.activityIndicatorView stopAnimating]; //stops from spinning when user goes back to search again
 }
 
+- (void)registerForKeyboardNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWasShown:)
+                                                 name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillBeHidden:)
+                                                 name:UIKeyboardWillHideNotification object:nil];
+}
+
+// Called when the UIKeyboardDidShowNotification is sent.
+- (void)keyboardWasShown:(NSNotification*)aNotification
+{
+    NSDictionary* info = [aNotification userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height+70, 0.0);
+    
+    self.pageScrollView.contentInset = contentInsets;
+    self.pageScrollView.scrollIndicatorInsets = contentInsets;
+    
+    // If active text field is hidden by keyboard, scroll it so it's visible
+    // Your application might not need or want this behavior.
+    CGRect aRect = self.view.frame;
+    aRect.size.height -= kbSize.height;
+    if (!CGRectContainsPoint(aRect, self.areaField.frame.origin) ) {
+        CGPoint scrollPoint = CGPointMake(0.0, self.areaField.frame.origin.y-kbSize.height);
+        NSLog(@"scroll point is: %@", NSStringFromCGPoint(scrollPoint));
+        [self.pageScrollView setContentOffset:scrollPoint animated:YES];
+    }
+}
+
+// Called when the UIKeyboardWillHideNotification is sent
+- (void)keyboardWillBeHidden:(NSNotification*)aNotification
+{
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(45.0, 0.0,0.0, 0.0);
+    self.pageScrollView.contentInset = contentInsets;
+    self.pageScrollView.scrollIndicatorInsets = contentInsets;
+}
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -281,7 +321,7 @@
     if (!tView){
         tView = [[UILabel alloc] init];
         // Setup label properties - frame, font, colors etc
-        [tView setFont:[UIFont fontWithName:@"Montserrat-Regular" size:15.0]];
+        [tView setFont:[UIFont fontWithName:@"Avenir" size:15.0]];
         
     }
     tView.text = industryArray[row];
@@ -409,7 +449,27 @@
                 
             case 6:
                 
-                //industry field selected
+                //area of study field selected
+                self.firstNameField.enabled = NO;
+                self.lastNameField.enabled = NO;
+                self.jobField.enabled = NO;
+                self.companyField.enabled = NO;
+                self.industryField.enabled = NO;
+                self.eduField.enabled = NO;
+                
+                //make background change to disabled color
+                self.firstNameField.backgroundColor = disabledColor;
+                self.lastNameField.backgroundColor = disabledColor;
+                self.jobField.backgroundColor = disabledColor;
+                self.companyField.backgroundColor = disabledColor;
+                self.industryField.backgroundColor = disabledColor;
+                self.eduField.backgroundColor = disabledColor;
+                
+                break;
+                
+            case 7:
+                
+                //area field selected
                 self.firstNameField.enabled = NO;
                 self.lastNameField.enabled = NO;
                 self.jobField.enabled = NO;
@@ -424,26 +484,6 @@
                 self.companyField.backgroundColor = disabledColor;
                 self.eduField.backgroundColor = disabledColor;
                 self.areaField.backgroundColor = disabledColor;
-                
-                break;
-                
-            case 7:
-                
-                //area field selected
-                self.firstNameField.enabled = NO;
-                self.lastNameField.enabled = NO;
-                self.jobField.enabled = NO;
-                self.companyField.enabled = NO;
-                self.eduField.enabled = NO;
-                self.industryField.enabled = NO;
-                
-                //make background change to disabled color
-                self.firstNameField.backgroundColor = disabledColor;
-                self.lastNameField.backgroundColor = disabledColor;
-                self.jobField.backgroundColor = disabledColor;
-                self.companyField.backgroundColor = disabledColor;
-                self.eduField.backgroundColor = disabledColor;
-                self.industryField.backgroundColor = disabledColor;
                 
                 break;
                 
@@ -463,6 +503,7 @@
         {
             case 1:
                 
+
                 //First Name Field SElected
                 self.lastNameField.enabled = YES;
                 self.jobField.enabled = YES;
@@ -568,16 +609,16 @@
                 self.lastNameField.enabled = YES;
                 self.jobField.enabled = YES;
                 self.companyField.enabled = YES;
-                self.eduField.enabled = YES;
                 self.industryField.enabled = YES;
+                self.eduField.enabled = YES;
                 
                 //make background change to disabled color
                 self.firstNameField.backgroundColor = enabledColor;
                 self.lastNameField.backgroundColor = enabledColor;
                 self.jobField.backgroundColor = enabledColor;
                 self.companyField.backgroundColor = enabledColor;
-                self.eduField.backgroundColor = enabledColor;
                 self.industryField.backgroundColor = enabledColor;
+                self.eduField.backgroundColor = enabledColor;
                 
                 break;
                 
@@ -614,4 +655,5 @@
 
 
 }
+
 @end

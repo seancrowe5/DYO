@@ -13,6 +13,7 @@
 #import "HTAutocompleteManager.h"
 
 @interface SearchViewController : UIViewController <UITextFieldDelegate, SearchResultsTableViewControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
+- (IBAction)didEndEditing:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UITextField *firstNameField;
 @property (strong, nonatomic) IBOutlet UITextField *lastNameField;

@@ -65,7 +65,7 @@
         // Set to custom font if the textfield is cleared, else set it to system font
         // This is a workaround because secure text fields don't play well with custom fonts
         if (textField.text.length == 0) {
-            textField.font = [UIFont fontWithName:@"Montserrat-Regular" size:textField.font.pointSize];
+            textField.font = [UIFont fontWithName:@"Avenir" size:textField.font.pointSize];
         }
         else {
             textField.font = [UIFont systemFontOfSize:textField.font.pointSize];

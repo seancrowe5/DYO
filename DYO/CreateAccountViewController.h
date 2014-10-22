@@ -17,10 +17,9 @@
 @property (weak, nonatomic) IBOutlet UINavigationItem *createAccountTitle;
 @property (weak, nonatomic) IBOutlet UITextView *createAccountSubTitle;
 
-
-- (IBAction)textFieldReturn:(id)sender;
 - (IBAction)nextStep:(id)sender;
 - (IBAction)cancelSignUp:(id)sender;
+- (IBAction)nextKeyPressed:(UITextField *)sender;
 
 
 @end

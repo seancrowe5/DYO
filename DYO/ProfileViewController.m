@@ -78,8 +78,14 @@ int count;
     pktStatePicker.dataSource = self;
     [pktStatePicker  setShowsSelectionIndicator:YES];
     self.industryField.inputView =  pktStatePicker  ;
-    
+    self.pageScrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
 
+    
+    //School Autofill
+    self.educationField.autocompleteDataSource = [HTAutocompleteManager sharedManager];
+    self.educationField.autocompleteType = HTAutocompleteTypeColor;
+    
+    [self registerForKeyboardNotifications];
 
 }
 
@@ -90,6 +96,45 @@ int count;
     [self.navigationController.navigationBar setHidden:NO];
     
 
+}
+
+- (void)registerForKeyboardNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWasShown:)
+                                                 name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillBeHidden:)
+                                                 name:UIKeyboardWillHideNotification object:nil];
+}
+
+// Called when the UIKeyboardDidShowNotification is sent.
+- (void)keyboardWasShown:(NSNotification*)aNotification
+{
+    NSDictionary* info = [aNotification userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height+20, 0.0);
+   
+    self.pageScrollView.contentInset = contentInsets;
+    self.pageScrollView.scrollIndicatorInsets = contentInsets;
+    
+    // If active text field is hidden by keyboard, scroll it so it's visible
+    // Your application might not need or want this behavior.
+    CGRect aRect = self.view.frame;
+    aRect.size.height -= kbSize.height;
+    if (!CGRectContainsPoint(aRect, self.areaOfStudyField.frame.origin) ) {
+        CGPoint scrollPoint = CGPointMake(0.0, self.areaOfStudyField.frame.origin.y-kbSize.height);
+        NSLog(@"scroll point is: %@", NSStringFromCGPoint(scrollPoint));
+        [self.pageScrollView setContentOffset:scrollPoint animated:YES];
+    }
+}
+
+// Called when the UIKeyboardWillHideNotification is sent
+- (void)keyboardWillBeHidden:(NSNotification*)aNotification
+{
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(20.0, 0.0,0.0, 0.0);
+    self.pageScrollView.contentInset = contentInsets;
+    self.pageScrollView.scrollIndicatorInsets = contentInsets;
 }
 
 #pragma mark - Helper Methods
@@ -133,28 +178,6 @@ int count;
     self.areaOfStudyField.backgroundColor = self.backgroundColor;
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    //hides keyboard on background touch
-    UITouch *touch = [[event allTouches] anyObject];
- 
-    if ([self.jobField isFirstResponder] && [touch view] != self.jobField) {
-        [self.jobField resignFirstResponder];
-    }
-    if ([self.companyField isFirstResponder] && [touch view] != self.companyField) {
-        [self.companyField resignFirstResponder];
-    }
-    if ([self.educationField isFirstResponder] && [touch view] != self.educationField) {
-        [self.educationField resignFirstResponder];
-    }
-    if ([self.areaOfStudyField isFirstResponder] && [touch view] != self.areaOfStudyField) {
-        [self.areaOfStudyField resignFirstResponder];
-    }
-    if ([self.industryField isFirstResponder] && [touch view] != self.industryField) {
-        [self.industryField resignFirstResponder];
-    }
-    [super touchesBegan:touches withEvent:event];
-    
-}
 #pragma mark - IMAGE STUFF
 
 //DICATATES WHAT HAPPENS WHEN ACTION SHEET ITEMS ARE SELECTED
@@ -466,4 +489,33 @@ int count;
     
 
 }
+- (IBAction)nextButtonPressed:(UITextField *)sender {
+    if (sender.tag == 0) {
+        [sender resignFirstResponder];
+        [self.jobField becomeFirstResponder];
+    }
+    else if (sender.tag == 1) {
+        [sender resignFirstResponder];
+        [self.companyField becomeFirstResponder];
+    }
+    else if (sender.tag == 2) {
+        [self.educationField becomeFirstResponder];
+    }
+    else if (sender.tag == 3) {
+        [self.industryField becomeFirstResponder];
+    }
+    else if (sender.tag == 4) {
+        [self.areaOfStudyField becomeFirstResponder];
+    }
+    
+}
+
+- (IBAction)eduEditingBegan:(id)sender {
+    self.educationField.textAlignment = NSTextAlignmentLeft;
+    
+    UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 7, 20)];
+    self.educationField.leftView = paddingView;
+    self.educationField.leftViewMode = UITextFieldViewModeAlways;
+}
+
 @end
