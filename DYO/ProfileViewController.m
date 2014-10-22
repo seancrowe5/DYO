@@ -364,14 +364,7 @@ int count;
 }
 
 
-- (IBAction)logout:(id)sender {
-    [PFUser logOut];
-    
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-    UITabBarController *obj=[storyboard  instantiateViewControllerWithIdentifier:@"loginView"];
-    self.navigationController.navigationBarHidden=YES;
-    [self.navigationController pushViewController:obj animated:NO];
-}
+
 
 - (IBAction)editProfileButton:(id)sender {
     [self.editButton setTitle:@"Save" forState:UIControlStateNormal];

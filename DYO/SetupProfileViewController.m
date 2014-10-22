@@ -84,15 +84,7 @@
     self.pageScrollView.contentInset = contentInsets;
     self.pageScrollView.scrollIndicatorInsets = contentInsets;
     
-    // If active text field is hidden by keyboard, scroll it so it's visible
-    // Your application might not need or want this behavior.
-    CGRect aRect = self.view.frame;
-    aRect.size.height -= kbSize.height;
-    if (!CGRectContainsPoint(aRect, self.activeField.frame.origin) ) {
-        CGPoint scrollPoint = CGPointMake(0.0, self.activeField.frame.origin.y-kbSize.height);
-        NSLog(@"scroll point is: %@", NSStringFromCGPoint(scrollPoint));
-        [self.pageScrollView setContentOffset:scrollPoint animated:YES];
-    }
+
 }
 
 // Called when the UIKeyboardWillHideNotification is sent
