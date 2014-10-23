@@ -389,7 +389,6 @@
                                         <connections>
                                             <action selector="firstNameEditingChanged:" destination="8d0-3K-wcC" eventType="editingChanged" id="SKa-gL-Kvq"/>
                                             <action selector="firstNameSelected:" destination="8d0-3K-wcC" eventType="touchUpInside" id="AtK-7r-yFP"/>
-                                            <action selector="search:" destination="8d0-3K-wcC" eventType="editingDidEndOnExit" id="IEw-2z-Qbh"/>
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last name" textAlignment="center" minimumFontSize="17" id="zCg-m5-vBU">
@@ -400,7 +399,6 @@
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                         <connections>
                                             <action selector="lastNameEditingChanged:" destination="8d0-3K-wcC" eventType="editingChanged" id="P8f-OE-ldO"/>
-                                            <action selector="search:" destination="8d0-3K-wcC" eventType="editingDidEndOnExit" id="2b6-zp-i0J"/>
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Job title" textAlignment="center" minimumFontSize="17" id="7uk-kg-d6j">
@@ -411,7 +409,6 @@
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                         <connections>
                                             <action selector="jobTitleEditingChanged:" destination="8d0-3K-wcC" eventType="editingChanged" id="TCS-Ar-ZD0"/>
-                                            <action selector="search:" destination="8d0-3K-wcC" eventType="editingDidEndOnExit" id="1LX-xi-yMS"/>
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Current company" textAlignment="center" minimumFontSize="17" id="oSo-fN-Y3f">
@@ -422,7 +419,6 @@
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                         <connections>
                                             <action selector="currentCompanyEditingChanged:" destination="8d0-3K-wcC" eventType="editingChanged" id="MTc-xG-P1C"/>
-                                            <action selector="search:" destination="8d0-3K-wcC" eventType="editingDidEndOnExit" id="QYH-NG-a8Q"/>
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Education" minimumFontSize="17" clearButtonMode="whileEditing" id="5aE-1E-95P" customClass="HTAutocompleteTextField">
@@ -434,7 +430,6 @@
                                         <connections>
                                             <action selector="eduEditingChanged:" destination="8d0-3K-wcC" eventType="editingChanged" id="fDS-pT-EsZ"/>
                                             <action selector="eduEditingEnd:" destination="8d0-3K-wcC" eventType="editingDidEnd" id="zuk-Zr-h5d"/>
-                                            <action selector="search:" destination="8d0-3K-wcC" eventType="editingDidEndOnExit" id="j7u-oC-Sep"/>
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="23K-ye-DgE">
@@ -457,7 +452,6 @@
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                         <connections>
                                             <action selector="industryEditingChanged:" destination="8d0-3K-wcC" eventType="editingChanged" id="f19-Cv-PKg"/>
-                                            <action selector="search:" destination="8d0-3K-wcC" eventType="editingDidEndOnExit" id="Tgf-QV-nud"/>
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Area of study" textAlignment="center" minimumFontSize="17" id="M4i-tT-Ezk">
