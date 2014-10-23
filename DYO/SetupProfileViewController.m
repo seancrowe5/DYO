@@ -11,11 +11,14 @@
 @interface SetupProfileViewController () //<CLLocationManagerDelegate>
 {
     NSArray *_pickerData;
-    int monthClick;
     NSArray *industryArray;
     UIPickerView *pktStatePicker ;
+    
+    NSArray *areaOfStudyArray;
+    UIPickerView *pkAreaOfStudyPicker;
+    
     UIToolbar *mypickerToolbar;
-
+    int monthClick;
 }
 @end
 
@@ -31,27 +34,39 @@
     self.profileImage.image = [UIImage imageNamed:@"profilePlaceholder.png"];
     self.didUploadPhoto = NO;
     
-    
-    //get industry plist
+    ////INDUSTRY PICKER////
     NSString *path = [[NSBundle mainBundle] pathForResource:
                       @"testing2" ofType:@"plist"];
-    
-    // Build the array from the plist
     NSMutableArray *array2 = [[NSMutableArray alloc] initWithContentsOfFile:path];
     NSMutableArray *array3 = [[NSMutableArray alloc]init];
-    
-    //loop through industry stuff
     for (NSDictionary *dict in array2) {
         [array3 addObject:[dict objectForKey:@"Industry"]];
     }
-    
-    //Industry Picker
+
     industryArray = array3;
     pktStatePicker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 43, 320, 480)];
     pktStatePicker.delegate = self;
     pktStatePicker.dataSource = self;
     [pktStatePicker  setShowsSelectionIndicator:YES];
     self.industryField.inputView =  pktStatePicker  ;
+    ////end: INDUSTRY PICKER////
+    
+    ////AREA OF STUDY PICKER////
+    path = [[NSBundle mainBundle] pathForResource:
+                      @"aresOfStudy" ofType:@"plist"]; //gets the file
+    NSMutableArray *array4 = [[NSMutableArray alloc] initWithContentsOfFile:path]; //build the array from file
+    NSMutableArray *array5 = [[NSMutableArray alloc]init]; //temporary array for looping
+    for (NSDictionary *dict in array4) {
+        [array5 addObject:[dict objectForKey:@"Area of Study"]]; //each area of study line added to array5
+    }
+    
+    areaOfStudyArray = array5;
+    pkAreaOfStudyPicker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 43, 320, 480)];
+    pkAreaOfStudyPicker.delegate = self;
+    pkAreaOfStudyPicker.dataSource = self;
+    [pkAreaOfStudyPicker  setShowsSelectionIndicator:YES];
+    self.areaOfStudyField.inputView =  pkAreaOfStudyPicker; //*important this makes the picker show up on selection of area field
+    ////end: AREA OF STUDY PICKER////
     
     //dismiss keyboard on scroll
     self.pageScrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
@@ -275,7 +290,9 @@
     NSString *fileName;
     
     //declare a UI image variable set it to our image property...then resize it
-    UIImage *newImage = [self resizeImage:self.image toWidth:100.0f andHeight:100.0f];
+    //UIImage *newImage = [self resizeImage:self.image toWidth:100.0f andHeight:100.0f];
+    UIImage *newImage = self.profileImage.image; //lets try setting the new image to the image property that was set in the didfinishpickingimage method
+
     fileData = UIImagePNGRepresentation(newImage);
     fileName = @"image.png";
     PFFile *file = [PFFile fileWithName:fileName data:fileData];
@@ -351,19 +368,52 @@
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
     
+    if(pickerView == pktStatePicker){
+        //then return the number of rows in industry array
+        return [industryArray count];
+    }
+    else if(pickerView == pkAreaOfStudyPicker){
+        //then return the number of rows in area of study array
+        return [areaOfStudyArray count];
+    }
+    else{
+    //else return something, just in case
     return [industryArray count];
+    }
 }
 
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
 
-    return [industryArray objectAtIndex:row];
+    if(pickerView == pktStatePicker){
+        //then return the row of industry array
+        return [industryArray objectAtIndex:row];
+    }
+    else if(pickerView == pkAreaOfStudyPicker){
+        //then return the row of area of study array
+        return [areaOfStudyArray objectAtIndex:row];
+    }
+    else{
+        //else return something, just in case
+        return [industryArray objectAtIndex:row];
+
+    }
+
 }
 
 - (void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
     
-    self.industryField.text = [industryArray objectAtIndex:row];
-    [pickerView resignFirstResponder];
+    if(pickerView == pktStatePicker){
+        //then set the industry text field to the selection and resign the picker
+        self.industryField.text = [industryArray objectAtIndex:row];
+        [pickerView resignFirstResponder];
+        
+    }
+    else if(pickerView == pkAreaOfStudyPicker){
+        //then set the area of study text field to the selection and resign the picker
+        self.areaOfStudyField.text = [industryArray objectAtIndex:row];
+        [pkAreaOfStudyPicker resignFirstResponder]; //*trying this to see if it works
+    }
 }
 
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
@@ -371,12 +421,15 @@
     if (!tView){
         tView = [[UILabel alloc] init];
         // Setup label properties - frame, font, colors etc
-        [tView setFont:[UIFont fontWithName:@"Avenir" size:15.0]];
+        [tView setFont:[UIFont fontWithName:@"Avenir" size:15.0]]; //font size for picker views
         
     }
     
     if([pickerView isEqual: pktStatePicker]){
         tView.text = industryArray[row];
+    }
+    if([pickerView isEqual:pkAreaOfStudyPicker]){
+        tView.text = areaOfStudyArray[row];
     }
    
     tView.textAlignment = NSTextAlignmentCenter;

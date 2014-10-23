@@ -157,8 +157,8 @@
             if(![areaOfStudy length] == 0){
                 [query whereKey:@"areaOfStudy" hasPrefix:areaOfStudy];}
 
-            [query whereKey:@"lastLocation" nearGeoPoint:self.userGeoPoint withinMiles:50000.0]; //5 miles
-    
+            [query whereKey:@"lastLocation" nearGeoPoint:self.userGeoPoint withinMiles:50000.0]; //Get current loc and search within50000 miles
+            [query whereKey:@"objectId" notEqualTo:currentUser.objectId]; //make sure we exlude the current user from search results
             self.searchResults = [query findObjects];
             
         }
