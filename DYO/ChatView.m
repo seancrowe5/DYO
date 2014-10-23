@@ -46,7 +46,7 @@
     
     
     
-    self.collectionView.collectionViewLayout.messageBubbleFont = [UIFont fontWithName:@"Avenir" size:12.0f];
+    self.collectionView.collectionViewLayout.messageBubbleFont = [UIFont fontWithName:@"Avenir" size:14.0f];
    self.inputToolbar.contentView.leftBarButtonItem = nil;
     
     

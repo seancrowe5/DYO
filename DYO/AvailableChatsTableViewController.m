@@ -102,13 +102,15 @@
     lastMessageObject = [query getFirstObject];
     
     cell.messageExcerpt.text = lastMessageObject[@"text"];
+    cell.messageExcerpt.textColor = [UIColor lightGrayColor];
+
     cell.userName.text = selectedUser[@"firstName"];
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     //uncomment to get the time only
-    //[formatter setDateFormat:@"hh:mm a"];
+    [formatter setDateFormat:@"h:mm a"];
     //[formatter setDateFormat:@"MMM dd, YYYY"];
-    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    //[formatter setDateStyle:NSDateFormatterMediumStyle];
     
     
     NSDate *time = lastMessageObject.createdAt;
