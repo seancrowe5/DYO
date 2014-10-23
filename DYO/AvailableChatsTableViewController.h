@@ -10,8 +10,11 @@
 #import "JSQDemoViewController.h"
 #import "ChatView.h"
 
+
 @interface AvailableChatsTableViewController : UITableViewController <ChatViewDelegate>
+
 @property (strong,nonatomic) NSMutableArray *availableChatRooms;
+@property (strong,nonatomic) NSMutableArray *usersAvailableChatRooms;
 //@property (strong,nonatomic) UIImage *userImage;
 //@property (strong,nonatomic) NSMutableArray *listOfAvatars;
 

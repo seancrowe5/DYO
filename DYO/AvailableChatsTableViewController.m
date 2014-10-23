@@ -39,8 +39,6 @@
 
     //Call the helper method defined below to get the updated list of chatrooms
     [self updateAvailableChatRooms];
-    
-//    self.listOfAvatars = [[NSMutableArray alloc] init];
 
 }
 
@@ -186,7 +184,7 @@
     PFQuery *query = [PFQuery queryWithClassName:@"ChatRoom"]; //let's query the chatroom class
     [query whereKey:@"user1" equalTo:[PFUser currentUser]]; //give me all results when the user1 column is equal to the current user
     PFQuery *queryInverse = [PFQuery queryWithClassName:@"ChatRoom"]; //lets also check the same class but a different colum
-    [query whereKey:@"user2" equalTo:[PFUser currentUser]]; //give me all results when the user2 column is equal to the current user, just incase the current user didn't start convo
+    [queryInverse whereKey:@"user2" equalTo:[PFUser currentUser]]; //give me all results when the user2 column is equal to the current user, just incase the current user didn't start convo
     
     PFQuery *queryCombined = [PFQuery orQueryWithSubqueries:@[query, queryInverse]];
     [queryCombined includeKey:@"chat"];
@@ -198,7 +196,9 @@
         if (!error) {
             [self.availableChatRooms removeAllObjects];
             self.availableChatRooms = [objects mutableCopy];
-            [self.tableView reloadData];
+            [self.tableView reloadData]; //ensures the table is laoded when background process complete
+            NSLog(@"availableChatRooms %@", self.availableChatRooms);
+
         }
     }];
     
