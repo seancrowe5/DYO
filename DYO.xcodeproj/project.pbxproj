@@ -42,7 +42,7 @@
 		21AA5AEA19F80FE700219759 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21AA5AE919F80FE700219759 /* AssetsLibrary.framework */; };
 		21AA5AEB19F80FF200219759 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CFF77419B6BB74001D5088 /* MobileCoreServices.framework */; };
 		21AA5AED19F8100200219759 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21AA5AEC19F8100200219759 /* QuickLook.framework */; };
-		21B662FD19F950900091D90B /* areaOfStudy.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21B662FC19F9508F0091D90B /* areaOfStudy.plist */; };
+		21B6630119F9692E0091D90B /* areaOfStudy.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21B6630019F9692E0091D90B /* areaOfStudy.plist */; };
 		21CF0F3219D083F000CB4094 /* ChatView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CF0F3119D083F000CB4094 /* ChatView.m */; };
 		21CFF72B19B620A4001D5088 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CFF72A19B620A4001D5088 /* Foundation.framework */; };
 		21CFF72D19B620A4001D5088 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CFF72C19B620A4001D5088 /* CoreGraphics.framework */; };
@@ -131,7 +131,7 @@
 		21AA5AE519F80F4700219759 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		21AA5AE919F80FE700219759 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		21AA5AEC19F8100200219759 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
-		21B662FC19F9508F0091D90B /* areaOfStudy.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; name = areaOfStudy.plist; path = ../../../../Downloads/areaOfStudy.plist; sourceTree = "<group>"; };
+		21B6630019F9692E0091D90B /* areaOfStudy.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = areaOfStudy.plist; sourceTree = "<group>"; };
 		21CF0F3019D083F000CB4094 /* ChatView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatView.h; sourceTree = "<group>"; };
 		21CF0F3119D083F000CB4094 /* ChatView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatView.m; sourceTree = "<group>"; };
 		21CFF72719B620A4001D5088 /* DYO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DYO.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -385,7 +385,7 @@
 		21CFF73119B620A4001D5088 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				21B662FC19F9508F0091D90B /* areaOfStudy.plist */,
+				21B6630019F9692E0091D90B /* areaOfStudy.plist */,
 				21A0600619EF0BED00DCF677 /* testing2.plist */,
 				2133EB0519E6F24300140F2F /* CollegeData.plist */,
 				2133EB0119E6E43700140F2F /* testing.plist */,
@@ -589,10 +589,10 @@
 				2108C9D819E304CF0013572B /* Logo.png in Resources */,
 				21FDC36A19F806A700D50141 /* HockeySDK.xcconfig in Resources */,
 				21FDC36B19F806A700D50141 /* HockeySDKResources.bundle in Resources */,
+				21B6630119F9692E0091D90B /* areaOfStudy.plist in Resources */,
 				21942CB819F76DE500B192BF /* disclosure@2x.png in Resources */,
 				21A0600719EF0BED00DCF677 /* testing2.plist in Resources */,
 				216092A719E322D2000718C2 /* Montserrat-Bold.ttf in Resources */,
-				21B662FD19F950900091D90B /* areaOfStudy.plist in Resources */,
 				21CFF73519B620A4001D5088 /* InfoPlist.strings in Resources */,
 				21CFF73D19B620A4001D5088 /* Images.xcassets in Resources */,
 			);

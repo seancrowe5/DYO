@@ -26,6 +26,8 @@
     
     
     self.navigationItem.title = @"SETTINGS";
+    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+
 
 }
 

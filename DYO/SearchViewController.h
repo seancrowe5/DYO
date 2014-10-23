@@ -41,7 +41,7 @@
 - (IBAction)eduEditingChanged:(UITextField *)sender;
 - (IBAction)studyEditingChanged:(UITextField *)sender;
 - (IBAction)industryEditingChanged:(UITextField *)sender;
-- (IBAction)dismissKeyboardDrag:(id)sender;
+- (IBAction)dismissKeyboardDrag:(UITextField *)sender;
 - (void)textFieldDidBeginEditing:(UITextField *)textField;
 
 

@@ -51,6 +51,8 @@
                                       NSFontAttributeName: [UIFont fontWithName:@"Avenir" size:17.0f],
                                       }];
     self.navigationItem.title = @"MESSAGES";
+    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+
 
 
 }

@@ -14,6 +14,9 @@ NSArray *_pickerData;
 NSArray *industryArray;
 UIPickerView *pktStatePicker ;
     
+NSArray *areaOfStudyArray;
+UIPickerView *pkAreaOfStudyPicker;
+    
 }
 @end
 
@@ -84,8 +87,24 @@ int count;
     //School Autofill
     self.educationField.autocompleteDataSource = [HTAutocompleteManager sharedManager];
     self.educationField.autocompleteType = HTAutocompleteTypeColor;
-    
     [self registerForKeyboardNotifications];
+    
+    ////AREA OF STUDY PICKER////
+    NSString *path2 = [[NSBundle mainBundle] pathForResource:
+                       @"areaOfStudy" ofType:@"plist"]; //gets the file
+    NSMutableArray *array4 = [[NSMutableArray alloc] initWithContentsOfFile:path2]; //build the array from fil
+    NSMutableArray *array5 = [[NSMutableArray alloc]init]; //temporary array for looping
+    NSLog(@"array 4 is: %@", array4);
+    for (NSDictionary *dict in array4) {
+        [array5 addObject:[dict objectForKey:@"Area of Study"]]; //each area of study line added to array5
+    }
+    areaOfStudyArray = array5;
+    pkAreaOfStudyPicker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 43, 320, 480)];
+    pkAreaOfStudyPicker.delegate = self;
+    pkAreaOfStudyPicker.dataSource = self;
+    [pkAreaOfStudyPicker  setShowsSelectionIndicator:YES];
+    self.areaOfStudyField.inputView =  pkAreaOfStudyPicker; //*important this makes the picker show up on selection of area field
+    ////end: AREA OF STUDY PICKER////
 
 }
 
@@ -94,7 +113,8 @@ int count;
     
     //make sure nav shows
     [self.navigationController.navigationBar setHidden:NO];
-    
+    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+
 
 }
 
@@ -274,7 +294,7 @@ int count;
     NSString *fileName;
     
     //declare a UI image variable set it to our image property...then resize it
-    UIImage *newImage = [self resizeImage:self.image toWidth:200.0f andHeight:200.0f];
+    UIImage *newImage = self.profileImage.image;
     fileData = UIImagePNGRepresentation(newImage);
     fileName = @"image.png";
     PFFile *file = [PFFile fileWithName:fileName data:fileData];
@@ -337,17 +357,52 @@ int count;
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
-    return [industryArray count];
+    if([pickerView isEqual:pktStatePicker]){
+        //then return the number of rows in industry array
+        return [industryArray count];
+    }
+    else if(pickerView == pkAreaOfStudyPicker){
+        //then return the number of rows in area of study array
+        return [areaOfStudyArray count];
+    }
+    else{
+        //else return something, just in case
+        return [industryArray count];
+    }
+
 }
 
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
-    
-    return [industryArray objectAtIndex:row];
+    if(pickerView == pktStatePicker){
+        //then return the row of industry array
+        return [industryArray objectAtIndex:row];
+    }
+    else if(pickerView == pkAreaOfStudyPicker){
+        //then return the row of area of study array
+        return [areaOfStudyArray objectAtIndex:row];
+    }
+    else{
+        //else return something, just in case
+        return [industryArray objectAtIndex:row];
+        
+    }
+
 }
 
 - (void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
-    self.industryField.text = [industryArray objectAtIndex:row];
+    if(pickerView == pktStatePicker){
+        //then set the industry text field to the selection and resign the picker
+        self.industryField.text = [industryArray objectAtIndex:row];
+        [pickerView resignFirstResponder];
+        
+    }
+    else if(pickerView == pkAreaOfStudyPicker){
+        //then set the area of study text field to the selection and resign the picker
+        self.areaOfStudyField.text = [areaOfStudyArray objectAtIndex:row];
+        [pkAreaOfStudyPicker resignFirstResponder]; //*trying this to see if it works
+    }
+
 }
 
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
@@ -355,12 +410,20 @@ int count;
     if (!tView){
         tView = [[UILabel alloc] init];
         // Setup label properties - frame, font, colors etc
-        [tView setFont:[UIFont fontWithName:@"Montserrat-Regular" size:15.0]];
-
+        [tView setFont:[UIFont fontWithName:@"Avenir" size:15.0]]; //font size for picker views
+        
     }
-    tView.text = industryArray[row];
+    
+    if([pickerView isEqual: pktStatePicker]){
+        tView.text = industryArray[row];
+    }
+    if([pickerView isEqual:pkAreaOfStudyPicker]){
+        tView.text = areaOfStudyArray[row];
+    }
+    
     tView.textAlignment = NSTextAlignmentCenter;
     return tView;
+
 }
 
 
@@ -491,4 +554,7 @@ int count;
     self.educationField.leftViewMode = UITextFieldViewModeAlways;
 }
 
+- (IBAction)dismissKeyboard:(UITextField *)sender {
+    [sender resignFirstResponder];
+}
 @end

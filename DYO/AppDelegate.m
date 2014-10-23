@@ -48,7 +48,7 @@
     [self.locationTracker startLocationTracking];
     
     //LOCATION CODE
-    NSTimeInterval time = 60.0; //15 min
+    NSTimeInterval time = 300.0; //5 min
     self.locationUpdateTimer =
     [NSTimer scheduledTimerWithTimeInterval:time
                                      target:self
@@ -58,6 +58,7 @@
     
        return YES;
     
+    //HOckey app beta shtuff
     [[BITHockeyManager sharedHockeyManager] configureWithIdentifier:@"aa98531d647709ef424483860110b40f"];
     [[BITHockeyManager sharedHockeyManager] startManager];
     [[BITHockeyManager sharedHockeyManager].authenticator authenticateInstallation];

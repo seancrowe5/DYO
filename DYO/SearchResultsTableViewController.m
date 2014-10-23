@@ -109,9 +109,19 @@
     cell.profileImage.image = user.profileImage;
     cell.industryLabel.text = user.industry;
     cell.studyLabel.text = user.areaOfStudy;
-    cell.lastLocationLabel.text =[NSString stringWithFormat:@"%.2f", [self.currentLocation distanceInMilesTo:user.recentLocation]];
     
     //NSLog(@"distance in miles is: %f", [self.currentLocation distanceInMilesTo:user.recentLocation]);
+    
+    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+    [numberFormatter setGroupingSeparator:@","];
+    [numberFormatter setGroupingSize:3];
+    [numberFormatter setUsesGroupingSeparator:YES];
+    [numberFormatter setDecimalSeparator:@"."];
+    [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    [numberFormatter setMaximumFractionDigits:2];
+    NSString *theString = [numberFormatter stringFromNumber:[NSNumber numberWithDouble: [self.currentLocation distanceInMilesTo:user.recentLocation]]];
+    cell.lastLocationLabel.text = theString;
+
     
     
     //set tag to the indexPath

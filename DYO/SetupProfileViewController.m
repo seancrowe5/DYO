@@ -52,14 +52,14 @@
     ////end: INDUSTRY PICKER////
     
     ////AREA OF STUDY PICKER////
-    path = [[NSBundle mainBundle] pathForResource:
-                      @"aresOfStudy" ofType:@"plist"]; //gets the file
-    NSMutableArray *array4 = [[NSMutableArray alloc] initWithContentsOfFile:path]; //build the array from file
+    NSString *path2 = [[NSBundle mainBundle] pathForResource:
+                      @"areaOfStudy" ofType:@"plist"]; //gets the file
+    NSMutableArray *array4 = [[NSMutableArray alloc] initWithContentsOfFile:path2]; //build the array from fil
     NSMutableArray *array5 = [[NSMutableArray alloc]init]; //temporary array for looping
+    NSLog(@"array 4 is: %@", array4);
     for (NSDictionary *dict in array4) {
         [array5 addObject:[dict objectForKey:@"Area of Study"]]; //each area of study line added to array5
     }
-    
     areaOfStudyArray = array5;
     pkAreaOfStudyPicker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 43, 320, 480)];
     pkAreaOfStudyPicker.delegate = self;
@@ -288,9 +288,6 @@
     //declasre a file datatype and a filename datatype
     NSData *fileData;
     NSString *fileName;
-    
-    //declare a UI image variable set it to our image property...then resize it
-    //UIImage *newImage = [self resizeImage:self.image toWidth:100.0f andHeight:100.0f];
     UIImage *newImage = self.profileImage.image; //lets try setting the new image to the image property that was set in the didfinishpickingimage method
 
     fileData = UIImagePNGRepresentation(newImage);
@@ -368,7 +365,7 @@
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
     
-    if(pickerView == pktStatePicker){
+    if([pickerView isEqual:pktStatePicker]){
         //then return the number of rows in industry array
         return [industryArray count];
     }
@@ -411,7 +408,7 @@
     }
     else if(pickerView == pkAreaOfStudyPicker){
         //then set the area of study text field to the selection and resign the picker
-        self.areaOfStudyField.text = [industryArray objectAtIndex:row];
+        self.areaOfStudyField.text = [areaOfStudyArray objectAtIndex:row];
         [pkAreaOfStudyPicker resignFirstResponder]; //*trying this to see if it works
     }
 }

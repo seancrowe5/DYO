@@ -19,17 +19,21 @@
 @property (strong, nonatomic) IBOutlet HTAutocompleteTextField *educationField;
 @property (strong, nonatomic) IBOutlet UITextField *industryField;
 @property (strong, nonatomic) IBOutlet UITextField *areaOfStudyField;
+- (IBAction)dismissKeyboard:(UITextField *)sender;
 
 @property (nonatomic,strong) UIImagePickerController *imagePicker;
 @property (nonatomic, strong) UIImage *image;
+@property (nonatomic, strong) UIImage *theProfileImage;
+
 @property (nonatomic, strong) UIColor *backgroundColor;
 @property (weak, nonatomic) IBOutlet UIScrollView *pageScrollView;
 
 - (IBAction)eduEditingBegan:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UIButton *imageButton;
 @property (strong, nonatomic) IBOutlet UITextField *placeholderField;
 @property (strong, nonatomic) IBOutlet UIButton *editButton;
-@property (strong, nonatomic) IBOutlet UIImageView *profileImage;
+@property (strong, nonatomic) UIImageView *profileImage;
 - (IBAction)changePhoto:(id)sender;
 - (IBAction)editProfileButton:(id)sender;
 -(void)goodbyeKeyboard;

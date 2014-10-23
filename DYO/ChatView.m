@@ -47,6 +47,8 @@
     
     
     self.collectionView.collectionViewLayout.messageBubbleFont = [UIFont fontWithName:@"Avenir" size:12.0f];
+   self.inputToolbar.contentView.leftBarButtonItem = nil;
+    
     
     self.initialLoadNum = 5;
     self.numberMessageToLoad =self.initialLoadNum;
@@ -88,6 +90,7 @@
     [super viewWillAppear:NO];
     //make sure nav shows
     [self.navigationController.navigationBar setHidden:NO];
+    
    
     
 }
@@ -154,6 +157,7 @@
                      [self finishReceivingMessage];
                      if([self.messages count]>=self.numberMessageToLoad)
                      {
+                         
                          self.showLoadEarlierMessagesHeader = YES;
                      }
                      else
@@ -166,6 +170,26 @@
              self.isLoading = NO;
          }];
     }
+}
+
+//customize the load messages label
+- (UICollectionReusableView *)collectionView:(JSQMessagesCollectionView *)collectionView
+           viewForSupplementaryElementOfKind:(NSString *)kind
+                                 atIndexPath:(NSIndexPath *)indexPath
+{
+    if (self.showLoadEarlierMessagesHeader && [kind isEqualToString:UICollectionElementKindSectionHeader]) {
+        JSQMessagesLoadEarlierHeaderView *header = [collectionView dequeueLoadEarlierMessagesViewHeaderForIndexPath:indexPath];
+        
+        // Customize header
+        [header.loadButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        [header.loadButton.titleLabel setFont:[UIFont fontWithName:@"Avenir" size:12.0f]];
+        
+        
+        return header;
+    }
+    
+    return [super collectionView:collectionView viewForSupplementaryElementOfKind:kind
+                     atIndexPath:indexPath];
 }
 
 #pragma mark - JSQMessagesViewController method overrides
@@ -439,6 +463,7 @@
 {
     self.numberMessageToLoad += self.incrementLoadNum;
     [self loadMessages:true];
+
 }
 
 @end
