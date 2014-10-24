@@ -44,7 +44,7 @@
     pktStatePicker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 43, 320, 480)];
     pktStatePicker.delegate = self;
     pktStatePicker.dataSource = self;
-    [pktStatePicker  setShowsSelectionIndicator:YES];
+    [pktStatePicker  setShowsSelectionIndicator:NO];
     self.industryField.inputView =  pktStatePicker  ;
     
     ////AREA OF STUDY PICKER////
@@ -60,8 +60,9 @@
     pkAreaOfStudyPicker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 43, 320, 480)];
     pkAreaOfStudyPicker.delegate = self;
     pkAreaOfStudyPicker.dataSource = self;
-    [pkAreaOfStudyPicker  setShowsSelectionIndicator:YES];
+    [pkAreaOfStudyPicker  setShowsSelectionIndicator:NO];
     self.areaField.inputView =  pkAreaOfStudyPicker; //*important this makes the picker show up on selection of area field
+    [pkAreaOfStudyPicker selectRow:2 inComponent:0 animated:NO];
     ////end: AREA OF STUDY PICKER////
     
     
@@ -70,7 +71,6 @@
     
     self.eduField.autocompleteDataSource = [HTAutocompleteManager sharedManager];
     self.eduField.autocompleteType = HTAutocompleteTypeColor;
-    
     self.eduField.textAlignment = NSTextAlignmentCenter;
    
 
@@ -195,6 +195,8 @@
     
 
 }
+
+
 
 - (IBAction)firstNameEditingChanged:(UITextField *)sender {
     
@@ -325,13 +327,18 @@
         //then set the industry text field to the selection and resign the picker
         self.industryField.text = [industryArray objectAtIndex:row];
         [self allOtherFieldsDisabled:YES textFieldSender:self.industryField];
+       // pickerView.hidden = YES;
+
 
     }
     else if(pickerView == pkAreaOfStudyPicker){
         //then set the area of study text field to the selection and resign the picker
         self.areaField.text = [areaOfStudyArray objectAtIndex:row];
         [self allOtherFieldsDisabled:YES textFieldSender:self.areaField];
+        //pickerView.hidden = YES;
     }
+    
+   
 }
 
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{

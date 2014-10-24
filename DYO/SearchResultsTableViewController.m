@@ -103,15 +103,29 @@
     //the information was set in the view did load for the user properties
     //NSLog(@"First Name: %@", self.userMutableArray);
     [cell.firstNameLabel setText:[NSString stringWithFormat:@"%@ %@", user.firstName, user.lastName]];
-    cell.jobTitle.text =        user.jobTitle;
-    cell.companyLabel.text =    user.companyName;
-    cell.educationLabel.text =  user.educationLabel;
-    cell.profileImage.image = user.profileImage;
-    cell.industryLabel.text = user.industry;
-    cell.studyLabel.text = user.areaOfStudy;
     
+    if([user.jobTitle isEqualToString:@""]){cell.jobTitle.text =@"N/A";}
+    else{cell.jobTitle.text = user.jobTitle;}
+    
+    if([user.companyName isEqualToString:@""]){cell.companyLabel.text =@"N/A";}
+    else{cell.companyLabel.text = user.companyName;}
+    
+    if([user.educationLabel isEqualToString:@""]){cell.educationLabel.text =@"N/A";}
+    else{cell.educationLabel.text = user.educationLabel;}
+    
+    if([user.industry isEqualToString:@""]){cell.industryLabel.text =@"N/A";}
+    else{cell.industryLabel.text = user.industry;}
+    
+    if([user.areaOfStudy isEqualToString:@""]){cell.studyLabel.text =@"N/A";}
+    else{cell.studyLabel.text = user.areaOfStudy;}
+
+    
+    cell.profileImage.image = user.profileImage;
+    
+
     //NSLog(@"distance in miles is: %f", [self.currentLocation distanceInMilesTo:user.recentLocation]);
     
+    //let's make the distance have a thousands seperator
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
     [numberFormatter setGroupingSeparator:@","];
     [numberFormatter setGroupingSize:3];
