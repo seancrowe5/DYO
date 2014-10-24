@@ -161,26 +161,24 @@
             //if the first name contains information
             if(![firstName length] == 0){
                 //use parse to search for matches
-                [query whereKey:@"firstName" hasPrefix:firstName];}
-            
+                [query whereKey:@"firstName" matchesRegex:firstName modifiers:@"i"];}
             if(![lastName length] == 0){
-                [query whereKey:@"lastName" hasPrefix:lastName];}
+                [query whereKey:@"lastName" matchesRegex:lastName modifiers:@"i"];;}
             
             if(![jobTitle length] == 0){
-                [query whereKey:@"jobTitle" hasPrefix:jobTitle];}
+                [query whereKey:@"jobTitle" matchesRegex:jobTitle modifiers:@"i"];}
             
             if(![company length] == 0){
-                [query whereKey:@"company" hasPrefix:company];}
+                [query whereKey:@"company" matchesRegex:company modifiers:@"i"];}
             
             if(![education length] == 0){
-                NSLog(@"Education search in correct place %@", education);
-                [query whereKey:@"education" hasPrefix:education];}
+                [query whereKey:@"education" matchesRegex:education modifiers:@"i"];}
             
             if(![industry length] == 0){
-                [query whereKey:@"industry" hasPrefix:industry];}
+                [query whereKey:@"industry" matchesRegex:industry modifiers:@"i"];}
             
             if(![areaOfStudy length] == 0){
-                [query whereKey:@"areaOfStudy" hasPrefix:areaOfStudy];}
+                [query whereKey:@"areaOfStudy" matchesRegex:areaOfStudy modifiers:@"i"];}
 
             [query whereKey:@"lastLocation" nearGeoPoint:self.userGeoPoint withinMiles:50000.0]; //Get current loc and search within50000 miles
             [query whereKey:@"objectId" notEqualTo:currentUser.objectId]; //make sure we exlude the current user from search results

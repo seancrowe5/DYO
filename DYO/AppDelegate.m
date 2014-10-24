@@ -27,6 +27,7 @@
     
     
     //PUSH NOTIFICATION
+    // Register for Push Notitications, if running iOS 8
     if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
         UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
                                                         UIUserNotificationTypeBadge |
@@ -37,9 +38,8 @@
         [application registerForRemoteNotifications];
     } else {
         // Register for Push Notifications before iOS 8
-        
-            }
-    
+       
+    }
     UIImage *backButtonImage = [[UIImage imageNamed:@"next-right-arrow-thin-symbol2.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 13, 0, 6)];
     [[UIBarButtonItem appearance] setBackButtonBackgroundImage:backButtonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     

@@ -230,18 +230,18 @@
                                                   otherButtonTitles:nil, nil];
         
         [alertView show];
-
+      
+        
     }
-    
-    
     // Associate the device with a user
     PFInstallation *installation = [PFInstallation currentInstallation];
-    installation[@"user"] = self.currentUser;
+    installation[@"user"] = self.withUser;
     [installation saveInBackground];
+    
     
     // Create our Installation query
     PFQuery *pushQuery = [PFInstallation query];
-    [pushQuery whereKey:@"user" equalTo:self.withUser];
+    [pushQuery whereKey:@"user" equalTo:self.currentUser];
     
     // Send push notification to query
     PFPush *push = [[PFPush alloc] init];
