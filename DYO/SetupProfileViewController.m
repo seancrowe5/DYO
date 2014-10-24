@@ -386,7 +386,6 @@
     if(pickerView == pktStatePicker){
         //then set the industry text field to the selection and resign the picker
         self.industryField.text = [industryArray objectAtIndex:row];
-        [pickerView resignFirstResponder];
         
     }
     else if(pickerView == pkAreaOfStudyPicker){
@@ -394,6 +393,7 @@
         self.areaOfStudyField.text = [areaOfStudyArray objectAtIndex:row];
         [pkAreaOfStudyPicker resignFirstResponder]; //*trying this to see if it works
     }
+    [[self view] endEditing:YES];
 }
 
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{

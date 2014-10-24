@@ -18,6 +18,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    // Associate the device with a user
+    PFInstallation *installation = [PFInstallation currentInstallation];
+    installation[@"user"] = [PFUser currentUser];
+    [installation saveInBackground];
+    
+    
     self.navigationController.interactivePopGestureRecognizer.enabled = NO;
 
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;

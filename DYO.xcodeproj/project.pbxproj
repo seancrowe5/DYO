@@ -33,6 +33,7 @@
 		2164A78519D47A42006332B1 /* BackgroundTaskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2164A78019D47A42006332B1 /* BackgroundTaskManager.m */; };
 		2164A78619D47A42006332B1 /* LocationShareModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2164A78219D47A42006332B1 /* LocationShareModel.m */; };
 		217A6B3419DC9878009D22C9 /* camera.ico in Resources */ = {isa = PBXBuildFile; fileRef = 217A6B3319DC9878009D22C9 /* camera.ico */; };
+		218D5B6A19FAE93B00CCBDE9 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 218D5B6919FAE93B00CCBDE9 /* MessageUI.framework */; };
 		21942CB819F76DE500B192BF /* disclosure@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21942CB719F76DE500B192BF /* disclosure@2x.png */; };
 		21942CBA19F76E5400B192BF /* disclosure-White@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21942CB919F76E5400B192BF /* disclosure-White@2x.png */; };
 		21A0600719EF0BED00DCF677 /* testing2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21A0600619EF0BED00DCF677 /* testing2.plist */; };
@@ -67,7 +68,6 @@
 		21FBE1DA19F57BA500F2FC30 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FBE1D919F57BA500F2FC30 /* ChatViewController.m */; };
 		21FBE1DD19F57BB400F2FC30 /* JSQDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FBE1DC19F57BB400F2FC30 /* JSQDemoViewController.m */; };
 		21FDC36919F806A700D50141 /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21FDC36519F806A700D50141 /* HockeySDK.framework */; };
-		21FDC36A19F806A700D50141 /* HockeySDK.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 21FDC36719F806A700D50141 /* HockeySDK.xcconfig */; };
 		21FDC36B19F806A700D50141 /* HockeySDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 21FDC36819F806A700D50141 /* HockeySDKResources.bundle */; };
 		21FF2A3B19E4BBA50043B3B5 /* profilePlaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 21FF2A3A19E4BBA50043B3B5 /* profilePlaceholder.png */; };
 /* End PBXBuildFile section */
@@ -125,6 +125,7 @@
 		2164A78119D47A42006332B1 /* LocationShareModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationShareModel.h; sourceTree = "<group>"; };
 		2164A78219D47A42006332B1 /* LocationShareModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationShareModel.m; sourceTree = "<group>"; };
 		217A6B3319DC9878009D22C9 /* camera.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = camera.ico; sourceTree = "<group>"; };
+		218D5B6919FAE93B00CCBDE9 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		21942CB719F76DE500B192BF /* disclosure@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "disclosure@2x.png"; sourceTree = "<group>"; };
 		21942CB919F76E5400B192BF /* disclosure-White@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "disclosure-White@2x.png"; sourceTree = "<group>"; };
 		21A0600619EF0BED00DCF677 /* testing2.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = testing2.plist; sourceTree = "<group>"; };
@@ -187,6 +188,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				218D5B6A19FAE93B00CCBDE9 /* MessageUI.framework in Frameworks */,
 				21AA5AED19F8100200219759 /* QuickLook.framework in Frameworks */,
 				21CFF77C19B6BB74001D5088 /* QuartzCore.framework in Frameworks */,
 				21AA5AEB19F80FF200219759 /* MobileCoreServices.framework in Frameworks */,
@@ -324,7 +326,6 @@
 		21CFF71E19B620A4001D5088 = {
 			isa = PBXGroup;
 			children = (
-				21FDC36419F806A700D50141 /* HockeySDK.embeddedframework */,
 				21CFF75F19B62D92001D5088 /* MainStoryboard.storyboard */,
 				21CFF73019B620A4001D5088 /* DYO */,
 				21CFF74919B620A5001D5088 /* DYOTests */,
@@ -346,6 +347,8 @@
 		21CFF72919B620A4001D5088 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				218D5B6919FAE93B00CCBDE9 /* MessageUI.framework */,
+				21FDC36419F806A700D50141 /* HockeySDK.embeddedframework */,
 				21AA5AEC19F8100200219759 /* QuickLook.framework */,
 				21AA5AE919F80FE700219759 /* AssetsLibrary.framework */,
 				21AA5AE519F80F4700219759 /* CoreText.framework */,
@@ -536,7 +539,7 @@
 		21CFF71F19B620A4001D5088 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Sean Crowe";
 				TargetAttributes = {
 					21CFF72619B620A4001D5088 = {
@@ -587,7 +590,6 @@
 				21CFF76019B62D92001D5088 /* MainStoryboard.storyboard in Resources */,
 				21355DBE19F1C77E00944BEC /* icon.png in Resources */,
 				2108C9D819E304CF0013572B /* Logo.png in Resources */,
-				21FDC36A19F806A700D50141 /* HockeySDK.xcconfig in Resources */,
 				21FDC36B19F806A700D50141 /* HockeySDKResources.bundle in Resources */,
 				21B6630119F9692E0091D90B /* areaOfStudy.plist in Resources */,
 				21942CB819F76DE500B192BF /* disclosure@2x.png in Resources */,

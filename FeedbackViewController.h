@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <HockeySDK/HockeySDK.h>
+#import <MessageUI/MessageUI.h>
 
-@interface FeedbackViewController : UIViewController
+
+
+@interface FeedbackViewController : UIViewController <MFMailComposeViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *textField;
 
 @end

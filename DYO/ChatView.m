@@ -76,8 +76,8 @@
 
     if(self.isFirstMessage == false){
         //you came from the message tab
-        NSString *userTitle = [[[NSString alloc] initWithString:self.withUser[@"firstName"]] uppercaseString];
-        self.title = userTitle;
+        //NSString *userTitle = [[[NSString alloc] initWithString:self.withUser[@"firstName"]] uppercaseString];
+        self.title = @"Message";
     }
     else{
         self.title = @"Message";
@@ -220,6 +220,9 @@
      }];
     
     [self finishSendingMessage];
+    [self.inputToolbar.contentView.textView resignFirstResponder];
+    
+    
     
     if(self.isFirstMessage == true){ //aka you came from search
         [self.navigationController popViewControllerAnimated:YES];
@@ -233,15 +236,11 @@
       
         
     }
-    // Associate the device with a user
-    PFInstallation *installation = [PFInstallation currentInstallation];
-    installation[@"user"] = self.withUser;
-    [installation saveInBackground];
+   
     
-    
-    // Create our Installation query
+    // T
     PFQuery *pushQuery = [PFInstallation query];
-    [pushQuery whereKey:@"user" equalTo:self.currentUser];
+    [pushQuery whereKey:@"user" equalTo:self.withUser];
     
     // Send push notification to query
     PFPush *push = [[PFPush alloc] init];

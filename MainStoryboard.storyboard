@@ -84,7 +84,7 @@
                         <sections>
                             <tableViewSection id="7IH-WR-YUN">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="searchCell" editingAccessoryType="disclosureIndicator" textLabel="Go9-qm-x6z" rowHeight="60" style="IBUITableViewCellStyleDefault" id="EYL-7u-NX0">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="searchCell" editingAccessoryType="disclosureIndicator" textLabel="Go9-qm-x6z" rowHeight="44" style="IBUITableViewCellStyleDefault" id="EYL-7u-NX0">
                                         <rect key="frame" x="0.0" y="64" width="320" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EYL-7u-NX0" id="yah-F9-PdM">
@@ -105,7 +105,15 @@
                                             <segue destination="8d0-3K-wcC" kind="push" identifier="showSearch" id="IvW-Lb-hkx"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="profileCell" textLabel="hn6-bc-Msr" rowHeight="60" style="IBUITableViewCellStyleDefault" id="VL3-nl-Irw">
+                                    <tableViewCell hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" shouldIndentWhileEditing="NO" rowHeight="22" id="5cm-1H-GaL">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5cm-1H-GaL" id="OnN-aZ-KtF">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="profileCell" textLabel="hn6-bc-Msr" rowHeight="44" style="IBUITableViewCellStyleDefault" id="VL3-nl-Irw">
                                         <rect key="frame" x="0.0" y="149" width="320" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VL3-nl-Irw" id="W3P-ac-edW">
@@ -125,7 +133,15 @@
                                             <segue destination="EC0-8E-GWe" kind="push" identifier="showProfile" id="VE3-oe-Jnk"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="messagesCell" textLabel="wdV-ba-Aow" rowHeight="60" style="IBUITableViewCellStyleDefault" id="PlD-jv-jar">
+                                    <tableViewCell hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" shouldIndentWhileEditing="NO" rowHeight="22" id="ges-Dr-Mcp">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ges-Dr-Mcp" id="c68-Pr-L1b">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="messagesCell" textLabel="wdV-ba-Aow" rowHeight="44" style="IBUITableViewCellStyleDefault" id="PlD-jv-jar">
                                         <rect key="frame" x="0.0" y="234" width="320" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PlD-jv-jar" id="Jd1-ZQ-J46">
@@ -145,7 +161,15 @@
                                             <segue destination="6QW-AS-E7S" kind="push" identifier="homeToAvChats" id="uHV-uA-jWn"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="settingsCell" textLabel="rzz-Ia-SHU" rowHeight="60" style="IBUITableViewCellStyleDefault" id="1S0-rd-RZw">
+                                    <tableViewCell hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" shouldIndentWhileEditing="NO" rowHeight="22" id="Rft-Z3-sfC">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rft-Z3-sfC" id="p2u-9a-QAg">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="settingsCell" textLabel="rzz-Ia-SHU" rowHeight="44" style="IBUITableViewCellStyleDefault" id="1S0-rd-RZw">
                                         <rect key="frame" x="0.0" y="319" width="320" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1S0-rd-RZw" id="1YE-ox-hkB">
@@ -373,7 +397,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="476"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First name" textAlignment="center" minimumFontSize="17" id="zlC-Q8-Gmt">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First name" textAlignment="center" minimumFontSize="17" clearButtonMode="always" id="zlC-Q8-Gmt">
                                         <rect key="frame" x="20" y="8" width="280" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -385,7 +409,7 @@
                                             <action selector="firstNameSelected:" destination="8d0-3K-wcC" eventType="touchUpInside" id="AtK-7r-yFP"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last name" textAlignment="center" minimumFontSize="17" id="zCg-m5-vBU">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last name" textAlignment="center" minimumFontSize="17" clearButtonMode="always" id="zCg-m5-vBU">
                                         <rect key="frame" x="20" y="56" width="280" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -396,7 +420,7 @@
                                             <action selector="lastNameEditingChanged:" destination="8d0-3K-wcC" eventType="editingChanged" id="P8f-OE-ldO"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Job title" textAlignment="center" minimumFontSize="17" id="7uk-kg-d6j">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Job title" textAlignment="center" minimumFontSize="17" clearButtonMode="always" id="7uk-kg-d6j">
                                         <rect key="frame" x="20" y="104" width="280" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -407,7 +431,7 @@
                                             <action selector="jobTitleEditingChanged:" destination="8d0-3K-wcC" eventType="editingChanged" id="TCS-Ar-ZD0"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Current company" textAlignment="center" minimumFontSize="17" id="oSo-fN-Y3f">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Current company" textAlignment="center" minimumFontSize="17" clearButtonMode="always" id="oSo-fN-Y3f">
                                         <rect key="frame" x="20" y="152" width="280" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -418,7 +442,7 @@
                                             <action selector="dismissKeyboardDrag:" destination="8d0-3K-wcC" eventType="editingDidEndOnExit" id="81d-3s-atV"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Education" minimumFontSize="17" clearButtonMode="whileEditing" id="5aE-1E-95P" customClass="HTAutocompleteTextField">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Education" minimumFontSize="17" clearButtonMode="always" id="5aE-1E-95P" customClass="HTAutocompleteTextField">
                                         <rect key="frame" x="20" y="248" width="280" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -519,7 +543,7 @@
                                 <rect key="frame" x="-6" y="20" width="332" height="402"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="NAME" minimumFontSize="17" id="QRo-Se-BSm">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="NAME" minimumFontSize="17" clearButtonMode="whileEditing" id="QRo-Se-BSm">
                                         <rect key="frame" x="126" y="41" width="173" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
@@ -528,7 +552,7 @@
                                             <action selector="dismissKeyboard:" destination="EC0-8E-GWe" eventType="editingDidEndOnExit" id="CEy-se-Bl3"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CURRENT COMPANY" minimumFontSize="17" id="zd5-RS-vSg">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CURRENT COMPANY" minimumFontSize="17" clearButtonMode="whileEditing" id="zd5-RS-vSg">
                                         <rect key="frame" x="18" y="141" width="281" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
@@ -555,7 +579,7 @@
                                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5cL-uv-uUu">
                                         <rect key="frame" x="14" y="16" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" backgroundImage="36DC17BD-2D24-468D-855A-92B03C532A76">
+                                        <state key="normal" backgroundImage="0B3D4C66-C97F-4153-BF40-8159F7647C65">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -622,7 +646,7 @@
                                         <color key="textColor" red="0.031372549019607843" green="0.50196078431372548" blue="0.77254901960784317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="JOB TITLE" minimumFontSize="17" id="bhB-FV-QoH">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="JOB TITLE" minimumFontSize="17" clearButtonMode="whileEditing" id="bhB-FV-QoH">
                                         <rect key="frame" x="126" y="88" width="173" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
@@ -662,6 +686,7 @@
                         <outlet property="companyField" destination="zd5-RS-vSg" id="1WV-GS-k4K"/>
                         <outlet property="editButton" destination="qWO-eN-R8q" id="WI2-NF-E3u"/>
                         <outlet property="educationField" destination="IUD-Gn-iXu" id="Qpa-BC-rIh"/>
+                        <outlet property="imageButton" destination="5cL-uv-uUu" id="wxd-Pe-YYo"/>
                         <outlet property="industryField" destination="Qcm-RH-aN6" id="I1r-Ic-eUU"/>
                         <outlet property="jobField" destination="bhB-FV-QoH" id="fRR-hH-rDv"/>
                         <outlet property="nameField" destination="QRo-Se-BSm" id="aTC-S3-r64"/>
@@ -677,18 +702,26 @@
         <scene sceneID="RyN-Vc-HA5">
             <objects>
                 <tableViewController id="6QW-AS-E7S" customClass="AvailableChatsTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="71" sectionHeaderHeight="22" sectionFooterHeight="22" id="jOG-9b-TVr">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="68" sectionHeaderHeight="22" sectionFooterHeight="22" id="jOG-9b-TVr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="resultCell" rowHeight="71" id="yhX-mk-3Nq" customClass="AvailableChatsTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="resultCell" rowHeight="68" id="yhX-mk-3Nq" customClass="AvailableChatsTableViewCell">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yhX-mk-3Nq" id="Mo1-MB-QSj">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="maybe the font for the messages is too small" selectable="NO" id="Qm0-HE-fyY">
+                                            <rect key="frame" x="10" y="22" width="269" height="24"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aJo-p1-r1y">
                                             <rect key="frame" x="15" y="10" width="304" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -696,16 +729,8 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="maybe the font for the messages is too small" selectable="NO" id="Qm0-HE-fyY">
-                                            <rect key="frame" x="11" y="31" width="269" height="24"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        </textView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2:43 PM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iLu-xS-UsG">
-                                            <rect key="frame" x="144" y="10" width="128" height="21"/>
+                                            <rect key="frame" x="159" y="10" width="128" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -766,7 +791,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="cnK-IH-x2V">
-                                        <rect key="frame" x="25" y="20" width="108" height="30"/>
+                                        <rect key="frame" x="16" y="16" width="108" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="13"/>
                                         <state key="normal" title="Send Feedback">
@@ -774,7 +799,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="Zaw-IK-fxZ" kind="push" id="iOH-oO-YjP"/>
+                                            <action selector="showEmail:" destination="uaj-d2-W6G" eventType="touchUpInside" id="Oa8-4f-EL8"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 1.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bHS-Qe-ZGY">
@@ -863,37 +888,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P33-cq-7sQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1968" y="733.5"/>
-        </scene>
-        <!--Feedback View Controller-->
-        <scene sceneID="tF2-CC-Rzs">
-            <objects>
-                <viewController id="Zaw-IK-fxZ" customClass="FeedbackViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ba6-ct-mSK">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="631"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="PKK-CA-bVm">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="349"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="EK0-DN-92r">
-                        <barButtonItem key="rightBarButtonItem" title="SEND" id="Whl-qG-luY">
-                            <color key="tintColor" red="0.1019607843" green="0.4431372549" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="textField" destination="PKK-CA-bVm" id="k3O-DP-3aa"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KkA-qn-5Rk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1489" y="733.5"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="6u9-ar-IGM">
@@ -1202,7 +1196,7 @@
                                             <action selector="textFieldReturn:" destination="v7k-sm-mEp" eventType="editingDidEndOnExit" id="wpd-3a-dyi"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Industry" textAlignment="center" minimumFontSize="17" id="qQ4-q9-CWO">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Industry" textAlignment="center" minimumFontSize="17" clearButtonMode="always" id="qQ4-q9-CWO">
                                         <rect key="frame" x="20" y="329" width="280" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1213,7 +1207,7 @@
                                             <action selector="textFieldReturn:" destination="JUm-PW-Dcs" eventType="editingDidEndOnExit" id="6wp-hA-hYe"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Area of study" textAlignment="center" minimumFontSize="17" id="tK7-fU-b1H">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Area of study" textAlignment="center" minimumFontSize="17" clearButtonMode="always" id="tK7-fU-b1H">
                                         <rect key="frame" x="20" y="425" width="280" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1363,7 +1357,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="36DC17BD-2D24-468D-855A-92B03C532A76" width="256" height="256">
+        <image name="0B3D4C66-C97F-4153-BF40-8159F7647C65" width="256" height="256">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGbW5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QHAcI
 ERsgISUmLjE2OTo/QkNIS0xRVFVaXV5hZ2pVJG51bGzUCQoLDA0ODxBWJGNsYXNzXE5TSW1hZ2VGbGFn

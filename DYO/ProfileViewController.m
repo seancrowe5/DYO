@@ -31,7 +31,7 @@ int count;
                                                                        NSFontAttributeName: [UIFont fontWithName:@"Avenir" size:17.0f],
                                                                        }];
     self.navigationItem.title = @"PROFILE";
-
+    self.imageButton.enabled = NO;
 
     //display profile image from parse
     PFUser *user = [PFUser currentUser];
@@ -111,7 +111,6 @@ int count;
     self.industryField.delegate = self;
     self.educationField.delegate = self;
     self.areaOfStudyField.delegate = self;
-
 
 }
 
@@ -363,11 +362,19 @@ int count;
 
 }
 
+- (BOOL)textFieldShouldClear:(UITextField *)textField {
+        //This is where you show the picker AFTER it has been cleared
+    pktStatePicker.hidden = NO;
+    pkAreaOfStudyPicker.hidden = NO;
+    
+    return YES;
+}
+
 - (void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
     if(pickerView == pktStatePicker){
         //then set the industry text field to the selection and resign the picker
         self.industryField.text = [industryArray objectAtIndex:row];
-        [pickerView resignFirstResponder];
+        
         
     }
     else if(pickerView == pkAreaOfStudyPicker){
@@ -375,7 +382,8 @@ int count;
         self.areaOfStudyField.text = [areaOfStudyArray objectAtIndex:row];
         [pkAreaOfStudyPicker resignFirstResponder]; //*trying this to see if it works
     }
-
+   
+    [[self view] endEditing:YES];
 }
 
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
@@ -404,10 +412,10 @@ int count;
 
 - (IBAction)editProfileButton:(id)sender {
     [self.editButton setTitle:@"Save" forState:UIControlStateNormal];
-    
+    self.imageButton.enabled = YES;
     if(count==1){
         //You are in this loop because the user selected the save button
-        
+        self.imageButton.enabled = NO;
         [self.editButton setTitle:@"Edit" forState:UIControlStateNormal];
         
         //style to indicate it is not editable
@@ -417,6 +425,13 @@ int count;
         self.educationField.borderStyle = UITextBorderStyleNone;
         self.industryField.borderStyle = UITextBorderStyleNone;
         self.areaOfStudyField.borderStyle = UITextBorderStyleNone;
+        
+        self.jobField.clearButtonMode = UITextFieldViewModeNever;
+        self.companyField.clearButtonMode = UITextFieldViewModeNever;
+        self.educationField.clearButtonMode = UITextFieldViewModeNever;
+        self.industryField.clearButtonMode = UITextFieldViewModeNever;
+        self.areaOfStudyField.clearButtonMode = UITextFieldViewModeNever;
+
         
         //outdent
         UIView *spacerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
@@ -483,6 +498,7 @@ int count;
         [self.jobField setLeftViewMode:UITextFieldViewModeAlways];
         [self.jobField setLeftView:spacerView];
         
+        
         UIView *spacerView1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
         [self.companyField setLeftViewMode:UITextFieldViewModeAlways];
         [self.companyField setLeftView:spacerView1];
@@ -505,6 +521,12 @@ int count;
         self.educationField.borderStyle = UITextBorderStyleRoundedRect;
         self.industryField.borderStyle = UITextBorderStyleRoundedRect;
         self.areaOfStudyField.borderStyle = UITextBorderStyleRoundedRect;
+        
+        self.jobField.clearButtonMode = UITextFieldViewModeAlways;
+        self.companyField.clearButtonMode = UITextFieldViewModeAlways;
+        self.educationField.clearButtonMode = UITextFieldViewModeAlways;
+        self.industryField.clearButtonMode = UITextFieldViewModeAlways;
+        self.areaOfStudyField.clearButtonMode = UITextFieldViewModeAlways;
         
         UIColor *backgroundColor = [UIColor colorWithRed:230.0/255.0 green:230.0/255.0 blue:230.0/255.0 alpha:1];
         

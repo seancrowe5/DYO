@@ -44,6 +44,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:NO];
+    [self.tableView reloadData];
     
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     self.navigationController.interactivePopGestureRecognizer.enabled = YES;
@@ -185,8 +186,11 @@
     
     PFQuery *query = [PFQuery queryWithClassName:@"ChatRoom"]; //let's query the chatroom class
     [query whereKey:@"user1" equalTo:[PFUser currentUser]]; //give me all results when the user1 column is equal to the current user
+    [query whereKey:@"numberOfMessages" greaterThanOrEqualTo:[NSNumber numberWithInteger:1]];
+    
     PFQuery *queryInverse = [PFQuery queryWithClassName:@"ChatRoom"]; //lets also check the same class but a different colum
-    [queryInverse whereKey:@"user2" equalTo:[PFUser currentUser]]; //give me all results when the user2 column is equal to the current user, just incase the current user didn't start convo
+    [queryInverse whereKey:@"user2" equalTo:[PFUser currentUser]]; //give me all results when the user2 column is equal to the currentuser, just incase the current user didn't start convo
+    [queryInverse whereKey:@"numberOfMessages" greaterThanOrEqualTo:[NSNumber numberWithInteger:1]];
     
     PFQuery *queryCombined = [PFQuery orQueryWithSubqueries:@[query, queryInverse]];
     [queryCombined includeKey:@"chat"];

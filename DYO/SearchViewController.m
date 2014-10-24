@@ -46,6 +46,7 @@
     pktStatePicker.dataSource = self;
     [pktStatePicker  setShowsSelectionIndicator:NO];
     self.industryField.inputView =  pktStatePicker  ;
+    pktStatePicker.hidden = NO;
     
     ////AREA OF STUDY PICKER////
     NSString *path2 = [[NSBundle mainBundle] pathForResource:
@@ -62,7 +63,8 @@
     pkAreaOfStudyPicker.dataSource = self;
     [pkAreaOfStudyPicker  setShowsSelectionIndicator:NO];
     self.areaField.inputView =  pkAreaOfStudyPicker; //*important this makes the picker show up on selection of area field
-    [pkAreaOfStudyPicker selectRow:2 inComponent:0 animated:NO];
+    [pkAreaOfStudyPicker selectRow:0 inComponent:0 animated:NO];
+    //pkAreaOfStudyPicker.hidden = NO;
     ////end: AREA OF STUDY PICKER////
     
     
@@ -82,6 +84,8 @@
     self.eduField.delegate = self;
     self.firstNameField.delegate = self;
     self.areaField.delegate = self;
+    
+   
    
 }
 
@@ -100,7 +104,30 @@
     
     self.navigationItem.title = @"SEARCH";
     [self.activityIndicatorView stopAnimating]; //stops from spinning when user goes back to search again
+    
+//    //listen for tap
+//    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didRecognizeTapGesture:)];
+//    [self.eduField.superview addGestureRecognizer:tapGesture];
 }
+
+//- (void)didRecognizeTapGesture:(UITapGestureRecognizer*)gesture
+//{
+//    CGPoint point = [gesture locationInView:gesture.view];
+//    
+//    if (gesture.state == UIGestureRecognizerStateEnded)
+//    {
+//        if (CGRectContainsPoint(self.eduField.frame, point))
+//        {
+//            //if(there is anythign in the field, aka user is typing)
+//            //then(fill in the field with the auto suggest)
+//            
+////            if(self.eduField.text>0){
+////                NSLog(@"You are typing and then you touched the field");
+////                self.eduField.text = @"autocorrect";
+////            }
+//        }
+//    }
+//}
 
 // called when textField is selected.
 - (void)textFieldDidBeginEditing:(UITextField *)textField
@@ -108,6 +135,14 @@
     self.activeField = textField;
     if(self.activeField != self.firstNameField || self.activeField != self.areaField){
     [self.pageScrollView setContentOffset:CGPointMake(0,textField.center.y-70) animated:YES];
+    }
+    
+    if(self.activeField == self.industryField || self.activeField == self.areaField){
+        
+        pktStatePicker.hidden = NO;
+       pkAreaOfStudyPicker.hidden = NO;
+       
+        
     }
 }
 
@@ -127,7 +162,6 @@
     }
     
 }
-
 
 - (IBAction)search:(id)sender {
 
@@ -276,8 +310,14 @@
 }
 
 - (BOOL)textFieldShouldClear:(UITextField *)textField {
+    
     [self allOtherFieldsDisabled:NO textFieldSender:textField];
-
+    //This is where you show the picker AFTER it has been cleared
+    pktStatePicker.hidden = NO;
+    pkAreaOfStudyPicker.hidden = NO;
+    
+    
+    
     return YES;
 }
 
@@ -327,7 +367,8 @@
         //then set the industry text field to the selection and resign the picker
         self.industryField.text = [industryArray objectAtIndex:row];
         [self allOtherFieldsDisabled:YES textFieldSender:self.industryField];
-       // pickerView.hidden = YES;
+       pickerView.hidden = YES;
+        [[self view] endEditing:YES];
 
 
     }
@@ -335,13 +376,15 @@
         //then set the area of study text field to the selection and resign the picker
         self.areaField.text = [areaOfStudyArray objectAtIndex:row];
         [self allOtherFieldsDisabled:YES textFieldSender:self.areaField];
-        //pickerView.hidden = YES;
+        pickerView.hidden = YES;
+        [[self view] endEditing:YES];
     }
     
    
 }
 
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
+
     UILabel* tView = (UILabel*)view;
     if (!tView){
         tView = [[UILabel alloc] init];
