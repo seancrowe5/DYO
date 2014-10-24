@@ -75,42 +75,25 @@
     
     self.educationField.textAlignment = NSTextAlignmentCenter;
     
-    [self registerForKeyboardNotifications];
-}
+    self.firstNameField.delegate = self;
+    self.lastNameField.delegate = self;
+    self.jobField.delegate = self;
+    self.companyField.delegate = self;
+    self.industryField.delegate = self;
+    self.educationField.delegate = self;
+    self.areaOfStudyField.delegate = self;
 
-- (void)registerForKeyboardNotifications
-{
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWasShown:)
-                                                 name:UIKeyboardDidShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillBeHidden:)
-                                                 name:UIKeyboardWillHideNotification object:nil];
 }
 
 
-// Called when the UIKeyboardDidShowNotification is sent.
-- (void)keyboardWasShown:(NSNotification*)aNotification
+// called when textField start editting.
+- (void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    NSDictionary* info = [aNotification userInfo];
-    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height+300, 0.0);
+    self.activeField = textField;
     
-    self.pageScrollView.contentInset = contentInsets;
-    self.pageScrollView.scrollIndicatorInsets = contentInsets;
+        [self.pageScrollView setContentOffset:CGPointMake(0,textField.center.y-70) animated:YES];
     
-
 }
-
-// Called when the UIKeyboardWillHideNotification is sent
-- (void)keyboardWillBeHidden:(NSNotification*)aNotification
-{
-    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0,0.0, 0.0);
-    self.pageScrollView.contentInset = contentInsets;
-    self.pageScrollView.scrollIndicatorInsets = contentInsets;
-}
-
-
 
 #pragma Mark - Image
 

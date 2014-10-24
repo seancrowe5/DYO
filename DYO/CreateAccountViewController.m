@@ -23,12 +23,14 @@
 
     [self.navigationController.navigationBar setHidden:YES]; // I make the navigation bar appear
     self.createAccountTitle.title =@"Create a free account"; // I set the title of the view
-    [self.emailField becomeFirstResponder]; // When the view loads, the keyboard selects this and pops up
+    //[self.emailField becomeFirstResponder]; // When the view loads, the keyboard selects this and pops up
     //small circles on secure pass field
     [self.passField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     [self.secondPassField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
 
-    
+    //scroll delegates
+    self.passField.delegate = self;
+    self.secondPassField.delegate = self;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -41,6 +43,15 @@
 -(void)viewDidAppear:(BOOL)animated{
     self.navigationController.interactivePopGestureRecognizer.enabled = NO; //no swipe left to navigate
 
+}
+
+// called when textField start editting.
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    self.activeField = textField;
+    if(self.activeField != self.emailField){ //doesn't scroll for email
+        [self.pageScrollView setContentOffset:CGPointMake(0,textField.center.y-70) animated:YES];
+    }
 }
 
 - (void)textFieldDidChange:(id)sender

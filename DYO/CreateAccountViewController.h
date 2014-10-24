@@ -16,6 +16,9 @@
 @property (strong, nonatomic) IBOutlet UITextField *secondPassField;
 @property (weak, nonatomic) IBOutlet UINavigationItem *createAccountTitle;
 @property (weak, nonatomic) IBOutlet UITextView *createAccountSubTitle;
+@property (strong, nonatomic) UITextField *activeField;
+@property (weak, nonatomic) IBOutlet UIScrollView *pageScrollView;
+
 
 - (IBAction)nextStep:(id)sender;
 - (IBAction)nextKeyPressed:(UITextField *)sender;

@@ -10,7 +10,7 @@
 #import <Parse/Parse.h>
 #import "HTAutocompleteManager.h"
 
-@interface ProfileViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
+@interface ProfileViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate>
 
 //text fields
 @property (strong, nonatomic) IBOutlet UITextField *nameField;
@@ -19,6 +19,8 @@
 @property (strong, nonatomic) IBOutlet HTAutocompleteTextField *educationField;
 @property (strong, nonatomic) IBOutlet UITextField *industryField;
 @property (strong, nonatomic) IBOutlet UITextField *areaOfStudyField;
+@property (strong, nonatomic) UITextField *activeField;
+
 - (IBAction)dismissKeyboard:(UITextField *)sender;
 
 @property (nonatomic,strong) UIImagePickerController *imagePicker;

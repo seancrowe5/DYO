@@ -84,14 +84,7 @@
                         <sections>
                             <tableViewSection id="7IH-WR-YUN">
                                 <cells>
-                                    <tableViewCell hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" shouldIndentWhileEditing="NO" rowHeight="29" id="cCT-Ot-yQQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="cCT-Ot-yQQ" id="AcC-gv-cKK">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="searchCell" editingAccessoryType="disclosureIndicator" textLabel="Go9-qm-x6z" rowHeight="55" style="IBUITableViewCellStyleDefault" id="EYL-7u-NX0">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="searchCell" editingAccessoryType="disclosureIndicator" textLabel="Go9-qm-x6z" rowHeight="60" style="IBUITableViewCellStyleDefault" id="EYL-7u-NX0">
                                         <rect key="frame" x="0.0" y="64" width="320" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EYL-7u-NX0" id="yah-F9-PdM">
@@ -112,7 +105,7 @@
                                             <segue destination="8d0-3K-wcC" kind="push" identifier="showSearch" id="IvW-Lb-hkx"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="profileCell" textLabel="hn6-bc-Msr" rowHeight="55" style="IBUITableViewCellStyleDefault" id="VL3-nl-Irw">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="profileCell" textLabel="hn6-bc-Msr" rowHeight="60" style="IBUITableViewCellStyleDefault" id="VL3-nl-Irw">
                                         <rect key="frame" x="0.0" y="149" width="320" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VL3-nl-Irw" id="W3P-ac-edW">
@@ -132,7 +125,7 @@
                                             <segue destination="EC0-8E-GWe" kind="push" identifier="showProfile" id="VE3-oe-Jnk"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="messagesCell" textLabel="wdV-ba-Aow" rowHeight="56" style="IBUITableViewCellStyleDefault" id="PlD-jv-jar">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="messagesCell" textLabel="wdV-ba-Aow" rowHeight="60" style="IBUITableViewCellStyleDefault" id="PlD-jv-jar">
                                         <rect key="frame" x="0.0" y="234" width="320" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PlD-jv-jar" id="Jd1-ZQ-J46">
@@ -152,7 +145,7 @@
                                             <segue destination="6QW-AS-E7S" kind="push" identifier="homeToAvChats" id="uHV-uA-jWn"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="settingsCell" textLabel="rzz-Ia-SHU" rowHeight="55" style="IBUITableViewCellStyleDefault" id="1S0-rd-RZw">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="settingsCell" textLabel="rzz-Ia-SHU" rowHeight="60" style="IBUITableViewCellStyleDefault" id="1S0-rd-RZw">
                                         <rect key="frame" x="0.0" y="319" width="320" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1S0-rd-RZw" id="1YE-ox-hkB">
@@ -457,10 +450,9 @@
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                         <connections>
                                             <action selector="dismissKeyboardDrag:" destination="8d0-3K-wcC" eventType="editingDidEndOnExit" id="THe-Vy-vZ1"/>
-                                            <action selector="industryEditingChanged:" destination="8d0-3K-wcC" eventType="editingChanged" id="f19-Cv-PKg"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Area of study" textAlignment="center" minimumFontSize="17" id="M4i-tT-Ezk">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Area of study" textAlignment="center" minimumFontSize="17" clearButtonMode="always" id="M4i-tT-Ezk">
                                         <rect key="frame" x="20" y="296" width="280" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -468,7 +460,6 @@
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                         <connections>
                                             <action selector="dismissKeyboardDrag:" destination="8d0-3K-wcC" eventType="editingDidEndOnExit" id="XUb-YK-Gof"/>
-                                            <action selector="studyEditingChanged:" destination="8d0-3K-wcC" eventType="editingChanged" id="Z6k-Ow-hWy"/>
                                         </connections>
                                     </textField>
                                     <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" id="dG1-8S-ZEG">
@@ -564,7 +555,7 @@
                                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5cL-uv-uUu">
                                         <rect key="frame" x="14" y="16" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" backgroundImage="40FF3E93-F5AB-4939-9B34-E56A4F90C497">
+                                        <state key="normal" backgroundImage="005A02C5-C6BE-4973-B103-C1A997911588">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -1095,7 +1086,7 @@
                                 </subviews>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="size" keyPath="contentSize">
-                                        <size key="value" width="320" height="700"/>
+                                        <size key="value" width="320" height="650"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </scrollView>
@@ -1112,6 +1103,7 @@
                     <connections>
                         <outlet property="createAccountTitle" destination="CSh-YJ-Amg" id="ln3-HO-6cE"/>
                         <outlet property="emailField" destination="OTP-LK-Mcz" id="Evc-5J-M0X"/>
+                        <outlet property="pageScrollView" destination="NwD-hh-iDI" id="bpc-Bh-59Q"/>
                         <outlet property="passField" destination="TFU-MZ-Ko9" id="oDE-Gf-U6L"/>
                         <outlet property="secondPassField" destination="0nB-Sa-LVw" id="EXd-yH-HsO"/>
                         <segue destination="v7k-sm-mEp" kind="push" identifier="showProfileSetup" id="b9Q-ma-mbE"/>
@@ -1371,7 +1363,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="40FF3E93-F5AB-4939-9B34-E56A4F90C497" width="256" height="256">
+        <image name="005A02C5-C6BE-4973-B103-C1A997911588" width="256" height="256">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGbW5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QHAcI
 ERsgISUmLjE2OTo/QkNIS0xRVFVaXV5hZ2pVJG51bGzUCQoLDA0ODxBWJGNsYXNzXE5TSW1hZ2VGbGFn

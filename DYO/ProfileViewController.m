@@ -87,7 +87,6 @@ int count;
     //School Autofill
     self.educationField.autocompleteDataSource = [HTAutocompleteManager sharedManager];
     self.educationField.autocompleteType = HTAutocompleteTypeColor;
-    [self registerForKeyboardNotifications];
     
     ////AREA OF STUDY PICKER////
     NSString *path2 = [[NSBundle mainBundle] pathForResource:
@@ -106,6 +105,15 @@ int count;
     self.areaOfStudyField.inputView =  pkAreaOfStudyPicker; //*important this makes the picker show up on selection of area field
     ////end: AREA OF STUDY PICKER////
 
+    //scroll delegates
+    self.nameField.delegate = self;
+    self.jobField.delegate = self;
+    self.companyField.delegate = self;
+    self.industryField.delegate = self;
+    self.educationField.delegate = self;
+    self.areaOfStudyField.delegate = self;
+
+
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -114,47 +122,14 @@ int count;
     //make sure nav shows
     [self.navigationController.navigationBar setHidden:NO];
     self.navigationController.interactivePopGestureRecognizer.enabled = YES;
-
-
 }
 
-- (void)registerForKeyboardNotifications
+- (void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWasShown:)
-                                                 name:UIKeyboardDidShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillBeHidden:)
-                                                 name:UIKeyboardWillHideNotification object:nil];
-}
-
-// Called when the UIKeyboardDidShowNotification is sent.
-- (void)keyboardWasShown:(NSNotification*)aNotification
-{
-    NSDictionary* info = [aNotification userInfo];
-    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height+20, 0.0);
-   
-    self.pageScrollView.contentInset = contentInsets;
-    self.pageScrollView.scrollIndicatorInsets = contentInsets;
+    self.activeField = textField;
     
-    // If active text field is hidden by keyboard, scroll it so it's visible
-    // Your application might not need or want this behavior.
-    CGRect aRect = self.view.frame;
-    aRect.size.height -= kbSize.height;
-    if (!CGRectContainsPoint(aRect, self.areaOfStudyField.frame.origin) ) {
-        CGPoint scrollPoint = CGPointMake(0.0, self.areaOfStudyField.frame.origin.y-kbSize.height);
-        NSLog(@"scroll point is: %@", NSStringFromCGPoint(scrollPoint));
-        [self.pageScrollView setContentOffset:scrollPoint animated:YES];
-    }
-}
-
-// Called when the UIKeyboardWillHideNotification is sent
-- (void)keyboardWillBeHidden:(NSNotification*)aNotification
-{
-    UIEdgeInsets contentInsets = UIEdgeInsetsMake(20.0, 0.0,0.0, 0.0);
-    self.pageScrollView.contentInset = contentInsets;
-    self.pageScrollView.scrollIndicatorInsets = contentInsets;
+    [self.pageScrollView setContentOffset:CGPointMake(0,textField.center.y-60) animated:YES];
+    
 }
 
 #pragma mark - Helper Methods

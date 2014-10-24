@@ -79,7 +79,8 @@
     self.jobField.delegate = self;
     self.companyField.delegate = self;
     self.industryField.delegate = self;
-    self.eduField.delegate = self; self.firstNameField.delegate = self;
+    self.eduField.delegate = self;
+    self.firstNameField.delegate = self;
     self.areaField.delegate = self;
    
 }
@@ -103,11 +104,11 @@
     [self.activityIndicatorView stopAnimating]; //stops from spinning when user goes back to search again
 }
 
-// called when textField start editting.
+// called when textField is selected.
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
     self.activeField = textField;
-    if(self.activeField != self.firstNameField){
+    if(self.activeField != self.firstNameField || self.activeField != self.areaField){
     [self.pageScrollView setContentOffset:CGPointMake(0,textField.center.y-70) animated:YES];
     }
 }
@@ -217,7 +218,6 @@
 }
 
 
-
 - (IBAction)lastNameEditingChanged:(UITextField *)sender {
     if(sender.text.length >= 1){
         //if there is 1 or more characters in the field, then disable all others
@@ -277,29 +277,10 @@
     }
 }
 
-- (IBAction)studyEditingChanged:(UITextField *)sender {
-    if(sender.text.length >= 1){
-        //if there is 1 or more characters in the field, then disable all others
-        [self allOtherFieldsDisabled:YES textFieldSender:sender];
-        
-    }
-    else{
-        //if there are zero characters, then
-        [self allOtherFieldsDisabled:NO textFieldSender:sender];
-    }
+- (BOOL)textFieldShouldClear:(UITextField *)textField {
+    [self allOtherFieldsDisabled:NO textFieldSender:textField];
 
-}
-
-- (IBAction)industryEditingChanged:(UITextField *)sender {
-    if(sender.text.length >= 1){
-        //if there is 1 or more characters in the field, then disable all others
-        [self allOtherFieldsDisabled:YES textFieldSender:sender];
-        
-    }
-    else{
-        //if there are zero characters, then
-        [self allOtherFieldsDisabled:NO textFieldSender:sender];
-    }
+    return YES;
 }
 
 - (IBAction)dismissKeyboardDrag:(UITextField *)sender {
@@ -347,13 +328,13 @@
     if(pickerView == pktStatePicker){
         //then set the industry text field to the selection and resign the picker
         self.industryField.text = [industryArray objectAtIndex:row];
-        [pickerView resignFirstResponder];
-        
+        [self allOtherFieldsDisabled:YES textFieldSender:self.industryField];
+
     }
     else if(pickerView == pkAreaOfStudyPicker){
         //then set the area of study text field to the selection and resign the picker
         self.areaField.text = [areaOfStudyArray objectAtIndex:row];
-        [pkAreaOfStudyPicker resignFirstResponder]; //*trying this to see if it works
+        [self allOtherFieldsDisabled:YES textFieldSender:self.areaField];
     }
 }
 
