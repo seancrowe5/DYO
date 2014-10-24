@@ -126,7 +126,7 @@ int count;
 {
     self.activeField = textField;
     
-    [self.pageScrollView setContentOffset:CGPointMake(0,textField.center.y-60) animated:YES];
+    [self.pageScrollView setContentOffset:CGPointMake(0,textField.center.y-110) animated:YES];
     
 }
 
