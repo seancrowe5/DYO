@@ -26,7 +26,6 @@ int count;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.navigationController.navigationBar setHidden:NO];
     [self.navigationController.navigationBar setTitleTextAttributes: @{
                                                                        NSForegroundColorAttributeName: [UIColor whiteColor],
                                                                        NSFontAttributeName: [UIFont fontWithName:@"Avenir" size:17.0f],
@@ -119,8 +118,7 @@ int count;
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:NO];
     
-    //make sure nav shows
-    [self.navigationController.navigationBar setHidden:NO];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
     self.navigationController.interactivePopGestureRecognizer.enabled = YES;
 }
 

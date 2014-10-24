@@ -44,12 +44,14 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:NO];
-    [self.navigationController.navigationBar setHidden:NO];
+    
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
     [self.navigationController.navigationBar setTitleTextAttributes: @{NSForegroundColorAttributeName: [UIColor whiteColor],
                                       NSFontAttributeName: [UIFont fontWithName:@"Avenir" size:17.0f],
                                       }];
     self.navigationItem.title = @"MESSAGES";
-    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+    
 
 
 

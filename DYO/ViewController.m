@@ -16,8 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UINavigationBar *navBar = self.navigationController.navigationBar;
-    [navBar setHidden:NO];
     [self.navigationController.navigationBar setTitleTextAttributes: @{
                                                                        NSForegroundColorAttributeName: [UIColor whiteColor],
                                                                        NSFontAttributeName: [UIFont fontWithName:@"Avenir" size:17.0f],
@@ -26,6 +24,7 @@
     
     
     self.navigationItem.title = @"SETTINGS";
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
     self.navigationController.interactivePopGestureRecognizer.enabled = YES;
 
 

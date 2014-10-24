@@ -1643,11 +1643,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/AvailableChatsTableViewController.m"
-            timestampString = "435793668.088023"
+            timestampString = "435811606.980206"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1659,11 +1659,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/AvailableChatsTableViewController.m"
-            timestampString = "435793668.088023"
+            timestampString = "435811606.980206"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1723,11 +1723,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/SearchViewController.m"
-            timestampString = "435804352.440206"
+            timestampString = "435811541.093642"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
             landmarkName = "-prepareForSegue:sender:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1755,11 +1755,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ProfileViewController.m"
-            timestampString = "435805011.672386"
+            timestampString = "435811541.093642"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "246"
-            endingLineNumber = "246"
+            startingLineNumber = "244"
+            endingLineNumber = "244"
             landmarkName = "-imagePickerController:didFinishPickingMediaWithInfo:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1771,11 +1771,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DYO/ProfileViewController.m"
-            timestampString = "435805011.672386"
+            timestampString = "435811541.093642"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "265"
-            endingLineNumber = "265"
+            startingLineNumber = "263"
+            endingLineNumber = "263"
             landmarkName = "-savePhoto"
             landmarkType = "5">
          </BreakpointContent>

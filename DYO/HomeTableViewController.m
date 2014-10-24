@@ -23,7 +23,7 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     //NAv Bar
-    [self.navigationController.navigationBar setHidden:YES];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
     //[self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:241.0/255.0 green:106.0/255.0 blue:108.0/255.0 alpha:1]]; /*#f76070*/
 
    
@@ -48,8 +48,8 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:NO];
     //nav bar
-    [self.navigationController.navigationBar setHidden:YES];
-    self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    //self.navigationController.interactivePopGestureRecognizer.enabled = NO;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 
 

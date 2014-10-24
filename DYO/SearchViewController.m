@@ -85,13 +85,11 @@
    
 }
 
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:YES];
-     //self.navigationController.interactivePopGestureRecognizer.enabled = YES;
-}
+
 -(void)viewWillAppear:(BOOL)animated{
-    UINavigationBar *navBar = self.navigationController.navigationBar;
-    [navBar setHidden:NO];
+   // UINavigationBar *navBar = self.navigationController.navigationBar;
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
     [self.navigationController.navigationBar setTitleTextAttributes: @{
                                                                        NSForegroundColorAttributeName: [UIColor whiteColor],
                                                                        NSFontAttributeName: [UIFont fontWithName:@"Avenir" size:17.0f],

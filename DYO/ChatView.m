@@ -44,7 +44,7 @@
     self.outgoingBubbleImageView = [JSQMessagesBubbleImageFactory outgoingMessageBubbleImageViewWithColor:[UIColor colorWithRed:241.0/255.0 green:106.0/255.0 blue:108.0/255.0 alpha:1]];
     self.incomingBubbleImageView = [JSQMessagesBubbleImageFactory incomingMessageBubbleImageViewWithColor:[UIColor colorWithRed:90.0/255.0 green:196.0/255.0 blue:190.0/255.0 alpha:1]];
     
-    
+    // = CGPointMake(self.outgoingBubbleImageView.size.width/2.0f, self.outgoingBubbleImageView.size.height/2.0f);
     
     self.collectionView.collectionViewLayout.messageBubbleFont = [UIFont fontWithName:@"Avenir" size:14.0f];
    self.inputToolbar.contentView.leftBarButtonItem = nil;
