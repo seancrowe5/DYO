@@ -59,8 +59,12 @@
     self.isLoading = NO;
     
     if(self.isFirstMessage == false){
+        [self refreshMessages];
         //if first message is false, then run
-        [self loadMessages:false];
+        [NSTimer scheduledTimerWithTimeInterval:5.0f
+                                         target:self selector:@selector(refreshMessages) userInfo:nil repeats:YES];
+        
+  
     }
     self.chatsTimer = [NSTimer scheduledTimerWithTimeInterval:20.0 target:self selector:@selector(refreshMessages) userInfo:nil repeats:YES];
     

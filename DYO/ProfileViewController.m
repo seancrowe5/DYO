@@ -64,16 +64,12 @@ int count;
     //INDUSTRY Picker
     NSString *path = [[NSBundle mainBundle] pathForResource:
                       @"testing2" ofType:@"plist"];
-    // Build the array from the plist
     NSMutableArray *array2 = [[NSMutableArray alloc] initWithContentsOfFile:path];
     NSMutableArray *array3 = [[NSMutableArray alloc]init];
-    
-    //loop through industry stuff
     for (NSDictionary *dict in array2) {
         [array3 addObject:[dict objectForKey:@"Industry"]];
     }
     
-    //Industry Picker
     industryArray = array3;
     pktStatePicker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 43, 320, 480)];
     pktStatePicker.delegate = self;
@@ -81,7 +77,7 @@ int count;
     [pktStatePicker  setShowsSelectionIndicator:YES];
     self.industryField.inputView =  pktStatePicker  ;
     self.pageScrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
-
+    //end: INDUSTRY PICKER//
     
     //School Autofill
     self.educationField.autocompleteDataSource = [HTAutocompleteManager sharedManager];
@@ -111,8 +107,9 @@ int count;
     self.industryField.delegate = self;
     self.educationField.delegate = self;
     self.areaOfStudyField.delegate = self;
-
+    
 }
+
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:NO];
@@ -382,6 +379,8 @@ int count;
         self.areaOfStudyField.text = [areaOfStudyArray objectAtIndex:row];
         [pkAreaOfStudyPicker resignFirstResponder]; //*trying this to see if it works
     }
+   
+    //resigns the picker
    
     [[self view] endEditing:YES];
 }

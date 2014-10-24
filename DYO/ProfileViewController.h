@@ -10,7 +10,8 @@
 #import <Parse/Parse.h>
 #import "HTAutocompleteManager.h"
 
-@interface ProfileViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate>
+@interface ProfileViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate,
+UIGestureRecognizerDelegate>
 
 //text fields
 @property (strong, nonatomic) IBOutlet UITextField *nameField;
