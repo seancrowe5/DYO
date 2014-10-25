@@ -11,4 +11,5 @@
 @interface TermsandConditionsViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UINavigationItem *termsAndConditionsTitle;
 
+- (IBAction)closeButtonPressed:(id)sender;
 @end

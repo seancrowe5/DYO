@@ -65,6 +65,18 @@
                                                                        }];
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        
+        [[self.availableChatRooms objectAtIndex:indexPath.row] deleteEventually];
+        [self.availableChatRooms removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        
+    }
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -107,17 +119,33 @@
 
     cell.userName.text = selectedUser[@"firstName"];
     
+    
+    
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     //uncomment to get the time only
-    [formatter setDateFormat:@"h:mm a"];
+    
     //[formatter setDateFormat:@"MMM dd, YYYY"];
     //[formatter setDateStyle:NSDateFormatterMediumStyle];
-    
-    
     NSDate *time = lastMessageObject.createdAt;
-    NSString *messageDate = [formatter stringFromDate:time];
+    NSDate *today = [NSDate date]; //today
     
+    NSComparisonResult result;
+    result = [today compare:time];
+    
+    if(result==NSOrderedAscending){
+         NSLog(@"today is less");
+        [formatter setDateFormat:@"MMM dd, YYYY"];}
+    else if(result==NSOrderedDescending){
+        NSLog(@"newDate is less");
+        [formatter setDateFormat:@"h:mm a"];;}
+    else{
+        NSLog(@"Both dates are same");
+        [formatter setDateFormat:@"h:mm a"];}
+    
+    NSString *messageDate = [formatter stringFromDate:time];
     [cell.timeLabel setText:messageDate];
+    
+    
     //Images in Cells//
     
     //cell.imageview.image = placeholderImage;

@@ -49,4 +49,7 @@
     [self.navigationController.navigationBar setHidden:NO];
     self.navigationController.interactivePopGestureRecognizer.enabled = YES;
 }
+- (IBAction)closeButtonPressed:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 @end

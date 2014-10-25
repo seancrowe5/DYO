@@ -105,29 +105,7 @@
     self.navigationItem.title = @"SEARCH";
     [self.activityIndicatorView stopAnimating]; //stops from spinning when user goes back to search again
     
-//    //listen for tap
-//    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didRecognizeTapGesture:)];
-//    [self.eduField.superview addGestureRecognizer:tapGesture];
 }
-
-//- (void)didRecognizeTapGesture:(UITapGestureRecognizer*)gesture
-//{
-//    CGPoint point = [gesture locationInView:gesture.view];
-//    
-//    if (gesture.state == UIGestureRecognizerStateEnded)
-//    {
-//        if (CGRectContainsPoint(self.eduField.frame, point))
-//        {
-//            //if(there is anythign in the field, aka user is typing)
-//            //then(fill in the field with the auto suggest)
-//            
-////            if(self.eduField.text>0){
-////                NSLog(@"You are typing and then you touched the field");
-////                self.eduField.text = @"autocorrect";
-////            }
-//        }
-//    }
-//}
 
 // called when textField is selected.
 - (void)textFieldDidBeginEditing:(UITextField *)textField
