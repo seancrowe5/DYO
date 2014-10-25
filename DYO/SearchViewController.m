@@ -27,28 +27,48 @@
 {
     [super viewDidLoad];
     
-    //INDUSTRY Picker
+    /////////////////////////////////
+    /////////////////////////////////
+    ////Industry Picker Setup////////
+    /////////////////////////////////
+    /////////////////////////////////
+    
+    //Go get dataa and save in some arrays
     NSString *path = [[NSBundle mainBundle] pathForResource:
                       @"testing2" ofType:@"plist"];
-    // Build the array from the plist
     NSMutableArray *array2 = [[NSMutableArray alloc] initWithContentsOfFile:path];
     NSMutableArray *array3 = [[NSMutableArray alloc]init];
-    
-    //loop through industry stuff
     for (NSDictionary *dict in array2) {
         [array3 addObject:[dict objectForKey:@"Industry"]];
     }
     
-    //Industry Picker
     industryArray = array3;
     pktStatePicker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 43, 320, 480)];
     pktStatePicker.delegate = self;
     pktStatePicker.dataSource = self;
-    [pktStatePicker  setShowsSelectionIndicator:NO];
-    self.industryField.inputView =  pktStatePicker  ;
-    pktStatePicker.hidden = NO;
+    [pktStatePicker  setShowsSelectionIndicator:YES];
+    self.industryField.inputView =  pktStatePicker ;
     
-    ////AREA OF STUDY PICKER////
+    // Create done button in UIPickerView
+    UIToolbar *mypickerToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 43)];
+    mypickerToolbar.barStyle = UIBarStyleDefault;
+    [mypickerToolbar sizeToFit];
+    NSMutableArray *barItems = [[NSMutableArray alloc] init];
+    UIBarButtonItem *flexSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+    [barItems addObject:flexSpace];
+    UIBarButtonItem *doneBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(pickerDoneClicked)];
+    [barItems addObject:doneBtn];
+    [mypickerToolbar setItems:barItems animated:YES];
+    self.industryField.inputAccessoryView = mypickerToolbar;
+    
+    
+    /////////////////////////////////
+    /////////////////////////////////
+    ////Area of Study Picker ////////
+    /////////////////////////////////
+    /////////////////////////////////
+    
+    //go get some data and put in arrays
     NSString *path2 = [[NSBundle mainBundle] pathForResource:
                        @"areaOfStudy" ofType:@"plist"]; //gets the file
     NSMutableArray *array4 = [[NSMutableArray alloc] initWithContentsOfFile:path2]; //build the array from fil
@@ -61,11 +81,10 @@
     pkAreaOfStudyPicker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 43, 320, 480)];
     pkAreaOfStudyPicker.delegate = self;
     pkAreaOfStudyPicker.dataSource = self;
-    [pkAreaOfStudyPicker  setShowsSelectionIndicator:NO];
+    [pkAreaOfStudyPicker  setShowsSelectionIndicator:YES];
     self.areaField.inputView =  pkAreaOfStudyPicker; //*important this makes the picker show up on selection of area field
-    [pkAreaOfStudyPicker selectRow:0 inComponent:0 animated:NO];
-    //pkAreaOfStudyPicker.hidden = NO;
-    ////end: AREA OF STUDY PICKER////
+    self.areaField.inputAccessoryView = mypickerToolbar;
+    
     
     
     //dismiss keyboard on drag
@@ -107,6 +126,9 @@
     
 }
 
+-(void)pickerDoneClicked{
+    [[self view] endEditing:YES];
+}
 // called when textField is selected.
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
@@ -345,8 +367,8 @@
         //then set the industry text field to the selection and resign the picker
         self.industryField.text = [industryArray objectAtIndex:row];
         [self allOtherFieldsDisabled:YES textFieldSender:self.industryField];
-       pickerView.hidden = YES;
-        [[self view] endEditing:YES];
+       
+        
 
 
     }
@@ -354,8 +376,7 @@
         //then set the area of study text field to the selection and resign the picker
         self.areaField.text = [areaOfStudyArray objectAtIndex:row];
         [self allOtherFieldsDisabled:YES textFieldSender:self.areaField];
-        pickerView.hidden = YES;
-        [[self view] endEditing:YES];
+        
     }
     
    

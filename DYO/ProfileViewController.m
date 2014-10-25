@@ -36,23 +36,19 @@ int count;
     //display profile image from parse
     PFUser *user = [PFUser currentUser];
     PFFile *userImageFile = user[@"photo"];
-    
-    //if there is data for the photo...
-    if(userImageFile){
-        //go to parse and get the image
+    if(userImageFile){ //if there is data for the photo...go to parse and get the image
         [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
             if (!error) {
                 UIImage *image = [UIImage imageWithData:imageData];
                 [self.profileImage setImage:image];
-                //NSLog(@"image: %@",imageData);
             }
         }];
     }
     else{
-        self.profileImage.image = [UIImage imageNamed:@"profilePlaceholder.png"];
+        self.profileImage.image = [UIImage imageNamed:@"profilePlaceholder.png"]; //otherwise show the placeholder
     }
     
-    //Display the info from parse
+    //Get info from parse and display in fields
     self.nameField.text = [NSString stringWithFormat:@"%@ %@",[user valueForKey:@"firstName"], [user valueForKey:@"lastName"]];
     self.jobField.text = [NSString stringWithFormat:@"%@",[user valueForKey:@"jobTitle"]];          //job title
     self.companyField.text = [NSString stringWithFormat:@"%@",[user valueForKey:@"company"]];       //company
@@ -60,8 +56,15 @@ int count;
     self.industryField.text = [NSString stringWithFormat:@"%@",[user valueForKey:@"industry"]];   //industry
     self.areaOfStudyField.text = [NSString stringWithFormat:@"%@",[user valueForKey:@"areaOfStudy"]];   //industry
 
-   
-    //INDUSTRY Picker
+    self.pageScrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
+    
+    /////////////////////////////////
+    /////////////////////////////////
+    ////Industry Picker Setup////////
+    /////////////////////////////////
+    /////////////////////////////////
+    
+    //Go get dataa and save in some arrays
     NSString *path = [[NSBundle mainBundle] pathForResource:
                       @"testing2" ofType:@"plist"];
     NSMutableArray *array2 = [[NSMutableArray alloc] initWithContentsOfFile:path];
@@ -69,21 +72,34 @@ int count;
     for (NSDictionary *dict in array2) {
         [array3 addObject:[dict objectForKey:@"Industry"]];
     }
-    
+
     industryArray = array3;
     pktStatePicker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 43, 320, 480)];
     pktStatePicker.delegate = self;
     pktStatePicker.dataSource = self;
     [pktStatePicker  setShowsSelectionIndicator:YES];
-    self.industryField.inputView =  pktStatePicker  ;
-    self.pageScrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
-    //end: INDUSTRY PICKER//
+    self.industryField.inputView =  pktStatePicker ;
     
-    //School Autofill
-    self.educationField.autocompleteDataSource = [HTAutocompleteManager sharedManager];
-    self.educationField.autocompleteType = HTAutocompleteTypeColor;
+    // Create done button in UIPickerView
+    UIToolbar*  mypickerToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 43)];
+    mypickerToolbar.barStyle = UIBarStyleDefault;
+    [mypickerToolbar sizeToFit];
+    NSMutableArray *barItems = [[NSMutableArray alloc] init];
+    UIBarButtonItem *flexSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+    [barItems addObject:flexSpace];
+    UIBarButtonItem *doneBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(pickerDoneClicked)];
+    [barItems addObject:doneBtn];
+    [mypickerToolbar setItems:barItems animated:YES];
+    self.industryField.inputAccessoryView = mypickerToolbar;
     
-    ////AREA OF STUDY PICKER////
+    
+    /////////////////////////////////
+    /////////////////////////////////
+    ////Area of Study Picker ////////
+    /////////////////////////////////
+    /////////////////////////////////
+    
+    //go get some data and put in arrays
     NSString *path2 = [[NSBundle mainBundle] pathForResource:
                        @"areaOfStudy" ofType:@"plist"]; //gets the file
     NSMutableArray *array4 = [[NSMutableArray alloc] initWithContentsOfFile:path2]; //build the array from fil
@@ -98,9 +114,18 @@ int count;
     pkAreaOfStudyPicker.dataSource = self;
     [pkAreaOfStudyPicker  setShowsSelectionIndicator:YES];
     self.areaOfStudyField.inputView =  pkAreaOfStudyPicker; //*important this makes the picker show up on selection of area field
-    ////end: AREA OF STUDY PICKER////
+    self.areaOfStudyField.inputAccessoryView = mypickerToolbar;
 
-    //scroll delegates
+    
+    
+    
+    //School Autofill
+    self.educationField.autocompleteDataSource = [HTAutocompleteManager sharedManager];
+    self.educationField.autocompleteType = HTAutocompleteTypeColor;
+    
+    
+
+    //scroll delegates to tell it which fields will scroll up when selected
     self.nameField.delegate = self;
     self.jobField.delegate = self;
     self.companyField.delegate = self;
@@ -108,22 +133,25 @@ int count;
     self.educationField.delegate = self;
     self.areaOfStudyField.delegate = self;
     
+    }
+
+-(void)pickerDoneClicked{
+    NSLog(@"done clicked");
+    [[self view] endEditing:YES];
 }
-
-
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:NO];
-    
+    //this makes sure the nav shows up and works properly
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     self.navigationController.interactivePopGestureRecognizer.enabled = YES;
 }
 
+
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
+    //this scrolls the view for when you select a text field
     self.activeField = textField;
-    
     [self.pageScrollView setContentOffset:CGPointMake(0,textField.center.y-110) animated:YES];
-    
 }
 
 #pragma mark - Helper Methods
@@ -377,12 +405,12 @@ int count;
     else if(pickerView == pkAreaOfStudyPicker){
         //then set the area of study text field to the selection and resign the picker
         self.areaOfStudyField.text = [areaOfStudyArray objectAtIndex:row];
-        [pkAreaOfStudyPicker resignFirstResponder]; //*trying this to see if it works
+        //[pkAreaOfStudyPicker resignFirstResponder]; //*trying this to see if it works
     }
    
     //resigns the picker
    
-    [[self view] endEditing:YES];
+   
 }
 
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{

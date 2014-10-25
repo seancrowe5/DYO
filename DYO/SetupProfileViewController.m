@@ -17,7 +17,6 @@
     NSArray *areaOfStudyArray;
     UIPickerView *pkAreaOfStudyPicker;
     
-    UIToolbar *mypickerToolbar;
     int monthClick;
 }
 @end
@@ -34,7 +33,14 @@
     self.profileImage.image = [UIImage imageNamed:@"profilePlaceholder.png"];
     self.didUploadPhoto = NO;
     
-    ////INDUSTRY PICKER////
+    
+    /////////////////////////////////
+    /////////////////////////////////
+    ////Industry Picker Setup////////
+    /////////////////////////////////
+    /////////////////////////////////
+    
+    //Go get dataa and save in some arrays
     NSString *path = [[NSBundle mainBundle] pathForResource:
                       @"testing2" ofType:@"plist"];
     NSMutableArray *array2 = [[NSMutableArray alloc] initWithContentsOfFile:path];
@@ -42,18 +48,36 @@
     for (NSDictionary *dict in array2) {
         [array3 addObject:[dict objectForKey:@"Industry"]];
     }
-
+    
     industryArray = array3;
     pktStatePicker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 43, 320, 480)];
     pktStatePicker.delegate = self;
     pktStatePicker.dataSource = self;
     [pktStatePicker  setShowsSelectionIndicator:YES];
-    self.industryField.inputView =  pktStatePicker  ;
-    ////end: INDUSTRY PICKER////
+    self.industryField.inputView =  pktStatePicker ;
     
-    ////AREA OF STUDY PICKER////
+    // Create done button in UIPickerView
+    UIToolbar *mypickerToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 43)];
+    mypickerToolbar.barStyle = UIBarStyleDefault;
+    [mypickerToolbar sizeToFit];
+    NSMutableArray *barItems = [[NSMutableArray alloc] init];
+    UIBarButtonItem *flexSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+    [barItems addObject:flexSpace];
+    UIBarButtonItem *doneBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(pickerDoneClicked)];
+    [barItems addObject:doneBtn];
+    [mypickerToolbar setItems:barItems animated:YES];
+    self.industryField.inputAccessoryView = mypickerToolbar;
+    
+    
+    /////////////////////////////////
+    /////////////////////////////////
+    ////Area of Study Picker ////////
+    /////////////////////////////////
+    /////////////////////////////////
+    
+    //go get some data and put in arrays
     NSString *path2 = [[NSBundle mainBundle] pathForResource:
-                      @"areaOfStudy" ofType:@"plist"]; //gets the file
+                       @"areaOfStudy" ofType:@"plist"]; //gets the file
     NSMutableArray *array4 = [[NSMutableArray alloc] initWithContentsOfFile:path2]; //build the array from fil
     NSMutableArray *array5 = [[NSMutableArray alloc]init]; //temporary array for looping
     NSLog(@"array 4 is: %@", array4);
@@ -66,7 +90,7 @@
     pkAreaOfStudyPicker.dataSource = self;
     [pkAreaOfStudyPicker  setShowsSelectionIndicator:YES];
     self.areaOfStudyField.inputView =  pkAreaOfStudyPicker; //*important this makes the picker show up on selection of area field
-    ////end: AREA OF STUDY PICKER////
+    self.areaOfStudyField.inputAccessoryView = mypickerToolbar;
     
     //dismiss keyboard on scroll
     self.pageScrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
@@ -85,7 +109,10 @@
 
 }
 
-
+-(void)pickerDoneClicked{
+     [[self view] endEditing:YES];
+    
+}
 // called when textField start editting.
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
@@ -391,9 +418,9 @@
     else if(pickerView == pkAreaOfStudyPicker){
         //then set the area of study text field to the selection and resign the picker
         self.areaOfStudyField.text = [areaOfStudyArray objectAtIndex:row];
-        [pkAreaOfStudyPicker resignFirstResponder]; //*trying this to see if it works
+        //[pkAreaOfStudyPicker resignFirstResponder]; //*trying this to see if it works
     }
-    [[self view] endEditing:YES];
+    
 }
 
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
