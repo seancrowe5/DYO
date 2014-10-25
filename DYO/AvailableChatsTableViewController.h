@@ -15,6 +15,8 @@
 
 @property (strong,nonatomic) NSMutableArray *availableChatRooms;
 @property (strong,nonatomic) NSMutableArray *usersAvailableChatRooms;
+@property (weak, nonatomic) IBOutlet UILabel *messageLabel;
+
 //@property (strong,nonatomic) UIImage *userImage;
 //@property (strong,nonatomic) NSMutableArray *listOfAvatars;
 

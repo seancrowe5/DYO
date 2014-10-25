@@ -10,7 +10,7 @@
 
 @interface AvailableChatsTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *userName;
-@property (weak, nonatomic) IBOutlet UITextView *messageExcerpt;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *messageExcerpt;
 
 @end

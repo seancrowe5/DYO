@@ -44,6 +44,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:NO];
+    [self updateAvailableChatRooms];
     [self.tableView reloadData];
     
     [self.navigationController setNavigationBarHidden:NO animated:YES];
@@ -224,7 +225,7 @@
     [queryCombined includeKey:@"chat"];
     [queryCombined includeKey:@"user1"];
     [queryCombined includeKey:@"user2"];
-    [queryCombined orderByDescending:@"createdAt"];
+    [queryCombined orderByDescending:@"updatedAt"];
     
     [queryCombined findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
@@ -236,6 +237,8 @@
         }
     }];
     
+    
+
 }
 
 
