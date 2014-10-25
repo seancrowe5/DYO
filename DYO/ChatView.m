@@ -245,6 +245,8 @@
     // T
     PFQuery *pushQuery = [PFInstallation query];
     [pushQuery whereKey:@"user" equalTo:self.withUser];
+    NSLog(@"The query give us: %@", pushQuery);
+    
     
     // Send push notification to query
     PFPush *push = [[PFPush alloc] init];
