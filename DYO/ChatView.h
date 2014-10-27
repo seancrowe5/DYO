@@ -8,6 +8,7 @@
 
 #import "JSQMessagesViewController.h"
 #import "JSQMessages.h"
+#import <JSQSystemSoundPlayer+JSQMessages.h>
 
 @class ChatView;
 @protocol ChatViewDelegate <NSObject>
